@@ -582,4 +582,4 @@ If you need to restore the theme customizer:
 
 - **[Installation Guide](/guide/installation)** - Set up a fresh installation without customizer
 - **[Theme Customizer](/theme-customizer/)** - Learn about the customizer before removing
-- **[Customization Guide](/customization/)** - Alternative customization approaches
+- **[Theme System](/guide/theme-system)** - Alternative customization approaches

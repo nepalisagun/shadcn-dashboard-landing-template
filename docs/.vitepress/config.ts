@@ -1,6 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  // Dev-server URLs like http://localhost:3000 are instructions, not pages
+  ignoreDeadLinks: "localhostLinks",
   title: 'Shadcn Dashboard & Landing',
   description: 'Open-source admin dashboard & landing page template built with React, TypeScript, shadcn/ui, and Tailwind CSS v4. Developed by ShadcnStore.',
 

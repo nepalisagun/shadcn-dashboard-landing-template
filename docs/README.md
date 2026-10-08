@@ -18,12 +18,12 @@ The documentation is organized into framework-specific sections to provide targe
 ### 🎨 Component System
 - **[Component Library](./components/)** - shadcn/ui integration
 - **[Theme Customizer](./theme-customizer/)** - Real-time theme editing
-- **[Layouts](./layouts/)** - Layout system and navigation
+- **[Project Structure](./guide/project-structure)** - Layout system and navigation
 
 ### 🚀 Advanced Topics
-- **[Deployment](./deployment/)** - Production deployment guides
-- **[Customization](./customization/)** - Styling and customization
-- **[Migration](./migration/)** - Framework and version migration
+- **[Deployment](./vite/build-deploy)** - Production deployment guides (see also [Next.js](./nextjs/build-deploy))
+- **[Customization](./theme-customizer/)** - Styling and customization
+- **[Migration](https://github.com/shadcnstore/shadcn-dashboard-landing-template/blob/main/CHANGELOG.md#migrating-a-customized-1x-copy)** - Upgrading from 1.x (Radix) to 2.0 (Base UI)
 
 ## 🛠️ Development
 
@@ -115,10 +115,6 @@ docs/
 ├── nextjs/                # Next.js-specific documentation
 ├── components/            # Component library docs
 ├── theme-customizer/      # Theme customization guides
-├── layouts/              # Layout system docs
-├── deployment/           # Deployment guides
-├── customization/        # Customization guides
-├── migration/            # Migration guides
 ├── api/                  # API reference
 └── examples/             # Usage examples
 ```

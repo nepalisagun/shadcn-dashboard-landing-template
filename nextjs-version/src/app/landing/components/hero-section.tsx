@@ -85,7 +85,7 @@ export function HeroSection() {
                 width={1200}
                 height={800}
                 className="w-full rounded-xl object-cover block dark:hidden"
-                priority
+                preload
               />
 
               {/* Dark mode dashboard image */}
@@ -95,7 +95,7 @@ export function HeroSection() {
                 width={1200}
                 height={800}
                 className="w-full rounded-xl object-cover hidden dark:block"
-                priority
+                preload
               />
 
               {/* Bottom fade effect - gradient overlay that fades the image to background */}

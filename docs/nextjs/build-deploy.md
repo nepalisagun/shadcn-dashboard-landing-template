@@ -784,4 +784,3 @@ getTTFB(console.log)
 - **[Troubleshooting Guide](/nextjs/troubleshooting)** - Detailed problem resolution
 - **[Components](/components/)** - Component library documentation
 - **[Theme Customizer](/theme-customizer/)** - Theme customization guide
-- **[API Reference](/api/)** - API endpoints documentation

@@ -24,6 +24,7 @@ export default function LoginPage() {
       <div className="bg-muted relative hidden lg:block">
         <Image
           src="https://ui.shadcn.com/placeholder.svg"
+          loading="eager"
           alt="Image"
           fill
           className="object-cover dark:brightness-[0.95] dark:invert"

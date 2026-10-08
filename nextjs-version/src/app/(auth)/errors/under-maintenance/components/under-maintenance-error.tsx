@@ -11,6 +11,7 @@ export function UnderMaintenanceError() {
     <div className='mx-auto flex min-h-dvh flex-col items-center justify-center gap-8 p-8 md:gap-12 md:p-16'>
       <Image
         src='https://ui.shadcn.com/placeholder.svg'
+        loading='eager'
         alt='placeholder image'
         width={960}
         height={540}

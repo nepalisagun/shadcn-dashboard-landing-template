@@ -663,7 +663,7 @@ export default function NotificationSettings() {
                   render={({ field }) => (
                     <FormItem className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <Mail className="h-5 w-5 text-muted-foreground" />
+                        <Mail className="size-5 text-muted-foreground" />
                         <div>
                           <FormLabel className="font-medium mb-1">
                             Email
@@ -689,7 +689,7 @@ export default function NotificationSettings() {
                   render={({ field }) => (
                     <FormItem className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <Bell className="h-5 w-5 text-muted-foreground" />
+                        <Bell className="size-5 text-muted-foreground" />
                         <div>
                           <FormLabel className="font-medium mb-1">
                             Push Notifications
@@ -715,7 +715,7 @@ export default function NotificationSettings() {
                   render={({ field }) => (
                     <FormItem className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <MessageSquare className="h-5 w-5 text-muted-foreground" />
+                        <MessageSquare className="size-5 text-muted-foreground" />
                         <div>
                           <FormLabel className="font-medium mb-1">
                             SMS

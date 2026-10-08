@@ -158,7 +158,7 @@ export function EventForm({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <div
-              className={cn("w-3 h-3 rounded-full", selectedEventType?.color)}
+              className={cn("size-3 rounded-full", selectedEventType?.color)}
             />
             {event ? "Edit Event" : "Create New Event"}
           </DialogTitle>
@@ -173,7 +173,7 @@ export function EventForm({
           {/* Event Title */}
           <div className="space-y-2">
             <Label htmlFor="title" className="flex items-center gap-2">
-              <Type className="w-4 h-4" />
+              <Type className="size-4" />
               Event Title
             </Label>
             <Input
@@ -191,7 +191,7 @@ export function EventForm({
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label className="flex items-center gap-2">
-                <Tag className="w-4 h-4" />
+                <Tag className="size-4" />
                 Event Type
               </Label>
               <Select
@@ -213,7 +213,7 @@ export function EventForm({
                     <SelectItem key={type.value} value={type.value}>
                       <div className="flex items-center gap-2">
                         <div
-                          className={cn("w-3 h-3 rounded-full", type.color)}
+                          className={cn("size-3 rounded-full", type.color)}
                         />
                         {type.label}
                       </div>
@@ -228,7 +228,7 @@ export function EventForm({
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label className="flex items-center gap-2">
-                <CalendarIcon className="w-4 h-4" />
+                <CalendarIcon className="size-4" />
                 Date
               </Label>
               <Popover open={showCalendar} onOpenChange={setShowCalendar}>
@@ -259,7 +259,7 @@ export function EventForm({
 
             <div className="space-y-2">
               <Label className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
+                <Clock className="size-4" />
                 Time
               </Label>
               <Select
@@ -339,7 +339,7 @@ export function EventForm({
           {/* Location */}
           <div className="space-y-2">
             <Label htmlFor="location" className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="size-4" />
               Location
             </Label>
             <Input
@@ -355,7 +355,7 @@ export function EventForm({
           {/* Attendees */}
           <div className="space-y-2">
             <Label className="flex items-center gap-2">
-              <Users className="w-4 h-4" />
+              <Users className="size-4" />
               Attendees
             </Label>
             <div className="flex gap-2">
@@ -381,7 +381,7 @@ export function EventForm({
                     variant="secondary"
                     className="flex items-center gap-2 px-2 py-1"
                   >
-                    <Avatar className="w-5 h-5">
+                    <Avatar className="size-5">
                       <AvatarFallback className="text-[10px] font-medium">
                         {attendee
                           .split(" ")

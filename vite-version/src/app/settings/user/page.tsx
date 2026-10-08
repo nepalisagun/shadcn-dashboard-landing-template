@@ -121,11 +121,11 @@ export default function UserSettingsPage() {
                 {/* Profile Picture Section */}
                 <div className="flex items-center gap-6 ">
                   {useDefaultIcon ? (
-                    <div className="flex h-20 w-20 items-center justify-center rounded-lg">
+                    <div className="flex size-20 items-center justify-center rounded-lg">
                       <Logo size={56} />
                     </div>
                   ) : (
-                    <Avatar className="h-20 w-20 rounded-lg">
+                    <Avatar className="size-20 rounded-lg">
                       <AvatarImage src={profileImage || undefined} />
                       <AvatarFallback>SS</AvatarFallback>
                     </Avatar>
@@ -138,7 +138,7 @@ export default function UserSettingsPage() {
                         onClick={handleFileUpload}
                         className="cursor-pointer"
                       >
-                        <Upload className="mr-2 h-4 w-4" />
+                        <Upload className="mr-2 size-4" />
                         Upload new photo
                       </Button>
                       <Button

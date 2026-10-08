@@ -33,7 +33,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-xl bg-white dark:bg-zinc-950 text-zinc-950 dark:text-zinc-50",
+      "flex size-full flex-col overflow-hidden rounded-xl bg-white dark:bg-zinc-950 text-zinc-950 dark:text-zinc-50",
       className
     )}
     {...props}
@@ -309,7 +309,7 @@ export function CommandSearch({ open, onOpenChange }: CommandSearchProps) {
                       value={item.title}
                       onSelect={() => handleSelect(item.url)}
                     >
-                      {Icon && <Icon className="mr-2 h-4 w-4" />}
+                      {Icon && <Icon className="mr-2 size-4" />}
                       {item.title}
                     </CommandItem>
                   )
@@ -329,7 +329,7 @@ export function SearchTrigger({ onClick }: { onClick: () => void }) {
       onClick={onClick}
       className="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-8 px-3 py-1 relative w-full justify-start text-muted-foreground sm:pr-12 md:w-36 lg:w-56"
     >
-      <Search className="mr-2 h-3.5 w-3.5" />
+      <Search className="mr-2 size-3.5" />
       <span className="hidden lg:inline-flex">Search...</span>
       <span className="inline-flex lg:hidden">Search...</span>
       <kbd className="pointer-events-none absolute right-1.5 top-1.5 hidden h-4 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">

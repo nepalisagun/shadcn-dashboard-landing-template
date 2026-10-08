@@ -45,7 +45,7 @@ export function QuickActions({
           {quickStats.map((stat, index) => (
             <div key={index} className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className={`w-2 h-2 rounded-full ${stat.color}`} />
+                <div className={`size-2 rounded-full ${stat.color}`} />
                 <span className="text-sm text-muted-foreground">{stat.label}</span>
               </div>
               <Badge variant="secondary">{stat.value}</Badge>
@@ -65,7 +65,7 @@ export function QuickActions({
             className="w-full justify-start cursor-pointer" 
             onClick={onNewEvent}
           >
-            <Plus className="w-4 h-4 mr-2" />
+            <Plus className="size-4 mr-2" />
             New Event
           </Button>
           
@@ -74,7 +74,7 @@ export function QuickActions({
             className="w-full justify-start cursor-pointer" 
             onClick={onNewMeeting}
           >
-            <Users className="w-4 h-4 mr-2" />
+            <Users className="size-4 mr-2" />
             Schedule Meeting
           </Button>
           
@@ -83,7 +83,7 @@ export function QuickActions({
             className="w-full justify-start cursor-pointer" 
             onClick={onNewReminder}
           >
-            <Bell className="w-4 h-4 mr-2" />
+            <Bell className="size-4 mr-2" />
             Set Reminder
           </Button>
 
@@ -94,7 +94,7 @@ export function QuickActions({
             size="sm" 
             className="w-full justify-start cursor-pointer" 
           >
-            <Share className="w-4 h-4 mr-2" />
+            <Share className="size-4 mr-2" />
             Share Calendar
           </Button>
           
@@ -103,7 +103,7 @@ export function QuickActions({
             size="sm" 
             className="w-full justify-start cursor-pointer" 
           >
-            <Download className="w-4 h-4 mr-2" />
+            <Download className="size-4 mr-2" />
             Export
           </Button>
           
@@ -113,7 +113,7 @@ export function QuickActions({
             className="w-full justify-start cursor-pointer" 
             onClick={onSettings}
           >
-            <Settings className="w-4 h-4 mr-2" />
+            <Settings className="size-4 mr-2" />
             Settings
           </Button>
         </CardContent>
@@ -123,14 +123,14 @@ export function QuickActions({
       <Card>
         <CardHeader className="pb-3">
           <CardTitle className="text-sm font-medium flex items-center gap-2">
-            <Clock className="w-4 h-4" />
+            <Clock className="size-4" />
             Next Up
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="space-y-2">
             <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-blue-500 rounded-full mt-2" />
+              <div className="size-2 bg-blue-500 rounded-full mt-2" />
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium truncate">Team Standup</p>
                 <p className="text-xs text-muted-foreground">9:00 AM • Conference Room A</p>
@@ -138,7 +138,7 @@ export function QuickActions({
             </div>
             
             <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-purple-500 rounded-full mt-2" />
+              <div className="size-2 bg-purple-500 rounded-full mt-2" />
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium truncate">Design Review</p>
                 <p className="text-xs text-muted-foreground">2:00 PM • Virtual</p>

@@ -156,7 +156,7 @@ export function LandingFooter() {
                     />
                   }
                 >
-                  <social.icon className="h-4 w-4" />
+                  <social.icon className="size-4" />
                 </Button>
               ))}
             </div>
@@ -235,7 +235,7 @@ export function LandingFooter() {
           <div className="flex flex-col sm:flex-row items-center gap-2 text-muted-foreground text-sm">
             <div className="flex items-center gap-1">
               <span>Made with</span>
-              <Heart className="h-4 w-4 text-red-500 fill-current" />
+              <Heart className="size-4 text-red-500 fill-current" />
               <span>by</span>
               <a
                 href="https://shadcnstore.com"

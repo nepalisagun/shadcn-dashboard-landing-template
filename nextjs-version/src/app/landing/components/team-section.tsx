@@ -154,7 +154,7 @@ export function TeamSection() {
                   {/* Avatar */}
                   <div className="flex justify-center mb-4">
                     <CardDecorator>
-                      <Avatar className="h-24 w-24 border shadow-lg">
+                      <Avatar className="size-24 border shadow-lg">
                         <AvatarImage
                           src={member.image}
                           alt={member.name}
@@ -185,7 +185,7 @@ export function TeamSection() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="h-8 w-8 cursor-pointer hover:text-primary"
+                      className="size-8 cursor-pointer hover:text-primary"
                       nativeButton={false}
                       render={
                         <a
@@ -196,12 +196,12 @@ export function TeamSection() {
                         />
                       }
                     >
-                      <Linkedin className="h-4 w-4" />
+                      <Linkedin className="size-4" />
                     </Button>
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="h-8 w-8 cursor-pointer hover:text-primary"
+                      className="size-8 cursor-pointer hover:text-primary"
                       nativeButton={false}
                       render={
                         <a
@@ -212,12 +212,12 @@ export function TeamSection() {
                         />
                       }
                     >
-                      <Github className="h-4 w-4" />
+                      <Github className="size-4" />
                     </Button>
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="h-8 w-8 cursor-pointer hover:text-primary"
+                      className="size-8 cursor-pointer hover:text-primary"
                       nativeButton={false}
                       render={
                         <a
@@ -228,7 +228,7 @@ export function TeamSection() {
                         />
                       }
                     >
-                      <Globe className="h-4 w-4" />
+                      <Globe className="size-4" />
                     </Button>
                   </div>
                 </div>

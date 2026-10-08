@@ -129,7 +129,7 @@ export function SignupForm3({
             <img
               src="https://ui.shadcn.com/placeholder.svg"
               alt="Image"
-              className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.95] dark:invert"
+              className="absolute inset-0 size-full object-cover dark:brightness-[0.95] dark:invert"
             />
           </div>
         </CardContent>

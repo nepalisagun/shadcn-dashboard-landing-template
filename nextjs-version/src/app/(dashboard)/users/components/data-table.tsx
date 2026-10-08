@@ -172,7 +172,7 @@ export function DataTable({
         const user = row.original
         return (
           <div className="flex items-center gap-3">
-            <Avatar className="h-8 w-8">
+            <Avatar className="size-8">
               <AvatarFallback className="text-xs font-medium">
                 {user.avatar}
               </AvatarFallback>
@@ -240,7 +240,7 @@ export function DataTable({
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8 cursor-pointer"
+              className="size-8 cursor-pointer"
             >
               <Eye className="size-4" />
               <span className="sr-only">View user</span>
@@ -248,7 +248,7 @@ export function DataTable({
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8 cursor-pointer"
+              className="size-8 cursor-pointer"
               onClick={() => onEditUser(user)}
             >
               <Pencil className="size-4" />
@@ -260,7 +260,7 @@ export function DataTable({
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-8 w-8 cursor-pointer"
+                    className="size-8 cursor-pointer"
                   />
                 }
               >

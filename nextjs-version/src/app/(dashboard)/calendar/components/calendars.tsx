@@ -159,16 +159,16 @@ export function Calendars({
               <div className="flex items-center gap-1">
                 {index === 0 && (
                   <div
-                    className="h-5 w-5 flex items-center justify-center opacity-0 group-hover/collapsible:opacity-100 cursor-pointer hover:bg-accent rounded-sm"
+                    className="size-5 flex items-center justify-center opacity-0 group-hover/collapsible:opacity-100 cursor-pointer hover:bg-accent rounded-sm"
                     onClick={(e) => {
                       e.stopPropagation()
                       onNewCalendar?.()
                     }}
                   >
-                    <Plus className="h-3 w-3" />
+                    <Plus className="size-3" />
                   </div>
                 )}
-                <ChevronRight className="h-4 w-4 transition-transform group-data-open/collapsible:rotate-90" />
+                <ChevronRight className="size-4 transition-transform group-data-open/collapsible:rotate-90" />
               </div>
             </CollapsibleTrigger>
 
@@ -205,9 +205,9 @@ export function Calendars({
                         {/* Visibility Icon */}
                         <div className="opacity-0 group-hover/calendar-item:opacity-100">
                           {item.visible ? (
-                            <Eye className="h-3 w-3 text-muted-foreground" />
+                            <Eye className="size-3 text-muted-foreground" />
                           ) : (
-                            <EyeOff className="h-3 w-3 text-muted-foreground" />
+                            <EyeOff className="size-3 text-muted-foreground" />
                           )}
                         </div>
 
@@ -217,12 +217,12 @@ export function Calendars({
                             nativeButton={false}
                             render={
                               <div
-                                className="h-5 w-5 flex items-center justify-center p-0 opacity-0 group-hover/calendar-item:opacity-100 cursor-pointer hover:bg-accent rounded-sm"
+                                className="size-5 flex items-center justify-center p-0 opacity-0 group-hover/calendar-item:opacity-100 cursor-pointer hover:bg-accent rounded-sm"
                                 onClick={(e) => e.stopPropagation()}
                               />
                             }
                           >
-                            <MoreHorizontal className="h-3 w-3" />
+                            <MoreHorizontal className="size-3" />
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end" side="right">
                             <DropdownMenuItem

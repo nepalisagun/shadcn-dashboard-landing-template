@@ -83,7 +83,7 @@ export function UserFormDialog({ onAddUser }: UserFormDialogProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger render={<Button className="cursor-pointer" />}>
-        <Plus className="mr-2 h-4 w-4" />
+        <Plus className="mr-2 size-4" />
         Add New User
       </DialogTrigger>
       <DialogContent className="sm:max-w-2xl">

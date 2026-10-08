@@ -85,7 +85,7 @@ export function RecentTransactions() {
           <CardDescription>Latest customer transactions</CardDescription>
         </div>
         <Button variant="outline" size="sm" className="cursor-pointer">
-          <Eye className="h-4 w-4 mr-2" />
+          <Eye className="size-4 mr-2" />
           View All
         </Button>
       </CardHeader>
@@ -93,7 +93,7 @@ export function RecentTransactions() {
         {transactions.map((transaction) => (
           <div key={transaction.id}>
             <div className="flex p-3 rounded-lg border gap-2">
-              <Avatar className="h-8 w-8">
+              <Avatar className="size-8">
                 <AvatarImage
                   src={transaction.customer.avatar}
                   alt={transaction.customer.name}
@@ -141,11 +141,11 @@ export function RecentTransactions() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="h-8 w-8 p-0 cursor-pointer"
+                          className="size-8 p-0 cursor-pointer"
                         />
                       }
                     >
-                      <MoreHorizontal className="h-4 w-4" />
+                      <MoreHorizontal className="size-4" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                       <DropdownMenuItem className="cursor-pointer">

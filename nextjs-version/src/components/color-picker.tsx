@@ -59,7 +59,7 @@ export function ColorPicker({ label, cssVar, value, onChange }: ColorPickerProps
           <Button
             type="button"
             variant="outline"
-            className="h-8 w-8 p-0 overflow-hidden cursor-pointer"
+            className="size-8 p-0 overflow-hidden cursor-pointer"
             style={{ backgroundColor: displayColor }}
           >
             <input
@@ -67,7 +67,7 @@ export function ColorPicker({ label, cssVar, value, onChange }: ColorPickerProps
               id={`color-${cssVar}`}
               value={displayColor}
               onChange={handleColorChange}
-              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              className="absolute inset-0 size-full opacity-0 cursor-pointer"
             />
           </Button>
         </div>

@@ -113,7 +113,7 @@ export function ThemeTab({
             onClick={handleRandomShadcn}
             className="cursor-pointer"
           >
-            <Dices className="h-3.5 w-3.5 mr-1.5" />
+            <Dices className="size-3.5 mr-1.5" />
             Random
           </Button>
         </div>
@@ -144,25 +144,25 @@ export function ThemeTab({
                   <div className="flex items-center gap-2">
                     <div className="flex gap-1">
                       <div
-                        className="w-3 h-3 rounded-full border border-border/20"
+                        className="size-3 rounded-full border border-border/20"
                         style={{
                           backgroundColor: theme.preset.styles.light.primary,
                         }}
                       />
                       <div
-                        className="w-3 h-3 rounded-full border border-border/20"
+                        className="size-3 rounded-full border border-border/20"
                         style={{
                           backgroundColor: theme.preset.styles.light.secondary,
                         }}
                       />
                       <div
-                        className="w-3 h-3 rounded-full border border-border/20"
+                        className="size-3 rounded-full border border-border/20"
                         style={{
                           backgroundColor: theme.preset.styles.light.accent,
                         }}
                       />
                       <div
-                        className="w-3 h-3 rounded-full border border-border/20"
+                        className="size-3 rounded-full border border-border/20"
                         style={{
                           backgroundColor: theme.preset.styles.light.muted,
                         }}
@@ -189,7 +189,7 @@ export function ThemeTab({
             onClick={handleRandomTweakcn}
             className="cursor-pointer"
           >
-            <Dices className="h-3.5 w-3.5 mr-1.5" />
+            <Dices className="size-3.5 mr-1.5" />
             Random
           </Button>
         </div>
@@ -225,25 +225,25 @@ export function ThemeTab({
                   <div className="flex items-center gap-2">
                     <div className="flex gap-1">
                       <div
-                        className="w-3 h-3 rounded-full border border-border/20"
+                        className="size-3 rounded-full border border-border/20"
                         style={{
                           backgroundColor: theme.preset.styles.light.primary,
                         }}
                       />
                       <div
-                        className="w-3 h-3 rounded-full border border-border/20"
+                        className="size-3 rounded-full border border-border/20"
                         style={{
                           backgroundColor: theme.preset.styles.light.secondary,
                         }}
                       />
                       <div
-                        className="w-3 h-3 rounded-full border border-border/20"
+                        className="size-3 rounded-full border border-border/20"
                         style={{
                           backgroundColor: theme.preset.styles.light.accent,
                         }}
                       />
                       <div
-                        className="w-3 h-3 rounded-full border border-border/20"
+                        className="size-3 rounded-full border border-border/20"
                         style={{
                           backgroundColor: theme.preset.styles.light.muted,
                         }}
@@ -294,7 +294,7 @@ export function ThemeTab({
             onClick={handleLightMode}
             className="cursor-pointer mode-toggle-button relative overflow-hidden"
           >
-            <Sun className="h-4 w-4 mr-1 transition-transform duration-300" />
+            <Sun className="size-4 mr-1 transition-transform duration-300" />
             Light
           </Button>
           <Button
@@ -303,7 +303,7 @@ export function ThemeTab({
             onClick={handleDarkMode}
             className="cursor-pointer mode-toggle-button relative overflow-hidden"
           >
-            <Moon className="h-4 w-4 mr-1 transition-transform duration-300" />
+            <Moon className="size-4 mr-1 transition-transform duration-300" />
             Dark
           </Button>
         </div>
@@ -319,7 +319,7 @@ export function ThemeTab({
           onClick={onImportClick}
           className="w-full cursor-pointer"
         >
-          <Upload className="h-3.5 w-3.5 mr-1.5" />
+          <Upload className="size-3.5 mr-1.5" />
           Import Theme
         </Button>
       </div>
@@ -356,7 +356,7 @@ export function ThemeTab({
       {/* Tweakcn */}
       <div className="p-4 bg-muted rounded-lg space-y-3">
         <div className="flex items-center gap-2">
-          <Palette className="h-4 w-4 text-primary" />
+          <Palette className="size-4 text-primary" />
           <span className="text-sm font-medium">Advanced Customization</span>
         </div>
         <p className="text-xs text-muted-foreground">
@@ -379,7 +379,7 @@ export function ThemeTab({
             window.open("https://tweakcn.com/editor/theme", "_blank")
           }
         >
-          <ExternalLink className="h-3.5 w-3.5 mr-1.5" />
+          <ExternalLink className="size-3.5 mr-1.5" />
           Open Tweakcn
         </Button>
       </div>

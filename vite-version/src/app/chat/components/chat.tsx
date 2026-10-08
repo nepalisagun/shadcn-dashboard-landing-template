@@ -121,9 +121,7 @@ export function Chat({ conversations, messages, users }: ChatProps) {
           className={`
           w-100 border-r bg-background flex-shrink-0
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
-          lg:relative lg:block
-          fixed inset-y-0 left-0 z-50
-          transition-transform duration-300 ease-in-out
+          lg:relative lg:block fixed inset-y-0 left-0 z-50 transition-transform duration-300 ease-in-out
         `}
         >
           {/* Sidebar Header with Close Button (Mobile Only) */}
@@ -135,7 +133,7 @@ export function Chat({ conversations, messages, users }: ChatProps) {
               onClick={() => setIsSidebarOpen(false)}
               className="cursor-pointer"
             >
-              <X className="h-4 w-4" />
+              <X className="size-4" />
             </Button>
           </div>
 
@@ -160,7 +158,7 @@ export function Chat({ conversations, messages, users }: ChatProps) {
               onClick={() => setIsSidebarOpen(true)}
               className="cursor-pointer lg:hidden mr-2"
             >
-              <Menu className="h-4 w-4" />
+              <Menu className="size-4" />
             </Button>
 
             <div className="flex-1">

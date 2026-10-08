@@ -166,7 +166,7 @@ export function CalendarMain({
                     className={cn(
                       "text-sm font-medium",
                       isDayToday &&
-                        "bg-primary text-primary-foreground rounded-md w-6 h-6 flex items-center justify-center text-xs"
+                        "bg-primary text-primary-foreground rounded-md size-6 flex items-center justify-center text-xs"
                     )}
                   >
                     {format(day, "d")}
@@ -192,7 +192,7 @@ export function CalendarMain({
                       }}
                     >
                       <div className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
+                        <Clock className="size-3" />
                         <span className="truncate">{event.title}</span>
                       </div>
                     </div>
@@ -224,21 +224,21 @@ export function CalendarMain({
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-3">
                     <div
-                      className={cn("w-3 h-3 rounded-full mt-1.5", event.color)}
+                      className={cn("size-3 rounded-full mt-1.5", event.color)}
                     />
                     <div className="flex-1">
                       <h3 className="font-medium">{event.title}</h3>
                       <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
                         <div className="flex items-center flex-wrap gap-1">
-                          <CalendarIcon className="w-4 h-4" />
+                          <CalendarIcon className="size-4" />
                           {format(event.date, "MMM d, yyyy")}
                         </div>
                         <div className="flex items-center flex-wrap gap-1">
-                          <Clock className="w-4 h-4" />
+                          <Clock className="size-4" />
                           {event.time}
                         </div>
                         <div className="flex items-center flex-wrap gap-1">
-                          <MapPin className="w-4 h-4" />
+                          <MapPin className="size-4" />
                           {event.location}
                         </div>
                       </div>
@@ -262,7 +262,7 @@ export function CalendarMain({
                       size="sm"
                       className="cursor-pointer"
                     >
-                      <MoreHorizontal className="w-4 h-4" />
+                      <MoreHorizontal className="size-4" />
                     </Button>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export function CalendarMain({
             className="xl:hidden cursor-pointer"
             onClick={onMenuClick}
           >
-            <Menu className="w-4 h-4" />
+            <Menu className="size-4" />
           </Button>
 
           <div className="flex items-center gap-2">
@@ -296,7 +296,7 @@ export function CalendarMain({
               onClick={() => navigateMonth("prev")}
               className="cursor-pointer"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="size-4" />
             </Button>
             <Button
               variant="outline"
@@ -304,7 +304,7 @@ export function CalendarMain({
               onClick={() => navigateMonth("next")}
               className="cursor-pointer"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="size-4" />
             </Button>
             <Button
               variant="outline"
@@ -324,7 +324,7 @@ export function CalendarMain({
         <div className="flex flex-col gap-3 md:flex-row md:items-center">
           {/* Search */}
           <div className="relative">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
+            <Search className="size-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
             <Input placeholder="Search events..." className="pl-10 w-64" />
           </div>
 
@@ -333,24 +333,24 @@ export function CalendarMain({
             <DropdownMenuTrigger
               render={<Button variant="outline" className="cursor-pointer" />}
             >
-              {viewMode === "month" && <Grid3X3 className="w-4 h-4 mr-2" />}
-              {viewMode === "list" && <List className="w-4 h-4 mr-2" />}
+              {viewMode === "month" && <Grid3X3 className="size-4 mr-2" />}
+              {viewMode === "list" && <List className="size-4 mr-2" />}
               {viewMode.charAt(0).toUpperCase() + viewMode.slice(1)}
-              <ChevronDown className="w-4 h-4 ml-2" />
+              <ChevronDown className="size-4 ml-2" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem
                 onClick={() => setViewMode("month")}
                 className="cursor-pointer"
               >
-                <Grid3X3 className="w-4 h-4 mr-2" />
+                <Grid3X3 className="size-4 mr-2" />
                 Month
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() => setViewMode("list")}
                 className="cursor-pointer"
               >
-                <List className="w-4 h-4 mr-2" />
+                <List className="size-4 mr-2" />
                 List
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -373,21 +373,21 @@ export function CalendarMain({
           {selectedEvent && (
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <CalendarIcon className="w-4 h-4 text-muted-foreground" />
+                <CalendarIcon className="size-4 text-muted-foreground" />
                 <span>{format(selectedEvent.date, "EEEE, MMMM d, yyyy")}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-muted-foreground" />
+                <Clock className="size-4 text-muted-foreground" />
                 <span>
                   {selectedEvent.time} ({selectedEvent.duration})
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-muted-foreground" />
+                <MapPin className="size-4 text-muted-foreground" />
                 <span>{selectedEvent.location}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-muted-foreground" />
+                <Users className="size-4 text-muted-foreground" />
                 <div className="flex items-center gap-2">
                   <span>Attendees:</span>
                   <div className="flex -space-x-2">
@@ -395,7 +395,7 @@ export function CalendarMain({
                       (attendee: string, index: number) => (
                         <Avatar
                           key={index}
-                          className="w-6 h-6 border-2 border-background"
+                          className="size-6 border-2 border-background"
                         >
                           <AvatarFallback className="text-xs">
                             {attendee}

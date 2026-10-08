@@ -81,16 +81,16 @@ export default function AppearanceSettings() {
                           </FormControl>
                           <div className="rounded-md border-2 border-muted p-4 hover:border-accent transition-colors">
                             <div className="space-y-2">
-                              <div className="w-20 h-20 bg-white border rounded-md p-3">
+                              <div className="size-20 bg-white border rounded-md p-3">
                                 <div className="space-y-2">
                                   <div className="h-2 bg-gray-200 rounded w-3/4"></div>
                                   <div className="h-2 bg-gray-200 rounded w-1/2"></div>
                                   <div className="flex space-x-2">
-                                    <div className="h-2 w-2 bg-gray-300 rounded-full"></div>
+                                    <div className="size-2 bg-gray-300 rounded-full"></div>
                                     <div className="h-2 bg-gray-200 rounded flex-1"></div>
                                   </div>
                                   <div className="flex space-x-2">
-                                    <div className="h-2 w-2 bg-gray-300 rounded-full"></div>
+                                    <div className="size-2 bg-gray-300 rounded-full"></div>
                                     <div className="h-2 bg-gray-200 rounded flex-1"></div>
                                   </div>
                                 </div>
@@ -107,16 +107,16 @@ export default function AppearanceSettings() {
                           </FormControl>
                           <div className="rounded-md border-2 border-muted p-4 hover:border-accent transition-colors">
                             <div className="space-y-2">
-                              <div className="w-20 h-20 bg-gray-900 border border-gray-700 rounded-md p-3">
+                              <div className="size-20 bg-gray-900 border border-gray-700 rounded-md p-3">
                                 <div className="space-y-2">
                                   <div className="h-2 bg-gray-600 rounded w-3/4"></div>
                                   <div className="h-2 bg-gray-600 rounded w-1/2"></div>
                                   <div className="flex space-x-2">
-                                    <div className="h-2 w-2 bg-gray-500 rounded-full"></div>
+                                    <div className="size-2 bg-gray-500 rounded-full"></div>
                                     <div className="h-2 bg-gray-600 rounded flex-1"></div>
                                   </div>
                                   <div className="flex space-x-2">
-                                    <div className="h-2 w-2 bg-gray-500 rounded-full"></div>
+                                    <div className="size-2 bg-gray-500 rounded-full"></div>
                                     <div className="h-2 bg-gray-600 rounded flex-1"></div>
                                   </div>
                                 </div>

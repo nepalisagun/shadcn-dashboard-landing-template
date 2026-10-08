@@ -144,7 +144,7 @@ export function LandingNavbar() {
               />
             }
           >
-            <Github className="h-5 w-5" />
+            <Github className="size-5" />
           </Button>
           <Button
             variant="outline"
@@ -158,7 +158,7 @@ export function LandingNavbar() {
               />
             }
           >
-            <LayoutDashboard className="h-4 w-4 mr-2" />
+            <LayoutDashboard className="size-4 mr-2" />
             Dashboard
           </Button>
           <Button
@@ -186,7 +186,7 @@ export function LandingNavbar() {
               <Button variant="ghost" size="icon" className="cursor-pointer" />
             }
           >
-            <Menu className="h-5 w-5" />
+            <Menu className="size-5" />
             <span className="sr-only">Toggle menu</span>
           </SheetTrigger>
           <SheetContent
@@ -211,15 +211,15 @@ export function LandingNavbar() {
                       onClick={() =>
                         setTheme(theme === "light" ? "dark" : "light")
                       }
-                      className="cursor-pointer h-8 w-8"
+                      className="cursor-pointer size-8"
                     >
-                      <Moon className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                      <Sun className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                      <Moon className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                      <Sun className="absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                     </Button>
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="cursor-pointer h-8 w-8"
+                      className="cursor-pointer size-8"
                       nativeButton={false}
                       render={
                         <a
@@ -230,15 +230,15 @@ export function LandingNavbar() {
                         />
                       }
                     >
-                      <Github className="h-4 w-4" />
+                      <Github className="size-4" />
                     </Button>
                     <Button
                       variant="ghost"
                       size="icon"
                       onClick={() => setIsOpen(false)}
-                      className="cursor-pointer h-8 w-8"
+                      className="cursor-pointer size-8"
                     >
-                      <X className="h-4 w-4" />
+                      <X className="size-4" />
                     </Button>
                   </div>
                 </div>
@@ -257,7 +257,7 @@ export function LandingNavbar() {
                           <CollapsibleTrigger className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
                             {item.name}
                             <ChevronDown
-                              className={`h-4 w-4 transition-transform ${solutionsOpen ? "rotate-180" : ""}`}
+                              className={`size-4 transition-transform ${solutionsOpen ? "rotate-180" : ""}`}
                             />
                           </CollapsibleTrigger>
                           <CollapsibleContent className="pl-4 space-y-1">

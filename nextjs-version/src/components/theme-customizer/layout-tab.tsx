@@ -125,9 +125,9 @@ export function LayoutTab() {
                     // Icon mode: Show thin icon sidebar with clear icons
                     <>
                       <div className="w-4 flex-shrink-0 bg-muted flex flex-col gap-1 p-1 border-r items-center">
-                        <div className="w-2 h-2 bg-foreground/60 rounded-sm"></div>
-                        <div className="w-2 h-2 bg-foreground/40 rounded-sm"></div>
-                        <div className="w-2 h-2 bg-foreground/30 rounded-sm"></div>
+                        <div className="size-2 bg-foreground/60 rounded-sm"></div>
+                        <div className="size-2 bg-foreground/40 rounded-sm"></div>
+                        <div className="size-2 bg-foreground/30 rounded-sm"></div>
                       </div>
                       <div className="flex-1 bg-background/50 m-1 rounded-sm border-dashed border border-muted-foreground/20"></div>
                     </>

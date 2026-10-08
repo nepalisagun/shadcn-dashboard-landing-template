@@ -32,7 +32,7 @@ export function CurrentPlanCard({ plan }: CurrentPlanCardProps) {
       <CardContent>
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
-            <Crown className="h-5 w-5 text-yellow-500" />
+            <Crown className="size-5 text-yellow-500" />
             <span className="font-semibold">{plan.planName}</span>
             <Badge variant="secondary">{plan.status}</Badge>
           </div>
@@ -46,7 +46,7 @@ export function CurrentPlanCard({ plan }: CurrentPlanCardProps) {
           <Card className="border-neutral-200 bg-neutral-50 dark:border-neutral-600 dark:bg-neutral-800">
             <CardContent>
               <div className="flex items-start gap-3">
-                <AlertTriangle className="h-5 w-5 text-neutral-600 mt-0.5 dark:text-neutral-400" />
+                <AlertTriangle className="size-5 text-neutral-600 mt-0.5 dark:text-neutral-400" />
                 <div className="space-y-1">
                   <p className="font-medium text-neutral-800 dark:text-neutral-400">We need your attention!</p>
                   <p className="text-sm text-neutral-700 dark:text-neutral-400">{plan.attentionMessage}</p>

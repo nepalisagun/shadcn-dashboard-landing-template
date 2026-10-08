@@ -68,14 +68,14 @@ export function TopProducts() {
           <CardDescription>Best performing products this month</CardDescription>
         </div>
         <Button variant="outline" size="sm" className="cursor-pointer">
-          <Eye className="h-4 w-4 mr-2" />
+          <Eye className="size-4 mr-2" />
           View All
         </Button>
       </CardHeader>
       <CardContent className="space-y-4">
         {products.map((product, index) => (
           <div key={product.id} className="flex items-center p-3 rounded-lg border gap-2">
-              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-semibold text-sm">
+              <div className="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary font-semibold text-sm">
                 #{index + 1}
               </div>
             <div className="flex gap-2 items-center justify-between space-x-3 flex-1 flex-wrap">
@@ -88,7 +88,7 @@ export function TopProducts() {
                 </div>
                 <div className="flex items-center space-x-2 mt-1">
                   <div className="flex items-center space-x-1">
-                    <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                    <Star className="size-3 fill-yellow-400 text-yellow-400" />
                     <span className="text-xs text-muted-foreground">{product.rating}</span>
                   </div>
                   <span className="text-xs text-muted-foreground">•</span>
@@ -102,7 +102,7 @@ export function TopProducts() {
                     variant="outline"
                     className="text-green-600 border-green-200 cursor-pointer"
                   >
-                    <TrendingUp className="h-3 w-3 mr-1" />
+                    <TrendingUp className="size-3 mr-1" />
                     {product.growth}
                   </Badge>
                 </div>

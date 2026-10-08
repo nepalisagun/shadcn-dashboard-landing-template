@@ -20,11 +20,11 @@ export function UserNav() {
         render={
           <Button
             variant="ghost"
-            className="relative h-8 w-8 rounded-full cursor-pointer"
+            className="relative size-8 rounded-full cursor-pointer"
           />
         }
       >
-        <Avatar className="h-9 w-9 cursor-pointer">
+        <Avatar className="size-9 cursor-pointer">
           <AvatarImage
             src="https://notion-avatars.netlify.app/api/avatar/?preset=female-2"
             alt="@shadcn"

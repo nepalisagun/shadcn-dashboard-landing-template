@@ -32,7 +32,7 @@ export function CalendarSidebar({
           className="w-full cursor-pointer"
           onClick={onNewEvent}
         >
-          <Plus className="w-4 h-4 mr-2" />
+          <Plus className="size-4 mr-2" />
           Add New Event
         </Button>
       </div>
@@ -69,7 +69,7 @@ export function CalendarSidebar({
           className="w-full justify-start cursor-pointer"
           onClick={onNewCalendar}
         >
-          <Plus className="w-4 h-4 mr-2" />
+          <Plus className="size-4 mr-2" />
           New Calendar
         </Button>
       </div>

@@ -55,7 +55,7 @@ export function StatsSection() {
               <CardContent className="p-6">
                 <div className="flex justify-center mb-4">
                   <div className="p-3 bg-primary/10 rounded-xl">
-                    <stat.icon className="h-6 w-6 text-primary" />
+                    <stat.icon className="size-6 text-primary" />
                   </div>
                 </div>
                 <div className="space-y-1">

@@ -90,7 +90,7 @@ export function DataTableToolbar<TData extends RowData>({
                 >
                   <div className="flex items-center">
                     {status.icon && (
-                      <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+                      <status.icon className="mr-2 size-4 text-muted-foreground" />
                     )}
                     {status.label}
                   </div>
@@ -168,7 +168,7 @@ export function DataTableToolbar<TData extends RowData>({
             className="px-3 cursor-pointer"
             disabled={!isFiltered}
           >
-            <RefreshCcw className="h-4 w-4" />
+            <RefreshCcw className="size-4" />
             <span className="hidden lg:block">Reset Filters</span>
           </Button>
         </div>

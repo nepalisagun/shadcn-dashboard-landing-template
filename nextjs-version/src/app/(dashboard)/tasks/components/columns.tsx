@@ -103,7 +103,7 @@ export const columns: ColumnDef<DataTableFeatures, Task>[] = [
       return (
         <div className="flex w-[130px] items-center">
           {status.icon && (
-            <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+            <status.icon className="mr-2 size-4 text-muted-foreground" />
           )}
           <span className="text-sm">{status.label}</span>
         </div>

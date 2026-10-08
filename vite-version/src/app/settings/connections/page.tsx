@@ -54,7 +54,7 @@ export default function ConnectionSettings() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Apple className="h-8 w-8" />
+                    <Apple className="size-8" />
                     <div>
                       <div className="font-medium">Apple</div>
                       <div className="text-sm text-muted-foreground">
@@ -71,7 +71,7 @@ export default function ConnectionSettings() {
                 <Separator />
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Chrome className="h-8 w-8" />
+                    <Chrome className="size-8" />
                     <div>
                       <div className="font-medium">Google</div>
                       <div className="text-sm text-muted-foreground">
@@ -88,7 +88,7 @@ export default function ConnectionSettings() {
                 <Separator />
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Github className="h-8 w-8" />
+                    <Github className="size-8" />
                     <div>
                       <div className="font-medium">Github</div>
                       <div className="text-sm text-muted-foreground">
@@ -105,7 +105,7 @@ export default function ConnectionSettings() {
                 <Separator />
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Slack className="h-8 w-8" />
+                    <Slack className="size-8" />
                     <div>
                       <div className="font-medium">Slack</div>
                       <div className="text-sm text-muted-foreground">
@@ -134,7 +134,7 @@ export default function ConnectionSettings() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Facebook className="h-8 w-8" />
+                    <Facebook className="size-8" />
                     <div>
                       <div className="font-medium">
                         Facebook
@@ -152,13 +152,13 @@ export default function ConnectionSettings() {
                     size="icon"
                     className="cursor-pointer"
                   >
-                    <Globe className="h-4 w-4" />
+                    <Globe className="size-4" />
                   </Button>
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Twitter className="h-8 w-8" />
+                    <Twitter className="size-8" />
                     <div>
                       <div className="font-medium">
                         Twitter
@@ -176,13 +176,13 @@ export default function ConnectionSettings() {
                     size="icon"
                     className="cursor-pointer text-destructive"
                   >
-                    <Globe className="h-4 w-4" />
+                    <Globe className="size-4" />
                   </Button>
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Instagram className="h-8 w-8" />
+                    <Instagram className="size-8" />
                     <div>
                       <div className="font-medium">
                         Instagram
@@ -200,13 +200,13 @@ export default function ConnectionSettings() {
                     size="icon"
                     className="cursor-pointer text-destructive"
                   >
-                    <Globe className="h-4 w-4" />
+                    <Globe className="size-4" />
                   </Button>
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Dribbble className="h-8 w-8" />
+                    <Dribbble className="size-8" />
                     <div>
                       <div className="font-medium">
                         Dribbble
@@ -224,7 +224,7 @@ export default function ConnectionSettings() {
                     size="icon"
                     className="cursor-pointer"
                   >
-                    <Globe className="h-4 w-4" />
+                    <Globe className="size-4" />
                   </Button>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function ConnectionSettings() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Zap className="h-8 w-8" />
+                    <Zap className="size-8" />
                     <div>
                       <div className="font-medium">Zapier</div>
                       <div className="text-sm text-muted-foreground">
@@ -261,7 +261,7 @@ export default function ConnectionSettings() {
                 <Separator />
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Globe className="h-8 w-8" />
+                    <Globe className="size-8" />
                     <div>
                       <div className="font-medium">Webhooks</div>
                       <div className="text-sm text-muted-foreground">
@@ -278,7 +278,7 @@ export default function ConnectionSettings() {
                 <Separator />
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Database className="h-8 w-8" />
+                    <Database className="size-8" />
                     <div>
                       <div className="font-medium">Database Sync</div>
                       <div className="text-sm text-muted-foreground">

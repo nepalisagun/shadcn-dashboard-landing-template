@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="flex flex-col items-center justify-center space-y-2 text-center">
           <div className="flex items-center space-x-2 text-sm text-muted-foreground">
             <span>Made with</span>
-            <Heart className="h-4 w-4 fill-red-500 text-red-500" />
+            <Heart className="size-4 fill-red-500 text-red-500" />
             <span>by</span>
             <Link
               to="https://shadcnstore.com"

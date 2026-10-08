@@ -39,7 +39,7 @@ export function FeaturesGrid({ features }: FeaturesGridProps) {
               return (
                 <div key={feature.name} className='relative pl-16'>
                   <div className='text-base leading-7 font-semibold'>
-                    <div className='bg-accent absolute start-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg'>
+                    <div className='bg-accent absolute start-0 top-0 flex size-10 items-center justify-center rounded-lg'>
                       <IconComponent className='text-foreground size-6' aria-hidden='true' />
                     </div>
                     <span className='text-lg'>{feature.name}</span>

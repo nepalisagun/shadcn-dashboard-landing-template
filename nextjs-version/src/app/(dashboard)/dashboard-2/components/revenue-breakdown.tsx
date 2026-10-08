@@ -134,7 +134,7 @@ export function RevenueBreakdown() {
                   >
                     <div className="flex items-center gap-2">
                       <span
-                        className="flex h-3 w-3 shrink-0 "
+                        className="flex size-3 shrink-0 "
                         style={{
                           backgroundColor: `var(--color-${key})`,
                         }}
@@ -238,7 +238,7 @@ export function RevenueBreakdown() {
                 >
                   <div className="flex items-center gap-3">
                     <span
-                      className="flex h-3 w-3 shrink-0 rounded-full"
+                      className="flex size-3 shrink-0 rounded-full"
                       style={{
                         backgroundColor: `var(--color-${item.category})`,
                       }}

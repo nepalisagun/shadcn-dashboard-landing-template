@@ -188,7 +188,7 @@ export function MessageList({
                     {!isOwnMessage && (
                       <div className="w-8">
                         {showAvatar && user && (
-                          <Avatar className="h-8 w-8 cursor-pointer">
+                          <Avatar className="size-8 cursor-pointer">
                             <AvatarImage src={user.avatar} alt={user.name} />
                             <AvatarFallback className="text-xs">
                               {user.name
@@ -265,7 +265,7 @@ export function MessageList({
                             {isOwnMessage && (
                               <div className="flex">
                                 {/* Message status indicators */}
-                                <CheckCheck className="h-3 w-3" />
+                                <CheckCheck className="size-3" />
                               </div>
                             )}
                           </div>
@@ -279,26 +279,26 @@ export function MessageList({
                                 <Button
                                   variant="ghost"
                                   size="sm"
-                                  className="h-6 w-6 p-0 cursor-pointer"
+                                  className="size-6 p-0 cursor-pointer"
                                 />
                               }
                             >
-                              <MoreHorizontal className="h-3 w-3" />
+                              <MoreHorizontal className="size-3" />
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
                               <DropdownMenuItem className="cursor-pointer">
-                                <Reply className="h-4 w-4 mr-2" />
+                                <Reply className="size-4 mr-2" />
                                 Reply
                               </DropdownMenuItem>
                               <DropdownMenuItem className="cursor-pointer">
-                                <Copy className="h-4 w-4 mr-2" />
+                                <Copy className="size-4 mr-2" />
                                 Copy
                               </DropdownMenuItem>
                               {isOwnMessage && (
                                 <>
                                   <DropdownMenuSeparator />
                                   <DropdownMenuItem className="cursor-pointer text-destructive">
-                                    <Trash2 className="h-4 w-4 mr-2" />
+                                    <Trash2 className="size-4 mr-2" />
                                     Delete
                                   </DropdownMenuItem>
                                 </>

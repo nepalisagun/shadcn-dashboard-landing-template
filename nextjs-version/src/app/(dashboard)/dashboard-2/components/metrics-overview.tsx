@@ -69,7 +69,7 @@ export function MetricsOverview() {
               </CardTitle>
               <CardAction>
                 <Badge variant="outline">
-                  <TrendIcon className="h-4 w-4" />
+                  <TrendIcon className="size-4" />
                   {metric.change}
                 </Badge>
               </CardAction>

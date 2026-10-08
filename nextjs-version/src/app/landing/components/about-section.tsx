@@ -61,7 +61,7 @@ export function AboutSection() {
               <CardContent className="p-8">
                 <div className="flex flex-col items-center text-center">
                   <CardDecorator>
-                    <value.icon className="h-6 w-6" aria-hidden />
+                    <value.icon className="size-6" aria-hidden />
                   </CardDecorator>
                   <h3 className="mt-6 font-medium text-balance">
                     {value.title}
@@ -95,7 +95,7 @@ export function AboutSection() {
                 />
               }
             >
-              <Github className="mr-2 h-4 w-4" />
+              <Github className="mr-2 size-4" />
               Star on GitHub
             </Button>
             <Button

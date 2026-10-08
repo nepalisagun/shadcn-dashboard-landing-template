@@ -78,7 +78,7 @@ export function ContactSection() {
             <Card className="hover:shadow-md transition-shadow cursor-pointer">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <MessageCircle className="h-5 w-5 text-primary" />
+                  <MessageCircle className="size-5 text-primary" />
                   Discord Community
                 </CardTitle>
               </CardHeader>
@@ -108,7 +108,7 @@ export function ContactSection() {
             <Card className="hover:shadow-md transition-shadow cursor-pointer">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Github className="h-5 w-5 text-primary" />
+                  <Github className="size-5 text-primary" />
                   GitHub Issues
                 </CardTitle>
               </CardHeader>
@@ -138,7 +138,7 @@ export function ContactSection() {
             <Card className="hover:shadow-md transition-shadow cursor-pointer">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <BookOpen className="h-5 w-5 text-primary" />
+                  <BookOpen className="size-5 text-primary" />
                   Documentation
                 </CardTitle>
               </CardHeader>
@@ -165,7 +165,7 @@ export function ContactSection() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Mail className="h-5 w-5" />
+                  <Mail className="size-5" />
                   Send us a message
                 </CardTitle>
               </CardHeader>

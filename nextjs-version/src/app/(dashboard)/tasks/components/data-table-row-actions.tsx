@@ -31,7 +31,7 @@ export function DataTableRowActions<TData extends RowData>({
         render={
           <Button
             variant="ghost"
-            className="flex h-8 w-8 p-0 data-popup-open:bg-muted cursor-pointer"
+            className="flex size-8 p-0 data-popup-open:bg-muted cursor-pointer"
           />
         }
       >

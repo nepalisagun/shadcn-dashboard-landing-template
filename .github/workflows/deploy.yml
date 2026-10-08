@@ -109,12 +109,12 @@ jobs:
           echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
 
-          ssh-keyscan -p 1705 46.202.179.245 >> ~/.ssh/known_hosts
+          ssh-keyscan -p 4388 -t ed25519 46.202.179.245 >> ~/.ssh/known_hosts
 
           cat >>~/.ssh/config <<EOF
           Host deploy-server
             HostName 46.202.179.245
-            Port 1705
+            Port 4388
             User github-deploy
             IdentityFile ~/.ssh/deploy_key
             StrictHostKeyChecking no

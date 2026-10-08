@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { format, isToday, isYesterday } from "date-fns"
-import { CheckCheck, MoreHorizontal, Reply, Copy, Trash2 } from "lucide-react"
+import { Check, MoreHorizontal, Reply, Copy, Trash2 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -264,10 +264,11 @@ export function MessageList({
                               <span className="italic">(edited)</span>
                             )}
                             {isOwnMessage && (
-                              <div className="flex">
-                                {/* Message status indicators */}
-                                <CheckCheck className="size-3" />
-                              </div>
+                              <span className="flex" aria-label="Read">
+                                {/* Message status: two full ticks, overlapped */}
+                                <Check className="size-3.5" aria-hidden="true" />
+                                <Check className="-ml-2 size-3.5" aria-hidden="true" />
+                              </span>
                             )}
                           </div>
                         </div>

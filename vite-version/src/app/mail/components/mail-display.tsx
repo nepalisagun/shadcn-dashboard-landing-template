@@ -17,6 +17,7 @@ import {
 
 import {
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -201,7 +202,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             <span className="sr-only">More</span>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem className="cursor-pointer">
+            <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
               Mark as unread
             </DropdownMenuItem>
             <DropdownMenuItem className="cursor-pointer">
@@ -212,7 +213,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             </DropdownMenuItem>
             <DropdownMenuItem className="cursor-pointer">
               Mute thread
-            </DropdownMenuItem>
+            </DropdownMenuItem></DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

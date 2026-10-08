@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -209,7 +210,7 @@ export function EventForm({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {eventTypes.map((type) => (
+                  <SelectGroup>{eventTypes.map((type) => (
                     <SelectItem key={type.value} value={type.value}>
                       <div className="flex items-center gap-2">
                         <div
@@ -218,7 +219,7 @@ export function EventForm({
                         {type.label}
                       </div>
                     </SelectItem>
-                  ))}
+                  ))}</SelectGroup>
                 </SelectContent>
               </Select>
             </div>
@@ -272,11 +273,11 @@ export function EventForm({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {timeSlots.map((time) => (
+                  <SelectGroup>{timeSlots.map((time) => (
                     <SelectItem key={time} value={time}>
                       {time}
                     </SelectItem>
-                  ))}
+                  ))}</SelectGroup>
                 </SelectContent>
               </Select>
             </div>
@@ -296,11 +297,11 @@ export function EventForm({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {durationOptions.map((duration) => (
+                  <SelectGroup>{durationOptions.map((duration) => (
                     <SelectItem key={duration} value={duration}>
                       {duration}
                     </SelectItem>
-                  ))}
+                  ))}</SelectGroup>
                 </SelectContent>
               </Select>
             </div>

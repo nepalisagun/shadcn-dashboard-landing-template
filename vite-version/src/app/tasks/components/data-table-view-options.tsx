@@ -1,6 +1,5 @@
 "use client"
 
-import { DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import type { ReactTable, RowData } from "@tanstack/react-table"
 import type { DataTableFeatures } from "@/lib/data-table"
 import { Settings2 } from "lucide-react"
@@ -13,6 +12,7 @@ import {
   DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
 interface DataTableViewOptionsProps<TData extends RowData> {
@@ -41,7 +41,7 @@ export function DataTableViewOptions<TData extends RowData>({
           <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        {table
+        <DropdownMenuGroup>{table
           .getAllColumns()
           .filter(
             (column) =>
@@ -58,7 +58,7 @@ export function DataTableViewOptions<TData extends RowData>({
                 {column.id}
               </DropdownMenuCheckboxItem>
             )
-          })}
+          })}</DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   )

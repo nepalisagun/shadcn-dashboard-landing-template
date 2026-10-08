@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea"
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -195,7 +196,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
                   <SelectValue placeholder="Select status" />
                 </SelectTrigger>
                 <SelectContent>
-                  {statuses.map((status) => (
+                  <SelectGroup>{statuses.map((status) => (
                     <SelectItem key={status.value} value={status.value}>
                       <div className="flex items-center">
                         {status.icon && (
@@ -204,7 +205,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
                         {status.label}
                       </div>
                     </SelectItem>
-                  ))}
+                  ))}</SelectGroup>
                 </SelectContent>
               </Select>
             </div>
@@ -223,11 +224,11 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
                   <SelectValue placeholder="Select category" />
                 </SelectTrigger>
                 <SelectContent>
-                  {categories.map((category) => (
+                  <SelectGroup>{categories.map((category) => (
                     <SelectItem key={category.value} value={category.value}>
                       {category.label}
                     </SelectItem>
-                  ))}
+                  ))}</SelectGroup>
                 </SelectContent>
               </Select>
             </div>
@@ -248,11 +249,11 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
                   <SelectValue placeholder="Select priority" />
                 </SelectTrigger>
                 <SelectContent>
-                  {priorities.map((priority) => (
+                  <SelectGroup>{priorities.map((priority) => (
                     <SelectItem key={priority.value} value={priority.value}>
                       <div className="flex items-center">{priority.label}</div>
                     </SelectItem>
-                  ))}
+                  ))}</SelectGroup>
                 </SelectContent>
               </Select>
             </div>

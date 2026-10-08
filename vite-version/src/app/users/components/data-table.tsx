@@ -30,6 +30,7 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -39,6 +40,7 @@ import { Label } from "@/components/ui/label"
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -268,7 +270,7 @@ export function DataTable({
                 <span className="sr-only">More actions</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem className="cursor-pointer">
+                <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
                   View Details
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer">
@@ -276,16 +278,16 @@ export function DataTable({
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer">
                   Reset Password
-                </DropdownMenuItem>
+                </DropdownMenuItem></DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem
+                <DropdownMenuGroup><DropdownMenuItem
                   variant="destructive"
                   className="cursor-pointer"
                   onClick={() => onDeleteUser(user.id)}
                 >
                   <Trash2 />
                   Delete User
-                </DropdownMenuItem>
+                </DropdownMenuItem></DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -364,12 +366,12 @@ export function DataTable({
               <SelectValue placeholder="Select Role" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Roles</SelectItem>
+              <SelectGroup><SelectItem value="all">All Roles</SelectItem>
               <SelectItem value="Admin">Admin</SelectItem>
               <SelectItem value="Author">Author</SelectItem>
               <SelectItem value="Editor">Editor</SelectItem>
               <SelectItem value="Maintainer">Maintainer</SelectItem>
-              <SelectItem value="Subscriber">Subscriber</SelectItem>
+              <SelectItem value="Subscriber">Subscriber</SelectItem></SelectGroup>
             </SelectContent>
           </Select>
         </div>
@@ -395,10 +397,10 @@ export function DataTable({
               <SelectValue placeholder="Select Plan" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Plans</SelectItem>
+              <SelectGroup><SelectItem value="all">All Plans</SelectItem>
               <SelectItem value="Basic">Basic</SelectItem>
               <SelectItem value="Professional">Professional</SelectItem>
-              <SelectItem value="Enterprise">Enterprise</SelectItem>
+              <SelectItem value="Enterprise">Enterprise</SelectItem></SelectGroup>
             </SelectContent>
           </Select>
         </div>
@@ -425,11 +427,11 @@ export function DataTable({
               <SelectValue placeholder="Select Status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Status</SelectItem>
+              <SelectGroup><SelectItem value="all">All Status</SelectItem>
               <SelectItem value="Active">Active</SelectItem>
               <SelectItem value="Pending">Pending</SelectItem>
               <SelectItem value="Error">Error</SelectItem>
-              <SelectItem value="Inactive">Inactive</SelectItem>
+              <SelectItem value="Inactive">Inactive</SelectItem></SelectGroup>
             </SelectContent>
           </Select>
         </div>
@@ -447,7 +449,7 @@ export function DataTable({
               Columns <ChevronDown data-icon="inline-end" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              {table
+              <DropdownMenuGroup>{table
                 .getAllColumns()
                 .filter((column) => column.getCanHide())
                 .map((column) => {
@@ -463,7 +465,7 @@ export function DataTable({
                       {column.id}
                     </DropdownMenuCheckboxItem>
                   )
-                })}
+                })}</DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -535,11 +537,11 @@ export function DataTable({
               <SelectValue placeholder={table.state.pagination.pageSize} />
             </SelectTrigger>
             <SelectContent side="top">
-              {[10, 20, 30, 40, 50].map((pageSize) => (
+              <SelectGroup>{[10, 20, 30, 40, 50].map((pageSize) => (
                 <SelectItem key={pageSize} value={`${pageSize}`}>
                   {pageSize}
                 </SelectItem>
-              ))}
+              ))}</SelectGroup>
             </SelectContent>
           </Select>
         </div>

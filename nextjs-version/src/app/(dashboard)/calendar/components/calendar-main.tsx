@@ -35,6 +35,7 @@ import { Input } from "@/components/ui/input"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
@@ -336,7 +337,7 @@ export function CalendarMain({
               <ChevronDown data-icon="inline-end" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem
+              <DropdownMenuGroup><DropdownMenuItem
                 onClick={() => setViewMode("month")}
                 className="cursor-pointer"
               >
@@ -349,7 +350,7 @@ export function CalendarMain({
               >
                 <List />
                 List
-              </DropdownMenuItem>
+              </DropdownMenuItem></DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

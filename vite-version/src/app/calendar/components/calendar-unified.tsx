@@ -41,6 +41,7 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
@@ -327,7 +328,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                     <ChevronDown data-icon="inline-end" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
-                    <DropdownMenuItem onClick={() => setViewMode("month")}>
+                    <DropdownMenuGroup><DropdownMenuItem onClick={() => setViewMode("month")}>
                       <Grid3X3 />
                       Month
                     </DropdownMenuItem>
@@ -342,7 +343,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                     <DropdownMenuItem onClick={() => setViewMode("list")}>
                       <List />
                       List
-                    </DropdownMenuItem>
+                    </DropdownMenuItem></DropdownMenuGroup>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>

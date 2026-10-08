@@ -16,6 +16,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -152,9 +153,9 @@ export default function AppearanceSettings() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="inter">Inter</SelectItem>
+                    <SelectGroup><SelectItem value="inter">Inter</SelectItem>
                     <SelectItem value="roboto">Roboto</SelectItem>
-                    <SelectItem value="system">System Default</SelectItem>
+                    <SelectItem value="system">System Default</SelectItem></SelectGroup>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -178,9 +179,9 @@ export default function AppearanceSettings() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="small">Small</SelectItem>
+                    <SelectGroup><SelectItem value="small">Small</SelectItem>
                     <SelectItem value="medium">Medium</SelectItem>
-                    <SelectItem value="large">Large</SelectItem>
+                    <SelectItem value="large">Large</SelectItem></SelectGroup>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -210,9 +211,9 @@ export default function AppearanceSettings() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="compact">Compact</SelectItem>
+                    <SelectGroup><SelectItem value="compact">Compact</SelectItem>
                     <SelectItem value="comfortable">Comfortable</SelectItem>
-                    <SelectItem value="spacious">Spacious</SelectItem>
+                    <SelectItem value="spacious">Spacious</SelectItem></SelectGroup>
                   </SelectContent>
                 </Select>
                 <FormMessage />
@@ -240,9 +241,9 @@ export default function AppearanceSettings() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="fixed">Fixed</SelectItem>
+                    <SelectGroup><SelectItem value="fixed">Fixed</SelectItem>
                     <SelectItem value="fluid">Fluid</SelectItem>
-                    <SelectItem value="container">Container</SelectItem>
+                    <SelectItem value="container">Container</SelectItem></SelectGroup>
                   </SelectContent>
                 </Select>
                 <FormMessage />

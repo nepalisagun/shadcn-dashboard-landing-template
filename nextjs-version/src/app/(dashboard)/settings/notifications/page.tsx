@@ -23,6 +23,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -298,11 +299,11 @@ export default function NotificationSettings() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="instant">Instant</SelectItem>
+                        <SelectGroup><SelectItem value="instant">Instant</SelectItem>
                         <SelectItem value="hourly">Hourly digest</SelectItem>
                         <SelectItem value="daily">Daily digest</SelectItem>
                         <SelectItem value="weekly">Weekly digest</SelectItem>
-                        <SelectItem value="never">Never</SelectItem>
+                        <SelectItem value="never">Never</SelectItem></SelectGroup>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -331,9 +332,9 @@ export default function NotificationSettings() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="22:00">10:00 PM</SelectItem>
+                          <SelectGroup><SelectItem value="22:00">10:00 PM</SelectItem>
                           <SelectItem value="23:00">11:00 PM</SelectItem>
-                          <SelectItem value="00:00">12:00 AM</SelectItem>
+                          <SelectItem value="00:00">12:00 AM</SelectItem></SelectGroup>
                         </SelectContent>
                       </Select>
                     )}
@@ -358,9 +359,9 @@ export default function NotificationSettings() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="06:00">6:00 AM</SelectItem>
+                          <SelectGroup><SelectItem value="06:00">6:00 AM</SelectItem>
                           <SelectItem value="07:00">7:00 AM</SelectItem>
-                          <SelectItem value="08:00">8:00 AM</SelectItem>
+                          <SelectItem value="08:00">8:00 AM</SelectItem></SelectGroup>
                         </SelectContent>
                       </Select>
                     )}
@@ -631,11 +632,11 @@ export default function NotificationSettings() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="online">
+                            <SelectGroup><SelectItem value="online">
                               Only When I&apos;m online
                             </SelectItem>
                             <SelectItem value="always">Always</SelectItem>
-                            <SelectItem value="never">Never</SelectItem>
+                            <SelectItem value="never">Never</SelectItem></SelectGroup>
                           </SelectContent>
                         </Select>
                         <FormMessage />

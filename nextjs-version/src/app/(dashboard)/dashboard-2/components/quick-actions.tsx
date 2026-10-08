@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -25,19 +26,19 @@ export function QuickActions() {
           Actions
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem className="cursor-pointer">
+          <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
             <FileText />
             Generate Report
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
             <Download />
             Export Data
-          </DropdownMenuItem>
+          </DropdownMenuItem></DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="cursor-pointer">
+          <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
             <Settings />
             Dashboard Settings
-          </DropdownMenuItem>
+          </DropdownMenuItem></DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

@@ -11,6 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -286,7 +287,7 @@ export function MessageList({
                               <MoreHorizontal />
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
-                              <DropdownMenuItem className="cursor-pointer">
+                              <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
                                 <Reply />
                                 Reply
                               </DropdownMenuItem>
@@ -302,7 +303,7 @@ export function MessageList({
                                     Delete
                                   </DropdownMenuItem>
                                 </>
-                              )}
+                              )}</DropdownMenuGroup>
                             </DropdownMenuContent>
                           </DropdownMenu>
                         </div>

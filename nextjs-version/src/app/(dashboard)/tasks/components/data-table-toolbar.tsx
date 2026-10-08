@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -79,7 +80,7 @@ export function DataTableToolbar<TData extends RowData>({
               <SelectValue placeholder="Status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all" className="cursor-pointer">
+              <SelectGroup><SelectItem value="all" className="cursor-pointer">
                 All Status
               </SelectItem>
               {statuses.map((status) => (
@@ -95,7 +96,7 @@ export function DataTableToolbar<TData extends RowData>({
                     {status.label}
                   </div>
                 </SelectItem>
-              ))}
+              ))}</SelectGroup>
             </SelectContent>
           </Select>
 
@@ -109,7 +110,7 @@ export function DataTableToolbar<TData extends RowData>({
               <SelectValue placeholder="Category" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all" className="cursor-pointer">
+              <SelectGroup><SelectItem value="all" className="cursor-pointer">
                 All Categories
               </SelectItem>
               {categories.map((category) => (
@@ -120,7 +121,7 @@ export function DataTableToolbar<TData extends RowData>({
                 >
                   {category.label}
                 </SelectItem>
-              ))}
+              ))}</SelectGroup>
             </SelectContent>
           </Select>
 
@@ -134,7 +135,7 @@ export function DataTableToolbar<TData extends RowData>({
               <SelectValue placeholder="Priority" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all" className="cursor-pointer">
+              <SelectGroup><SelectItem value="all" className="cursor-pointer">
                 All Priorities
               </SelectItem>
               {priorities.map((priority) => (
@@ -145,7 +146,7 @@ export function DataTableToolbar<TData extends RowData>({
                 >
                   <div className="flex items-center">{priority.label}</div>
                 </SelectItem>
-              ))}
+              ))}</SelectGroup>
             </SelectContent>
           </Select>
         </div>

@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge"
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -69,7 +70,7 @@ export function DashboardHeader() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="7d" className="cursor-pointer">
+                  <SelectGroup><SelectItem value="7d" className="cursor-pointer">
                     Last 7 days
                   </SelectItem>
                   <SelectItem value="30d" className="cursor-pointer">
@@ -80,7 +81,7 @@ export function DashboardHeader() {
                   </SelectItem>
                   <SelectItem value="1y" className="cursor-pointer">
                     Last year
-                  </SelectItem>
+                  </SelectItem></SelectGroup>
                 </SelectContent>
               </Select>
             </div>

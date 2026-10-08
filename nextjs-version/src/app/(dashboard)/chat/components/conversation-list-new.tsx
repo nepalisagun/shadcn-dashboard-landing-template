@@ -12,6 +12,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -205,7 +206,7 @@ export function ConversationList({
                     <MoreHorizontal />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
-                    <DropdownMenuItem
+                    <DropdownMenuGroup><DropdownMenuItem
                       onClick={(e) => {
                         e.stopPropagation()
                         togglePin(conversation.id)
@@ -224,11 +225,11 @@ export function ConversationList({
                     >
                       <VolumeX />
                       {conversation.isMuted ? "Unmute" : "Mute"}
-                    </DropdownMenuItem>
+                    </DropdownMenuItem></DropdownMenuGroup>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem className="cursor-pointer text-destructive">
+                    <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer text-destructive">
                       Delete conversation
-                    </DropdownMenuItem>
+                    </DropdownMenuItem></DropdownMenuGroup>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>

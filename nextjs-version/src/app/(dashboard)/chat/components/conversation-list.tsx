@@ -22,6 +22,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -104,19 +105,19 @@ export function ConversationList({
             <MoreVertical />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem className="cursor-pointer">
+            <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
               <UserPlus />
               New Chat
             </DropdownMenuItem>
             <DropdownMenuItem className="cursor-pointer">
               <Filter />
               Filter Messages
-            </DropdownMenuItem>
+            </DropdownMenuItem></DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="cursor-pointer">
+            <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
               <Settings />
               Chat Settings
-            </DropdownMenuItem>
+            </DropdownMenuItem></DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

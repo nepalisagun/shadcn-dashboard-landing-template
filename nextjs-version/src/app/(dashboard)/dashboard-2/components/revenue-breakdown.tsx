@@ -19,6 +19,7 @@ import {
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -119,7 +120,7 @@ export function RevenueBreakdown() {
               <SelectValue placeholder="Select category" />
             </SelectTrigger>
             <SelectContent align="end" className="rounded-lg">
-              {categories.map((key) => {
+              <SelectGroup>{categories.map((key) => {
                 const config = chartConfig[key as keyof typeof chartConfig]
 
                 if (!config) {
@@ -143,7 +144,7 @@ export function RevenueBreakdown() {
                     </div>
                   </SelectItem>
                 )
-              })}
+              })}</SelectGroup>
             </SelectContent>
           </Select>
           <Button variant="outline" className="cursor-pointer">

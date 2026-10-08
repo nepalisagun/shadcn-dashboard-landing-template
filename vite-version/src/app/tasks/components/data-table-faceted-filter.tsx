@@ -141,7 +141,7 @@ export function DataTableFacetedFilter<TData extends RowData, TValue>({
                 )
               })}
             </CommandGroup>
-            {selectedValues.size > 0 && (
+            <CommandGroup>{selectedValues.size > 0 && (
               <>
                 <CommandSeparator />
                 <CommandGroup>
@@ -153,7 +153,7 @@ export function DataTableFacetedFilter<TData extends RowData, TValue>({
                   </CommandItem>
                 </CommandGroup>
               </>
-            )}
+            )}</CommandGroup>
           </CommandList>
         </Command>
       </PopoverContent>

@@ -17,6 +17,7 @@ import {
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -73,7 +74,7 @@ export function SalesChart() {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="3m" className="cursor-pointer">
+              <SelectGroup><SelectItem value="3m" className="cursor-pointer">
                 Last 3 months
               </SelectItem>
               <SelectItem value="6m" className="cursor-pointer">
@@ -81,7 +82,7 @@ export function SalesChart() {
               </SelectItem>
               <SelectItem value="12m" className="cursor-pointer">
                 Last 12 months
-              </SelectItem>
+              </SelectItem></SelectGroup>
             </SelectContent>
           </Select>
           <Button variant="outline" className="cursor-pointer">

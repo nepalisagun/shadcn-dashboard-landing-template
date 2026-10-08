@@ -23,6 +23,7 @@ import { Input } from "@/components/ui/input"
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -135,11 +136,11 @@ export function UserFormDialog({ onAddUser }: UserFormDialogProps) {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="Admin">Admin</SelectItem>
+                        <SelectGroup><SelectItem value="Admin">Admin</SelectItem>
                         <SelectItem value="Author">Author</SelectItem>
                         <SelectItem value="Editor">Editor</SelectItem>
                         <SelectItem value="Maintainer">Maintainer</SelectItem>
-                        <SelectItem value="Subscriber">Subscriber</SelectItem>
+                        <SelectItem value="Subscriber">Subscriber</SelectItem></SelectGroup>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -159,11 +160,11 @@ export function UserFormDialog({ onAddUser }: UserFormDialogProps) {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="Basic">Basic</SelectItem>
+                        <SelectGroup><SelectItem value="Basic">Basic</SelectItem>
                         <SelectItem value="Professional">
                           Professional
                         </SelectItem>
-                        <SelectItem value="Enterprise">Enterprise</SelectItem>
+                        <SelectItem value="Enterprise">Enterprise</SelectItem></SelectGroup>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -185,9 +186,9 @@ export function UserFormDialog({ onAddUser }: UserFormDialogProps) {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="Auto Debit">Auto Debit</SelectItem>
+                        <SelectGroup><SelectItem value="Auto Debit">Auto Debit</SelectItem>
                         <SelectItem value="UPI">UPI</SelectItem>
-                        <SelectItem value="Paypal">Paypal</SelectItem>
+                        <SelectItem value="Paypal">Paypal</SelectItem></SelectGroup>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -207,10 +208,10 @@ export function UserFormDialog({ onAddUser }: UserFormDialogProps) {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="Active">Active</SelectItem>
+                        <SelectGroup><SelectItem value="Active">Active</SelectItem>
                         <SelectItem value="Pending">Pending</SelectItem>
                         <SelectItem value="Error">Error</SelectItem>
-                        <SelectItem value="Inactive">Inactive</SelectItem>
+                        <SelectItem value="Inactive">Inactive</SelectItem></SelectGroup>
                       </SelectContent>
                     </Select>
                     <FormMessage />

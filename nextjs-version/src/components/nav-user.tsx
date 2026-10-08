@@ -106,13 +106,13 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem
+            <DropdownMenuGroup><DropdownMenuItem
               className="cursor-pointer"
               render={<Link href="/sign-in" />}
             >
               <LogOut />
               Log out
-            </DropdownMenuItem>
+            </DropdownMenuItem></DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>

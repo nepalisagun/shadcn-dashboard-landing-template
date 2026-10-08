@@ -17,6 +17,7 @@ import { Badge } from "@/components/ui/badge"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -220,7 +221,7 @@ export function ChatHeader({
             <MoreVertical />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={onToggleMute} className="cursor-pointer">
+            <DropdownMenuGroup><DropdownMenuItem onClick={onToggleMute} className="cursor-pointer">
               {conversation.isMuted ? (
                 <>
                   <Bell />
@@ -245,11 +246,11 @@ export function ChatHeader({
                   Manage members
                 </DropdownMenuItem>
               </>
-            )}
+            )}</DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="cursor-pointer text-destructive">
+            <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer text-destructive">
               Delete conversation
-            </DropdownMenuItem>
+            </DropdownMenuItem></DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

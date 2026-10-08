@@ -14,6 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
@@ -159,7 +160,7 @@ export function RecentTransactions() {
                       <MoreHorizontal />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuItem className="cursor-pointer">
+                      <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
                         View Details
                       </DropdownMenuItem>
                       <DropdownMenuItem className="cursor-pointer">
@@ -167,7 +168,7 @@ export function RecentTransactions() {
                       </DropdownMenuItem>
                       <DropdownMenuItem className="cursor-pointer">
                         Contact Customer
-                      </DropdownMenuItem>
+                      </DropdownMenuItem></DropdownMenuGroup>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </div>

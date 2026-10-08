@@ -24,6 +24,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -303,12 +304,12 @@ export default function UserSettingsPage() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="english">English</SelectItem>
+                          <SelectGroup><SelectItem value="english">English</SelectItem>
                           <SelectItem value="spanish">Spanish</SelectItem>
                           <SelectItem value="french">French</SelectItem>
                           <SelectItem value="german">German</SelectItem>
                           <SelectItem value="italian">Italian</SelectItem>
-                          <SelectItem value="portuguese">Portuguese</SelectItem>
+                          <SelectItem value="portuguese">Portuguese</SelectItem></SelectGroup>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -358,7 +359,7 @@ export default function UserSettingsPage() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="pst">
+                          <SelectGroup><SelectItem value="pst">
                             PST (Pacific Standard Time)
                           </SelectItem>
                           <SelectItem value="est">
@@ -381,7 +382,7 @@ export default function UserSettingsPage() {
                           </SelectItem>
                           <SelectItem value="aest">
                             AEST (Australian Eastern Standard Time)
-                          </SelectItem>
+                          </SelectItem></SelectGroup>
                         </SelectContent>
                       </Select>
                       <FormMessage />

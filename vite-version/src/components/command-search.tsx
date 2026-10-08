@@ -299,7 +299,7 @@ export function CommandSearch({ open, onOpenChange }: CommandSearchProps) {
           <CommandInput placeholder="What do you need?" autoFocus />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
-            {Object.entries(groupedItems).map(([group, items]) => (
+            <CommandGroup>{Object.entries(groupedItems).map(([group, items]) => (
               <CommandGroup key={group} heading={group}>
                 {items.map((item) => {
                   const Icon = item.icon
@@ -315,7 +315,7 @@ export function CommandSearch({ open, onOpenChange }: CommandSearchProps) {
                   )
                 })}
               </CommandGroup>
-            ))}
+            ))}</CommandGroup>
           </CommandList>
         </Command>
       </DialogContent>

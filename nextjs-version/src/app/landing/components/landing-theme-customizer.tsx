@@ -24,6 +24,7 @@ import { Label } from "@/components/ui/label"
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
   SelectTrigger,
   SelectValue,
@@ -284,7 +285,7 @@ export function LandingThemeCustomizer({
                   <SelectValue placeholder="Choose Shadcn Theme" />
                 </SelectTrigger>
                 <SelectContent className="max-h-60">
-                  <div className="p-2">
+                  <SelectGroup><div className="p-2">
                     {colorThemes.map((theme) => (
                       <SelectItem
                         key={theme.value}
@@ -326,7 +327,7 @@ export function LandingThemeCustomizer({
                         </div>
                       </SelectItem>
                     ))}
-                  </div>
+                  </div></SelectGroup>
                 </SelectContent>
               </Select>
             </div>
@@ -371,7 +372,7 @@ export function LandingThemeCustomizer({
                   <SelectValue placeholder="Choose Tweakcn Theme" />
                 </SelectTrigger>
                 <SelectContent className="max-h-60">
-                  <div className="p-2">
+                  <SelectGroup><div className="p-2">
                     {tweakcnThemes.map((theme) => (
                       <SelectItem
                         key={theme.value}
@@ -413,7 +414,7 @@ export function LandingThemeCustomizer({
                         </div>
                       </SelectItem>
                     ))}
-                  </div>
+                  </div></SelectGroup>
                 </SelectContent>
               </Select>
             </div>

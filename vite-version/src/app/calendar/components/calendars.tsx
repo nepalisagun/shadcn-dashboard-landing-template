@@ -18,6 +18,7 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -225,7 +226,7 @@ export function Calendars({
                             <MoreHorizontal />
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end" side="right">
-                            <DropdownMenuItem
+                            <DropdownMenuGroup><DropdownMenuItem
                               onClick={() => onCalendarEdit?.(item.id)}
                               className="cursor-pointer"
                             >
@@ -236,14 +237,14 @@ export function Calendars({
                               className="cursor-pointer"
                             >
                               {item.visible ? "Hide" : "Show"} calendar
-                            </DropdownMenuItem>
+                            </DropdownMenuItem></DropdownMenuGroup>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem
+                            <DropdownMenuGroup><DropdownMenuItem
                               onClick={() => onCalendarDelete?.(item.id)}
                               className="cursor-pointer text-destructive"
                             >
                               Delete calendar
-                            </DropdownMenuItem>
+                            </DropdownMenuItem></DropdownMenuGroup>
                           </DropdownMenuContent>
                         </DropdownMenu>
                       </div>

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
@@ -39,26 +40,26 @@ export function DataTableRowActions<TData extends RowData>({
         <span className="sr-only">Open menu for {task.id}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
-        <DropdownMenuItem className="cursor-pointer">
+        <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
           View Task
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer">
           Edit Task
-        </DropdownMenuItem>
+        </DropdownMenuItem></DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="cursor-pointer">
+        <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
           Duplicate
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer">
           Mark as Favorite
-        </DropdownMenuItem>
+        </DropdownMenuItem></DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="cursor-pointer" variant="destructive">
+        <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer" variant="destructive">
           Delete
           <DropdownMenuShortcut className="text-destructive">
             ⌘⌫
           </DropdownMenuShortcut>
-        </DropdownMenuItem>
+        </DropdownMenuItem></DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   )

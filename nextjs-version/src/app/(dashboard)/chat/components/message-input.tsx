@@ -17,6 +17,7 @@ import { Textarea } from "@/components/ui/textarea"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
@@ -114,7 +115,7 @@ export function MessageInput({
               </TooltipContent>
             </Tooltip>
             <DropdownMenuContent side="top" align="start">
-              <DropdownMenuItem
+              <DropdownMenuGroup><DropdownMenuItem
                 onClick={() => handleFileUpload("image")}
                 className="cursor-pointer"
               >
@@ -127,7 +128,7 @@ export function MessageInput({
               >
                 <FileText />
                 Document
-              </DropdownMenuItem>
+              </DropdownMenuItem></DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </TooltipProvider>

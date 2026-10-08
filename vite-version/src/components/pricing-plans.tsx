@@ -116,10 +116,13 @@ export function PricingPlans({
       {plans.map((tier) => (
         <Card
           key={tier.id}
-          className={cn("flex flex-col pt-0", {
-            "border-primary relative shadow-lg": tier.popular,
-            "border-primary": currentPlanId === tier.id && mode === "billing",
-          })}
+          className={cn(
+            "flex flex-col overflow-visible pt-0 shadow-xs [--card-spacing:--spacing(6)]",
+            {
+              "relative shadow-lg ring-primary": tier.popular,
+              "ring-primary": currentPlanId === tier.id && mode === "billing",
+            }
+          )}
           aria-labelledby={`${tier.id}-title`}
         >
           {tier.popular && (
@@ -134,7 +137,7 @@ export function PricingPlans({
             </div>
           )}
           <CardHeader className="gap-y-2 pt-8 text-center">
-            <CardTitle id={`${tier.id}-title`} className="text-2xl">
+            <CardTitle id={`${tier.id}-title`} className="text-2xl font-semibold">
               {tier.name}
             </CardTitle>
             <p className="text-muted-foreground text-sm text-balance">
@@ -159,7 +162,7 @@ export function PricingPlans({
               ))}
             </div>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="border-t-0 bg-transparent pt-0">
             <Button
               className="w-full cursor-pointer"
               size="lg"

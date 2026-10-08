@@ -3,16 +3,48 @@
 import * as React from "react"
 import { Label, Pie, PieChart, Sector } from "recharts"
 import type { PieSectorDataItem } from "recharts/types/polar/Pie"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChartContainer, ChartStyle, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  ChartContainer,
+  ChartStyle,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
 
 const revenueData = [
-  { category: "subscriptions", value: 45, amount: 24500, fill: "var(--color-subscriptions)" },
+  {
+    category: "subscriptions",
+    value: 45,
+    amount: 24500,
+    fill: "var(--color-subscriptions)",
+  },
   { category: "sales", value: 30, amount: 16300, fill: "var(--color-sales)" },
-  { category: "services", value: 15, amount: 8150, fill: "var(--color-services)" },
-  { category: "partnerships", value: 10, amount: 5430, fill: "var(--color-partnerships)" },
+  {
+    category: "services",
+    value: 15,
+    amount: 8150,
+    fill: "var(--color-services)",
+  },
+  {
+    category: "partnerships",
+    value: 10,
+    amount: 5430,
+    fill: "var(--color-partnerships)",
+  },
 ]
 
 const chartConfig = {
@@ -49,7 +81,20 @@ export function RevenueBreakdown() {
     [activeCategory]
   )
 
-  const categories = React.useMemo(() => revenueData.map((item) => item.category), [])
+  const categories = React.useMemo(
+    () => revenueData.map((item) => item.category),
+    []
+  )
+  const categoryLabels = React.useMemo(
+    () =>
+      Object.fromEntries(
+        categories.map((key) => [
+          key,
+          chartConfig[key as keyof typeof chartConfig]?.label ?? key,
+        ])
+      ),
+    [categories]
+  )
 
   return (
     <Card data-chart={id} className="flex flex-col cursor-pointer">
@@ -60,7 +105,11 @@ export function RevenueBreakdown() {
           <CardDescription>Revenue distribution by source</CardDescription>
         </div>
         <div className="flex items-center space-x-2">
-          <Select value={activeCategory} onValueChange={setActiveCategory}>
+          <Select
+            items={categoryLabels}
+            value={activeCategory}
+            onValueChange={(value) => value && setActiveCategory(value)}
+          >
             <SelectTrigger
               className="w-[175px] rounded-lg cursor-pointer"
               aria-label="Select a category"
@@ -148,7 +197,11 @@ export function RevenueBreakdown() {
                               y={viewBox.cy}
                               className="fill-foreground text-3xl font-bold"
                             >
-                              ${(revenueData[activeIndex].amount / 1000).toFixed(0)}K
+                              $
+                              {(revenueData[activeIndex].amount / 1000).toFixed(
+                                0
+                              )}
+                              K
                             </tspan>
                             <tspan
                               x={viewBox.cx}
@@ -169,14 +222,15 @@ export function RevenueBreakdown() {
 
           <div className="flex flex-col justify-center space-y-4">
             {revenueData.map((item, index) => {
-              const config = chartConfig[item.category as keyof typeof chartConfig]
+              const config =
+                chartConfig[item.category as keyof typeof chartConfig]
               const isActive = index === activeIndex
 
               return (
                 <div
                   key={item.category}
                   className={`flex items-center justify-between p-3 rounded-lg transition-colors cursor-pointer ${
-                    isActive ? 'bg-muted' : 'hover:bg-muted/50'
+                    isActive ? "bg-muted" : "hover:bg-muted/50"
                   }`}
                   onClick={() => setActiveCategory(item.category)}
                 >
@@ -190,8 +244,12 @@ export function RevenueBreakdown() {
                     <span className="font-medium">{config?.label}</span>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold">${(item.amount / 1000).toFixed(1)}K</div>
-                    <div className="text-sm text-muted-foreground">{item.value}%</div>
+                    <div className="font-bold">
+                      ${(item.amount / 1000).toFixed(1)}K
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {item.value}%
+                    </div>
                   </div>
                 </div>
               )

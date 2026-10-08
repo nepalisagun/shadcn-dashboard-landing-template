@@ -1,14 +1,17 @@
 "use client"
 
-import { ArrowRight, Play, Star } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { DotPattern } from '@/components/dot-pattern'
+import { ArrowRight, Play, Star } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { DotPattern } from "@/components/dot-pattern"
 import { assetUrl, getAppUrl } from "@/lib/utils"
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-16 sm:pt-20 pb-16">
+    <section
+      id="hero"
+      className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-16 sm:pt-20 pb-16"
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0">
         {/* Dot pattern overlay using reusable component */}
@@ -30,30 +33,39 @@ export function HeroSection() {
           <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
             Build Better
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              {" "}Web Applications{" "}
+              {" "}
+              Web Applications{" "}
             </span>
             with Ready-Made Components
           </h1>
 
           {/* Subheading */}
           <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            Accelerate your development with our curated collection of blocks, templates, landing pages,
-            and admin dashboards. From free components to complete solutions, built with shadcn/ui.
+            Accelerate your development with our curated collection of blocks,
+            templates, landing pages, and admin dashboards. From free components
+            to complete solutions, built with shadcn/ui.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button size="lg" className="text-base cursor-pointer" asChild>
-              <a href={getAppUrl("/auth/sign-up")}>
-                Get Started Free
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+            <Button
+              size="lg"
+              className="text-base cursor-pointer"
+              nativeButton={false}
+              render={<a href={getAppUrl("/auth/sign-up")} />}
+            >
+              Get Started Free
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button variant="outline" size="lg" className="text-base cursor-pointer" asChild>
-              <a href="#">
-                <Play className="mr-2 h-4 w-4" />
-                Watch Demo
-              </a>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-base cursor-pointer"
+              nativeButton={false}
+              render={<a href="#" />}
+            >
+              <Play className="mr-2 h-4 w-4" />
+              Watch Demo
             </Button>
           </div>
         </div>
@@ -87,11 +99,10 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   className="rounded-full h-16 w-16 p-0 cursor-pointer hover:scale-105 transition-transform"
-                  asChild
+                  nativeButton={false}
+                  render={<a href="#" aria-label="Watch demo video" />}
                 >
-                  <a href="#" aria-label="Watch demo video">
-                    <Play className="h-6 w-6 fill-current" />
-                  </a>
+                  <Play className="h-6 w-6 fill-current" />
                 </Button>
               </div>
             </div>

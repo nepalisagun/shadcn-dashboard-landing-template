@@ -8,7 +8,7 @@ import {
   Image as ImageIcon,
   FileText,
   Mic,
-  MoreHorizontal
+  MoreHorizontal,
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -18,13 +18,13 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger
+  TooltipTrigger,
 } from "@/components/ui/tooltip"
 
 interface MessageInputProps {
@@ -36,7 +36,7 @@ interface MessageInputProps {
 export function MessageInput({
   onSendMessage,
   disabled = false,
-  placeholder = "Type a message..."
+  placeholder = "Type a message...",
 }: MessageInputProps) {
   const [message, setMessage] = useState("")
   const [isTyping, setIsTyping] = useState(false)
@@ -93,17 +93,21 @@ export function MessageInput({
         <TooltipProvider>
           <DropdownMenu>
             <Tooltip>
-              <TooltipTrigger asChild>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    disabled={disabled}
-                    className="cursor-pointer disabled:cursor-not-allowed"
-                  >
-                    <Paperclip className="h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
+              <TooltipTrigger
+                render={
+                  <DropdownMenuTrigger
+                    render={
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        disabled={disabled}
+                        className="cursor-pointer disabled:cursor-not-allowed"
+                      />
+                    }
+                  />
+                }
+              >
+                <Paperclip className="h-4 w-4" />
               </TooltipTrigger>
               <TooltipContent>
                 <p>Attach file</p>
@@ -148,15 +152,17 @@ export function MessageInput({
           <div className="absolute right-2 bottom-2 flex items-center gap-1">
             <TooltipProvider>
               <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    disabled={disabled}
-                    className="h-6 w-6 p-0 cursor-pointer disabled:cursor-not-allowed"
-                  >
-                    <Smile className="h-4 w-4" />
-                  </Button>
+                <TooltipTrigger
+                  render={
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      disabled={disabled}
+                      className="h-6 w-6 p-0 cursor-pointer disabled:cursor-not-allowed"
+                    />
+                  }
+                >
+                  <Smile className="h-4 w-4" />
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Add emoji</p>
@@ -166,15 +172,17 @@ export function MessageInput({
 
             <TooltipProvider>
               <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    disabled={disabled}
-                    className="h-6 w-6 p-0 cursor-pointer disabled:cursor-not-allowed"
-                  >
-                    <MoreHorizontal className="h-4 w-4" />
-                  </Button>
+                <TooltipTrigger
+                  render={
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      disabled={disabled}
+                      className="h-6 w-6 p-0 cursor-pointer disabled:cursor-not-allowed"
+                    />
+                  }
+                >
+                  <MoreHorizontal className="h-4 w-4" />
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>More options</p>
@@ -187,24 +195,28 @@ export function MessageInput({
         {/* Voice message or send button */}
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger asChild>
+            <TooltipTrigger
+              render={
+                message.trim() ? (
+                  <Button
+                    onClick={handleSendMessage}
+                    disabled={disabled}
+                    className="cursor-pointer disabled:cursor-not-allowed"
+                  />
+                ) : (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    disabled={disabled}
+                    className="cursor-pointer disabled:cursor-not-allowed"
+                  />
+                )
+              }
+            >
               {message.trim() ? (
-                <Button
-                  onClick={handleSendMessage}
-                  disabled={disabled}
-                  className="cursor-pointer disabled:cursor-not-allowed"
-                >
-                  <Send className="h-4 w-4" />
-                </Button>
+                <Send className="h-4 w-4" />
               ) : (
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  disabled={disabled}
-                  className="cursor-pointer disabled:cursor-not-allowed"
-                >
-                  <Mic className="h-4 w-4" />
-                </Button>
+                <Mic className="h-4 w-4" />
               )}
             </TooltipTrigger>
             <TooltipContent>

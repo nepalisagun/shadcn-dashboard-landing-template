@@ -12,12 +12,20 @@ interface ColorPickerProps {
   onChange: (cssVar: string, value: string) => void
 }
 
-export function ColorPicker({ label, cssVar, value, onChange }: ColorPickerProps) {
+export function ColorPicker({
+  label,
+  cssVar,
+  value,
+  onChange,
+}: ColorPickerProps) {
   const [localValue, setLocalValue] = React.useState(value)
+  const [prevValue, setPrevValue] = React.useState(value)
 
-  React.useEffect(() => {
+  // Re-sync when the parent changes the value (e.g. a theme preset is applied).
+  if (value !== prevValue) {
+    setPrevValue(value)
     setLocalValue(value)
-  }, [value])
+  }
 
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newColor = e.target.value
@@ -33,17 +41,19 @@ export function ColorPicker({ label, cssVar, value, onChange }: ColorPickerProps
 
   // Get current computed color for display
   const displayColor = React.useMemo(() => {
-    if (localValue && localValue.startsWith('#')) {
+    if (localValue && localValue.startsWith("#")) {
       return localValue
     }
 
     // Try to get computed value from CSS
-    const computed = getComputedStyle(document.documentElement).getPropertyValue(cssVar).trim()
-    if (computed && computed.startsWith('#')) {
+    const computed = getComputedStyle(document.documentElement)
+      .getPropertyValue(cssVar)
+      .trim()
+    if (computed && computed.startsWith("#")) {
       return computed
     }
 
-    return '#000000'
+    return "#000000"
   }, [localValue, cssVar])
 
   return (

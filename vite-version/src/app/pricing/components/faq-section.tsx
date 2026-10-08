@@ -40,7 +40,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                 <AccordionItem
                   key={item.id}
                   value={`item-${item.id}`}
-                  className="rounded-md !border my-3"
+                  className="rounded-md border! my-3"
                 >
                   <AccordionTrigger className="cursor-pointer px-4">
                     {item.question}
@@ -60,7 +60,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                 <AccordionItem
                   key={item.id}
                   value={`item-${item.id}`}
-                  className="rounded-md !border my-3"
+                  className="rounded-md border! my-3"
                 >
                   <AccordionTrigger className="cursor-pointer px-4">
                     {item.question}

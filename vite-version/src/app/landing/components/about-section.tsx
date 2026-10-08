@@ -2,7 +2,12 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { CardDecorator } from "@/components/ui/card-decorator"
 import { Code, Palette, Layout, Crown } from "lucide-react"
 import { Github } from "@/components/icons/brand-icons"
@@ -57,19 +62,13 @@ export function AboutSection() {
         <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 xl:grid-cols-4 mb-12">
           {values.map((value, index) => (
             <Card key={index} className="group shadow-xs py-2">
-              <CardContent className="p-8">
-                <div className="flex flex-col items-center text-center">
-                  <CardDecorator>
+              <CardHeader className="items-center p-8 text-center">
+                <CardDecorator>
                     <value.icon className="size-6" aria-hidden />
                   </CardDecorator>
-                  <h3 className="mt-6 font-medium text-balance">
-                    {value.title}
-                  </h3>
-                  <p className="text-muted-foreground mt-3 text-sm">
-                    {value.description}
-                  </p>
-                </div>
-              </CardContent>
+                <CardTitle className="mt-6 text-balance">{value.title}</CardTitle>
+                <CardDescription className="mt-3">{value.description}</CardDescription>
+              </CardHeader>
             </Card>
           ))}
         </div>

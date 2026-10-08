@@ -4,7 +4,7 @@ import { FeaturesGrid } from "./components/features-grid"
 import { FAQSection } from "./components/faq-section"
 
 // Import data
-import featuresData from "./data/features.json"
+import { features as featuresData } from "./data/features"
 import faqsData from "./data/faqs.json"
 
 export default function PricingPage() {

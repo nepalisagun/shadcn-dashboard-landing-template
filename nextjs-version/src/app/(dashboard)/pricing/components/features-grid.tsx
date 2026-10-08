@@ -1,22 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Rocket, Shield, Zap, Users, Headphones, Clock } from "lucide-react"
-
-// Icon mapping
-const iconMap = {
-  Rocket,
-  Shield,
-  Zap,
-  Users,
-  Headphones,
-  Clock,
-}
-
-interface Feature {
-  id: number
-  name: string
-  description: string
-  icon: string
-}
+import type { Feature } from "../data/features"
 
 interface FeaturesGridProps {
   features: Feature[]
@@ -35,7 +18,7 @@ export function FeaturesGrid({ features }: FeaturesGridProps) {
         <div className='mx-auto mt-6 sm:mt-8 lg:mt-12'>
           <dl className='grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-16'>
             {features.map(feature => {
-              const IconComponent = iconMap[feature.icon as keyof typeof iconMap]
+              const IconComponent = feature.icon
               return (
                 <div key={feature.name} className='relative pl-16'>
                   <div className='text-base leading-7 font-semibold'>

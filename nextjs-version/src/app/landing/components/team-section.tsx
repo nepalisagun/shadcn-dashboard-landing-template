@@ -3,7 +3,12 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card"
 import { CardDecorator } from "@/components/ui/card-decorator"
 import { Globe } from "lucide-react"
 import { Github, Linkedin } from "@/components/icons/brand-icons"
@@ -168,12 +173,10 @@ export function TeamSection() {
                   </div>
 
                   {/* Name and Role */}
-                  <h3 className="text-lg font-semibold text-foreground mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm font-medium text-primary mb-3">
+                  <CardTitle className="mb-1 text-lg">{member.name}</CardTitle>
+                  <CardDescription className="mb-3 font-medium text-primary">
                     {member.role}
-                  </p>
+                  </CardDescription>
 
                   {/* Description */}
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">

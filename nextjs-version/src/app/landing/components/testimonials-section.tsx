@@ -1,6 +1,12 @@
 "use client"
 
-import { Card, CardContent } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 
@@ -112,8 +118,7 @@ export function TestimonialsSection() {
         <div className="columns-1 gap-4 md:columns-2 md:gap-6 lg:columns-3 lg:gap-4">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="mb-6 break-inside-avoid shadow-none lg:mb-4">
-              <CardContent>
-                <div className="flex items-start gap-4">
+              <CardHeader className="flex flex-row items-start gap-4">
                   <Avatar className="bg-muted size-12 shrink-0">
                     <AvatarImage
                       alt={testimonial.name}
@@ -129,18 +134,13 @@ export function TestimonialsSection() {
                         .join('')}
                     </AvatarFallback>
                   </Avatar>
-
-                  <div className="min-w-0 flex-1">
-                    <a href="#" onClick={e => e.preventDefault()} className="cursor-pointer">
-                      <h3 className="font-medium hover:text-primary transition-colors">{testimonial.name}</h3>
-                    </a>
-                    <span className="text-muted-foreground block text-sm tracking-wide">
-                      {testimonial.role}
-                    </span>
-                  </div>
+                <div className="min-w-0 flex-1">
+                  <CardTitle>{testimonial.name}</CardTitle>
+                  <CardDescription className="tracking-wide">{testimonial.role}</CardDescription>
                 </div>
-
-                <blockquote className="mt-4">
+              </CardHeader>
+              <CardContent>
+                <blockquote>
                   <p className="text-sm leading-relaxed text-balance">{testimonial.quote}</p>
                 </blockquote>
               </CardContent>

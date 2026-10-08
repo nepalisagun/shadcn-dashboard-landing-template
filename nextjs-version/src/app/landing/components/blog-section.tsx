@@ -2,7 +2,13 @@
 
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Badge } from '@/components/ui/badge'
 
 const blogs = [
@@ -51,8 +57,7 @@ export function BlogSection() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {blogs.map(blog => (
             <Card key={blog.id} className="overflow-hidden py-0">
-              <CardContent className="px-0">
-                <div className="aspect-video">
+              <div className="aspect-video">
                   <Image
                     src={blog.image}
                     alt={blog.title}
@@ -62,19 +67,13 @@ export function BlogSection() {
                     loading="lazy"
                   />
                 </div>
-                <div className="flex flex-col gap-3 p-6">
-                  <p className="text-muted-foreground text-xs tracking-widest uppercase">
-                    {blog.category}
-                  </p>
-                  <a
-                    href="#"
-                    onClick={e => e.preventDefault()}
-                    className="cursor-pointer"
-                  >
-                    <h3 className="text-xl font-bold hover:text-primary transition-colors">{blog.title}</h3>
-                  </a>
-                  <p className="text-muted-foreground">{blog.description}</p>
-                  <a
+              <CardHeader className="gap-3 px-6 pt-6">
+                <p className="text-xs tracking-widest text-muted-foreground uppercase">{blog.category}</p>
+                <CardTitle className="text-xl font-bold">{blog.title}</CardTitle>
+                <CardDescription className="text-base">{blog.description}</CardDescription>
+              </CardHeader>
+              <CardFooter className="px-6 pb-6">
+                <a
                     href="#"
                     onClick={e => e.preventDefault()}
                     className="inline-flex items-center gap-2 text-primary hover:underline cursor-pointer"
@@ -82,8 +81,7 @@ export function BlogSection() {
                     Learn More
                     <ArrowRight className="size-4" />
                   </a>
-                </div>
-              </CardContent>
+              </CardFooter>
             </Card>
           ))}
         </div>

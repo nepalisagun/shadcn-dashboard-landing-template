@@ -82,7 +82,7 @@ const FaqSection = () => {
                   <AccordionItem
                     key={item.value}
                     value={item.value}
-                    className="rounded-md !border bg-transparent"
+                    className="rounded-md border! bg-transparent"
                   >
                     <AccordionTrigger className="cursor-pointer items-center gap-4 rounded-none bg-transparent py-2 ps-3 pe-4 hover:no-underline data-panel-open:border-b">
                       <div className="flex items-center gap-4">

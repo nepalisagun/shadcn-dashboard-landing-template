@@ -92,13 +92,13 @@ export function PricingSection() {
             >
               <ToggleGroupItem
                 value="monthly"
-                className="data-pressed:bg-background data-pressed:border-border border-transparent border px-6 !rounded-full data-pressed:text-foreground hover:bg-transparent cursor-pointer transition-colors"
+                className="data-pressed:bg-background data-pressed:border-border border-transparent border px-6 rounded-full! data-pressed:text-foreground hover:bg-transparent cursor-pointer transition-colors"
               >
                 Monthly
               </ToggleGroupItem>
               <ToggleGroupItem
                 value="yearly"
-                className="data-pressed:bg-background data-pressed:border-border border-transparent border px-6 !rounded-full data-pressed:text-foreground hover:bg-transparent cursor-pointer transition-colors"
+                className="data-pressed:bg-background data-pressed:border-border border-transparent border px-6 rounded-full! data-pressed:text-foreground hover:bg-transparent cursor-pointer transition-colors"
               >
                 Annually
               </ToggleGroupItem>

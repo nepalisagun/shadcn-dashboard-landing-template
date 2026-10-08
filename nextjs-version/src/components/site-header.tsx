@@ -74,7 +74,7 @@ export function SiteHeader() {
               nativeButton={false}
               render={
                 <a
-                  href="https://github.com/silicondeck/shadcn-dashboard-landing-template"
+                  href="https://github.com/shadcnstore/shadcn-dashboard-landing-template"
                   rel="noopener noreferrer"
                   target="_blank"
                   className="dark:text-foreground"

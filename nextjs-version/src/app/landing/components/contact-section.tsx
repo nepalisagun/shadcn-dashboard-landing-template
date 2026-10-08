@@ -124,7 +124,7 @@ export function ContactSection() {
                   nativeButton={false}
                   render={
                     <a
-                      href="https://github.com/silicondeck/shadcn-dashboard-landing-template/issues"
+                      href="https://github.com/shadcnstore/shadcn-dashboard-landing-template/issues"
                       target="_blank"
                       rel="noopener noreferrer"
                     />

@@ -137,7 +137,7 @@ export function LandingNavbar() {
             nativeButton={false}
             render={
               <a
-                href="https://github.com/silicondeck/shadcn-dashboard-landing-template"
+                href="https://github.com/shadcnstore/shadcn-dashboard-landing-template"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Repository"
@@ -223,7 +223,7 @@ export function LandingNavbar() {
                       nativeButton={false}
                       render={
                         <a
-                          href="https://github.com/silicondeck/shadcn-dashboard-landing-template"
+                          href="https://github.com/shadcnstore/shadcn-dashboard-landing-template"
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="GitHub Repository"

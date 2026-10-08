@@ -78,7 +78,7 @@ export function CTASection() {
                   nativeButton={false}
                   render={
                     <a
-                      href="https://github.com/silicondeck/shadcn-dashboard-landing-template"
+                      href="https://github.com/shadcnstore/shadcn-dashboard-landing-template"
                       target="_blank"
                       rel="noopener noreferrer"
                     />

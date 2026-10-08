@@ -129,7 +129,7 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
         <SheetContent
           showCloseButton={false}
           side={sidebarConfig.side === "left" ? "right" : "left"}
-          className="w-[400px] p-0 gap-0 pointer-events-auto overflow-hidden flex flex-col"
+          className="w-[400px] p-0 gap-0 pointer-events-auto overflow-hidden flex flex-col bg-background"
         >
           <SheetHeader className="gap-0 p-4 pb-2">
             <div className="flex items-center gap-2">

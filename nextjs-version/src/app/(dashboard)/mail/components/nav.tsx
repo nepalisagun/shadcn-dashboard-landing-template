@@ -38,8 +38,6 @@ export function Nav({ links, isCollapsed }: NavProps) {
                     className={cn(
                       buttonVariants({ variant: link.variant, size: "icon" }),
                       "size-9 cursor-pointer",
-                      link.variant === "default" &&
-                        "dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white"
                     )}
                   />
                 }
@@ -61,19 +59,17 @@ export function Nav({ links, isCollapsed }: NavProps) {
               key={index}
               className={cn(
                 buttonVariants({ variant: link.variant, size: "sm" }),
-                link.variant === "default" &&
-                  "group dark:bg-muted dark:text-foreground dark:hover:bg-muted dark:hover:text-foreground",
                 "justify-start cursor-pointer"
               )}
             >
-              <link.icon className="mr-2 size-4" />
+              <link.icon />
               {link.title}
               {link.label && (
                 <span
                   className={cn(
                     "ml-auto",
                     link.variant === "default" &&
-                      "text-background dark:text-muted-foreground"
+                      "text-primary-foreground"
                   )}
                 >
                   {link.label}

@@ -88,7 +88,7 @@ export function TopProducts() {
                 </div>
                 <div className="flex items-center gap-2 mt-1">
                   <div className="flex items-center gap-1">
-                    <Star className="size-3 fill-yellow-400 text-yellow-400" />
+                    <Star className="size-3 fill-warning text-warning" />
                     <span className="text-xs text-muted-foreground">{product.rating}</span>
                   </div>
                   <span className="text-xs text-muted-foreground">•</span>
@@ -100,7 +100,7 @@ export function TopProducts() {
                   <p className="text-sm font-medium">{product.revenue}</p>
                   <Badge
                     variant="outline"
-                    className="text-green-600 border-green-200 cursor-pointer"
+                    className="text-success border-success/30 cursor-pointer"
                   >
                     <TrendingUp />
                     {product.growth}

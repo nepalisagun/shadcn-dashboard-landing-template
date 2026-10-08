@@ -37,7 +37,7 @@ export function DotPattern({
   return (
     <div
       className={cn(
-        "absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#374151_1px,transparent_1px)]",
+        "absolute inset-0 bg-[radial-gradient(var(--border)_1px,transparent_1px)]",
         sizeMap[size],
         fadeMap[fadeStyle],
         opacityMap[opacity],

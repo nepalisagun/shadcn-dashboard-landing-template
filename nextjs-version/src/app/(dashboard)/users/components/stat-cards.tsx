@@ -47,8 +47,8 @@ export function StatCards() {
                 variant='outline'
                 className={cn(
                   metric.growth >= 0
-                    ? 'border-green-200 bg-green-50 text-green-700 dark:border-green-800 dark:bg-green-950/20 dark:text-green-400'
-                    : 'border-red-200 bg-red-50 text-red-700 dark:border-red-800 dark:bg-red-950/20 dark:text-red-400',
+                    ? 'border-success/30 bg-success/10 text-success'
+                    : 'border-destructive/30 bg-destructive/10 text-destructive',
                 )}
               >
                 {metric.growth >= 0 ? (

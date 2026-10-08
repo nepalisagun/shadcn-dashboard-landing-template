@@ -230,7 +230,7 @@ export function LandingFooter() {
           <div className="flex flex-col sm:flex-row items-center gap-2 text-muted-foreground text-sm">
             <div className="flex items-center gap-1">
               <span>Made with</span>
-              <Heart className="size-4 text-red-500 fill-current" />
+              <Heart className="size-4 text-destructive fill-current" />
               <span>by</span>
               <a
                 href="https://shadcnstore.com"

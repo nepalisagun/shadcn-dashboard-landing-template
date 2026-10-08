@@ -64,35 +64,35 @@ const demographicsData = [
     customers: 2847,
     percentage: "18.0%",
     growth: "+15.2%",
-    growthColor: "text-green-600",
+    growthColor: "text-success",
   },
   {
     ageGroup: "25-34",
     customers: 4521,
     percentage: "28.5%",
     growth: "+8.7%",
-    growthColor: "text-green-600",
+    growthColor: "text-success",
   },
   {
     ageGroup: "35-44",
     customers: 3982,
     percentage: "25.1%",
     growth: "+3.4%",
-    growthColor: "text-blue-600",
+    growthColor: "text-info",
   },
   {
     ageGroup: "45-54",
     customers: 2734,
     percentage: "17.2%",
     growth: "+1.2%",
-    growthColor: "text-orange-600",
+    growthColor: "text-warning",
   },
   {
     ageGroup: "55+",
     customers: 1763,
     percentage: "11.2%",
     growth: "-2.1%",
-    growthColor: "text-red-600",
+    growthColor: "text-destructive",
   },
 ]
 
@@ -102,35 +102,35 @@ const regionsData = [
     customers: 6847,
     revenue: "$847,523",
     growth: "+12.3%",
-    growthColor: "text-green-600",
+    growthColor: "text-success",
   },
   {
     region: "Europe",
     customers: 4521,
     revenue: "$563,891",
     growth: "+9.7%",
-    growthColor: "text-green-600",
+    growthColor: "text-success",
   },
   {
     region: "Asia Pacific",
     customers: 2892,
     revenue: "$321,456",
     growth: "+18.4%",
-    growthColor: "text-blue-600",
+    growthColor: "text-info",
   },
   {
     region: "Latin America",
     customers: 1123,
     revenue: "$187,234",
     growth: "+15.8%",
-    growthColor: "text-green-600",
+    growthColor: "text-success",
   },
   {
     region: "Others",
     customers: 464,
     revenue: "$67,891",
     growth: "+5.2%",
-    growthColor: "text-orange-600",
+    growthColor: "text-warning",
   },
 ]
 
@@ -238,7 +238,7 @@ export function CustomerInsights() {
                         </span>
                       </div>
                       <div className="text-2xl font-bold">15,847</div>
-                      <div className="text-xs text-green-600 flex items-center gap-1 mt-1">
+                      <div className="text-xs text-success flex items-center gap-1 mt-1">
                         <ArrowUpIcon className="size-3" />
                         +12.5% from last month
                       </div>
@@ -252,7 +252,7 @@ export function CustomerInsights() {
                         </span>
                       </div>
                       <div className="text-2xl font-bold">92.4%</div>
-                      <div className="text-xs text-green-600 flex items-center gap-1 mt-1">
+                      <div className="text-xs text-success flex items-center gap-1 mt-1">
                         <ArrowUpIcon className="size-3" />
                         +2.1% improvement
                       </div>
@@ -264,7 +264,7 @@ export function CustomerInsights() {
                         <span className="text-sm font-medium">Avg. LTV</span>
                       </div>
                       <div className="text-2xl font-bold">$2,847</div>
-                      <div className="text-xs text-green-600 flex items-center gap-1 mt-1">
+                      <div className="text-xs text-success flex items-center gap-1 mt-1">
                         <ArrowUpIcon className="size-3" />
                         +8.3% growth
                       </div>

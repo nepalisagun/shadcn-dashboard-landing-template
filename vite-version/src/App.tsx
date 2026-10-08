@@ -1,13 +1,25 @@
-import { BrowserRouter as Router } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ThemeProvider } from "@/components/theme-provider"
 import { SidebarConfigProvider } from "@/contexts/sidebar-context"
 import { Toaster } from "@/components/ui/toast"
-import { AppRouter } from "@/components/router/app-router"
+import { RootFallback, RootLayout } from "@/components/router/root-layout"
+import { routes } from "@/config/routes"
 import { useEffect } from "react"
 import { initGTM } from "@/utils/analytics"
 
 // Get basename from environment (for deployment) or use empty string for development
 const basename = import.meta.env.VITE_BASENAME || ""
+
+const router = createBrowserRouter(
+  [
+    {
+      element: <RootLayout />,
+      HydrateFallback: RootFallback,
+      children: routes,
+    },
+  ],
+  { basename }
+)
 
 function App() {
   // Initialize GTM on app load
@@ -22,11 +34,9 @@ function App() {
     >
       <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
         <SidebarConfigProvider>
-          <Router basename={basename}>
-            <Toaster>
-              <AppRouter />
-            </Toaster>
-          </Router>
+          <Toaster>
+            <RouterProvider router={router} />
+          </Toaster>
         </SidebarConfigProvider>
       </ThemeProvider>
     </div>

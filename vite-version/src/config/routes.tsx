@@ -1,189 +1,115 @@
-import { Navigate } from "react-router-dom"
+import type { ComponentType } from "react"
+import { Navigate, type RouteObject } from "react-router-dom"
 
-import {
-  Landing,
-  Dashboard,
-  Dashboard2,
-  Mail,
-  Tasks,
-  Chat,
-  Calendar,
-  Users,
-  FAQs,
-  Pricing,
-  SignIn,
-  SignIn2,
-  SignIn3,
-  SignUp,
-  SignUp2,
-  SignUp3,
-  ForgotPassword,
-  ForgotPassword2,
-  ForgotPassword3,
-  Unauthorized,
-  Forbidden,
-  NotFound,
-  InternalServerError,
-  UnderMaintenance,
-  UserSettings,
-  AccountSettings,
-  BillingSettings,
-  AppearanceSettings,
-  NotificationSettings,
-  ConnectionSettings,
-} from "@/config/lazy-pages"
-
-export interface RouteConfig {
-  path: string
-  element: React.ReactNode
-  children?: RouteConfig[]
+/**
+ * Every page is code-split. With the data router, a route's code is loaded
+ * *before* the navigation commits: the current page stays on screen and the
+ * root layout shows a progress bar until the next page is ready.
+ */
+function page(load: () => Promise<{ default: ComponentType }>) {
+  return async () => ({ Component: (await load()).default })
 }
 
-export const routes: RouteConfig[] = [
-  // Default route - redirect to dashboard
+export const routes: RouteObject[] = [
   // Use relative path "dashboard" instead of "/dashboard" for basename compatibility
-  {
-    path: "/",
-    element: <Navigate to="dashboard" replace />,
-  },
-
+  { path: "/", element: <Navigate to="dashboard" replace /> },
   // Landing Page
-  {
-    path: "/landing",
-    element: <Landing />,
-  },
-
+  { path: "/landing", lazy: page(() => import("@/app/landing/page")) },
   // Dashboard Routes
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/dashboard-2",
-    element: <Dashboard2 />,
-  },
-
+  { path: "/dashboard", lazy: page(() => import("@/app/dashboard/page")) },
+  { path: "/dashboard-2", lazy: page(() => import("@/app/dashboard-2/page")) },
   // Application Routes
-  {
-    path: "/mail",
-    element: <Mail />,
-  },
-  {
-    path: "/tasks",
-    element: <Tasks />,
-  },
-  {
-    path: "/chat",
-    element: <Chat />,
-  },
-  {
-    path: "/calendar",
-    element: <Calendar />,
-  },
-
+  { path: "/mail", lazy: page(() => import("@/app/mail/page")) },
+  { path: "/tasks", lazy: page(() => import("@/app/tasks/page")) },
+  { path: "/chat", lazy: page(() => import("@/app/chat/page")) },
+  { path: "/calendar", lazy: page(() => import("@/app/calendar/page")) },
   // Content Pages
-  {
-    path: "/users",
-    element: <Users />,
-  },
-  {
-    path: "/faqs",
-    element: <FAQs />,
-  },
-  {
-    path: "/pricing",
-    element: <Pricing />,
-  },
-
+  { path: "/users", lazy: page(() => import("@/app/users/page")) },
+  { path: "/faqs", lazy: page(() => import("@/app/faqs/page")) },
+  { path: "/pricing", lazy: page(() => import("@/app/pricing/page")) },
   // Authentication Routes
   {
     path: "/auth/sign-in",
-    element: <SignIn />,
+    lazy: page(() => import("@/app/auth/sign-in/page")),
   },
   {
     path: "/auth/sign-in-2",
-    element: <SignIn2 />,
+    lazy: page(() => import("@/app/auth/sign-in-2/page")),
   },
   {
     path: "/auth/sign-in-3",
-    element: <SignIn3 />,
+    lazy: page(() => import("@/app/auth/sign-in-3/page")),
   },
   {
     path: "/auth/sign-up",
-    element: <SignUp />,
+    lazy: page(() => import("@/app/auth/sign-up/page")),
   },
   {
     path: "/auth/sign-up-2",
-    element: <SignUp2 />,
+    lazy: page(() => import("@/app/auth/sign-up-2/page")),
   },
   {
     path: "/auth/sign-up-3",
-    element: <SignUp3 />,
+    lazy: page(() => import("@/app/auth/sign-up-3/page")),
   },
   {
     path: "/auth/forgot-password",
-    element: <ForgotPassword />,
+    lazy: page(() => import("@/app/auth/forgot-password/page")),
   },
   {
     path: "/auth/forgot-password-2",
-    element: <ForgotPassword2 />,
+    lazy: page(() => import("@/app/auth/forgot-password-2/page")),
   },
   {
     path: "/auth/forgot-password-3",
-    element: <ForgotPassword3 />,
+    lazy: page(() => import("@/app/auth/forgot-password-3/page")),
   },
-
   // Error Pages
   {
     path: "/errors/unauthorized",
-    element: <Unauthorized />,
+    lazy: page(() => import("@/app/errors/unauthorized/page")),
   },
   {
     path: "/errors/forbidden",
-    element: <Forbidden />,
+    lazy: page(() => import("@/app/errors/forbidden/page")),
   },
   {
     path: "/errors/not-found",
-    element: <NotFound />,
+    lazy: page(() => import("@/app/errors/not-found/page")),
   },
   {
     path: "/errors/internal-server-error",
-    element: <InternalServerError />,
+    lazy: page(() => import("@/app/errors/internal-server-error/page")),
   },
   {
     path: "/errors/under-maintenance",
-    element: <UnderMaintenance />,
+    lazy: page(() => import("@/app/errors/under-maintenance/page")),
   },
-
   // Settings Routes
   {
     path: "/settings/user",
-    element: <UserSettings />,
+    lazy: page(() => import("@/app/settings/user/page")),
   },
   {
     path: "/settings/account",
-    element: <AccountSettings />,
+    lazy: page(() => import("@/app/settings/account/page")),
   },
   {
     path: "/settings/billing",
-    element: <BillingSettings />,
+    lazy: page(() => import("@/app/settings/billing/page")),
   },
   {
     path: "/settings/appearance",
-    element: <AppearanceSettings />,
+    lazy: page(() => import("@/app/settings/appearance/page")),
   },
   {
     path: "/settings/notifications",
-    element: <NotificationSettings />,
+    lazy: page(() => import("@/app/settings/notifications/page")),
   },
   {
     path: "/settings/connections",
-    element: <ConnectionSettings />,
+    lazy: page(() => import("@/app/settings/connections/page")),
   },
-
   // Catch-all route for 404
-  {
-    path: "*",
-    element: <NotFound />,
-  },
+  { path: "*", lazy: page(() => import("@/app/errors/not-found/page")) },
 ]

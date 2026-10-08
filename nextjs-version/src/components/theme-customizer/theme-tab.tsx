@@ -346,7 +346,7 @@ export function ThemeTab({
           value="brand-colors"
           className="border border-border rounded-lg overflow-hidden"
         >
-          <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-muted/50 transition-colors">
+          <AccordionTrigger className="items-center px-4 py-3 hover:no-underline hover:bg-muted/50 transition-colors">
             <span className="text-sm font-medium">Brand Colors</span>
           </AccordionTrigger>
           <AccordionContent className="flex flex-col px-4 pb-4 pt-2 gap-3 border-t border-border bg-muted/20">

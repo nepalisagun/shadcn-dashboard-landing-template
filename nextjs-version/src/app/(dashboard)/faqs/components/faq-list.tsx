@@ -121,7 +121,7 @@ export function FAQList({ faqs, categories }: FAQListProps) {
                       value={`item-${item.id}`}
                       className="rounded-md border!"
                     >
-                      <AccordionTrigger className="cursor-pointer px-4 hover:no-underline">
+                      <AccordionTrigger className="items-center cursor-pointer px-4 hover:no-underline">
                         <div className="flex items-start text-left">
                           <span>{item.question}</span>
                           <Badge

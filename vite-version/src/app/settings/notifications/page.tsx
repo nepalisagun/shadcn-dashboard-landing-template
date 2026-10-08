@@ -456,9 +456,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="orderUpdatesEmail"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-order-updates-email"
+                                aria-label="Order updates: email"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -472,9 +473,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="orderUpdatesBrowser"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-order-updates-browser"
+                                aria-label="Order updates: browser"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -488,9 +490,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="orderUpdatesApp"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-order-updates-app"
+                                aria-label="Order updates: app"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -509,9 +512,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="invoiceRemindersEmail"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-invoice-reminders-email"
+                                aria-label="Invoice reminders: email"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -525,9 +529,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="invoiceRemindersBrowser"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-invoice-reminders-browser"
+                                aria-label="Invoice reminders: browser"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -541,9 +546,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="invoiceRemindersApp"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-invoice-reminders-app"
+                                aria-label="Invoice reminders: app"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -562,9 +568,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="promotionalOffersEmail"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-promotional-offers-email"
+                                aria-label="Promotional offers: email"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -578,9 +585,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="promotionalOffersBrowser"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-promotional-offers-browser"
+                                aria-label="Promotional offers: browser"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -594,9 +602,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="promotionalOffersApp"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-promotional-offers-app"
+                                aria-label="Promotional offers: app"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -615,9 +624,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="systemMaintenanceEmail"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-system-maintenance-email"
+                                aria-label="System maintenance: email"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -631,9 +641,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="systemMaintenanceBrowser"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-system-maintenance-browser"
+                                aria-label="System maintenance: browser"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}
@@ -647,9 +658,10 @@ export default function NotificationSettings() {
                           control={form.control}
                           name="systemMaintenanceApp"
                           render={({ field, fieldState }) => (
-                            <Field data-invalid={fieldState.invalid}>
+                            <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-center">
                               <Checkbox
                                 id="notifications-system-maintenance-app"
+                                aria-label="System maintenance: app"
                                 aria-invalid={fieldState.invalid}
                                 checked={field.value}
                                 onCheckedChange={field.onChange}

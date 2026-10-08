@@ -42,7 +42,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                   value={`item-${item.id}`}
                   className="rounded-md border! my-3"
                 >
-                  <AccordionTrigger className="cursor-pointer px-4">
+                  <AccordionTrigger className="items-center cursor-pointer px-4">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground px-4">
@@ -62,7 +62,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                   value={`item-${item.id}`}
                   className="rounded-md border! my-3"
                 >
-                  <AccordionTrigger className="cursor-pointer px-4">
+                  <AccordionTrigger className="items-center cursor-pointer px-4">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground px-4">

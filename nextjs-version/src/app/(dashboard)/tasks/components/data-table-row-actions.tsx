@@ -27,25 +27,37 @@ export function DataTableRowActions<TData extends RowData>({
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          className="flex h-8 w-8 p-0 data-[state=open]:bg-muted cursor-pointer"
-        >
-          <MoreHorizontal />
-          <span className="sr-only">Open menu for {task.id}</span>
-        </Button>
+      <DropdownMenuTrigger
+        render={
+          <Button
+            variant="ghost"
+            className="flex h-8 w-8 p-0 data-popup-open:bg-muted cursor-pointer"
+          />
+        }
+      >
+        <MoreHorizontal />
+        <span className="sr-only">Open menu for {task.id}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
-        <DropdownMenuItem className="cursor-pointer">View Task</DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer">Edit Task</DropdownMenuItem>
+        <DropdownMenuItem className="cursor-pointer">
+          View Task
+        </DropdownMenuItem>
+        <DropdownMenuItem className="cursor-pointer">
+          Edit Task
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="cursor-pointer">Duplicate</DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer">Mark as Favorite</DropdownMenuItem>
+        <DropdownMenuItem className="cursor-pointer">
+          Duplicate
+        </DropdownMenuItem>
+        <DropdownMenuItem className="cursor-pointer">
+          Mark as Favorite
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="cursor-pointer" variant="destructive">
           Delete
-          <DropdownMenuShortcut className="text-destructive">⌘⌫</DropdownMenuShortcut>
+          <DropdownMenuShortcut className="text-destructive">
+            ⌘⌫
+          </DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

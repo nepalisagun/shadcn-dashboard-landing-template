@@ -100,12 +100,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 // Create a separate component for the drag handle
 function DragHandle({ id }: { id: number }) {
@@ -138,9 +133,10 @@ const columns: ColumnDef<DataTableFeatures, z.infer<typeof schema>>[] = [
     header: ({ table }) => (
       <div className="flex items-center justify-center">
         <Checkbox
-          checked={
-            table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && "indeterminate")
+          checked={table.getIsAllPageRowsSelected()}
+          indeterminate={
+            table.getIsSomePageRowsSelected() &&
+            !table.getIsAllPageRowsSelected()
           }
           onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
           aria-label="Select all"
@@ -280,15 +276,17 @@ const columns: ColumnDef<DataTableFeatures, z.infer<typeof schema>>[] = [
     id: "actions",
     cell: () => (
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button
-            variant="ghost"
-            className="data-[state=open]:bg-muted text-muted-foreground flex size-8 cursor-pointer"
-            size="icon"
-          >
-            <EllipsisVertical />
-            <span className="sr-only">Open menu</span>
-          </Button>
+        <DropdownMenuTrigger
+          render={
+            <Button
+              variant="ghost"
+              className="data-popup-open:bg-muted text-muted-foreground flex size-8 cursor-pointer"
+              size="icon"
+            />
+          }
+        >
+          <EllipsisVertical />
+          <span className="sr-only">Open menu</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-32">
           <DropdownMenuItem>Edit</DropdownMenuItem>
@@ -302,7 +300,11 @@ const columns: ColumnDef<DataTableFeatures, z.infer<typeof schema>>[] = [
   },
 ]
 
-function DraggableRow({ row }: { row: Row<DataTableFeatures, z.infer<typeof schema>> }) {
+function DraggableRow({
+  row,
+}: {
+  row: Row<DataTableFeatures, z.infer<typeof schema>>
+}) {
   const { transform, transition, setNodeRef, isDragging } = useSortable({
     id: row.original.id,
   })
@@ -409,7 +411,11 @@ function TableContent({
                 currentTable.setPageSize(Number(value))
               }}
             >
-              <SelectTrigger size="sm" className="w-20 cursor-pointer" id="rows-per-page">
+              <SelectTrigger
+                size="sm"
+                className="w-20 cursor-pointer"
+                id="rows-per-page"
+              >
                 <SelectValue
                   placeholder={currentTable.state.pagination.pageSize}
                 />
@@ -461,7 +467,9 @@ function TableContent({
               variant="outline"
               className="hidden size-8 lg:flex cursor-pointer"
               size="icon"
-              onClick={() => currentTable.setPageIndex(currentTable.getPageCount() - 1)}
+              onClick={() =>
+                currentTable.setPageIndex(currentTable.getPageCount() - 1)
+              }
               disabled={!currentTable.getCanNextPage()}
             >
               <span className="sr-only">Go to last page</span>
@@ -486,9 +494,13 @@ export function DataTable({
   focusDocumentsData?: z.infer<typeof schema>[]
 }) {
   const [data, setData] = React.useState(() => initialData)
-  const [pastPerformance, setPastPerformance] = React.useState(() => pastPerformanceData)
+  const [pastPerformance, setPastPerformance] = React.useState(
+    () => pastPerformanceData
+  )
   const [keyPersonnel, setKeyPersonnel] = React.useState(() => keyPersonnelData)
-  const [focusDocuments, setFocusDocuments] = React.useState(() => focusDocumentsData)
+  const [focusDocuments, setFocusDocuments] = React.useState(
+    () => focusDocumentsData
+  )
   const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({})
   const [columnVisibility, setColumnVisibility] =
     React.useState<ColumnVisibilityState>({})
@@ -663,7 +675,15 @@ export function DataTable({
         <Label htmlFor="view-selector" className="sr-only">
           View
         </Label>
-        <Select defaultValue="outline">
+        <Select
+          items={{
+            outline: "Outline",
+            "past-performance": "Past Performance",
+            "key-personnel": "Key Personnel",
+            "focus-documents": "Focus Documents",
+          }}
+          defaultValue="outline"
+        >
           <SelectTrigger
             className="flex w-fit sm:hidden cursor-pointer"
             size="sm"
@@ -679,24 +699,34 @@ export function DataTable({
           </SelectContent>
         </Select>
         <TabsList className="**:data-[slot=badge]:bg-muted-foreground/30 hidden **:data-[slot=badge]:size-5 **:data-[slot=badge]:rounded-full **:data-[slot=badge]:px-1 sm:flex">
-          <TabsTrigger value="outline" className="cursor-pointer">Outline</TabsTrigger>
+          <TabsTrigger value="outline" className="cursor-pointer">
+            Outline
+          </TabsTrigger>
           <TabsTrigger value="past-performance" className="cursor-pointer">
             Past Performance <Badge variant="secondary">3</Badge>
           </TabsTrigger>
           <TabsTrigger value="key-personnel" className="cursor-pointer">
             Key Personnel <Badge variant="secondary">2</Badge>
           </TabsTrigger>
-          <TabsTrigger value="focus-documents" className="cursor-pointer">Focus Documents</TabsTrigger>
+          <TabsTrigger value="focus-documents" className="cursor-pointer">
+            Focus Documents
+          </TabsTrigger>
         </TabsList>
         <div className="flex items-center gap-2">
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="cursor-pointer">
-                <Columns2 />
-                <span className="hidden lg:inline">Customize Columns</span>
-                <span className="lg:hidden">Columns</span>
-                <ChevronDown />
-              </Button>
+            <DropdownMenuTrigger
+              render={
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="cursor-pointer"
+                />
+              }
+            >
+              <Columns2 />
+              <span className="hidden lg:inline">Customize Columns</span>
+              <span className="lg:hidden">Columns</span>
+              <ChevronDown />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
               {table
@@ -799,10 +829,12 @@ export function DataTable({
                   table.setPageSize(Number(value))
                 }}
               >
-                <SelectTrigger size="sm" className="w-20 cursor-pointer" id="rows-per-page">
-                  <SelectValue
-                    placeholder={table.state.pagination.pageSize}
-                  />
+                <SelectTrigger
+                  size="sm"
+                  className="w-20 cursor-pointer"
+                  id="rows-per-page"
+                >
+                  <SelectValue placeholder={table.state.pagination.pageSize} />
                 </SelectTrigger>
                 <SelectContent side="top">
                   {[10, 20, 30, 40, 50].map((pageSize) => (
@@ -873,8 +905,8 @@ export function DataTable({
           handleCurrentDragEnd={handlePastPerformanceDragEnd}
         />
       </TabsContent>
-      <TabsContent 
-        value="key-personnel" 
+      <TabsContent
+        value="key-personnel"
         className="relative flex flex-col gap-4 overflow-auto px-4 lg:px-6"
       >
         <TableContent
@@ -925,11 +957,16 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
   const isMobile = useIsMobile()
 
   return (
-    <Drawer direction={isMobile ? "bottom" : "right"}>
-      <DrawerTrigger asChild>
-        <Button variant="link" className="text-foreground w-fit px-0 text-left cursor-pointer">
-          {item.header}
-        </Button>
+    <Drawer swipeDirection={isMobile ? "down" : "right"}>
+      <DrawerTrigger
+        render={
+          <Button
+            variant="link"
+            className="text-foreground w-fit px-0 text-left cursor-pointer"
+          />
+        }
+      >
+        {item.header}
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="gap-1">
@@ -1071,8 +1108,10 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
         </div>
         <DrawerFooter>
           <Button className="cursor-pointer">Submit</Button>
-          <DrawerClose asChild>
-            <Button variant="outline" className="cursor-pointer">Done</Button>
+          <DrawerClose
+            render={<Button variant="outline" className="cursor-pointer" />}
+          >
+            Done
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

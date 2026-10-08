@@ -25,10 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from "@/components/ui/toggle-group"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 export const description = "An interactive area chart"
 
@@ -179,9 +176,9 @@ export function ChartAreaInteractive() {
         </CardDescription>
         <CardAction>
           <ToggleGroup
-            type="single"
-            value={timeRange}
-            onValueChange={setTimeRange}
+            spacing={0}
+            value={[timeRange]}
+            onValueChange={(value) => value[0] && setTimeRange(value[0])}
             variant="outline"
             className="hidden *:data-[slot=toggle-group-item]:!px-4 @[767px]/card:flex"
           >
@@ -189,7 +186,15 @@ export function ChartAreaInteractive() {
             <ToggleGroupItem value="30d">Last 30 days</ToggleGroupItem>
             <ToggleGroupItem value="7d">Last 7 days</ToggleGroupItem>
           </ToggleGroup>
-          <Select value={timeRange} onValueChange={setTimeRange}>
+          <Select
+            items={{
+              "90d": "Last 3 months",
+              "30d": "Last 30 days",
+              "7d": "Last 7 days",
+            }}
+            value={timeRange}
+            onValueChange={(value) => value && setTimeRange(value)}
+          >
             <SelectTrigger
               className="flex w-40 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate @[767px]/card:hidden"
               size="sm"
@@ -263,7 +268,9 @@ export function ChartAreaInteractive() {
               content={
                 <ChartTooltipContent
                   labelFormatter={(value) => {
-                    return new Date(value as string | number | Date).toLocaleDateString("en-US", {
+                    return new Date(
+                      value as string | number | Date
+                    ).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
                     })

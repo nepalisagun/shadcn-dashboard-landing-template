@@ -41,22 +41,24 @@ export function NavUser({
     <SidebarMenu>
       <SidebarMenuItem>
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <SidebarMenuButton
-              size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground cursor-pointer"
-            >
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg">
-                < Logo size={28} />
-              </div>
-              <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">{user.name}</span>
-                <span className="text-muted-foreground truncate text-xs">
-                  {user.email}
-                </span>
-              </div>
-              <EllipsisVertical className="ml-auto size-4" />
-            </SidebarMenuButton>
+          <DropdownMenuTrigger
+            render={
+              <SidebarMenuButton
+                size="lg"
+                className="data-popup-open:bg-sidebar-accent data-popup-open:text-sidebar-accent-foreground cursor-pointer"
+              />
+            }
+          >
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg">
+              <Logo size={28} />
+            </div>
+            <div className="grid flex-1 text-left text-sm leading-tight">
+              <span className="truncate font-medium">{user.name}</span>
+              <span className="text-muted-foreground truncate text-xs">
+                {user.email}
+              </span>
+            </div>
+            <EllipsisVertical className="ml-auto size-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
@@ -64,46 +66,52 @@ export function NavUser({
             align="end"
             sideOffset={4}
           >
-            <DropdownMenuLabel className="p-0 font-normal">
-              <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                <div className="h-8 w-8 rounded-lg">
-                  < Logo size={28} />
+            <DropdownMenuGroup>
+              <DropdownMenuLabel className="p-0 font-normal">
+                <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
+                  <div className="h-8 w-8 rounded-lg">
+                    <Logo size={28} />
+                  </div>
+                  <div className="grid flex-1 text-left text-sm leading-tight">
+                    <span className="truncate font-medium">{user.name}</span>
+                    <span className="text-muted-foreground truncate text-xs">
+                      {user.email}
+                    </span>
+                  </div>
                 </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">{user.name}</span>
-                  <span className="text-muted-foreground truncate text-xs">
-                    {user.email}
-                  </span>
-                </div>
-              </div>
-            </DropdownMenuLabel>
+              </DropdownMenuLabel>
+            </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem asChild className="cursor-pointer">
-                <Link href="/settings/account">
-                  <CircleUser />
-                  Account
-                </Link>
+              <DropdownMenuItem
+                className="cursor-pointer"
+                render={<Link href="/settings/account" />}
+              >
+                <CircleUser />
+                Account
               </DropdownMenuItem>
-              <DropdownMenuItem asChild className="cursor-pointer">
-                <Link href="/settings/billing">
-                  <CreditCard />
-                  Billing
-                </Link>
+              <DropdownMenuItem
+                className="cursor-pointer"
+                render={<Link href="/settings/billing" />}
+              >
+                <CreditCard />
+                Billing
               </DropdownMenuItem>
-              <DropdownMenuItem asChild className="cursor-pointer">
-                <Link href="/settings/notifications">
-                  <BellDot />
-                  Notifications
-                </Link>
+              <DropdownMenuItem
+                className="cursor-pointer"
+                render={<Link href="/settings/notifications" />}
+              >
+                <BellDot />
+                Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem asChild className="cursor-pointer">
-              <Link href="/sign-in">
-                <LogOut />
-                Log out
-              </Link>
+            <DropdownMenuItem
+              className="cursor-pointer"
+              render={<Link href="/sign-in" />}
+            >
+              <LogOut />
+              Log out
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

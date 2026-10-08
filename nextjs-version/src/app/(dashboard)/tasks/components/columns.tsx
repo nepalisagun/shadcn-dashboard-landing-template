@@ -17,9 +17,9 @@ export const columns: ColumnDef<DataTableFeatures, Task>[] = [
     id: "select",
     header: ({ table }) => (
       <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
+        checked={table.getIsAllPageRowsSelected()}
+        indeterminate={
+          table.getIsSomePageRowsSelected() && !table.getIsAllPageRowsSelected()
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
@@ -78,9 +78,7 @@ export const columns: ColumnDef<DataTableFeatures, Task>[] = [
 
       return (
         <div className="flex w-[120px] items-center">
-          <Badge variant="outline">
-            {category.label}
-          </Badge>
+          <Badge variant="outline">{category.label}</Badge>
         </div>
       )
     },

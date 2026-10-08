@@ -2,10 +2,21 @@
 
 import { useState } from "react"
 import { Calendar, Clock, RefreshCw, Filter } from "lucide-react"
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
 
 export function DashboardHeader() {
@@ -17,9 +28,12 @@ export function DashboardHeader() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle className="text-3xl font-bold">Business Dashboard</CardTitle>
+            <CardTitle className="text-3xl font-bold">
+              Business Dashboard
+            </CardTitle>
             <CardDescription className="text-base mt-2">
-              Comprehensive overview of your business performance and key metrics
+              Comprehensive overview of your business performance and key
+              metrics
             </CardDescription>
           </div>
           <div className="flex items-center space-x-2">
@@ -33,23 +47,40 @@ export function DashboardHeader() {
             </Button>
           </div>
         </div>
-        
+
         <Separator className="my-4" />
-        
+
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Calendar className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">Date Range:</span>
-              <Select value={dateRange} onValueChange={setDateRange}>
+              <Select
+                items={{
+                  "7d": "Last 7 days",
+                  "30d": "Last 30 days",
+                  "90d": "Last 90 days",
+                  "1y": "Last year",
+                }}
+                value={dateRange}
+                onValueChange={(value) => value && setDateRange(value)}
+              >
                 <SelectTrigger className="w-40 cursor-pointer">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="7d" className="cursor-pointer">Last 7 days</SelectItem>
-                  <SelectItem value="30d" className="cursor-pointer">Last 30 days</SelectItem>
-                  <SelectItem value="90d" className="cursor-pointer">Last 90 days</SelectItem>
-                  <SelectItem value="1y" className="cursor-pointer">Last year</SelectItem>
+                  <SelectItem value="7d" className="cursor-pointer">
+                    Last 7 days
+                  </SelectItem>
+                  <SelectItem value="30d" className="cursor-pointer">
+                    Last 30 days
+                  </SelectItem>
+                  <SelectItem value="90d" className="cursor-pointer">
+                    Last 90 days
+                  </SelectItem>
+                  <SelectItem value="1y" className="cursor-pointer">
+                    Last year
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -58,7 +89,7 @@ export function DashboardHeader() {
               Filters
             </Button>
           </div>
-          
+
           <div className="text-sm text-muted-foreground">
             Last updated: {lastUpdated}
           </div>

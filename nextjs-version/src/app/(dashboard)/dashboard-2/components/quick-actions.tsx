@@ -2,7 +2,13 @@
 
 import { Plus, Settings, FileText, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export function QuickActions() {
   return (
@@ -12,11 +18,11 @@ export function QuickActions() {
         New Sale
       </Button>
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="cursor-pointer">
-            <Settings className="h-4 w-4 mr-2" />
-            Actions
-          </Button>
+        <DropdownMenuTrigger
+          render={<Button variant="outline" className="cursor-pointer" />}
+        >
+          <Settings className="h-4 w-4 mr-2" />
+          Actions
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem className="cursor-pointer">

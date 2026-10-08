@@ -219,7 +219,7 @@ export function ThemeCustomizerTrigger({ onClick }: { onClick: () => void }) {
       onClick={onClick}
       size="icon"
       className={cn(
-        "fixed top-1/2 -translate-y-1/2 size-12 rounded-full shadow-lg z-50 bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer",
+        "fixed top-1/2 -mt-6 size-12 rounded-full shadow-lg z-50 active:not-aria-[haspopup]:translate-y-0 bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer",
         sidebarConfig.side === "left" ? "right-4" : "left-4"
       )}
     >

@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarConfigProvider } from "@/contexts/sidebar-context";
+import { Toaster } from "@/components/ui/toast";
 import { inter } from "@/lib/fonts";
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider defaultTheme="system" storageKey="nextjs-ui-theme">
           <SidebarConfigProvider>
-            {children}
+            <Toaster>{children}</Toaster>
           </SidebarConfigProvider>
         </ThemeProvider>
       </body>

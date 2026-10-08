@@ -50,7 +50,7 @@ import {
 
 import { dataTableFeatures, type DataTableFeatures } from "@/lib/data-table"
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
-import { toast } from "sonner"
+import { toast } from "@/components/ui/toast"
 import { z } from "zod"
 
 import { schema } from "../schemas/task-schema"
@@ -203,9 +203,9 @@ const columns: ColumnDef<DataTableFeatures, z.infer<typeof schema>>[] = [
         onSubmit={(e) => {
           e.preventDefault()
           toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
-            success: "Done",
-            error: "Error",
+            loading: { title: `Saving ${row.original.header}` },
+            success: { title: "Done" },
+            error: { title: "Error" },
           })
         }}
       >
@@ -228,9 +228,9 @@ const columns: ColumnDef<DataTableFeatures, z.infer<typeof schema>>[] = [
         onSubmit={(e) => {
           e.preventDefault()
           toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
-            success: "Done",
-            error: "Error",
+            loading: { title: `Saving ${row.original.header}` },
+            success: { title: "Done" },
+            error: { title: "Error" },
           })
         }}
       >

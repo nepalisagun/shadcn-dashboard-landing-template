@@ -1,6 +1,7 @@
 "use client"
 
 import { Card } from '@/components/ui/card'
+import { Skeleton } from "@/components/ui/skeleton"
 
 // Simple icon component for company logos
 const SimpleIcon = ({ iconSlug, size = 24 }: { iconSlug: string; size?: number }) => {
@@ -33,7 +34,7 @@ const SimpleIcon = ({ iconSlug, size = 24 }: { iconSlug: string; size?: number }
   const iconPath = iconMap[iconSlug as keyof typeof iconMap]
 
   if (!iconPath) {
-    return <div className='bg-muted animate-pulse rounded-sm' style={{ width: size, height: size }} />
+    return <Skeleton className='rounded-sm' style={{ width: size, height: size }} />
   }
 
   return (

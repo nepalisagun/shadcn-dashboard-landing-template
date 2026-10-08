@@ -22,7 +22,7 @@ A comprehensive overview of what's included in the template.
 
 ## Component Library
 
-**Built on shadcn/ui v3**
+**Built on shadcn/ui**
 - All shadcn/ui components included
 - Custom dashboard components
 - Advanced data tables with TanStack Table
@@ -42,14 +42,14 @@ A comprehensive overview of what's included in the template.
 - Optimized for SPAs
 
 **Next.js Version**
-- Next.js 15 + App Router
+- Next.js 16 + App Router
 - SSR/SSG capabilities
 - SEO optimized
 
 ## Developer Features
 
 **Modern Stack**
-- React 19, TypeScript 5.x, Tailwind CSS v4
+- React 19, TypeScript 6, Tailwind CSS v4
 - Full type safety and excellent DX
 - ESLint, Prettier, and build optimization
 

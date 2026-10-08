@@ -13,10 +13,10 @@ The documentation is organized into framework-specific sections to provide targe
 
 ### 🔧 Framework-Specific Guides
 - **[Vite Version](./vite/)** - React + Vite + React Router DOM
-- **[Next.js Version](./nextjs/)** - Next.js 15 + App Router
+- **[Next.js Version](./nextjs/)** - Next.js 16 + App Router
 
 ### 🎨 Component System
-- **[Component Library](./components/)** - shadcn/ui v3 integration
+- **[Component Library](./components/)** - shadcn/ui integration
 - **[Theme Customizer](./theme-customizer/)** - Real-time theme editing
 - **[Layouts](./layouts/)** - Layout system and navigation
 

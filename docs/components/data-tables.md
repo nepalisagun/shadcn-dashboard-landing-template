@@ -1,6 +1,6 @@
 # Data Tables
 
-The template includes a powerful data table component built with TanStack Table v8. It provides sorting, filtering, pagination, and selection features out of the box.
+The template includes a powerful data table component built with TanStack Table v9. It provides sorting, filtering, pagination, and selection features out of the box.
 
 ## Basic Usage
 
@@ -55,13 +55,15 @@ export const columns: ColumnDef<User>[] = [
     id: "actions",
     cell: ({ row }) => (
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="h-8 w-8 p-0">
-            <MoreHorizontal className="h-4 w-4" />
-          </Button>
+        <DropdownMenuTrigger
+          render={<Button variant="ghost" className="h-8 w-8 p-0" />}
+        >
+          <MoreHorizontal className="h-4 w-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuLabel>Actions</DropdownMenuLabel>
+          <DropdownMenuGroup>
+            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+          </DropdownMenuGroup>
           <DropdownMenuItem>Edit user</DropdownMenuItem>
           <DropdownMenuItem>Delete user</DropdownMenuItem>
         </DropdownMenuContent>
@@ -190,10 +192,8 @@ Allow users to show/hide columns:
 ```typescript
 // Column visibility toggle
 <DropdownMenu>
-  <DropdownMenuTrigger asChild>
-    <Button variant="outline" className="ml-auto">
-      Columns <ChevronDown className="ml-2 h-4 w-4" />
-    </Button>
+  <DropdownMenuTrigger render={<Button variant="outline" className="ml-auto" />}>
+    Columns <ChevronDown className="ml-2 h-4 w-4" />
   </DropdownMenuTrigger>
   <DropdownMenuContent align="end">
     {table

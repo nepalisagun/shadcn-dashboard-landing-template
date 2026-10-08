@@ -1,6 +1,6 @@
 # Next.js Version Guide
 
-The Next.js version of ShadcnStore provides a full-stack React framework with server-side rendering, static generation, and advanced optimization features. This guide covers the Next.js 15 implementation with App Router.
+The Next.js version of ShadcnStore provides a full-stack React framework with server-side rendering, static generation, and advanced optimization features. This guide covers the Next.js 16 implementation with App Router.
 
 ## Overview
 
@@ -21,7 +21,7 @@ The Next.js version is optimized for:
 - Incremental static regeneration (ISR)
 - Client-side rendering where appropriate
 
-### 🚀 Next.js 15 Features
+### 🚀 Next.js 16 Features
 - App Router with nested layouts
 - Server Components by default
 - Streaming and Suspense integration

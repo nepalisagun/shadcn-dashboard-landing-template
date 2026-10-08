@@ -5,9 +5,9 @@ The modern technologies powering the template.
 ## Core Technologies
 
 **Frontend**
-- React 19 with TypeScript 5.x
-- Vite or Next.js 15 for building
-- shadcn/ui v3 with Radix UI primitives
+- React 19 with TypeScript 6
+- Vite or Next.js 16 for building
+- shadcn/ui (base-nova) with Base UI primitives
 - Tailwind CSS v4 for styling
 
 **State & Data**

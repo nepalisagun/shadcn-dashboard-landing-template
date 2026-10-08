@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Shadcn Dashboard & Landing',
-  description: 'Open-source admin dashboard & landing page template built with React, TypeScript, shadcn/ui v3, and Tailwind CSS v4. Developed by ShadcnStore.',
+  description: 'Open-source admin dashboard & landing page template built with React, TypeScript, shadcn/ui, and Tailwind CSS v4. Developed by ShadcnStore.',
 
   // Theme configuration
   themeConfig: {
@@ -106,7 +106,7 @@ export default defineConfig({
 
     // Social links
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/silicondeck/shadcn-dashboard-landing-template' }
+      { icon: 'github', link: 'https://github.com/shadcnstore/shadcn-dashboard-landing-template' }
     ],
 
     // Footer
@@ -122,7 +122,7 @@ export default defineConfig({
 
     // Edit link
     editLink: {
-      pattern: 'https://github.com/silicondeck/shadcn-dashboard-landing-template/edit/main/docs/:path',
+      pattern: 'https://github.com/shadcnstore/shadcn-dashboard-landing-template/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     }
   },

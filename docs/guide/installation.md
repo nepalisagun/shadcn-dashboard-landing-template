@@ -4,7 +4,7 @@ Get the template running in under 2 minutes. Choose between Vite (SPA) or Next.j
 
 ## Prerequisites
 
-- Node.js 18+ and pnpm (recommended)
+- Node.js 20.19+ and pnpm (recommended)
 - Git for cloning
 
 ## Quick Setup
@@ -12,7 +12,7 @@ Get the template running in under 2 minutes. Choose between Vite (SPA) or Next.j
 ### Vite Version (SPA)
 
 ```bash
-git clone https://github.com/silicondeck/shadcn-dashboard-landing-template.git
+git clone https://github.com/shadcnstore/shadcn-dashboard-landing-template.git
 cd shadcn-dashboard-landing-template/vite-version
 pnpm install
 pnpm dev
@@ -23,7 +23,7 @@ Open `http://localhost:5173`
 ### Next.js Version (SSR/SSG)
 
 ```bash
-git clone https://github.com/silicondeck/shadcn-dashboard-landing-template.git
+git clone https://github.com/shadcnstore/shadcn-dashboard-landing-template.git
 cd shadcn-dashboard-landing-template/nextjs-version
 pnpm install
 pnpm dev
@@ -51,7 +51,7 @@ pnpm type-check   # TypeScript validation
 
 **Common Issues:**
 
-- **Node version**: Ensure Node.js 18+
+- **Node version**: Ensure Node.js 20.19+
 - **Port in use**: Use `pnpm dev -- --port 5174` (Vite) or `pnpm dev -p 3001` (Next.js)
 - **TypeScript errors**: Run `pnpm install` and restart your editor
 

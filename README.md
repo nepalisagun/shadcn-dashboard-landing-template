@@ -1,7 +1,7 @@
 # ShadCN Dashboard + Landing Page Template
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![GitHub Stars](https://img.shields.io/github/stars/silicondeck/shadcn-dashboard-landing-template?style=social)](https://github.com/silicondeck/shadcn-dashboard-landing-template)
+[![GitHub Stars](https://img.shields.io/github/stars/shadcnstore/shadcn-dashboard-landing-template?style=social)](https://github.com/shadcnstore/shadcn-dashboard-landing-template)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -17,9 +17,11 @@
 
 </div>
 
-Introducing a sleek, modern, and open-source admin dashboard template built with the latest web technologies, including React + TypeScript + Vite and Next.js + TypeScript. Powered by shadcn/ui v3 and Tailwind CSS v4, this project offers a clean, responsive, and highly customizable UI. Developed and maintained by [ShadcnStore](https://shadcnstore.com), this free and open-source template is designed to accelerate your development process. Whether you're building an admin panel, SaaS dashboard, or launching an AI-driven product, this dashboard provides a beautiful, production-ready interface for your application — complete with a seamless dashboard and a fully-featured landing page to help you hit the ground running.
+Introducing a sleek, modern, and open-source admin dashboard template built with the latest web technologies, including React + TypeScript + Vite and Next.js + TypeScript. Powered by shadcn/ui and Tailwind CSS v4, this project offers a clean, responsive, and highly customizable UI. Developed and maintained by [ShadcnStore](https://shadcnstore.com), this free and open-source template is designed to accelerate your development process. Whether you're building an admin panel, SaaS dashboard, or launching an AI-driven product, this dashboard provides a beautiful, production-ready interface for your application — complete with a seamless dashboard and a fully-featured landing page to help you hit the ground running.
 
 🚀 **Free & Open Source** by [**ShadcnStore**](https://shadcnstore.com) - Your gateway to premium UI components and templates.
+
+> **2.0 is out.** The template now runs on [Base UI](https://base-ui.com) instead of Radix UI, with every dependency on its latest release. Upgrading a customized copy? See the [changelog](./CHANGELOG.md#migrating-a-customized-1x-copy).
 
 
 ---
@@ -45,7 +47,7 @@ Experience the template in action:
 ⚡ **Dual Framework Support:**
 
 - **Vite** - Lightning-fast development experience
-- **Next.js 15** - Production-ready with App Router
+- **Next.js 16** - Production-ready with App Router
 
 🎨 **Live Theme Customization:**
 
@@ -78,7 +80,7 @@ Experience the template in action:
 - **Modern Tech Stack** - React 19, TypeScript, Tailwind CSS v4
 - **Cross-Platform** - Works with both Vite and Next.js
 - **Type Safety** - Full TypeScript support throughout
-- **Component Library** - Latest shadcn/ui v3 with Radix UI
+- **Component Library** - shadcn/ui on Base UI (base-nova style)
 - **Easy Customization** - Well-structured, modular codebase
 
 ---
@@ -104,7 +106,7 @@ Experience the template in action:
 │   │   │   ├── 📁 faqs/          # FAQ pages
 │   │   │   └── 📁 pricing/       # Pricing pages
 │   │   ├── 📁 components/        # UI components
-│   │   │   ├── 📁 ui/            # shadcn/ui v3 components
+│   │   │   ├── 📁 ui/            # shadcn/ui components
 │   │   │   ├── 📁 layouts/       # Layout components
 │   │   │   └── 📁 theme-customizer/ # Live theme editor
 │   │   ├── 📁 hooks/             # Custom React hooks
@@ -112,7 +114,7 @@ Experience the template in action:
 │   │   └── 📁 types/             # TypeScript type definitions
 │   └── 📄 package.json           # Vite dependencies
 │
-├── 📁 nextjs-version/            # Next.js 15 version
+├── 📁 nextjs-version/            # Next.js 16 version
 │   ├── 📁 src/
 │   │   ├── 📁 app/               # App Router with route groups
 │   │   │   ├── 📁 (auth)/        # Authentication route group
@@ -153,13 +155,13 @@ Experience the template in action:
 
 ### Prerequisites
 
-- **Node.js** 18+
+- **Node.js** 20.19+ (22 LTS or newer recommended)
 - **pnpm** (recommended) or npm
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/silicondeck/shadcn-dashboard-landing-template
+git clone https://github.com/shadcnstore/shadcn-dashboard-landing-template
 cd shadcn-dashboard
 ```
 
@@ -315,13 +317,13 @@ If you want to remove the theme customizer from your project:
 
 - **React 19** - Latest React with concurrent features
 - **TypeScript** - Full type safety
-- **Vite** - Ultra-fast development
-- **Next.js 15** - Production-ready with App Router
+- **Vite 8** - Ultra-fast development
+- **Next.js 16** - Production-ready with App Router
 
 ### **UI & Styling**
 
-- **shadcn/ui v3** - Latest component library
-- **Radix UI** - Accessible primitives
+- **shadcn/ui** - base-nova style components
+- **Base UI** - Accessible, unstyled primitives
 - **Tailwind CSS v4** - Utility-first styling
 - **tweakcn** - Advanced theme management
 - **Lucide React** - Beautiful icons
@@ -514,7 +516,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 This template is built on the shoulders of amazing open-source projects:
 
 - **[shadcn/ui](https://ui.shadcn.com)** - Beautiful and accessible components
-- **[Radix UI](https://www.radix-ui.com)** - Low-level accessible primitives
+- **[Base UI](https://base-ui.com)** - Accessible, unstyled primitives
 - **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
 - **[Lucide Icons](https://lucide.dev)** - Beautiful & consistent icons
 - **[tweakcn](https://tweakcn.com)** - Advanced theme customization
@@ -528,8 +530,7 @@ This template is built on the shoulders of amazing open-source projects:
 ### **Get Help**
 
 - 📖 **Documentation** - This README covers everything
-- 🐛 **Issues** - [Report bugs](https://github.com/silicondeck/shadcn-dashboard-landing-template/issues)
-- 💬 **Discussions** - [Join conversations](https://github.com/silicondeck/shadcn-dashboard-landing-template/discussions)
+- 🐛 **Issues** - [Report bugs](https://github.com/shadcnstore/shadcn-dashboard-landing-template/issues)
 
 ### **Stay Connected**
 

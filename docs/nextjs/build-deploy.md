@@ -46,7 +46,6 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: [
       'lucide-react',
-      '@radix-ui/react-icons',
       'recharts',
       'react-hook-form',
       '@tanstack/react-table'
@@ -636,7 +635,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '24'
           cache: 'pnpm'
       
       - name: Install pnpm

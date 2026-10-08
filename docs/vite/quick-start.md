@@ -16,7 +16,7 @@ Before getting started, ensure you have:
 
 ```bash
 # Clone the repository
-git clone https://github.com/silicondeck/shadcn-dashboard-landing-template.git
+git clone https://github.com/shadcnstore/shadcn-dashboard-landing-template.git
 cd shadcn-dashboard-landing-template
 ```
 

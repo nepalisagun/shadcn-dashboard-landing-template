@@ -1,13 +1,13 @@
 # Component Library
 
-The Shadcn Dashboard + Landing Page Template includes a comprehensive component library built on **shadcn/ui v3** with **Radix UI primitives** and **Tailwind CSS v4**. This section covers all available components, their usage patterns, and customization options.
+The Shadcn Dashboard + Landing Page Template includes a comprehensive component library built on **shadcn/ui** (base-nova style) with **Base UI primitives** and **Tailwind CSS v4**. This section covers all available components, their usage patterns, and customization options.
 
 ## Overview
 
 The component library is organized into several categories:
 
 ### UI Foundation Components
-Core building blocks from shadcn/ui v3 including buttons, inputs, cards, dialogs, and other essential interface elements.
+Core building blocks from shadcn/ui including buttons, inputs, cards, dialogs, and other essential interface elements.
 
 ### Data Display Components
 Advanced components for presenting information such as data tables, charts, calendars, and progress indicators.
@@ -23,7 +23,7 @@ Structural components for page organization including layouts, headers, footers,
 
 ## Key Features
 
-- **shadcn/ui v3 Integration** - Latest version with improved performance and accessibility
+- **shadcn/ui Integration** - Latest version with improved performance and accessibility
 - **TypeScript Support** - Full type safety with excellent developer experience
 - **Accessibility First** - WCAG AA compliant with keyboard navigation and screen reader support
 - **Customizable** - Easy theming with CSS variables and variant systems

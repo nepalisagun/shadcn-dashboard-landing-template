@@ -53,7 +53,7 @@ export default defineConfig({
           // Separate vendor libraries
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+          ui: ['@base-ui/react'],
           charts: ['recharts'],
           table: ['@tanstack/react-table'],
         },
@@ -168,7 +168,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '24'
         cache: 'pnpm'
         
     - name: Install pnpm

@@ -78,7 +78,7 @@ nextjs-version/
 
 ## Key Features
 
-### Next.js 15 with App Router
+### Next.js 16 with App Router
 
 - **Server Components** - Optimal performance with RSC
 - **File-based routing** - Automatic route generation
@@ -91,7 +91,7 @@ nextjs-version/
 - **TypeScript** - Full type safety
 - **ESLint** - Code quality enforcement
 - **Tailwind CSS v4** - Modern utility-first styling
-- **shadcn/ui v3** - Latest component library
+- **shadcn/ui** - base-nova style components
 - **Next.js optimizations** - Image optimization, font loading, etc.
 
 ## Development Server

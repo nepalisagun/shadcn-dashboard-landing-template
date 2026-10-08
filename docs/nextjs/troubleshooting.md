@@ -48,7 +48,6 @@ PORT=3001 pnpm dev
      experimental: {
        optimizePackageImports: [
          'lucide-react',
-         '@radix-ui/react-icons',
          'recharts',
          '@tanstack/react-table',
        ],

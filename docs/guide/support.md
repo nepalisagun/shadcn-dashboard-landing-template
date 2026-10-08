@@ -13,7 +13,7 @@ Get help with the Shadcn Dashboard template.
 ### Common Issues
 
 **Build Errors**
-- Check Node.js version (18+ required)
+- Check Node.js version (20.19+ required)
 - Clear `node_modules` and reinstall: `rm -rf node_modules pnpm-lock.yaml && pnpm install`
 - Verify TypeScript configuration
 
@@ -30,13 +30,11 @@ Get help with the Shadcn Dashboard template.
 ## Community Support
 
 ### GitHub
-- **[Issues](https://github.com/silicondeck/shadcn-dashboard-template/issues)** - Bug reports
-- **[Discussions](https://github.com/silicondeck/shadcn-dashboard-template/discussions)** - Questions
-- **[Wiki](https://github.com/silicondeck/shadcn-dashboard-template/wiki)** - Guides
+- **[Issues](https://github.com/shadcnstore/shadcn-dashboard-landing-template/issues)** - Bug reports
 
 ### Discord
 Join our community for real-time help:
-- [Discord Server](https://discord.com/invite/XEQhPc9a6p) (if available)
+- [Discord Server](https://discord.com/invite/XEQhPc9a6p)
 
 ### Social Media
 - **Twitter**: [@ShadcnStore](https://twitter.com/shadcnstore)
@@ -62,7 +60,7 @@ When reporting bugs, include:
 ## Feature Requests
 
 Suggest new features via:
-- [GitHub Discussions](https://github.com/silicondeck/shadcn-dashboard-template/discussions)
+- [ShadcnStore Discord](https://discord.gg/XEQhPc9a6p)
 - Community voting on priorities
 - Detailed use case descriptions
 
@@ -88,7 +86,7 @@ A: Choose based on your project needs:
 A: No, choose one version. Both provide identical UI components and features but different architectures.
 
 **Q: What Node.js version is required?**
-A: Node.js 18+ is required. Node.js 20+ is recommended for best performance.
+A: Node.js 20.19+ is required (Vite 8 and Next.js 16 both need it). Node.js 22 LTS or newer is recommended.
 
 ### Development
 
@@ -150,7 +148,7 @@ A: Yes, for the Vite version. Configure the base path in `vite.config.ts` for Gi
 
 **Q: I'm getting TypeScript errors**
 A: 
-1. Check Node.js version (18+)
+1. Check Node.js version (20.19+)
 2. Run `pnpm install` to ensure dependencies
 3. Restart TypeScript server in your editor
 4. Check for missing type definitions
@@ -280,7 +278,7 @@ Contact [community@shadcnstore.com](mailto:community@shadcnstore.com) if interes
 **Stay Connected**
 - Twitter: [@shadcnstore](https://twitter.com/shadcnstore)
 - LinkedIn: [ShadcnStore](https://linkedin.com/company/shadcnstore)
-- GitHub: [silicondeck](https://github.com/silicondeck)
+- GitHub: [shadcnstore](https://github.com/shadcnstore)
 
 ### Response Times
 

@@ -1,10 +1,10 @@
 # shadcn/ui Integration
 
-The template comes with shadcn/ui v3 pre-configured and ready to use. This guide covers the configuration, component structure, and how to add new components.
+The template comes with shadcn/ui pre-configured and ready to use. This guide covers the configuration, component structure, and how to add new components.
 
 ## Installation
 
-The template has shadcn/ui v3 already configured. To add new components:
+The template has shadcn/ui already configured. To add new components:
 
 ```bash
 # Add individual components
@@ -47,7 +47,7 @@ The shadcn/ui configuration is stored in `components.json`:
 
 ### UI Foundation Components
 
-Core building blocks from shadcn/ui v3:
+Core building blocks from shadcn/ui:
 
 - **Button** - Various button styles and states
 - **Input** - Text inputs, search fields, and form controls
@@ -90,29 +90,28 @@ Complete form handling solution:
 All shadcn/ui components follow a consistent pattern:
 
 ```typescript
-// Example: Button component structure
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
+// Example: Button component structure (base-nova style)
+import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        default: "bg-primary text-primary-foreground hover:bg-primary/80",
+        outline: "border-border bg-background hover:bg-muted hover:text-foreground",
+        secondary: "bg-secondary text-secondary-foreground",
+        ghost: "hover:bg-muted hover:text-foreground",
+        destructive: "bg-destructive/10 text-destructive hover:bg-destructive/20",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        default: "h-8 gap-1.5 px-2.5",
+        sm: "h-7 gap-1 px-2.5 text-[0.8rem]",
+        lg: "h-9 gap-1.5 px-2.5",
+        icon: "size-8",
       },
     },
     defaultVariants: {
@@ -122,27 +121,37 @@ const buttonVariants = cva(
   }
 )
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+function Button({
+  className,
+  variant = "default",
+  size = "default",
+  ...props
+}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
+  return (
+    <ButtonPrimitive
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  )
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
-
 export { Button, buttonVariants }
+```
+
+The components are built on [Base UI](https://base-ui.com). To render a component as a
+different element, pass it through the `render` prop (Base UI's equivalent of Radix's
+`asChild`). When a Button renders something that is not a `<button>`, add
+`nativeButton={false}`:
+
+```tsx
+<Button render={<a href="/docs" />} nativeButton={false}>
+  Read the docs
+</Button>
+
+<DropdownMenuTrigger render={<Button variant="outline" />}>
+  Open menu
+</DropdownMenuTrigger>
 ```
 
 ## Form Integration

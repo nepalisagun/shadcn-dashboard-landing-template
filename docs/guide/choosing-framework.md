@@ -101,7 +101,7 @@ export default function Dashboard() {
 Both versions maintain **100% feature parity** for:
 
 ### ✅ Identical Features:
-- **Component Library**: Same shadcn/ui v3 components
+- **Component Library**: Same shadcn/ui components
 - **Theme Customizer**: Identical theming capabilities
 - **Page Templates**: All 30+ pages available in both
 - **Styling**: Same Tailwind CSS v4 implementation

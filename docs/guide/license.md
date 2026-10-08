@@ -30,7 +30,7 @@ Key dependencies and their licenses:
 - **React** - MIT License
 - **Next.js** - MIT License
 - **Tailwind CSS** - MIT License
-- **Radix UI** - MIT License
+- **Base UI** - MIT License
 - **Lucide Icons** - ISC License
 
 ### shadcn/ui
@@ -53,6 +53,6 @@ For extended licensing or commercial support:
 
 ---
 
-For the full license text, see [LICENSE.md](https://github.com/silicondeck/shadcn-dashboard-template/blob/main/LICENSE.md).
+For the full license text, see [LICENSE.md](https://github.com/shadcnstore/shadcn-dashboard-landing-template/blob/main/License.md).
 
 **Summary**: The MIT License provides maximum freedom for using, modifying, and distributing the Shadcn Dashboard + Landing Page Template. Use it however you need for personal or commercial projects, with no restrictions or ongoing obligations.

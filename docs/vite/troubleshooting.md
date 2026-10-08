@@ -230,7 +230,7 @@ pnpm dev --port 5174
            manualChunks: {
              vendor: ['react', 'react-dom'],
              router: ['react-router-dom'],
-             ui: ['@radix-ui/react-dialog'],
+             ui: ['@base-ui/react'],
            },
          },
        },

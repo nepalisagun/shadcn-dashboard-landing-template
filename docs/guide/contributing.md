@@ -96,7 +96,7 @@ Thank you for contributing! Every improvement helps the community.
 ### Development Environment
 
 **Prerequisites**
-- Node.js 18+ installed
+- Node.js 20.19+ installed
 - pnpm package manager (recommended)
 - Git for version control
 - Code editor (VS Code recommended)
@@ -109,7 +109,7 @@ git clone https://github.com/YOUR_USERNAME/shadcn-dashboard-landing-template.git
 cd shadcn-dashboard-landing-template
 
 # Add upstream remote
-git remote add upstream https://github.com/silicondeck/shadcn-dashboard-landing-template.git
+git remote add upstream https://github.com/shadcnstore/shadcn-dashboard-landing-template.git
 ```
 
 **Install Dependencies**
@@ -484,7 +484,7 @@ All contributors are recognized in:
 - [shadcn/ui](https://ui.shadcn.com/) - Component library
 
 ### Community
-- [GitHub Repository](https://github.com/silicondeck/shadcn-dashboard-landing-template)
+- [GitHub Repository](https://github.com/shadcnstore/shadcn-dashboard-landing-template)
 - [Discord Server](https://discord.com/invite/XEQhPc9a6p)
 - [ShadcnStore](https://shadcnstore.com) - Premium components and templates
 

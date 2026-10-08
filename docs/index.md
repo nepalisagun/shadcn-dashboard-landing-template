@@ -2,7 +2,7 @@
 layout: home
 hero:
   name: "Shadcn Dashboard + Landing Page Template"
-  tagline: "Beautiful admin dashboard & landing page template built with shadcn/ui v3 and Tailwind CSS v4."
+  tagline: "Beautiful admin dashboard & landing page template built with shadcn/ui and Tailwind CSS v4."
   image:
     src: /hero.png
     alt: Dashboard Preview
@@ -25,7 +25,7 @@ features:
     details: Beautiful marketing landing page with hero, features, pricing, testimonials and complete business sections
   - icon: ⚡
     title: Dual Framework
-    details: Choose between Vite for lightning-fast development or Next.js 15 for production-ready SSR/SSG capabilities
+    details: Choose between Vite for lightning-fast development or Next.js 16 for production-ready SSR/SSG capabilities
   - icon: 🎨
     title: Live Theme Customizer
     details: Real-time theme editing with tweakcn integration. Customize colors, layouts, and components instantly
@@ -34,7 +34,7 @@ features:
     details: Mobile-first design with container queries that works seamlessly across all devices and screen sizes
   - icon: 🚀
     title: Production Ready
-    details: Clean, optimized TypeScript code with shadcn/ui v3, Tailwind CSS v4, and modern development tools
+    details: Clean, optimized TypeScript code with shadcn/ui, Tailwind CSS v4, and modern development tools
 ---
 
 ## 🌟 Live Demos

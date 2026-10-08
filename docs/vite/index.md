@@ -20,7 +20,7 @@ The Vite version is optimized for:
 - Optimized development server
 
 ### 📦 Modern Build System
-- Vite 5 with Rollup-based production builds
+- Vite 8 with Rolldown-based production builds
 - Tree shaking and code splitting
 - TypeScript support out of the box
 - ESBuild for fast transpilation
@@ -32,7 +32,7 @@ The Vite version is optimized for:
 - Dynamic route loading
 
 ### 🎨 UI Framework Integration
-- shadcn/ui v3 components
+- shadcn/ui components
 - Tailwind CSS v4 with @tailwindcss/vite plugin
 - CSS-in-JS support
 - PostCSS processing
@@ -110,7 +110,7 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+          ui: ['@base-ui/react'],
         },
       },
     },

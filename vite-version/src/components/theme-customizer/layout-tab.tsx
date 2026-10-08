@@ -72,7 +72,7 @@ export function LayoutTab() {
             <FieldLabel
               key={variant.value}
               htmlFor={`sidebar-variant-${variant.value}`}
-              className="relative w-full cursor-pointer gap-0 rounded-md border border-border p-4 transition-colors hover:border-border/60 has-data-checked:border-primary has-data-checked:bg-primary/10"
+              className="relative w-full cursor-pointer flex-col items-stretch gap-0 rounded-md border border-border p-4 transition-colors hover:border-border/60 has-data-checked:border-primary has-data-checked:bg-primary/10"
             >
               <RadioGroupItem
                 id={`sidebar-variant-${variant.value}`}
@@ -151,7 +151,7 @@ export function LayoutTab() {
             <FieldLabel
               key={option.value}
               htmlFor={`sidebar-collapsible-${option.value}`}
-              className="relative w-full cursor-pointer gap-0 rounded-md border border-border p-4 transition-colors hover:border-border/60 has-data-checked:border-primary has-data-checked:bg-primary/10"
+              className="relative w-full cursor-pointer flex-col items-stretch gap-0 rounded-md border border-border p-4 transition-colors hover:border-border/60 has-data-checked:border-primary has-data-checked:bg-primary/10"
             >
               <RadioGroupItem
                 id={`sidebar-collapsible-${option.value}`}
@@ -227,7 +227,7 @@ export function LayoutTab() {
             <FieldLabel
               key={side.value}
               htmlFor={`sidebar-side-${side.value}`}
-              className="relative w-full cursor-pointer gap-0 rounded-md border border-border p-4 transition-colors hover:border-border/60 has-data-checked:border-primary has-data-checked:bg-primary/10"
+              className="relative w-full cursor-pointer flex-col items-stretch gap-0 rounded-md border border-border p-4 transition-colors hover:border-border/60 has-data-checked:border-primary has-data-checked:bg-primary/10"
             >
               <RadioGroupItem
                 id={`sidebar-side-${side.value}`}

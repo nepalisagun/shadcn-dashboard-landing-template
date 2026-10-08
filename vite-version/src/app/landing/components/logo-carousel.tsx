@@ -1,6 +1,5 @@
 "use client"
 
-import { Card } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 
 // Simple icon component for company logos
@@ -95,9 +94,9 @@ export function LogoCarousel() {
               <div className="flex animate-logo-scroll gap-x-8 sm:gap-x-12">
                 {/* First set of logos */}
                 {techCompanies.map((company, index) => (
-                  <Card
+                  <div
                     key={`first-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center h-16 w-40 opacity-60 hover:opacity-100 transition-opacity duration-300 border-0 shadow-none bg-transparent"
+                    className="flex h-16 w-40 shrink-0 items-center justify-center opacity-60 transition-opacity duration-300 hover:opacity-100"
                   >
                     <div className="flex items-center gap-3">
                       <SimpleIcon iconSlug={company.id} size={28} />
@@ -105,13 +104,13 @@ export function LogoCarousel() {
                         {company.name}
                       </span>
                     </div>
-                  </Card>
+                  </div>
                 ))}
                 {/* Second set for seamless loop - identical to first */}
                 {techCompanies.map((company, index) => (
-                  <Card
+                  <div
                     key={`second-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center h-16 w-40 opacity-60 hover:opacity-100 transition-opacity duration-300 border-0 shadow-none bg-transparent"
+                    className="flex h-16 w-40 shrink-0 items-center justify-center opacity-60 transition-opacity duration-300 hover:opacity-100"
                   >
                     <div className="flex items-center gap-3">
                       <SimpleIcon iconSlug={company.id} size={28} />
@@ -119,7 +118,7 @@ export function LogoCarousel() {
                         {company.name}
                       </span>
                     </div>
-                  </Card>
+                  </div>
                 ))}
               </div>
             </div>

@@ -24,9 +24,9 @@ export function HeroSection() {
           {/* Announcement Badge */}
           <div className="mb-8 flex justify-center">
             <Badge variant="outline" className="px-4 py-2 border-foreground">
-              <Star className="size-3 mr-2 fill-current" />
+              <Star className="fill-current" />
               New: Premium Template Collection
-              <ArrowRight className="size-3 ml-2" />
+              <ArrowRight />
             </Badge>
           </div>
 
@@ -56,7 +56,7 @@ export function HeroSection() {
               render={<Link href="/auth/sign-up" />}
             >
               Get Started Free
-              <ArrowRight className="ml-2 size-4" />
+              <ArrowRight data-icon="inline-end" />
             </Button>
             <Button
               variant="outline"
@@ -65,7 +65,7 @@ export function HeroSection() {
               nativeButton={false}
               render={<a href="#" />}
             >
-              <Play className="mr-2 size-4" />
+              <Play data-icon="inline-start" />
               Watch Demo
             </Button>
           </div>

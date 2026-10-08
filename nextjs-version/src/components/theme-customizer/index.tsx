@@ -146,7 +146,7 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
                   onClick={handleReset}
                   className="cursor-pointer size-8"
                 >
-                  <RotateCcw className="size-4" />
+                  <RotateCcw />
                 </Button>
                 <Button
                   variant="outline"
@@ -154,7 +154,7 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
                   onClick={() => onOpenChange(false)}
                   className="cursor-pointer size-8"
                 >
-                  <X className="size-4" />
+                  <X />
                 </Button>
               </div>
             </div>
@@ -175,13 +175,13 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
                     value="theme"
                     className="cursor-pointer data-active:bg-background"
                   >
-                    <Palette className="size-4 mr-1" /> Theme
+                    <Palette /> Theme
                   </TabsTrigger>
                   <TabsTrigger
                     value="layout"
                     className="cursor-pointer data-active:bg-background"
                   >
-                    <Layout className="size-4 mr-1" /> Layout
+                    <Layout /> Layout
                   </TabsTrigger>
                 </TabsList>
                 {/* <TabsList className="grid w-full grid-cols-2 rounded-none h-12 p-1.5">

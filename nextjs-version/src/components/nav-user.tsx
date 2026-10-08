@@ -58,7 +58,7 @@ export function NavUser({
                 {user.email}
               </span>
             </div>
-            <EllipsisVertical className="ml-auto size-4" />
+            <EllipsisVertical className="ml-auto" />
           </DropdownMenuTrigger>
           <DropdownMenuContent
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"

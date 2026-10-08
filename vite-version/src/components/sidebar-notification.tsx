@@ -20,7 +20,7 @@ export function SidebarNotification() {
           className="absolute top-2 right-2 size-6 p-0 hover:bg-neutral-200 dark:hover:bg-neutral-700"
           onClick={() => setIsVisible(false)}
         >
-          <X className="size-3" />
+          <X data-icon="inline-start" />
           <span className="sr-only">Close notification</span>
         </Button>
         

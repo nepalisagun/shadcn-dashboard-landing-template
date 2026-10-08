@@ -242,7 +242,7 @@ export function DataTable({
               size="icon"
               className="size-8 cursor-pointer"
             >
-              <Eye className="size-4" />
+              <Eye data-icon="inline-start" />
               <span className="sr-only">View user</span>
             </Button>
             <Button
@@ -251,7 +251,7 @@ export function DataTable({
               className="size-8 cursor-pointer"
               onClick={() => onEditUser(user)}
             >
-              <Pencil className="size-4" />
+              <Pencil data-icon="inline-start" />
               <span className="sr-only">Edit user</span>
             </Button>
             <DropdownMenu>
@@ -264,7 +264,7 @@ export function DataTable({
                   />
                 }
               >
-                <EllipsisVertical className="size-4" />
+                <EllipsisVertical data-icon="inline-start" />
                 <span className="sr-only">More actions</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -283,7 +283,7 @@ export function DataTable({
                   className="cursor-pointer"
                   onClick={() => onDeleteUser(user.id)}
                 >
-                  <Trash2 className="mr-2 size-4" />
+                  <Trash2 />
                   Delete User
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -332,7 +332,7 @@ export function DataTable({
         </div>
         <div className="flex items-center gap-2">
           <Button variant="outline" className="cursor-pointer">
-            <Download className="mr-2 size-4" />
+            <Download data-icon="inline-start" />
             Export
           </Button>
           <UserFormDialog onAddUser={onAddUser} />
@@ -444,7 +444,7 @@ export function DataTable({
                 <Button variant="outline" className="cursor-pointer w-full" />
               }
             >
-              Columns <ChevronDown className="ml-2 size-4" />
+              Columns <ChevronDown data-icon="inline-end" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               {table

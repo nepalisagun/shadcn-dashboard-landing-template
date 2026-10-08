@@ -95,7 +95,7 @@ export function AboutSection() {
                 />
               }
             >
-              <Github className="mr-2 size-4" />
+              <Github data-icon="inline-start" />
               Star on GitHub
             </Button>
             <Button

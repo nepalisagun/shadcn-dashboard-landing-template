@@ -149,21 +149,21 @@ export function CustomerInsights() {
               value="growth"
               className="cursor-pointer flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all data-active:bg-background data-active:shadow-sm data-active:text-foreground"
             >
-              <TrendingUp className="size-4" />
+              <TrendingUp />
               <span className="hidden sm:inline">Growth</span>
             </TabsTrigger>
             <TabsTrigger
               value="demographics"
               className="cursor-pointer flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all data-active:bg-background data-active:shadow-sm data-active:text-foreground"
             >
-              <UserIcon className="size-4" />
+              <UserIcon />
               <span className="hidden sm:inline">Demographics</span>
             </TabsTrigger>
             <TabsTrigger
               value="regions"
               className="cursor-pointer flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all data-active:bg-background data-active:shadow-sm data-active:text-foreground"
             >
-              <MapPin className="size-4" />
+              <MapPin />
               <span className="hidden sm:inline">Regions</span>
             </TabsTrigger>
           </TabsList>

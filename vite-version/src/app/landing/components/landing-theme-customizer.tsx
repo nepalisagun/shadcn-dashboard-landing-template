@@ -206,7 +206,7 @@ export function LandingThemeCustomizer({
                   onClick={handleReset}
                   className="cursor-pointer size-8"
                 >
-                  <RotateCcw className="size-4" />
+                  <RotateCcw />
                 </Button>
                 <Button
                   variant="outline"
@@ -214,7 +214,7 @@ export function LandingThemeCustomizer({
                   onClick={() => onOpenChange(false)}
                   className="cursor-pointer size-8"
                 >
-                  <X className="size-4" />
+                  <X />
                 </Button>
               </div>
             </div>
@@ -234,7 +234,7 @@ export function LandingThemeCustomizer({
                   onClick={handleLightMode}
                   className="cursor-pointer mode-toggle-button relative overflow-hidden"
                 >
-                  <Sun className="size-4 mr-1 transition-transform duration-300" />
+                  <Sun className="transition-transform duration-300" data-icon="inline-start" />
                   Light
                 </Button>
                 <Button
@@ -243,7 +243,7 @@ export function LandingThemeCustomizer({
                   onClick={handleDarkMode}
                   className="cursor-pointer mode-toggle-button relative overflow-hidden"
                 >
-                  <Moon className="size-4 mr-1 transition-transform duration-300" />
+                  <Moon className="transition-transform duration-300" data-icon="inline-start" />
                   Dark
                 </Button>
               </div>
@@ -263,7 +263,7 @@ export function LandingThemeCustomizer({
                   onClick={handleRandomShadcn}
                   className="cursor-pointer"
                 >
-                  <Dices className="size-3.5 mr-1.5" />
+                  <Dices data-icon="inline-start" />
                   Random
                 </Button>
               </div>
@@ -345,7 +345,7 @@ export function LandingThemeCustomizer({
                   onClick={handleRandomTweakcn}
                   className="cursor-pointer"
                 >
-                  <Dices className="size-3.5 mr-1.5" />
+                  <Dices data-icon="inline-start" />
                   Random
                 </Button>
               </div>
@@ -452,7 +452,7 @@ export function LandingThemeCustomizer({
                 onClick={handleImportClick}
                 className="w-full cursor-pointer"
               >
-                <Upload className="size-3.5 mr-1.5" />
+                <Upload data-icon="inline-start" />
                 Import Theme
               </Button>
             </div>
@@ -514,7 +514,7 @@ export function LandingThemeCustomizer({
                   window.open("https://tweakcn.com/editor/theme", "_blank")
                 }
               >
-                <ExternalLink className="size-3.5 mr-1.5" />
+                <ExternalLink data-icon="inline-start" />
                 Open Tweakcn
               </Button>
             </div>

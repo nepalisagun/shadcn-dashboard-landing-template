@@ -116,7 +116,7 @@ function DragHandle({ id }: { id: number }) {
       size="icon"
       className="text-muted-foreground size-7 hover:bg-transparent cursor-move"
     >
-      <GripVertical className="text-muted-foreground size-3" />
+      <GripVertical className="text-muted-foreground" data-icon="inline-start" />
       <span className="sr-only">Drag to reorder</span>
     </Button>
   )
@@ -285,7 +285,7 @@ const columns: ColumnDef<DataTableFeatures, z.infer<typeof schema>>[] = [
             />
           }
         >
-          <EllipsisVertical />
+          <EllipsisVertical data-icon="inline-start" />
           <span className="sr-only">Open menu</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-32">
@@ -441,7 +441,7 @@ function TableContent({
               disabled={!currentTable.getCanPreviousPage()}
             >
               <span className="sr-only">Go to first page</span>
-              <ChevronsLeft />
+              <ChevronsLeft data-icon="inline-end" />
             </Button>
             <Button
               variant="outline"
@@ -451,7 +451,7 @@ function TableContent({
               disabled={!currentTable.getCanPreviousPage()}
             >
               <span className="sr-only">Go to previous page</span>
-              <ChevronLeft />
+              <ChevronLeft data-icon="inline-end" />
             </Button>
             <Button
               variant="outline"
@@ -461,7 +461,7 @@ function TableContent({
               disabled={!currentTable.getCanNextPage()}
             >
               <span className="sr-only">Go to next page</span>
-              <ChevronRight />
+              <ChevronRight data-icon="inline-end" />
             </Button>
             <Button
               variant="outline"
@@ -473,7 +473,7 @@ function TableContent({
               disabled={!currentTable.getCanNextPage()}
             >
               <span className="sr-only">Go to last page</span>
-              <ChevronsRight />
+              <ChevronsRight data-icon="inline-end" />
             </Button>
           </div>
         </div>
@@ -723,10 +723,10 @@ export function DataTable({
                 />
               }
             >
-              <Columns2 />
+              <Columns2 data-icon="inline-start" />
               <span className="hidden lg:inline">Customize Columns</span>
               <span className="lg:hidden">Columns</span>
-              <ChevronDown />
+              <ChevronDown data-icon="inline-end" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
               {table
@@ -753,7 +753,7 @@ export function DataTable({
             </DropdownMenuContent>
           </DropdownMenu>
           <Button variant="outline" size="sm" className="cursor-pointer">
-            <Plus />
+            <Plus data-icon="inline-start" />
             <span className="hidden lg:inline">Add Section</span>
           </Button>
         </div>
@@ -857,7 +857,7 @@ export function DataTable({
                 disabled={!table.getCanPreviousPage()}
               >
                 <span className="sr-only">Go to first page</span>
-                <ChevronsLeft />
+                <ChevronsLeft data-icon="inline-end" />
               </Button>
               <Button
                 variant="outline"
@@ -867,7 +867,7 @@ export function DataTable({
                 disabled={!table.getCanPreviousPage()}
               >
                 <span className="sr-only">Go to previous page</span>
-                <ChevronLeft />
+                <ChevronLeft data-icon="inline-end" />
               </Button>
               <Button
                 variant="outline"
@@ -877,7 +877,7 @@ export function DataTable({
                 disabled={!table.getCanNextPage()}
               >
                 <span className="sr-only">Go to next page</span>
-                <ChevronRight />
+                <ChevronRight data-icon="inline-end" />
               </Button>
               <Button
                 variant="outline"
@@ -887,7 +887,7 @@ export function DataTable({
                 disabled={!table.getCanNextPage()}
               >
                 <span className="sr-only">Go to last page</span>
-                <ChevronsRight />
+                <ChevronsRight data-icon="inline-end" />
               </Button>
             </div>
           </div>

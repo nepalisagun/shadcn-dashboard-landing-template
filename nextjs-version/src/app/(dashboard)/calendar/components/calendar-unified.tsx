@@ -212,7 +212,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-semibold">Calendar</h2>
           <Button size="sm" onClick={handleNewEvent}>
-            <Plus className="size-4 mr-1" />
+            <Plus data-icon="inline-start" />
             Event
           </Button>
         </div>
@@ -237,7 +237,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-sm font-medium">My Calendars</h3>
           <Button variant="ghost" size="sm" onClick={handleNewCalendar}>
-            <Plus className="size-4" />
+            <Plus />
           </Button>
         </div>
 
@@ -274,7 +274,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                   className="xl:hidden"
                   onClick={() => setShowCalendarSheet(true)}
                 >
-                  <Menu className="size-4" />
+                  <Menu />
                 </Button>
 
                 {/* Month Navigation */}
@@ -284,7 +284,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                     size="sm"
                     onClick={() => navigateMonth("prev")}
                   >
-                    <ChevronLeft className="size-4" />
+                    <ChevronLeft />
                   </Button>
                   <h2 className="text-lg font-semibold min-w-[140px] text-center">
                     {format(currentDate, "MMMM yyyy")}
@@ -294,7 +294,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                     size="sm"
                     onClick={() => navigateMonth("next")}
                   >
-                    <ChevronRight className="size-4" />
+                    <ChevronRight />
                   </Button>
                 </div>
 
@@ -306,7 +306,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
               <div className="flex items-center gap-2">
                 <div className="hidden sm:flex items-center gap-2">
                   <Button variant="ghost" size="sm" className="text-xs">
-                    <Search className="size-4 mr-1" />
+                    <Search data-icon="inline-start" />
                     Search
                   </Button>
                 </div>
@@ -316,7 +316,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                   <DropdownMenuTrigger
                     render={<Button variant="outline" size="sm" />}
                   >
-                    <Grid3X3 className="size-4 mr-1" />
+                    <Grid3X3 data-icon="inline-start" />
                     {viewMode === "month"
                       ? "Month"
                       : viewMode === "week"
@@ -324,23 +324,23 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                         : viewMode === "day"
                           ? "Day"
                           : "List"}
-                    <ChevronDown className="size-4 ml-1" />
+                    <ChevronDown data-icon="inline-end" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuItem onClick={() => setViewMode("month")}>
-                      <Grid3X3 className="size-4 mr-2" />
+                      <Grid3X3 />
                       Month
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setViewMode("week")}>
-                      <List className="size-4 mr-2" />
+                      <List />
                       Week
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setViewMode("day")}>
-                      <CalendarIcon className="size-4 mr-2" />
+                      <CalendarIcon />
                       Day
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setViewMode("list")}>
-                      <List className="size-4 mr-2" />
+                      <List />
                       List
                     </DropdownMenuItem>
                   </DropdownMenuContent>

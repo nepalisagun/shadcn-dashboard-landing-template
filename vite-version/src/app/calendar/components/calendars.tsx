@@ -222,7 +222,7 @@ export function Calendars({
                               />
                             }
                           >
-                            <MoreHorizontal className="size-3" />
+                            <MoreHorizontal />
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end" side="right">
                             <DropdownMenuItem

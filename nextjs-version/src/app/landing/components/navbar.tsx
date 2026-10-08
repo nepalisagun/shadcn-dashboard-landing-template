@@ -158,7 +158,7 @@ export function LandingNavbar() {
               />
             }
           >
-            <LayoutDashboard className="size-4 mr-2" />
+            <LayoutDashboard data-icon="inline-start" />
             Dashboard
           </Button>
           <Button
@@ -186,7 +186,7 @@ export function LandingNavbar() {
               <Button variant="ghost" size="icon" className="cursor-pointer" />
             }
           >
-            <Menu className="size-5" />
+            <Menu className="size-5" data-icon="inline-start" />
             <span className="sr-only">Toggle menu</span>
           </SheetTrigger>
           <SheetContent
@@ -213,8 +213,8 @@ export function LandingNavbar() {
                       }
                       className="cursor-pointer size-8"
                     >
-                      <Moon className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                      <Sun className="absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                      <Moon className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" data-icon="inline-start" />
+                      <Sun className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" data-icon="inline-end" />
                     </Button>
                     <Button
                       variant="ghost"
@@ -230,7 +230,7 @@ export function LandingNavbar() {
                         />
                       }
                     >
-                      <Github className="size-4" />
+                      <Github />
                     </Button>
                     <Button
                       variant="ghost"
@@ -238,7 +238,7 @@ export function LandingNavbar() {
                       onClick={() => setIsOpen(false)}
                       className="cursor-pointer size-8"
                     >
-                      <X className="size-4" />
+                      <X />
                     </Button>
                   </div>
                 </div>
@@ -322,7 +322,7 @@ export function LandingNavbar() {
                     nativeButton={false}
                     render={<Link href="/dashboard" />}
                   >
-                    <LayoutDashboard className="size-4" />
+                    <LayoutDashboard data-icon="inline-start" />
                     Dashboard
                   </Button>
 

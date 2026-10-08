@@ -101,20 +101,20 @@ export function ConversationList({
               />
             }
           >
-            <MoreVertical className="size-4" />
+            <MoreVertical />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem className="cursor-pointer">
-              <UserPlus className="size-4 mr-2" />
+              <UserPlus />
               New Chat
             </DropdownMenuItem>
             <DropdownMenuItem className="cursor-pointer">
-              <Filter className="size-4 mr-2" />
+              <Filter />
               Filter Messages
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="cursor-pointer">
-              <Settings className="size-4 mr-2" />
+              <Settings />
               Chat Settings
             </DropdownMenuItem>
           </DropdownMenuContent>

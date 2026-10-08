@@ -113,7 +113,7 @@ export function ThemeTab({
             onClick={handleRandomShadcn}
             className="cursor-pointer"
           >
-            <Dices className="size-3.5 mr-1.5" />
+            <Dices data-icon="inline-start" />
             Random
           </Button>
         </div>
@@ -189,7 +189,7 @@ export function ThemeTab({
             onClick={handleRandomTweakcn}
             className="cursor-pointer"
           >
-            <Dices className="size-3.5 mr-1.5" />
+            <Dices data-icon="inline-start" />
             Random
           </Button>
         </div>
@@ -294,7 +294,7 @@ export function ThemeTab({
             onClick={handleLightMode}
             className="cursor-pointer"
           >
-            <Sun className="size-4 mr-1" />
+            <Sun data-icon="inline-start" />
             Light
           </Button>
           <Button
@@ -303,7 +303,7 @@ export function ThemeTab({
             onClick={handleDarkMode}
             className="cursor-pointer"
           >
-            <Moon className="size-4 mr-1" />
+            <Moon data-icon="inline-start" />
             Dark
           </Button>
         </div>
@@ -319,7 +319,7 @@ export function ThemeTab({
           onClick={onImportClick}
           className="w-full cursor-pointer"
         >
-          <Upload className="size-3.5 mr-1.5" />
+          <Upload data-icon="inline-start" />
           Import Theme
         </Button>
       </div>
@@ -380,7 +380,7 @@ export function ThemeTab({
             window.open("https://tweakcn.com/editor/theme", "_blank")
           }
         >
-          <ExternalLink className="size-3.5 mr-1.5" />
+          <ExternalLink data-icon="inline-start" />
           Open Tweakcn
         </Button>
       </div>

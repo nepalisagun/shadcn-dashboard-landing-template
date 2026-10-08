@@ -120,7 +120,7 @@ export default function ConnectionSettings() {
                     </div>
                   </div>
                   <Button variant="outline" size="icon" className="cursor-pointer">
-                    <Globe className="size-4" />
+                    <Globe />
                   </Button>
                 </div>
                 <Separator />
@@ -136,7 +136,7 @@ export default function ConnectionSettings() {
                     </div>
                   </div>
                   <Button variant="outline" size="icon" className="cursor-pointer text-destructive">
-                    <Globe className="size-4" />
+                    <Globe />
                   </Button>
                 </div>
                 <Separator />
@@ -152,7 +152,7 @@ export default function ConnectionSettings() {
                     </div>
                   </div>
                   <Button variant="outline" size="icon" className="cursor-pointer text-destructive">
-                    <Globe className="size-4" />
+                    <Globe />
                   </Button>
                 </div>
                 <Separator />
@@ -168,7 +168,7 @@ export default function ConnectionSettings() {
                     </div>
                   </div>
                   <Button variant="outline" size="icon" className="cursor-pointer">
-                    <Globe className="size-4" />
+                    <Globe />
                   </Button>
                 </div>
               </div>

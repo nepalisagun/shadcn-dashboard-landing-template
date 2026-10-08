@@ -168,7 +168,7 @@ export function DataTableToolbar<TData extends RowData>({
             className="px-3 cursor-pointer"
             disabled={!isFiltered}
           >
-            <RefreshCcw className="size-4" />
+            <RefreshCcw data-icon="inline-start" />
             <span className="hidden lg:block">Reset Filters</span>
           </Button>
         </div>

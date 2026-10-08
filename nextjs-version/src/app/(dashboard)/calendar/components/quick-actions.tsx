@@ -65,7 +65,7 @@ export function QuickActions({
             className="w-full justify-start cursor-pointer" 
             onClick={onNewEvent}
           >
-            <Plus className="size-4 mr-2" />
+            <Plus data-icon="inline-start" />
             New Event
           </Button>
           
@@ -74,7 +74,7 @@ export function QuickActions({
             className="w-full justify-start cursor-pointer" 
             onClick={onNewMeeting}
           >
-            <Users className="size-4 mr-2" />
+            <Users data-icon="inline-start" />
             Schedule Meeting
           </Button>
           
@@ -83,7 +83,7 @@ export function QuickActions({
             className="w-full justify-start cursor-pointer" 
             onClick={onNewReminder}
           >
-            <Bell className="size-4 mr-2" />
+            <Bell data-icon="inline-start" />
             Set Reminder
           </Button>
 
@@ -94,7 +94,7 @@ export function QuickActions({
             size="sm" 
             className="w-full justify-start cursor-pointer" 
           >
-            <Share className="size-4 mr-2" />
+            <Share data-icon="inline-start" />
             Share Calendar
           </Button>
           
@@ -103,7 +103,7 @@ export function QuickActions({
             size="sm" 
             className="w-full justify-start cursor-pointer" 
           >
-            <Download className="size-4 mr-2" />
+            <Download data-icon="inline-start" />
             Export
           </Button>
           
@@ -113,7 +113,7 @@ export function QuickActions({
             className="w-full justify-start cursor-pointer" 
             onClick={onSettings}
           >
-            <Settings className="size-4 mr-2" />
+            <Settings data-icon="inline-start" />
             Settings
           </Button>
         </CardContent>

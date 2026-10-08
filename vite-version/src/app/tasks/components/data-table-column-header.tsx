@@ -34,11 +34,11 @@ export function DataTableColumnHeader<TData extends RowData, TValue>({
       >
         <span>{title}</span>
         {column.getIsSorted() === "desc" ? (
-          <ArrowDown className="ml-2 size-4" />
+          <ArrowDown />
         ) : column.getIsSorted() === "asc" ? (
-          <ArrowUp className="ml-2 size-4" />
+          <ArrowUp />
         ) : (
-          <ChevronsUpDown className="ml-2 size-4" />
+          <ChevronsUpDown />
         )}
       </Button>
     </div>

@@ -259,7 +259,7 @@ export function CalendarMain({
                       size="sm"
                       className="cursor-pointer"
                     >
-                      <MoreHorizontal className="size-4" />
+                      <MoreHorizontal />
                     </Button>
                   </div>
                 </div>
@@ -283,7 +283,7 @@ export function CalendarMain({
             className="xl:hidden cursor-pointer"
             onClick={onMenuClick}
           >
-            <Menu className="size-4" />
+            <Menu />
           </Button>
 
           <div className="flex items-center gap-2">
@@ -293,7 +293,7 @@ export function CalendarMain({
               onClick={() => navigateMonth("prev")}
               className="cursor-pointer"
             >
-              <ChevronLeft className="size-4" />
+              <ChevronLeft />
             </Button>
             <Button
               variant="outline"
@@ -301,7 +301,7 @@ export function CalendarMain({
               onClick={() => navigateMonth("next")}
               className="cursor-pointer"
             >
-              <ChevronRight className="size-4" />
+              <ChevronRight />
             </Button>
             <Button
               variant="outline"
@@ -330,24 +330,24 @@ export function CalendarMain({
             <DropdownMenuTrigger
               render={<Button variant="outline" className="cursor-pointer" />}
             >
-              {viewMode === "month" && <Grid3X3 className="size-4 mr-2" />}
-              {viewMode === "list" && <List className="size-4 mr-2" />}
+              {viewMode === "month" && <Grid3X3 />}
+              {viewMode === "list" && <List />}
               {viewMode.charAt(0).toUpperCase() + viewMode.slice(1)}
-              <ChevronDown className="size-4 ml-2" />
+              <ChevronDown data-icon="inline-end" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem
                 onClick={() => setViewMode("month")}
                 className="cursor-pointer"
               >
-                <Grid3X3 className="size-4 mr-2" />
+                <Grid3X3 />
                 Month
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() => setViewMode("list")}
                 className="cursor-pointer"
               >
-                <List className="size-4 mr-2" />
+                <List />
                 List
               </DropdownMenuItem>
             </DropdownMenuContent>

@@ -283,22 +283,22 @@ export function MessageList({
                                 />
                               }
                             >
-                              <MoreHorizontal className="size-3" />
+                              <MoreHorizontal />
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
                               <DropdownMenuItem className="cursor-pointer">
-                                <Reply className="size-4 mr-2" />
+                                <Reply />
                                 Reply
                               </DropdownMenuItem>
                               <DropdownMenuItem className="cursor-pointer">
-                                <Copy className="size-4 mr-2" />
+                                <Copy />
                                 Copy
                               </DropdownMenuItem>
                               {isOwnMessage && (
                                 <>
                                   <DropdownMenuSeparator />
                                   <DropdownMenuItem className="cursor-pointer text-destructive">
-                                    <Trash2 className="size-4 mr-2" />
+                                    <Trash2 />
                                     Delete
                                   </DropdownMenuItem>
                                 </>

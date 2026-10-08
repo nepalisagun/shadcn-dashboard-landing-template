@@ -60,7 +60,7 @@ export function DataTablePagination<TData extends RowData>({
             disabled={!table.getCanPreviousPage()}
           >
             <span className="sr-only">Go to first page</span>
-            <ChevronsLeft />
+            <ChevronsLeft data-icon="inline-end" />
           </Button>
           <Button
             variant="outline"
@@ -69,7 +69,7 @@ export function DataTablePagination<TData extends RowData>({
             disabled={!table.getCanPreviousPage()}
           >
             <span className="sr-only">Go to previous page</span>
-            <ChevronLeft />
+            <ChevronLeft data-icon="inline-end" />
           </Button>
           <div className="flex w-[100px] items-center justify-center text-sm font-medium">
             Page {table.state.pagination.pageIndex + 1} of{" "}
@@ -82,7 +82,7 @@ export function DataTablePagination<TData extends RowData>({
             disabled={!table.getCanNextPage()}
           >
             <span className="sr-only">Go to next page</span>
-            <ChevronRight />
+            <ChevronRight data-icon="inline-end" />
           </Button>
           <Button
             variant="outline"
@@ -91,7 +91,7 @@ export function DataTablePagination<TData extends RowData>({
             disabled={!table.getCanNextPage()}
           >
             <span className="sr-only">Go to last page</span>
-            <ChevronsRight />
+            <ChevronsRight data-icon="inline-end" />
           </Button>
         </div>
       </div>

@@ -92,7 +92,7 @@ export function Mail({
           <div className="m-3">
             <Button className="w-full cursor-pointer">
               {isCollapsed ? "" : "Compose"}
-              <Send className="size-4" />
+              <Send data-icon="inline-end" />
             </Button>
           </div>
           <Separator className="mx-0" />

@@ -53,7 +53,7 @@ export function DataTableFacetedFilter<TData extends RowData, TValue>({
           />
         }
       >
-        <PlusCircle />
+        <PlusCircle data-icon="inline-start" />
         {title}
         {selectedValues?.size > 0 && (
           <>

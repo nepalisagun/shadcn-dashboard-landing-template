@@ -96,7 +96,7 @@ export function RecentTransactions() {
           <CardDescription>Latest customer transactions</CardDescription>
         </div>
         <Button variant="outline" size="sm" className="cursor-pointer">
-          <Eye className="size-4 mr-2" />
+          <Eye data-icon="inline-start" />
           View All
         </Button>
       </CardHeader>
@@ -156,7 +156,7 @@ export function RecentTransactions() {
                         />
                       }
                     >
-                      <MoreHorizontal className="size-4" />
+                      <MoreHorizontal />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                       <DropdownMenuItem className="cursor-pointer">

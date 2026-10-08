@@ -196,7 +196,7 @@ export function TeamSection() {
                         />
                       }
                     >
-                      <Linkedin className="size-4" />
+                      <Linkedin />
                     </Button>
                     <Button
                       variant="ghost"
@@ -212,7 +212,7 @@ export function TeamSection() {
                         />
                       }
                     >
-                      <Github className="size-4" />
+                      <Github />
                     </Button>
                     <Button
                       variant="ghost"
@@ -228,7 +228,7 @@ export function TeamSection() {
                         />
                       }
                     >
-                      <Globe className="size-4" />
+                      <Globe />
                     </Button>
                   </div>
                 </div>

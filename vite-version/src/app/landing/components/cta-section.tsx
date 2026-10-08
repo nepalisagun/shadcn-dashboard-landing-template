@@ -16,7 +16,7 @@ export function CTASection() {
               {/* Badge and Stats */}
               <div className="flex flex-col items-center gap-4">
                 <Badge variant="outline" className="flex items-center gap-2">
-                  <TrendingUp className="size-3" />
+                  <TrendingUp />
                   Productivity Suite
                 </Badge>
 
@@ -68,7 +68,7 @@ export function CTASection() {
                     />
                   }
                 >
-                  <Package className="me-2 size-5" />
+                  <Package className="size-5" data-icon="inline-start" />
                   Browse Components
                 </Button>
                 <Button
@@ -84,9 +84,9 @@ export function CTASection() {
                     />
                   }
                 >
-                  <Github className="me-2 size-5" />
+                  <Github className="size-5" data-icon="inline-start" />
                   View on GitHub
-                  <ArrowRight className="ms-2 size-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="transition-transform group-hover:translate-x-1" data-icon="inline-end" />
                 </Button>
               </div>
 

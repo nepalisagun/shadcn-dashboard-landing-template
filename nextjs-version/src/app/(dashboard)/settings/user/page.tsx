@@ -133,7 +133,7 @@ export default function UserSettingsPage() {
                       onClick={handleFileUpload}
                       className="cursor-pointer"
                     >
-                      <Upload className="mr-2 size-4" />
+                      <Upload data-icon="inline-start" />
                       Upload new photo
                     </Button>
                     <Button

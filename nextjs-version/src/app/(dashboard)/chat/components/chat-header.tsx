@@ -147,7 +147,7 @@ export function ChatHeader({
                 />
               }
             >
-              <Search className="size-4" />
+              <Search />
             </TooltipTrigger>
             <TooltipContent>
               <p>Search in conversation</p>
@@ -165,7 +165,7 @@ export function ChatHeader({
                 />
               }
             >
-              <Phone className="size-4" />
+              <Phone />
             </TooltipTrigger>
             <TooltipContent>
               <p>Voice call</p>
@@ -183,7 +183,7 @@ export function ChatHeader({
                 />
               }
             >
-              <Video className="size-4" />
+              <Video />
             </TooltipTrigger>
             <TooltipContent>
               <p>Video call</p>
@@ -202,7 +202,7 @@ export function ChatHeader({
                 />
               }
             >
-              <Info className="size-4" />
+              <Info />
             </TooltipTrigger>
             <TooltipContent>
               <p>Conversation info</p>
@@ -217,31 +217,31 @@ export function ChatHeader({
               <Button variant="ghost" size="icon" className="cursor-pointer" />
             }
           >
-            <MoreVertical className="size-4" />
+            <MoreVertical />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={onToggleMute} className="cursor-pointer">
               {conversation.isMuted ? (
                 <>
-                  <Bell className="size-4 mr-2" />
+                  <Bell />
                   Unmute conversation
                 </>
               ) : (
                 <>
-                  <BellOff className="size-4 mr-2" />
+                  <BellOff />
                   Mute conversation
                 </>
               )}
             </DropdownMenuItem>
             <DropdownMenuItem className="cursor-pointer">
-              <Search className="size-4 mr-2" />
+              <Search />
               Search messages
             </DropdownMenuItem>
             {conversation.type === "group" && (
               <>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="cursor-pointer">
-                  <Users className="size-4 mr-2" />
+                  <Users />
                   Manage members
                 </DropdownMenuItem>
               </>

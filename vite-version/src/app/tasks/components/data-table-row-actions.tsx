@@ -35,7 +35,7 @@ export function DataTableRowActions<TData extends RowData>({
           />
         }
       >
-        <MoreHorizontal />
+        <MoreHorizontal data-icon="inline-start" />
         <span className="sr-only">Open menu for {task.id}</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">

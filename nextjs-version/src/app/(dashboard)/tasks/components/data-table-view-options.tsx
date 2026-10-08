@@ -33,7 +33,7 @@ export function DataTableViewOptions<TData extends RowData>({
           />
         }
       >
-        <Settings2 />
+        <Settings2 data-icon="inline-start" />
         View
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[150px]">

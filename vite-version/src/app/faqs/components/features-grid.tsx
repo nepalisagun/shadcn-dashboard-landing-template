@@ -42,7 +42,7 @@ export function FeaturesGrid({ features }: FeaturesGridProps) {
                   className='text-muted-foreground hover:text-foreground h-auto cursor-pointer !p-0 text-sm'
                 >
                   Learn more
-                  <ArrowRight className='ms-1.5 size-4' />
+                  <ArrowRight data-icon="inline-end" />
                 </Button>
               </CardContent>
             </Card>

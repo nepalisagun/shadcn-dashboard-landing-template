@@ -38,11 +38,11 @@ export function DashboardHeader() {
           </div>
           <div className="flex items-center gap-2">
             <Badge variant="outline" className="cursor-pointer">
-              <Clock className="size-3 mr-1" />
+              <Clock />
               Live Data
             </Badge>
             <Button variant="outline" size="sm" className="cursor-pointer">
-              <RefreshCw className="size-4 mr-2" />
+              <RefreshCw data-icon="inline-start" />
               Refresh
             </Button>
           </div>
@@ -85,7 +85,7 @@ export function DashboardHeader() {
               </Select>
             </div>
             <Button variant="outline" size="sm" className="cursor-pointer">
-              <Filter className="size-4 mr-2" />
+              <Filter data-icon="inline-start" />
               Filters
             </Button>
           </div>

@@ -202,7 +202,7 @@ export function ConversationList({
                       />
                     }
                   >
-                    <MoreHorizontal className="size-4" />
+                    <MoreHorizontal />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuItem
@@ -212,7 +212,7 @@ export function ConversationList({
                       }}
                       className="cursor-pointer"
                     >
-                      <Pin className="size-4 mr-2" />
+                      <Pin />
                       {conversation.isPinned ? "Unpin" : "Pin"}
                     </DropdownMenuItem>
                     <DropdownMenuItem
@@ -222,7 +222,7 @@ export function ConversationList({
                       }}
                       className="cursor-pointer"
                     >
-                      <VolumeX className="size-4 mr-2" />
+                      <VolumeX />
                       {conversation.isMuted ? "Unmute" : "Mute"}
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />

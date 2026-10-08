@@ -14,28 +14,28 @@ export function QuickActions() {
   return (
     <div className="flex items-center gap-2">
       <Button className="cursor-pointer">
-        <Plus className="size-4 mr-2" />
+        <Plus data-icon="inline-start" />
         New Sale
       </Button>
       <DropdownMenu>
         <DropdownMenuTrigger
           render={<Button variant="outline" className="cursor-pointer" />}
         >
-          <Settings className="size-4 mr-2" />
+          <Settings data-icon="inline-start" />
           Actions
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem className="cursor-pointer">
-            <FileText className="size-4 mr-2" />
+            <FileText />
             Generate Report
           </DropdownMenuItem>
           <DropdownMenuItem className="cursor-pointer">
-            <Download className="size-4 mr-2" />
+            <Download />
             Export Data
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem className="cursor-pointer">
-            <Settings className="size-4 mr-2" />
+            <Settings />
             Dashboard Settings
           </DropdownMenuItem>
         </DropdownMenuContent>

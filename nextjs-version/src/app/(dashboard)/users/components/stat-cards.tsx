@@ -53,13 +53,13 @@ export function StatCards() {
               >
                 {metric.growth >= 0 ? (
                   <>
-                    <TrendingUp className='me-1 size-3' />
+                    <TrendingUp />
                     {metric.growth >= 0 ? '+' : ''}
                     {metric.growth}%
                   </>
                 ) : (
                   <>
-                    <TrendingDown className='me-1 size-3' />
+                    <TrendingDown />
                     {metric.growth}%
                   </>
                 )}

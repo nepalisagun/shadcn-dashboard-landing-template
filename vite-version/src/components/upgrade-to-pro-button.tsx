@@ -29,7 +29,7 @@ export function UpgradeToProButton() {
           }
         >
           Upgrade to Pro
-          <Rocket size={30} className="ml-1" />
+          <Rocket size={30} data-icon="inline-end" />
         </HoverCardTrigger>
         <HoverCardContent className="mb-3 w-90 rounded-xl shadow-2xl bg-background border border-border p-3 animate-in fade-in slide-in-from-bottom-4 relative mr-4 md:mr-6 lg:mr-8">
           <div className="flex flex-col items-center text-center gap-3">
@@ -72,9 +72,9 @@ export function UpgradeToProButton() {
                     className="w-full flex items-center justify-center cursor-pointer"
                     variant="default"
                   >
-                    <Blocks size={16} />
+                    <Blocks size={16} data-icon="inline-start" />
                     Pro Blocks
-                    <ArrowRight size={16} />
+                    <ArrowRight size={16} data-icon="inline-end" />
                   </Button>
                 </a>
               </div>
@@ -84,7 +84,7 @@ export function UpgradeToProButton() {
                   variant="default"
                   disabled
                 >
-                  <LayoutDashboard size={16} />
+                  <LayoutDashboard size={16} data-icon="inline-start" />
                   Pro Dashboards
                 </Button>
                 <span className="absolute -top-5 -right-1">

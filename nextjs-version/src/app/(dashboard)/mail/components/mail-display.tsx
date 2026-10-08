@@ -56,7 +56,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             title="Archive"
             className="cursor-pointer disabled:cursor-not-allowed"
           >
-            <Archive className="size-4" />
+            <Archive data-icon="inline-start" />
             <span className="sr-only">Archive</span>
           </Button>
           <Button
@@ -66,7 +66,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             title="Move to junk"
             className="cursor-pointer disabled:cursor-not-allowed"
           >
-            <ArchiveX className="size-4" />
+            <ArchiveX data-icon="inline-start" />
             <span className="sr-only">Move to junk</span>
           </Button>
           <Button
@@ -76,7 +76,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             title="Move to trash"
             className="cursor-pointer disabled:cursor-not-allowed"
           >
-            <Trash2 className="size-4" />
+            <Trash2 data-icon="inline-start" />
             <span className="sr-only">Move to trash</span>
           </Button>
           <Separator orientation="vertical" className="mx-1 h-6" />
@@ -92,7 +92,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
                 />
               }
             >
-              <Clock className="size-4" />
+              <Clock data-icon="inline-start" />
               <span className="sr-only">Snooze</span>
             </PopoverTrigger>
             <PopoverContent className="flex w-auto p-0">
@@ -161,7 +161,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             title="Reply"
             className="cursor-pointer disabled:cursor-not-allowed"
           >
-            <Reply className="size-4" />
+            <Reply data-icon="inline-start" />
             <span className="sr-only">Reply</span>
           </Button>
           <Button
@@ -171,7 +171,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             title="Reply all"
             className="cursor-pointer disabled:cursor-not-allowed"
           >
-            <ReplyAll className="size-4" />
+            <ReplyAll data-icon="inline-start" />
             <span className="sr-only">Reply all</span>
           </Button>
           <Button
@@ -181,7 +181,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             title="Forward"
             className="cursor-pointer disabled:cursor-not-allowed"
           >
-            <Forward className="size-4" />
+            <Forward data-icon="inline-start" />
             <span className="sr-only">Forward</span>
           </Button>
         </div>
@@ -197,7 +197,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
               />
             }
           >
-            <MoreVertical className="size-4" />
+            <MoreVertical data-icon="inline-start" />
             <span className="sr-only">More</span>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

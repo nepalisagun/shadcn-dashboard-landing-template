@@ -68,7 +68,7 @@ export function TopProducts() {
           <CardDescription>Best performing products this month</CardDescription>
         </div>
         <Button variant="outline" size="sm" className="cursor-pointer">
-          <Eye className="size-4 mr-2" />
+          <Eye data-icon="inline-start" />
           View All
         </Button>
       </CardHeader>
@@ -102,7 +102,7 @@ export function TopProducts() {
                     variant="outline"
                     className="text-green-600 border-green-200 cursor-pointer"
                   >
-                    <TrendingUp className="size-3 mr-1" />
+                    <TrendingUp />
                     {product.growth}
                   </Badge>
                 </div>

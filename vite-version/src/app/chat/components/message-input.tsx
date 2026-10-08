@@ -107,7 +107,7 @@ export function MessageInput({
                   />
                 }
               >
-                <Paperclip className="size-4" />
+                <Paperclip />
               </TooltipTrigger>
               <TooltipContent>
                 <p>Attach file</p>
@@ -118,14 +118,14 @@ export function MessageInput({
                 onClick={() => handleFileUpload("image")}
                 className="cursor-pointer"
               >
-                <ImageIcon className="size-4 mr-2" />
+                <ImageIcon />
                 Photo or video
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() => handleFileUpload("file")}
                 className="cursor-pointer"
               >
-                <FileText className="size-4 mr-2" />
+                <FileText />
                 Document
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -162,7 +162,7 @@ export function MessageInput({
                     />
                   }
                 >
-                  <Smile className="size-4" />
+                  <Smile />
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Add emoji</p>
@@ -182,7 +182,7 @@ export function MessageInput({
                     />
                   }
                 >
-                  <MoreHorizontal className="size-4" />
+                  <MoreHorizontal />
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>More options</p>
@@ -214,9 +214,9 @@ export function MessageInput({
               }
             >
               {message.trim() ? (
-                <Send className="size-4" />
+                <Send />
               ) : (
-                <Mic className="size-4" />
+                <Mic />
               )}
             </TooltipTrigger>
             <TooltipContent>

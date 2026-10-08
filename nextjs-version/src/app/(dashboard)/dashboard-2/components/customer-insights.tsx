@@ -314,7 +314,7 @@ export function CustomerInsights() {
               <div className="text-muted-foreground text-sm hidden sm:block">
                 0 of {demographicsData.length} row(s) selected.
               </div>
-              <div className="flex flex-col gap-2 gap-2">
+              <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm" disabled>
                   Previous
                 </Button>
@@ -373,7 +373,7 @@ export function CustomerInsights() {
               <div className="text-muted-foreground text-sm hidden sm:block">
                 0 of {regionsData.length} row(s) selected.
               </div>
-              <div className="flex flex-col gap-2 gap-2">
+              <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm" disabled>
                   Previous
                 </Button>

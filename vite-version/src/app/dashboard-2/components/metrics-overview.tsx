@@ -81,7 +81,7 @@ export function MetricsOverview() {
                 </Badge>
               </CardAction>
             </CardHeader>
-            <CardFooter className="flex-col items-start gap-1.5 text-sm">
+            <CardFooter className="flex-col items-start gap-1.5 border-t-0 bg-transparent pt-0 text-sm">
               <div className="line-clamp-1 flex gap-2 font-medium">
                 {metric.footer} <TrendIcon className="size-4" />
               </div>

@@ -16,8 +16,8 @@ Before you begin, ensure you have the following installed:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/shadcn-dashboard.git
-cd shadcn-dashboard
+git clone https://github.com/shadcnstore/shadcn-dashboard-landing-template.git
+cd shadcn-dashboard-landing-template
 
 # Navigate to Next.js version
 cd nextjs-version

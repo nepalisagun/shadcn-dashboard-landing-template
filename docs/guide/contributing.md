@@ -16,8 +16,8 @@ Help improve the Shadcn Dashboard template.
 
 ```bash
 # Clone repository
-git clone https://github.com/your-username/shadcn-dashboard-template.git
-cd shadcn-dashboard-template
+git clone https://github.com/your-username/shadcn-dashboard-landing-template.git
+cd shadcn-dashboard-landing-template
 
 # Install dependencies for both versions
 cd vite-version && pnpm install

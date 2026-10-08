@@ -4,9 +4,15 @@ import { useState } from "react"
 import { CalendarIcon, Clock, MapPin, Users, Type, Tag } from "lucide-react"
 import { format } from "date-fns"
 
+import {
+  Field,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSet,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import {
   Select,
@@ -170,13 +176,13 @@ export function EventForm({
           </DialogDescription>
         </DialogHeader>
 
-        <div className="flex flex-col gap-6 py-4">
+        <FieldGroup className="flex flex-col gap-6 py-4">
           {/* Event Title */}
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="title" className="flex items-center gap-2">
+          <Field>
+            <FieldLabel htmlFor="title" className="flex items-center gap-2">
               <Type className="size-4" />
               Event Title
-            </Label>
+            </FieldLabel>
             <Input
               id="title"
               placeholder="Enter event title..."
@@ -186,15 +192,15 @@ export function EventForm({
               }
               className="text-lg font-medium"
             />
-          </div>
+          </Field>
 
           {/* Event Type */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2">
-              <Label className="flex items-center gap-2">
+            <Field>
+              <FieldLabel className="flex items-center gap-2">
                 <Tag className="size-4" />
                 Event Type
-              </Label>
+              </FieldLabel>
               <Select
                 items={eventTypes}
                 value={formData.type}
@@ -222,16 +228,16 @@ export function EventForm({
                   ))}</SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
+            </Field>
           </div>
 
           {/* Date and Time */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2">
-              <Label className="flex items-center gap-2">
+          <FieldGroup className="grid grid-cols-2 gap-4">
+            <Field>
+              <FieldLabel className="flex items-center gap-2">
                 <CalendarIcon className="size-4" />
                 Date
-              </Label>
+              </FieldLabel>
               <Popover open={showCalendar} onOpenChange={setShowCalendar}>
                 <PopoverTrigger
                   render={
@@ -256,13 +262,13 @@ export function EventForm({
                   />
                 </PopoverContent>
               </Popover>
-            </div>
+            </Field>
 
-            <div className="flex flex-col gap-2">
-              <Label className="flex items-center gap-2">
+            <Field>
+              <FieldLabel className="flex items-center gap-2">
                 <Clock className="size-4" />
                 Time
-              </Label>
+              </FieldLabel>
               <Select
                 value={formData.time}
                 onValueChange={(value) =>
@@ -280,13 +286,13 @@ export function EventForm({
                   ))}</SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
-          </div>
+            </Field>
+          </FieldGroup>
 
           {/* Duration and All Day */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2">
-              <Label>Duration</Label>
+            <Field>
+              <FieldLabel>Duration</FieldLabel>
               <Select
                 value={formData.duration}
                 onValueChange={(value) =>
@@ -304,12 +310,12 @@ export function EventForm({
                   ))}</SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
+            </Field>
 
-            <div className="flex flex-col gap-2">
-              <Label>Options</Label>
-              <div className="flex items-center gap-4 h-10">
-                <div className="flex items-center gap-2">
+            <FieldSet>
+              <FieldLegend variant="label">Options</FieldLegend>
+              <FieldGroup className="flex-row items-center gap-4 h-10">
+                <Field orientation="horizontal">
                   <Switch
                     id="all-day"
                     checked={formData.allDay}
@@ -317,11 +323,11 @@ export function EventForm({
                       setFormData((prev) => ({ ...prev, allDay: checked }))
                     }
                   />
-                  <Label htmlFor="all-day" className="text-sm">
+                  <FieldLabel htmlFor="all-day" className="text-sm">
                     All day
-                  </Label>
-                </div>
-                <div className="flex items-center gap-2">
+                  </FieldLabel>
+                </Field>
+                <Field orientation="horizontal">
                   <Switch
                     id="reminder"
                     checked={formData.reminder}
@@ -329,20 +335,20 @@ export function EventForm({
                       setFormData((prev) => ({ ...prev, reminder: checked }))
                     }
                   />
-                  <Label htmlFor="reminder" className="text-sm">
+                  <FieldLabel htmlFor="reminder" className="text-sm">
                     Reminder
-                  </Label>
-                </div>
-              </div>
-            </div>
+                  </FieldLabel>
+                </Field>
+              </FieldGroup>
+            </FieldSet>
           </div>
 
           {/* Location */}
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="location" className="flex items-center gap-2">
+          <Field>
+            <FieldLabel htmlFor="location" className="flex items-center gap-2">
               <MapPin className="size-4" />
               Location
-            </Label>
+            </FieldLabel>
             <Input
               id="location"
               placeholder="Add location..."
@@ -351,16 +357,17 @@ export function EventForm({
                 setFormData((prev) => ({ ...prev, location: e.target.value }))
               }
             />
-          </div>
+          </Field>
 
           {/* Attendees */}
-          <div className="flex flex-col gap-2">
-            <Label className="flex items-center gap-2">
+          <Field>
+            <FieldLabel htmlFor="event-attendee" className="flex items-center gap-2">
               <Users className="size-4" />
               Attendees
-            </Label>
+            </FieldLabel>
             <div className="flex gap-2">
               <Input
+                id="event-attendee"
                 placeholder="Add attendee..."
                 value={newAttendee}
                 onChange={(e) => setNewAttendee(e.target.value)}
@@ -404,11 +411,11 @@ export function EventForm({
                 ))}
               </div>
             )}
-          </div>
+          </Field>
 
           {/* Description */}
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="description">Description</Label>
+          <Field>
+            <FieldLabel htmlFor="description">Description</FieldLabel>
             <Textarea
               id="description"
               placeholder="Add description..."
@@ -421,7 +428,7 @@ export function EventForm({
               }
               rows={3}
             />
-          </div>
+          </Field>
 
           {/* Actions */}
           <div className="flex gap-3 pt-6">
@@ -445,7 +452,7 @@ export function EventForm({
               Cancel
             </Button>
           </div>
-        </div>
+        </FieldGroup>
       </DialogContent>
     </Dialog>
   )

@@ -1,9 +1,15 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { Controller,useForm } from "react-hook-form"
 import { z } from "zod"
 import { BaseLayout } from "@/components/layouts/base-layout"
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -13,14 +19,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   Select,
@@ -109,7 +107,6 @@ export default function UserSettingsPage() {
       description="Manage your personal information and preferences"
     >
       <div className="px-4 lg:px-6">
-        <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <Card>
               <CardHeader>
@@ -166,137 +163,130 @@ export default function UserSettingsPage() {
 
                 <Separator className="mb-4" />
                 {/* Form Fields */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <FieldGroup className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* First Name */}
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="firstName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>First Name</FormLabel>
-                        <FormControl>
-                          <Input
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="user-first-name">First Name</FieldLabel>
+                        
+                          <Input id="user-first-name" aria-invalid={fieldState.invalid}
                             placeholder="Enter your first name"
                             {...field}
                           />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
 
                   {/* Last Name */}
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="lastName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Last Name</FormLabel>
-                        <FormControl>
-                          <Input
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="user-last-name">Last Name</FieldLabel>
+                        
+                          <Input id="user-last-name" aria-invalid={fieldState.invalid}
                             placeholder="Enter your last name"
                             {...field}
                           />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
 
                   {/* Email */}
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>E-mail</FormLabel>
-                        <FormControl>
-                          <Input
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="user-email">E-mail</FieldLabel>
+                        
+                          <Input id="user-email" aria-invalid={fieldState.invalid}
                             type="email"
                             placeholder="Enter your email"
                             {...field}
                           />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
 
                   {/* Company */}
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="company"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Company</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Enter your company" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="user-company">Company</FieldLabel>
+                        
+                          <Input id="user-company" aria-invalid={fieldState.invalid} placeholder="Enter your company" {...field} />
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
 
                   {/* Phone Number */}
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
-                        <FormControl>
-                          <Input
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="user-phone">Phone Number</FieldLabel>
+                        
+                          <Input id="user-phone" aria-invalid={fieldState.invalid}
                             type="tel"
                             placeholder="Enter your phone number"
                             {...field}
                           />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
 
                   {/* Location */}
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="location"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Location</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Enter your location" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="user-location">Location</FieldLabel>
+                        
+                          <Input id="user-location" aria-invalid={fieldState.invalid} placeholder="Enter your location" {...field} />
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
 
                   {/* Website */}
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="website"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Website</FormLabel>
-                        <FormControl>
-                          <Input
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="user-website">Website</FieldLabel>
+                        
+                          <Input id="user-website" aria-invalid={fieldState.invalid}
                             type="url"
                             placeholder="Enter your website"
                             {...field}
                           />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
 
                   {/* Language */}
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="language"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Language</FormLabel>
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="user-language">Language</FieldLabel>
                         <Select
                           items={{
                             english: "English",
@@ -306,14 +296,14 @@ export default function UserSettingsPage() {
                             italian: "Italian",
                             portuguese: "Portuguese",
                           }}
-                          onValueChange={field.onChange}
+                          name={field.name}
+ onValueChange={field.onChange}
                           value={field.value}
                         >
-                          <FormControl>
-                            <SelectTrigger className="w-full">
+                          
+                            <SelectTrigger id="user-language" aria-invalid={fieldState.invalid} className="w-full">
                               <SelectValue placeholder="Select Language" />
                             </SelectTrigger>
-                          </FormControl>
                           <SelectContent>
                             <SelectGroup><SelectItem value="english">English</SelectItem>
                             <SelectItem value="spanish">Spanish</SelectItem>
@@ -325,33 +315,32 @@ export default function UserSettingsPage() {
                             </SelectItem></SelectGroup>
                           </SelectContent>
                         </Select>
-                        <FormMessage />
-                      </FormItem>
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
 
                   {/* Role */}
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="role"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Role</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Enter your role" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="user-role">Role</FieldLabel>
+                        
+                          <Input id="user-role" aria-invalid={fieldState.invalid} placeholder="Enter your role" {...field} />
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
 
                   {/* Timezone */}
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="timezone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Timezone</FormLabel>
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="user-timezone">Timezone</FieldLabel>
                         <Select
                           items={{
                             pst: "PST (Pacific Standard Time)",
@@ -363,14 +352,14 @@ export default function UserSettingsPage() {
                             jst: "JST (Japan Standard Time)",
                             aest: "AEST (Australian Eastern Standard Time)",
                           }}
-                          onValueChange={field.onChange}
+                          name={field.name}
+ onValueChange={field.onChange}
                           value={field.value}
                         >
-                          <FormControl>
-                            <SelectTrigger className="w-full">
+                          
+                            <SelectTrigger id="user-timezone" aria-invalid={fieldState.invalid} className="w-full">
                               <SelectValue placeholder="Select Timezone" />
                             </SelectTrigger>
-                          </FormControl>
                           <SelectContent>
                             <SelectGroup><SelectItem value="pst">
                               PST (Pacific Standard Time)
@@ -398,28 +387,27 @@ export default function UserSettingsPage() {
                             </SelectItem></SelectGroup>
                           </SelectContent>
                         </Select>
-                        <FormMessage />
-                      </FormItem>
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
-                </div>
+                </FieldGroup>
 
                 {/* Bio - Full Width */}
-                <FormField
+                <Controller
                   control={form.control}
                   name="bio"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Bio</FormLabel>
-                      <FormControl>
-                        <Textarea
+                  render={({ field, fieldState }) => (
+                    <Field data-invalid={fieldState.invalid}>
+                      <FieldLabel htmlFor="user-bio">Bio</FieldLabel>
+                      
+                        <Textarea id="user-bio" aria-invalid={fieldState.invalid}
                           placeholder="Tell us a little about yourself..."
                           className="min-h-[100px]"
                           {...field}
                         />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
+                      {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                    </Field>
                   )}
                 />
 
@@ -439,7 +427,6 @@ export default function UserSettingsPage() {
               </CardContent>
             </Card>
           </form>
-        </Form>
       </div>
     </BaseLayout>
   )

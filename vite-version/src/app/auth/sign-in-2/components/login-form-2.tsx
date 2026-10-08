@@ -1,9 +1,12 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import {
+  Field,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 
 export function LoginForm2({
   className,
@@ -18,13 +21,13 @@ export function LoginForm2({
         </p>
       </div>
       <div className="grid gap-6">
-        <div className="grid gap-3">
-          <Label htmlFor="email">Email</Label>
+        <Field>
+          <FieldLabel htmlFor="email">Email</FieldLabel>
           <Input id="email" type="email" placeholder="test@example.com" defaultValue="test@example.com" required />
-        </div>
-        <div className="grid gap-3">
+        </Field>
+        <Field>
           <div className="flex items-center">
-            <Label htmlFor="password">Password</Label>
+            <FieldLabel htmlFor="password">Password</FieldLabel>
             <a
               href="/templates/dashboard/shadcn-dashboard-landing-template/auth/forgot-password-2"
               className="ml-auto text-sm underline-offset-4 hover:underline"
@@ -33,7 +36,7 @@ export function LoginForm2({
             </a>
           </div>
           <Input id="password" type="password" defaultValue="password" required />
-        </div>
+        </Field>
         <Button type="submit" className="w-full cursor-pointer">
           Login
         </Button>

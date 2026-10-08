@@ -1,9 +1,12 @@
 "use client"
 
 import * as React from "react"
+import {
+  Field,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 
 interface ColorPickerProps {
   label: string
@@ -50,10 +53,10 @@ export function ColorPicker({ label, cssVar, value, onChange }: ColorPickerProps
   }, [localValue, cssVar])
 
   return (
-    <div className="flex flex-col gap-2">
-      <Label htmlFor={`color-${cssVar}`} className="text-xs font-medium">
+    <Field className="gap-2">
+      <FieldLabel htmlFor={`color-${cssVar}`} className="text-xs">
         {label}
-      </Label>
+      </FieldLabel>
       <div className="flex items-start gap-2">
         <div className="relative">
           <Button
@@ -79,6 +82,6 @@ export function ColorPicker({ label, cssVar, value, onChange }: ColorPickerProps
           className="h-8 text-xs flex-1"
         />
       </div>
-    </div>
+    </Field>
   )
 }

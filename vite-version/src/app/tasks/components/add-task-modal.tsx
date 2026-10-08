@@ -4,6 +4,11 @@ import { useState } from "react"
 import { Plus } from "lucide-react"
 import { z } from "zod"
 
+import {
+  Field,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -14,7 +19,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import {
   Select,
@@ -146,9 +150,9 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-          {/* Task Title */}
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="title">Task Title *</Label>
+          <FieldGroup>{/* Task Title */}
+          <Field>
+            <FieldLabel htmlFor="title">Task Title *</FieldLabel>
             <Input
               id="title"
               placeholder="Enter task title..."
@@ -161,11 +165,11 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
             {errors.title && (
               <p className="text-sm text-red-500">{errors.title}</p>
             )}
-          </div>
+          </Field>
 
           {/* Task Description */}
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="description">Description</Label>
+          <Field>
+            <FieldLabel htmlFor="description">Description</FieldLabel>
             <Textarea
               id="description"
               placeholder="Provide additional details about the task..."
@@ -178,13 +182,13 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
               }
               rows={3}
             />
-          </div>
+          </Field>
 
-          {/* Task Status and Category - Side by Side */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Task Status and Category - Side by Side */}</FieldGroup>
+          <FieldGroup className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Task Status */}
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="status">Status</Label>
+            <Field>
+              <FieldLabel htmlFor="status">Status</FieldLabel>
               <Select
                 items={statuses}
                 value={formData.status}
@@ -208,11 +212,11 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
                   ))}</SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
+            </Field>
 
             {/* Task Category */}
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="category">Category</Label>
+            <Field>
+              <FieldLabel htmlFor="category">Category</FieldLabel>
               <Select
                 items={categories}
                 value={formData.category}
@@ -231,13 +235,13 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
                   ))}</SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
-          </div>
+            </Field>
+          </FieldGroup>
 
-          {/* Task Priority - Half Width on Desktop */}
+          <FieldGroup>{/* Task Priority - Half Width on Desktop */}</FieldGroup>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="priority">Priority</Label>
+            <Field>
+              <FieldLabel htmlFor="priority">Priority</FieldLabel>
               <Select
                 items={priorities}
                 value={formData.priority}
@@ -256,10 +260,10 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
                   ))}</SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
+            </Field>
           </div>
 
-          {/* Action Buttons */}
+          <FieldGroup>{/* Action Buttons */}</FieldGroup>
           <div className="flex justify-end gap-2 pt-4">
             <Button
               type="button"

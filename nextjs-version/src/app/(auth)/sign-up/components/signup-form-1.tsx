@@ -1,9 +1,15 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { Controller,useForm } from "react-hook-form"
 import { z } from "zod"
 import { cn } from "@/lib/utils"
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -13,14 +19,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
 import { Checkbox } from "@/components/ui/checkbox"
 
 const signupFormSchema = z.object({
@@ -68,97 +66,90 @@ export function SignupForm1({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
               <div className="grid gap-6">
-                <div className="grid gap-4">
-                  <div className="grid grid-cols-2 gap-3">
-                    <FormField
+                <FieldGroup className="grid gap-4">
+                  <FieldGroup className="grid grid-cols-2 gap-3">
+                    <Controller
                       control={form.control}
                       name="firstName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>First Name</FormLabel>
-                          <FormControl>
-                            <Input placeholder="John" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor="signup-form-1-first-name">First Name</FieldLabel>
+                          
+                            <Input id="signup-form-1-first-name" aria-invalid={fieldState.invalid} placeholder="John" {...field} />
+                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                        </Field>
                       )}
                     />
-                    <FormField
+                    <Controller
                       control={form.control}
                       name="lastName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Last Name</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Doe" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor="signup-form-1-last-name">Last Name</FieldLabel>
+                          
+                            <Input id="signup-form-1-last-name" aria-invalid={fieldState.invalid} placeholder="Doe" {...field} />
+                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                        </Field>
                       )}
                     />
-                  </div>
-                  <FormField
+                  </FieldGroup>
+                  <Controller
                     control={form.control}
                     name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="signup-form-1-email">Email</FieldLabel>
+                        
+                          <Input id="signup-form-1-email" aria-invalid={fieldState.invalid}
                             type="email"
                             placeholder="m@example.com"
                             {...field}
                           />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="password"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Password</FormLabel>
-                        <FormControl>
-                          <Input type="password" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="signup-form-1-password">Password</FieldLabel>
+                        
+                          <Input id="signup-form-1-password" aria-invalid={fieldState.invalid} type="password" {...field} />
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="confirmPassword"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Confirm Password</FormLabel>
-                        <FormControl>
-                          <Input type="password" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="signup-form-1-confirm-password">Confirm Password</FieldLabel>
+                        
+                          <Input id="signup-form-1-confirm-password" aria-invalid={fieldState.invalid} type="password" {...field} />
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="terms"
-                    render={({ field }) => (
-                      <FormItem className="flex items-start gap-2">
-                        <FormControl>
-                          <Checkbox
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid} orientation="horizontal">
+                        
+                          <Checkbox id="signup-form-1-terms" aria-invalid={fieldState.invalid}
                             checked={field.value}
                             onCheckedChange={field.onChange}
                             className="mt-0.5"
                           />
-                        </FormControl>
-                        <FormLabel className="text-sm">
+                        <FieldLabel htmlFor="signup-form-1-terms" className="text-sm">
                           I agree to the terms of service and privacy policy
-                        </FormLabel>
-                      </FormItem>
+                        </FieldLabel>
+                      </Field>
                     )}
                   />
                   <Button type="submit" className="w-full cursor-pointer">
@@ -174,7 +165,7 @@ export function SignupForm1({
                     </svg>
                     Sign up with Google
                   </Button>
-                </div>
+                </FieldGroup>
                 <div className="text-center text-sm">
                   Already have an account?{" "}
                   <a href="/auth/sign-in" className="underline underline-offset-4">
@@ -183,7 +174,6 @@ export function SignupForm1({
                 </div>
               </div>
             </form>
-          </Form>
         </CardContent>
       </Card>
       <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">

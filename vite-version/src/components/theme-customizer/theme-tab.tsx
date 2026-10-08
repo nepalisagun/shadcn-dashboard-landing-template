@@ -1,8 +1,9 @@
 "use client"
 
 import { Palette, Dices, Upload, ExternalLink, Sun, Moon } from "lucide-react"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { Field, FieldLabel, FieldLegend, FieldSet } from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
 import {
   Select,
   SelectContent,
@@ -105,9 +106,9 @@ export function ThemeTab({
   return (
     <div className="flex flex-col p-4 gap-6">
       {/* Shadcn UI Theme Presets */}
-      <div className="flex flex-col gap-3">
+      <Field>
         <div className="flex items-center justify-between">
-          <Label className="text-sm font-medium">Shadcn UI Theme Presets</Label>
+          <FieldLabel htmlFor="customizer-shadcn-ui-theme">Shadcn UI Theme Presets</FieldLabel>
           <Button
             variant="outline"
             size="sm"
@@ -131,11 +132,11 @@ export function ThemeTab({
             applyTheme(value, isDarkMode)
           }}
         >
-          <SelectTrigger className="w-full cursor-pointer">
+          <SelectTrigger id="customizer-shadcn-ui-theme" className="w-full cursor-pointer">
             <SelectValue placeholder="Choose Shadcn Theme" />
           </SelectTrigger>
           <SelectContent className="max-h-60">
-            <SelectGroup><div className="p-2">
+            <SelectGroup>
               {colorThemes.map((theme) => (
                 <SelectItem
                   key={theme.value}
@@ -173,17 +174,17 @@ export function ThemeTab({
                   </div>
                 </SelectItem>
               ))}
-            </div></SelectGroup>
+            </SelectGroup>
           </SelectContent>
         </Select>
-      </div>
+      </Field>
 
       <Separator />
 
       {/* Tweakcn Theme Presets */}
-      <div className="flex flex-col gap-3">
+      <Field>
         <div className="flex items-center justify-between">
-          <Label className="text-sm font-medium">Tweakcn Theme Presets</Label>
+          <FieldLabel htmlFor="customizer-tweakcn-theme">Tweakcn Theme Presets</FieldLabel>
           <Button
             variant="outline"
             size="sm"
@@ -212,11 +213,11 @@ export function ThemeTab({
             }
           }}
         >
-          <SelectTrigger className="w-full cursor-pointer">
+          <SelectTrigger id="customizer-tweakcn-theme" className="w-full cursor-pointer">
             <SelectValue placeholder="Choose Tweakcn Theme" />
           </SelectTrigger>
           <SelectContent className="max-h-60">
-            <SelectGroup><div className="p-2">
+            <SelectGroup>
               {tweakcnThemes.map((theme) => (
                 <SelectItem
                   key={theme.value}
@@ -254,61 +255,65 @@ export function ThemeTab({
                   </div>
                 </SelectItem>
               ))}
-            </div></SelectGroup>
+            </SelectGroup>
           </SelectContent>
         </Select>
-      </div>
+      </Field>
 
       <Separator />
 
       {/* Radius Selection */}
-      <div className="flex flex-col gap-3">
-        <Label className="text-sm font-medium">Radius</Label>
-        <div className="grid grid-cols-5 gap-2">
-          {radiusOptions.map((option) => (
-            <div
-              key={option.value}
-              className={`relative cursor-pointer rounded-md p-3 border transition-colors ${
-                selectedRadius === option.value
-                  ? "border-primary"
-                  : "border-border hover:border-border/60"
-              }`}
-              onClick={() => handleRadiusSelect(option.value)}
-            >
-              <div className="text-center">
-                <div className="text-xs font-medium">{option.name}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <FieldSet>
+        <FieldLegend variant="label">Radius</FieldLegend>
+        <ToggleGroup
+                variant="outline"
+                spacing={2}
+                value={[selectedRadius]}
+                onValueChange={(value) => value[0] && handleRadiusSelect(value[0])}
+                className="grid w-full grid-cols-5"
+              >
+                {radiusOptions.map((option) => (
+                  <ToggleGroupItem
+                    key={option.value}
+                    value={option.value}
+                    className="cursor-pointer text-xs"
+                  >
+                    {option.name}
+                  </ToggleGroupItem>
+                ))}
+              </ToggleGroup>
+      </FieldSet>
 
       <Separator />
 
       {/* Mode Section */}
-      <div className="flex flex-col gap-3">
-        <Label className="text-sm font-medium">Mode</Label>
-        <div className="grid grid-cols-2 gap-2">
-          <Button
-            variant={!isDarkMode ? "secondary" : "outline"}
-            size="sm"
-            onClick={handleLightMode}
-            className="cursor-pointer mode-toggle-button relative overflow-hidden"
-          >
-            <Sun className="transition-transform duration-300" data-icon="inline-start" />
-            Light
-          </Button>
-          <Button
-            variant={isDarkMode ? "secondary" : "outline"}
-            size="sm"
-            onClick={handleDarkMode}
-            className="cursor-pointer mode-toggle-button relative overflow-hidden"
-          >
-            <Moon className="transition-transform duration-300" data-icon="inline-start" />
-            Dark
-          </Button>
-        </div>
-      </div>
+      <FieldSet>
+        <FieldLegend variant="label">Mode</FieldLegend>
+        <ToggleGroup
+                variant="outline"
+                size="sm"
+                spacing={2}
+                value={[isDarkMode ? "dark" : "light"]}
+                className="grid w-full grid-cols-2"
+              >
+                <ToggleGroupItem
+                  value="light"
+                  onClick={handleLightMode}
+                  className="cursor-pointer"
+                >
+                  <Sun />
+                  Light
+                </ToggleGroupItem>
+                <ToggleGroupItem
+                  value="dark"
+                  onClick={handleDarkMode}
+                  className="cursor-pointer"
+                >
+                  <Moon />
+                  Dark
+                </ToggleGroupItem>
+              </ToggleGroup>
+      </FieldSet>
 
       <Separator />
 
@@ -332,9 +337,7 @@ export function ThemeTab({
           className="border border-border rounded-lg overflow-hidden"
         >
           <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-muted/50 transition-colors">
-            <Label className="text-sm font-medium cursor-pointer">
-              Brand Colors
-            </Label>
+            <span className="text-sm font-medium">Brand Colors</span>
           </AccordionTrigger>
           <AccordionContent className="flex flex-col px-4 pb-4 pt-2 gap-3 border-t border-border bg-muted/20">
             {baseColors.map((color) => (

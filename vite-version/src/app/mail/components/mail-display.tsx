@@ -20,6 +20,10 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu"
+import {
+  Field,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
@@ -27,7 +31,6 @@ import {
   DropdownMenu,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Label } from "@/components/ui/label"
 import {
   Popover,
   PopoverContent,
@@ -258,13 +261,12 @@ export function MailDisplay({ mail }: MailDisplayProps) {
                   placeholder={`Reply ${mail.name}...`}
                 />
                 <div className="flex items-center">
-                  <Label
-                    htmlFor="mute"
-                    className="flex items-center gap-2 text-xs font-normal cursor-pointer"
-                  >
-                    <Switch id="mute" aria-label="Mute thread" /> Mute this
-                    thread
-                  </Label>
+                  <Field orientation="horizontal" className="w-fit">
+                    <Switch id="mute" />
+                    <FieldLabel htmlFor="mute" className="text-xs font-normal cursor-pointer">
+                      Mute this thread
+                    </FieldLabel>
+                  </Field>
                   <Button
                     onClick={(e) => e.preventDefault()}
                     size="sm"

@@ -1,21 +1,19 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { Controller,useForm } from "react-hook-form"
 import { z } from "zod"
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
 import { Mail, MessageCircle, BookOpen } from "lucide-react"
 import { Github } from "@/components/icons/brand-icons"
 
@@ -170,95 +168,88 @@ export function ContactSection() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="flex flex-col gap-6"
                   >
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <FormField
+                    <FieldGroup className="grid gap-4 sm:grid-cols-2">
+                      <Controller
                         control={form.control}
                         name="firstName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>First name</FormLabel>
-                            <FormControl>
-                              <Input placeholder="John" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
+                        render={({ field, fieldState }) => (
+                          <Field data-invalid={fieldState.invalid}>
+                            <FieldLabel htmlFor="contact-section-first-name">First name</FieldLabel>
+                            
+                              <Input id="contact-section-first-name" aria-invalid={fieldState.invalid} placeholder="John" {...field} />
+                            {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                          </Field>
                         )}
                       />
-                      <FormField
+                      <Controller
                         control={form.control}
                         name="lastName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Last name</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Doe" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
+                        render={({ field, fieldState }) => (
+                          <Field data-invalid={fieldState.invalid}>
+                            <FieldLabel htmlFor="contact-section-last-name">Last name</FieldLabel>
+                            
+                              <Input id="contact-section-last-name" aria-invalid={fieldState.invalid} placeholder="Doe" {...field} />
+                            {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                          </Field>
                         )}
                       />
-                    </div>
-                    <FormField
+                    </FieldGroup>
+                    <FieldGroup><Controller
                       control={form.control}
                       name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email</FormLabel>
-                          <FormControl>
-                            <Input
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor="contact-section-email">Email</FieldLabel>
+                          
+                            <Input id="contact-section-email" aria-invalid={fieldState.invalid}
                               type="email"
                               placeholder="john@example.com"
                               {...field}
                             />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
+                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                        </Field>
                       )}
                     />
-                    <FormField
+                    <Controller
                       control={form.control}
                       name="subject"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Subject</FormLabel>
-                          <FormControl>
-                            <Input
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor="contact-section-subject">Subject</FieldLabel>
+                          
+                            <Input id="contact-section-subject" aria-invalid={fieldState.invalid}
                               placeholder="Component request, bug report, general inquiry..."
                               {...field}
                             />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
+                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                        </Field>
                       )}
                     />
-                    <FormField
+                    <Controller
                       control={form.control}
                       name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Message</FormLabel>
-                          <FormControl>
-                            <Textarea
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor="contact-section-message">Message</FieldLabel>
+                          
+                            <Textarea id="contact-section-message" aria-invalid={fieldState.invalid}
                               placeholder="Tell us how we can help you with ShadcnStore components..."
                               rows={10}
                               className="min-h-50"
                               {...field}
                             />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
+                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                        </Field>
                       )}
-                    />
+                    /></FieldGroup>
                     <Button type="submit" className="w-full cursor-pointer">
                       Send Message
                     </Button>
                   </form>
-                </Form>
               </CardContent>
             </Card>
           </div>

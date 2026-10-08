@@ -1,9 +1,13 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import {
+  Field,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 
 export function SignupForm2({
@@ -18,32 +22,32 @@ export function SignupForm2({
           Enter your information to create a new account
         </p>
       </div>
-      <div className="grid gap-6">
-        <div className="grid grid-cols-2 gap-3">
-          <div className="grid gap-3">
-            <Label htmlFor="firstName">First Name</Label>
+      <FieldGroup className="grid gap-6">
+        <FieldGroup className="grid grid-cols-2 gap-3">
+          <Field>
+            <FieldLabel htmlFor="firstName">First Name</FieldLabel>
             <Input id="firstName" placeholder="John" required />
-          </div>
-          <div className="grid gap-3">
-            <Label htmlFor="lastName">Last Name</Label>
+          </Field>
+          <Field>
+            <FieldLabel htmlFor="lastName">Last Name</FieldLabel>
             <Input id="lastName" placeholder="Doe" required />
-          </div>
-        </div>
-        <div className="grid gap-3">
-          <Label htmlFor="email">Email</Label>
+          </Field>
+        </FieldGroup>
+        <Field>
+          <FieldLabel htmlFor="email">Email</FieldLabel>
           <Input id="email" type="email" placeholder="m@example.com" required />
-        </div>
-        <div className="grid gap-3">
-          <Label htmlFor="password">Password</Label>
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="password">Password</FieldLabel>
           <Input id="password" type="password" required />
-        </div>
-        <div className="grid gap-3">
-          <Label htmlFor="confirmPassword">Confirm Password</Label>
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="confirmPassword">Confirm Password</FieldLabel>
           <Input id="confirmPassword" type="password" required />
-        </div>
-        <div className="flex items-center gap-2">
+        </Field>
+        <Field orientation="horizontal">
           <Checkbox id="terms" required />
-          <Label htmlFor="terms" className="text-sm">
+          <FieldLabel htmlFor="terms" className="text-sm">
             I agree to the{" "}
             <a href="#" className="underline underline-offset-4 hover:text-primary">
               Terms of Service
@@ -52,8 +56,8 @@ export function SignupForm2({
             <a href="#" className="underline underline-offset-4 hover:text-primary">
               Privacy Policy
             </a>
-          </Label>
-        </div>
+          </FieldLabel>
+        </Field>
         <Button type="submit" className="w-full cursor-pointer">
           Create Account
         </Button>
@@ -71,7 +75,7 @@ export function SignupForm2({
           </svg>
           Sign up with GitHub
         </Button>
-      </div>
+      </FieldGroup>
       <div className="text-center text-sm">
         Already have an account?{" "}
         <a href="/templates/dashboard/shadcn-dashboard-landing-template/auth/sign-in-2" className="underline underline-offset-4">

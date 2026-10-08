@@ -1,9 +1,15 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { Controller,useForm } from "react-hook-form"
 import { z } from "zod"
 import { cn } from "@/lib/utils"
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -13,14 +19,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
 
 const loginFormSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -51,34 +49,32 @@ export function LoginForm1({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Form {...form}>
             <form action="/">
               <div className="grid gap-6">
-                <div className="grid gap-4">
-                  <FormField
+                <FieldGroup className="grid gap-4">
+                  <Controller
                     control={form.control}
                     name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="login-form-1-email">Email</FieldLabel>
+                        
+                          <Input id="login-form-1-email" aria-invalid={fieldState.invalid}
                             type="email"
                             placeholder="test@example.com"
                             {...field}
                           />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="password"
-                    render={({ field }) => (
-                      <FormItem>
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
                         <div className="flex items-center">
-                          <FormLabel>Password</FormLabel>
+                          <FieldLabel htmlFor="login-form-1-password">Password</FieldLabel>
                           <a
                             href="/auth/forgot-password"
                             className="ml-auto text-sm underline-offset-4 hover:underline"
@@ -86,11 +82,10 @@ export function LoginForm1({
                             Forgot your password?
                           </a>
                         </div>
-                        <FormControl>
-                          <Input type="password" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
+                        
+                          <Input id="login-form-1-password" aria-invalid={fieldState.invalid} type="password" {...field} />
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
                   <Button type="submit" className="w-full cursor-pointer">
@@ -106,7 +101,7 @@ export function LoginForm1({
                     </svg>
                     Login with Google
                   </Button>
-                </div>
+                </FieldGroup>
                 <div className="text-center text-sm">
                   Don&apos;t have an account?{" "}
                   <a href="/auth/sign-up" className="underline underline-offset-4">
@@ -115,7 +110,6 @@ export function LoginForm1({
                 </div>
               </div>
             </form>
-          </Form>
         </CardContent>
       </Card>
       <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">

@@ -1,6 +1,12 @@
 "use client"
 
-import { Label } from '@/components/ui/label'
+import {
+  FieldDescription,
+  FieldLabel,
+  FieldLegend,
+  FieldSet,
+} from "@/components/ui/field"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Separator } from '@/components/ui/separator'
 import { useSidebarConfig } from "@/hooks/use-sidebar-config"
 import { useSidebar } from '@/components/ui/sidebar'
@@ -31,29 +37,31 @@ export function LayoutTab() {
   return (
     <div className="flex flex-col p-4 gap-6">
       {/* Sidebar Configuration */}
-      <div className="flex flex-col gap-3">
-        {/* Sidebar Variant */}
-        <div>
-          <Label className="text-sm font-medium">Sidebar Variant</Label>
-          {sidebarConfig.variant && (
-            <p className="text-xs text-muted-foreground mt-1">
+      <FieldSet>
+        <FieldLegend variant="label">Sidebar Variant</FieldLegend>
+        {sidebarConfig.variant && (
+            <FieldDescription>
               {sidebarConfig.variant === "sidebar" && "Default: Standard sidebar layout"}
               {sidebarConfig.variant === "floating" && "Floating: Floating sidebar with border"}
               {sidebarConfig.variant === "inset" && "Inset: Inset sidebar with rounded corners"}
-            </p>
+            </FieldDescription>
           )}
-        </div>
-        <div className="grid grid-cols-3 gap-3">
+        <RadioGroup
+          value={sidebarConfig.variant}
+          onValueChange={(value) => handleSidebarVariantSelect(value as "sidebar" | "floating" | "inset")}
+          className="grid grid-cols-3 gap-3"
+        >
           {sidebarVariants.map((variant) => (
-            <div
+            <FieldLabel
               key={variant.value}
-              className={`relative p-4 border rounded-md cursor-pointer transition-colors ${
-                sidebarConfig.variant === variant.value
-                  ? "border-primary bg-primary/10"
-                  : "border-border hover:border-border/60"
-              }`}
-              onClick={() => handleSidebarVariantSelect(variant.value as "sidebar" | "floating" | "inset")}
+              htmlFor={`sidebar-variant-${variant.value}`}
+              className="relative w-full cursor-pointer gap-0 rounded-md border border-border p-4 transition-colors hover:border-border/60 has-data-checked:border-primary has-data-checked:bg-primary/10"
             >
+              <RadioGroupItem
+                id={`sidebar-variant-${variant.value}`}
+                value={variant.value}
+                className="sr-only absolute"
+              />
               {/* Visual representation of sidebar variant */}
               <div className="flex flex-col gap-2">
                 <div className="text-xs font-semibold text-center">{variant.name}</div>
@@ -77,36 +85,39 @@ export function LayoutTab() {
                   </div>
                 </div>
               </div>
-            </div>
+            </FieldLabel>
           ))}
-        </div>
-      </div>
+        </RadioGroup>
+      </FieldSet>
       
       <Separator />
 
       {/* Sidebar Collapsible Mode */}
-      <div className="flex flex-col gap-3">
-        <div>
-          <Label className="text-sm font-medium">Sidebar Collapsible Mode</Label>
-          {sidebarConfig.collapsible && (
-            <p className="text-xs text-muted-foreground mt-1">
+      <FieldSet>
+        <FieldLegend variant="label">Sidebar Collapsible Mode</FieldLegend>
+        {sidebarConfig.collapsible && (
+            <FieldDescription>
               {sidebarConfig.collapsible === "offcanvas" && "Off Canvas: Slides out of view"}
               {sidebarConfig.collapsible === "icon" && "Icon: Collapses to icon only"}
               {sidebarConfig.collapsible === "none" && "None: Always visible"}
-            </p>
+            </FieldDescription>
           )}
-        </div>
-        <div className="grid grid-cols-3 gap-3">
+        <RadioGroup
+          value={sidebarConfig.collapsible}
+          onValueChange={(value) => handleSidebarCollapsibleSelect(value as "offcanvas" | "icon" | "none")}
+          className="grid grid-cols-3 gap-3"
+        >
           {sidebarCollapsibleOptions.map((option) => (
-            <div
+            <FieldLabel
               key={option.value}
-              className={`relative p-4 border rounded-md cursor-pointer transition-colors ${
-                sidebarConfig.collapsible === option.value
-                  ? "border-primary bg-primary/10"
-                  : "border-border hover:border-border/60"
-              }`}
-              onClick={() => handleSidebarCollapsibleSelect(option.value as "offcanvas" | "icon" | "none")}
+              htmlFor={`sidebar-collapsible-${option.value}`}
+              className="relative w-full cursor-pointer gap-0 rounded-md border border-border p-4 transition-colors hover:border-border/60 has-data-checked:border-primary has-data-checked:bg-primary/10"
             >
+              <RadioGroupItem
+                id={`sidebar-collapsible-${option.value}`}
+                value={option.value}
+                className="sr-only absolute"
+              />
               {/* Visual representation of collapsible mode */}
               <div className="flex flex-col gap-2">
                 <div className="text-xs font-semibold text-center">{option.name}</div>
@@ -145,35 +156,38 @@ export function LayoutTab() {
                   )}
                 </div>
               </div>
-            </div>
+            </FieldLabel>
           ))}
-        </div>
-      </div>
+        </RadioGroup>
+      </FieldSet>
 
       <Separator />
 
       {/* Sidebar Side */}
-      <div className="flex flex-col gap-3">
-        <div>
-          <Label className="text-sm font-medium">Sidebar Position</Label>
-          {sidebarConfig.side && (
-            <p className="text-xs text-muted-foreground mt-1">
+      <FieldSet>
+        <FieldLegend variant="label">Sidebar Position</FieldLegend>
+        {sidebarConfig.side && (
+            <FieldDescription>
               {sidebarConfig.side === "left" && "Left: Sidebar positioned on the left side"}
               {sidebarConfig.side === "right" && "Right: Sidebar positioned on the right side"}
-            </p>
+            </FieldDescription>
           )}
-        </div>
-        <div className="grid grid-cols-2 gap-3">
+        <RadioGroup
+          value={sidebarConfig.side}
+          onValueChange={(value) => handleSidebarSideSelect(value as "left" | "right")}
+          className="grid grid-cols-2 gap-3"
+        >
           {sidebarSideOptions.map((side) => (
-            <div
+            <FieldLabel
               key={side.value}
-              className={`relative p-4 border rounded-md cursor-pointer transition-colors ${
-                sidebarConfig.side === side.value
-                  ? "border-primary bg-primary/10"
-                  : "border-border hover:border-border/60"
-              }`}
-              onClick={() => handleSidebarSideSelect(side.value as "left" | "right")}
+              htmlFor={`sidebar-side-${side.value}`}
+              className="relative w-full cursor-pointer gap-0 rounded-md border border-border p-4 transition-colors hover:border-border/60 has-data-checked:border-primary has-data-checked:bg-primary/10"
             >
+              <RadioGroupItem
+                id={`sidebar-side-${side.value}`}
+                value={side.value}
+                className="sr-only absolute"
+              />
               {/* Visual representation of sidebar side */}
               <div className="flex flex-col gap-2">
                 <div className="text-xs font-semibold text-center">{side.name}</div>
@@ -203,10 +217,10 @@ export function LayoutTab() {
                   )}
                 </div>
               </div>
-            </div>
+            </FieldLabel>
           ))}
-        </div>
-      </div>
+        </RadioGroup>
+      </FieldSet>
     </div>
   )
 }

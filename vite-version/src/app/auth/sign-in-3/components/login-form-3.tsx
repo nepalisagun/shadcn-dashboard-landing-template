@@ -1,10 +1,13 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import {
+  Field,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Logo } from "@/components/logo"
 
 export function LoginForm3({
@@ -31,8 +34,8 @@ export function LoginForm3({
                   Login to your ShadcnStore account
                 </p>
               </div>
-              <div className="grid gap-3">
-                <Label htmlFor="email">Email</Label>
+              <Field>
+                <FieldLabel htmlFor="email">Email</FieldLabel>
                 <Input
                   id="email"
                   type="email"
@@ -40,10 +43,10 @@ export function LoginForm3({
                   defaultValue="test@example.com"
                   required
                 />
-              </div>
-              <div className="grid gap-3">
+              </Field>
+              <Field>
                 <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
+                  <FieldLabel htmlFor="password">Password</FieldLabel>
                   <a
                     href="/templates/dashboard/shadcn-dashboard-landing-template/auth/forgot-password-3"
                     className="ml-auto text-sm underline-offset-2 hover:underline"
@@ -52,7 +55,7 @@ export function LoginForm3({
                   </a>
                 </div>
                 <Input id="password" type="password" defaultValue="password" required />
-              </div>
+              </Field>
               <Button type="submit" className="w-full cursor-pointer">
                 Login
               </Button>

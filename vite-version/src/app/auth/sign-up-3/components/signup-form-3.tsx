@@ -1,10 +1,14 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import {
+  Field,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Logo } from "@/components/logo"
 
@@ -17,7 +21,7 @@ export function SignupForm3({
       <Card className="overflow-hidden p-0">
         <CardContent className="grid p-0 md:grid-cols-2">
           <form className="p-6 md:p-8">
-            <div className="flex flex-col gap-6">
+            <FieldGroup className="flex flex-col gap-6">
               <div className="flex justify-center mb-2">
                 <a href="/" className="flex items-center gap-2 font-medium">
                   <div className="bg-primary text-primary-foreground flex size-8 items-center justify-center rounded-md">
@@ -32,44 +36,44 @@ export function SignupForm3({
                   Enter your information to create a new account
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="grid gap-3">
-                  <Label htmlFor="firstName">First Name</Label>
+              <FieldGroup className="grid grid-cols-2 gap-3">
+                <Field>
+                  <FieldLabel htmlFor="firstName">First Name</FieldLabel>
                   <Input
                     id="firstName"
                     placeholder="John"
                     required
                   />
-                </div>
-                <div className="grid gap-3">
-                  <Label htmlFor="lastName">Last Name</Label>
+                </Field>
+                <Field>
+                  <FieldLabel htmlFor="lastName">Last Name</FieldLabel>
                   <Input
                     id="lastName"
                     placeholder="Doe"
                     required
                   />
-                </div>
-              </div>
-              <div className="grid gap-3">
-                <Label htmlFor="email">Email</Label>
+                </Field>
+              </FieldGroup>
+              <Field>
+                <FieldLabel htmlFor="email">Email</FieldLabel>
                 <Input
                   id="email"
                   type="email"
                   placeholder="m@example.com"
                   required
                 />
-              </div>
-              <div className="grid gap-3">
-                <Label htmlFor="password">Password</Label>
+              </Field>
+              <Field>
+                <FieldLabel htmlFor="password">Password</FieldLabel>
                 <Input id="password" type="password" required />
-              </div>
-              <div className="grid gap-3">
-                <Label htmlFor="confirmPassword">Confirm Password</Label>
+              </Field>
+              <Field>
+                <FieldLabel htmlFor="confirmPassword">Confirm Password</FieldLabel>
                 <Input id="confirmPassword" type="password" required />
-              </div>
-              <div className="flex items-center gap-2">
+              </Field>
+              <Field orientation="horizontal">
                 <Checkbox id="terms" required />
-                <Label htmlFor="terms" className="text-sm">
+                <FieldLabel htmlFor="terms" className="text-sm">
                   I agree to the{" "}
                   <a href="#" className="underline underline-offset-4 hover:text-primary">
                     Terms of Service
@@ -78,8 +82,8 @@ export function SignupForm3({
                   <a href="#" className="underline underline-offset-4 hover:text-primary">
                     Privacy Policy
                   </a>
-                </Label>
-              </div>
+                </FieldLabel>
+              </Field>
               <Button type="submit" className="w-full cursor-pointer">
                 Create Account
               </Button>
@@ -123,7 +127,7 @@ export function SignupForm3({
                   Sign in
                 </a>
               </div>
-            </div>
+            </FieldGroup>
           </form>
           <div className="bg-muted relative hidden md:block">
             <img

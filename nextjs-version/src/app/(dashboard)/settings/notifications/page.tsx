@@ -1,7 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { Controller,useForm } from "react-hook-form"
 import { z } from "zod"
 import {
   Card,
@@ -10,15 +10,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field"
+import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
   Select,
@@ -116,8 +116,6 @@ export default function NotificationSettings() {
           Configure how you receive notifications.
         </p>
       </div>
-
-      <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6">
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
             <Card>
@@ -128,70 +126,67 @@ export default function NotificationSettings() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col gap-6">
-                <div className="flex flex-col gap-4">
-                  <FormField
+                <FieldGroup className="flex flex-col gap-4">
+                  <Controller
                     control={form.control}
                     name="emailSecurity"
-                    render={({ field }) => (
-                      <FormItem className="flex items-center gap-3">
-                        <FormControl>
-                          <Checkbox
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid} orientation="horizontal">
+                        
+                          <Checkbox id="notifications-email-security" aria-invalid={fieldState.invalid}
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
-                        </FormControl>
-                        <div className="flex flex-col gap-1">
-                          <FormLabel>Security alerts</FormLabel>
-                          <p className="text-sm text-muted-foreground">
+                        <FieldContent>
+                          <FieldLabel htmlFor="notifications-email-security">Security alerts</FieldLabel>
+                          <FieldDescription>
                             Get notified when there are security events on your
                             account.
-                          </p>
-                        </div>
-                      </FormItem>
+                          </FieldDescription>
+                        </FieldContent>
+                      </Field>
                     )}
                   />
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="emailUpdates"
-                    render={({ field }) => (
-                      <FormItem className="flex items-center gap-3">
-                        <FormControl>
-                          <Checkbox
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid} orientation="horizontal">
+                        
+                          <Checkbox id="notifications-email-updates" aria-invalid={fieldState.invalid}
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
-                        </FormControl>
-                        <div className="flex flex-col gap-1">
-                          <FormLabel>Product updates</FormLabel>
-                          <p className="text-sm text-muted-foreground">
+                        <FieldContent>
+                          <FieldLabel htmlFor="notifications-email-updates">Product updates</FieldLabel>
+                          <FieldDescription>
                             Receive updates about new features and improvements.
-                          </p>
-                        </div>
-                      </FormItem>
+                          </FieldDescription>
+                        </FieldContent>
+                      </Field>
                     )}
                   />
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="emailMarketing"
-                    render={({ field }) => (
-                      <FormItem className="flex items-center gap-3">
-                        <FormControl>
-                          <Checkbox
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid} orientation="horizontal">
+                        
+                          <Checkbox id="notifications-email-marketing" aria-invalid={fieldState.invalid}
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
-                        </FormControl>
-                        <div className="flex flex-col gap-1">
-                          <FormLabel>Marketing emails</FormLabel>
-                          <p className="text-sm text-muted-foreground">
+                        <FieldContent>
+                          <FieldLabel htmlFor="notifications-email-marketing">Marketing emails</FieldLabel>
+                          <FieldDescription>
                             Receive emails about our latest offers and
                             promotions.
-                          </p>
-                        </div>
-                      </FormItem>
+                          </FieldDescription>
+                        </FieldContent>
+                      </Field>
                     )}
                   />
-                </div>
+                </FieldGroup>
               </CardContent>
             </Card>
 
@@ -203,68 +198,65 @@ export default function NotificationSettings() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col gap-6">
-                <div className="flex flex-col gap-4">
-                  <FormField
+                <FieldGroup className="flex flex-col gap-4">
+                  <Controller
                     control={form.control}
                     name="pushMessages"
-                    render={({ field }) => (
-                      <FormItem className="flex items-center gap-3">
-                        <FormControl>
-                          <Checkbox
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid} orientation="horizontal">
+                        
+                          <Checkbox id="notifications-push-messages" aria-invalid={fieldState.invalid}
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
-                        </FormControl>
-                        <div className="flex flex-col gap-1">
-                          <FormLabel>New messages</FormLabel>
-                          <p className="text-sm text-muted-foreground">
+                        <FieldContent>
+                          <FieldLabel htmlFor="notifications-push-messages">New messages</FieldLabel>
+                          <FieldDescription>
                             Get notified when you receive new messages.
-                          </p>
-                        </div>
-                      </FormItem>
+                          </FieldDescription>
+                        </FieldContent>
+                      </Field>
                     )}
                   />
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="pushMentions"
-                    render={({ field }) => (
-                      <FormItem className="flex items-center gap-3">
-                        <FormControl>
-                          <Checkbox
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid} orientation="horizontal">
+                        
+                          <Checkbox id="notifications-push-mentions" aria-invalid={fieldState.invalid}
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
-                        </FormControl>
-                        <div className="flex flex-col gap-1">
-                          <FormLabel>Mentions</FormLabel>
-                          <p className="text-sm text-muted-foreground">
+                        <FieldContent>
+                          <FieldLabel htmlFor="notifications-push-mentions">Mentions</FieldLabel>
+                          <FieldDescription>
                             Get notified when someone mentions you.
-                          </p>
-                        </div>
-                      </FormItem>
+                          </FieldDescription>
+                        </FieldContent>
+                      </Field>
                     )}
                   />
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="pushTasks"
-                    render={({ field }) => (
-                      <FormItem className="flex items-center gap-3">
-                        <FormControl>
-                          <Checkbox
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid} orientation="horizontal">
+                        
+                          <Checkbox id="notifications-push-tasks" aria-invalid={fieldState.invalid}
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
-                        </FormControl>
-                        <div className="flex flex-col gap-1">
-                          <FormLabel>Task updates</FormLabel>
-                          <p className="text-sm text-muted-foreground">
+                        <FieldContent>
+                          <FieldLabel htmlFor="notifications-push-tasks">Task updates</FieldLabel>
+                          <FieldDescription>
                             Get notified about task assignments and updates.
-                          </p>
-                        </div>
-                      </FormItem>
+                          </FieldDescription>
+                        </FieldContent>
+                      </Field>
                     )}
                   />
-                </div>
+                </FieldGroup>
               </CardContent>
             </Card>
           </div>
@@ -276,12 +268,12 @@ export default function NotificationSettings() {
               </CardDescription>
             </CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <FormField
+              <Controller
                 control={form.control}
                 name="emailFrequency"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email Frequency</FormLabel>
+                render={({ field, fieldState }) => (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor="notifications-email-frequency">Email Frequency</FieldLabel>
                     <Select
                       items={{
                         instant: "Instant",
@@ -290,14 +282,14 @@ export default function NotificationSettings() {
                         weekly: "Weekly digest",
                         never: "Never",
                       }}
-                      onValueChange={field.onChange}
+                      name={field.name}
+ onValueChange={field.onChange}
                       value={field.value}
                     >
-                      <FormControl>
-                        <SelectTrigger className="w-full">
+                      
+                        <SelectTrigger id="notifications-email-frequency" aria-invalid={fieldState.invalid} className="w-full">
                           <SelectValue placeholder="Select frequency" />
                         </SelectTrigger>
-                      </FormControl>
                       <SelectContent>
                         <SelectGroup><SelectItem value="instant">Instant</SelectItem>
                         <SelectItem value="hourly">Hourly digest</SelectItem>
@@ -306,31 +298,31 @@ export default function NotificationSettings() {
                         <SelectItem value="never">Never</SelectItem></SelectGroup>
                       </SelectContent>
                     </Select>
-                    <FormMessage />
-                  </FormItem>
+                    {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                  </Field>
                 )}
               />
-              <FormItem>
-                <FormLabel>Quiet Hours</FormLabel>
+              <Field>
+                <FieldLabel htmlFor="notifications-quiet-hours-start">Quiet Hours</FieldLabel>
                 <div className="flex gap-2">
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="quietHoursStart"
-                    render={({ field }) => (
+                    render={({ field, fieldState }) => (
                       <Select
                         items={{
                           "22:00": "10:00 PM",
                           "23:00": "11:00 PM",
                           "00:00": "12:00 AM",
                         }}
-                        onValueChange={field.onChange}
+                        name={field.name}
+ onValueChange={field.onChange}
                         value={field.value}
                       >
-                        <FormControl>
-                          <SelectTrigger className="w-50">
+                        
+                          <SelectTrigger id="notifications-quiet-hours-start" aria-invalid={fieldState.invalid} className="w-50">
                             <SelectValue placeholder="Start" />
                           </SelectTrigger>
-                        </FormControl>
                         <SelectContent>
                           <SelectGroup><SelectItem value="22:00">10:00 PM</SelectItem>
                           <SelectItem value="23:00">11:00 PM</SelectItem>
@@ -340,24 +332,24 @@ export default function NotificationSettings() {
                     )}
                   />
                   <span className="self-center">to</span>
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="quietHoursEnd"
-                    render={({ field }) => (
+                    render={({ field, fieldState }) => (
                       <Select
                         items={{
                           "06:00": "6:00 AM",
                           "07:00": "7:00 AM",
                           "08:00": "8:00 AM",
                         }}
-                        onValueChange={field.onChange}
+                        name={field.name}
+ onValueChange={field.onChange}
                         value={field.value}
                       >
-                        <FormControl>
-                          <SelectTrigger className="w-50">
+                        
+                          <SelectTrigger id="notifications-quiet-hours-end" aria-invalid={fieldState.invalid} className="w-50">
                             <SelectValue placeholder="End" />
                           </SelectTrigger>
-                        </FormControl>
                         <SelectContent>
                           <SelectGroup><SelectItem value="06:00">6:00 AM</SelectItem>
                           <SelectItem value="07:00">7:00 AM</SelectItem>
@@ -367,7 +359,7 @@ export default function NotificationSettings() {
                     )}
                   />
                 </div>
-              </FormItem>
+              </Field>
             </CardContent>
           </Card>
 
@@ -398,50 +390,47 @@ export default function NotificationSettings() {
                         Order updates
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="orderUpdatesEmail"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-order-updates-email" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="orderUpdatesBrowser"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-order-updates-browser" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="orderUpdatesApp"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-order-updates-app" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
@@ -451,50 +440,47 @@ export default function NotificationSettings() {
                         Invoice reminders
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="invoiceRemindersEmail"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-invoice-reminders-email" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="invoiceRemindersBrowser"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-invoice-reminders-browser" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="invoiceRemindersApp"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-invoice-reminders-app" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
@@ -504,50 +490,47 @@ export default function NotificationSettings() {
                         Promotional offers
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="promotionalOffersEmail"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-promotional-offers-email" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="promotionalOffersBrowser"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-promotional-offers-browser" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="promotionalOffersApp"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-promotional-offers-app" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
@@ -557,50 +540,47 @@ export default function NotificationSettings() {
                         System maintenance
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="systemMaintenanceEmail"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-system-maintenance-email" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="systemMaintenanceBrowser"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-system-maintenance-browser" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
                       <TableCell className="text-center">
-                        <FormField
+                        <Controller
                           control={form.control}
                           name="systemMaintenanceApp"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Checkbox
+                          render={({ field, fieldState }) => (
+                            <Field data-invalid={fieldState.invalid}>
+                              
+                                <Checkbox id="notifications-system-maintenance-app" aria-invalid={fieldState.invalid}
                                   checked={field.value}
                                   onCheckedChange={field.onChange}
                                 />
-                              </FormControl>
-                            </FormItem>
+                            </Field>
                           )}
                         />
                       </TableCell>
@@ -609,28 +589,28 @@ export default function NotificationSettings() {
                 </Table>
 
                 <div className="flex flex-col gap-4">
-                  <FormField
+                  <Controller
                     control={form.control}
                     name="notificationTiming"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>
+                    render={({ field, fieldState }) => (
+                      <Field data-invalid={fieldState.invalid}>
+                        <FieldLabel htmlFor="notifications-notification-timing">
                           When should we send you notifications?
-                        </FormLabel>
+                        </FieldLabel>
                         <Select
                           items={{
                             online: "Only When I'm online",
                             always: "Always",
                             never: "Never",
                           }}
-                          onValueChange={field.onChange}
+                          name={field.name}
+ onValueChange={field.onChange}
                           value={field.value}
                         >
-                          <FormControl>
-                            <SelectTrigger className="w-full max-w-sm">
+                          
+                            <SelectTrigger id="notifications-notification-timing" aria-invalid={fieldState.invalid} className="w-full max-w-sm">
                               <SelectValue placeholder="Select timing" />
                             </SelectTrigger>
-                          </FormControl>
                           <SelectContent>
                             <SelectGroup><SelectItem value="online">
                               Only When I&apos;m online
@@ -639,8 +619,8 @@ export default function NotificationSettings() {
                             <SelectItem value="never">Never</SelectItem></SelectGroup>
                           </SelectContent>
                         </Select>
-                        <FormMessage />
-                      </FormItem>
+                        {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      </Field>
                     )}
                   />
                 </div>
@@ -657,85 +637,82 @@ export default function NotificationSettings() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col gap-4">
-                <FormField
+              <FieldGroup className="flex flex-col gap-4">
+                <Controller
                   control={form.control}
                   name="channelEmail"
-                  render={({ field }) => (
-                    <FormItem className="flex items-center justify-between">
+                  render={({ field, fieldState }) => (
+                    <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-between">
                       <div className="flex items-center gap-3">
                         <Mail className="size-5 text-muted-foreground" />
                         <div>
-                          <FormLabel className="font-medium mb-1">
+                          <FieldLabel htmlFor="notifications-channel-email" className="font-medium mb-1">
                             Email
-                          </FormLabel>
+                          </FieldLabel>
                           <div className="text-sm text-muted-foreground">
                             Receive notifications via email
                           </div>
                         </div>
                       </div>
-                      <FormControl>
-                        <Checkbox
+                      
+                        <Checkbox id="notifications-channel-email" aria-invalid={fieldState.invalid}
                           checked={field.value}
                           onCheckedChange={field.onChange}
                         />
-                      </FormControl>
-                    </FormItem>
+                    </Field>
                   )}
                 />
                 <Separator />
-                <FormField
+                <Controller
                   control={form.control}
                   name="channelPush"
-                  render={({ field }) => (
-                    <FormItem className="flex items-center justify-between">
+                  render={({ field, fieldState }) => (
+                    <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-between">
                       <div className="flex items-center gap-3">
                         <Bell className="size-5 text-muted-foreground" />
                         <div>
-                          <FormLabel className="font-medium mb-1">
+                          <FieldLabel htmlFor="notifications-channel-push" className="font-medium mb-1">
                             Push Notifications
-                          </FormLabel>
+                          </FieldLabel>
                           <div className="text-sm text-muted-foreground">
                             Receive browser push notifications
                           </div>
                         </div>
                       </div>
-                      <FormControl>
-                        <Checkbox
+                      
+                        <Checkbox id="notifications-channel-push" aria-invalid={fieldState.invalid}
                           checked={field.value}
                           onCheckedChange={field.onChange}
                         />
-                      </FormControl>
-                    </FormItem>
+                    </Field>
                   )}
                 />
                 <Separator />
-                <FormField
+                <Controller
                   control={form.control}
                   name="channelSms"
-                  render={({ field }) => (
-                    <FormItem className="flex items-center justify-between">
+                  render={({ field, fieldState }) => (
+                    <Field data-invalid={fieldState.invalid} orientation="horizontal" className="justify-between">
                       <div className="flex items-center gap-3">
                         <MessageSquare className="size-5 text-muted-foreground" />
                         <div>
-                          <FormLabel className="font-medium mb-1">
+                          <FieldLabel htmlFor="notifications-channel-sms" className="font-medium mb-1">
                             SMS
-                          </FormLabel>
+                          </FieldLabel>
                           <div className="text-sm text-muted-foreground">
                             Receive notifications via SMS
                           </div>
                         </div>
                       </div>
-                      <FormControl>
-                        <Checkbox
+                      
+                        <Checkbox id="notifications-channel-sms" aria-invalid={fieldState.invalid}
                           checked={field.value}
                           onCheckedChange={field.onChange}
                         />
-                      </FormControl>
-                    </FormItem>
+                    </Field>
                   )}
                 />
-              </div>
+              </FieldGroup>
             </CardContent>
           </Card>
 
@@ -748,7 +725,6 @@ export default function NotificationSettings() {
             </Button>
           </div>
         </form>
-      </Form>
     </div>
   )
 }

@@ -55,6 +55,11 @@ import { z } from "zod"
 
 import { schema } from "../schemas/task-schema"
 import { useIsMobile } from "@/hooks/use-mobile"
+import {
+  Field,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -403,10 +408,10 @@ function TableContent({
           {currentTable.getFilteredRowModel().rows.length} row(s) selected.
         </div>
         <div className="flex w-full items-center gap-8 lg:w-fit">
-          <div className="hidden items-center gap-2 lg:flex">
-            <Label htmlFor="rows-per-page" className="text-sm font-medium">
+          <Field className="hidden lg:flex">
+            <FieldLabel htmlFor="rows-per-page" className="text-sm font-medium">
               Rows per page
-            </Label>
+            </FieldLabel>
             <Select
               value={`${currentTable.state.pagination.pageSize}`}
               onValueChange={(value) => {
@@ -430,7 +435,7 @@ function TableContent({
                 ))}</SelectGroup>
               </SelectContent>
             </Select>
-          </div>
+          </Field>
           <div className="flex w-fit items-center justify-center text-sm font-medium">
             Page {currentTable.state.pagination.pageIndex + 1} of{" "}
             {currentTable.getPageCount()}
@@ -821,10 +826,10 @@ export function DataTable({
             {table.getFilteredRowModel().rows.length} row(s) selected.
           </div>
           <div className="flex w-full items-center gap-8 lg:w-fit">
-            <div className="hidden items-center gap-2 lg:flex">
-              <Label htmlFor="rows-per-page" className="text-sm font-medium">
+            <Field className="hidden lg:flex">
+              <FieldLabel htmlFor="rows-per-page" className="text-sm font-medium">
                 Rows per page
-              </Label>
+              </FieldLabel>
               <Select
                 value={`${table.state.pagination.pageSize}`}
                 onValueChange={(value) => {
@@ -846,7 +851,7 @@ export function DataTable({
                   ))}</SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
+            </Field>
             <div className="flex w-fit items-center justify-center text-sm font-medium">
               Page {table.state.pagination.pageIndex + 1} of{" "}
               {table.getPageCount()}
@@ -1036,13 +1041,13 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
             </>
           )}
           <form className="flex flex-col gap-4">
-            <div className="flex flex-col gap-3">
-              <Label htmlFor="header">Header</Label>
+            <FieldGroup><Field>
+              <FieldLabel htmlFor="header">Header</FieldLabel>
               <Input id="header" defaultValue={item.header} />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="type">Type</Label>
+            </Field></FieldGroup>
+            <FieldGroup className="grid grid-cols-2 gap-4">
+              <Field>
+                <FieldLabel htmlFor="type">Type</FieldLabel>
                 <Select defaultValue={item.type}>
                   <SelectTrigger id="type" className="w-full cursor-pointer">
                     <SelectValue placeholder="Select a type" />
@@ -1066,9 +1071,9 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                     <SelectItem value="Cover Page">Cover Page</SelectItem></SelectGroup>
                   </SelectContent>
                 </Select>
-              </div>
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="status">Status</Label>
+              </Field>
+              <Field>
+                <FieldLabel htmlFor="status">Status</FieldLabel>
                 <Select defaultValue={item.status}>
                   <SelectTrigger id="status" className="w-full cursor-pointer">
                     <SelectValue placeholder="Select a status" />
@@ -1079,20 +1084,20 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                     <SelectItem value="Not Started">Not Started</SelectItem></SelectGroup>
                   </SelectContent>
                 </Select>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="target">Target</Label>
+              </Field>
+            </FieldGroup>
+            <FieldGroup className="grid grid-cols-2 gap-4">
+              <Field>
+                <FieldLabel htmlFor="target">Target</FieldLabel>
                 <Input id="target" defaultValue={item.target} />
-              </div>
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="limit">Limit</Label>
+              </Field>
+              <Field>
+                <FieldLabel htmlFor="limit">Limit</FieldLabel>
                 <Input id="limit" defaultValue={item.limit} />
-              </div>
-            </div>
-            <div className="flex flex-col gap-3">
-              <Label htmlFor="reviewer">Reviewer</Label>
+              </Field>
+            </FieldGroup>
+            <FieldGroup><Field>
+              <FieldLabel htmlFor="reviewer">Reviewer</FieldLabel>
               <Select defaultValue={item.reviewer}>
                 <SelectTrigger id="reviewer" className="w-full cursor-pointer">
                   <SelectValue placeholder="Select a reviewer" />
@@ -1105,7 +1110,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                   <SelectItem value="Emily Whalen">Emily Whalen</SelectItem></SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
+            </Field></FieldGroup>
           </form>
         </div>
         <DrawerFooter>

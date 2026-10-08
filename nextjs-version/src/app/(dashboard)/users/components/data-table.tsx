@@ -22,6 +22,11 @@ import {
   Search,
 } from "lucide-react"
 
+import {
+  Field,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -36,7 +41,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
   Select,
   SelectContent,
@@ -341,11 +345,11 @@ export function DataTable({
         </div>
       </div>
 
-      <div className="grid gap-2 sm:grid-cols-4 sm:gap-4">
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="role-filter" className="text-sm font-medium">
+      <FieldGroup className="grid gap-2 sm:grid-cols-4 sm:gap-4">
+        <Field>
+          <FieldLabel htmlFor="role-filter" className="text-sm font-medium">
             Role
-          </Label>
+          </FieldLabel>
           <Select
             items={{
               all: "All Roles",
@@ -374,11 +378,11 @@ export function DataTable({
               <SelectItem value="Subscriber">Subscriber</SelectItem></SelectGroup>
             </SelectContent>
           </Select>
-        </div>
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="plan-filter" className="text-sm font-medium">
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="plan-filter" className="text-sm font-medium">
             Plan
-          </Label>
+          </FieldLabel>
           <Select
             items={{
               all: "All Plans",
@@ -403,11 +407,11 @@ export function DataTable({
               <SelectItem value="Enterprise">Enterprise</SelectItem></SelectGroup>
             </SelectContent>
           </Select>
-        </div>
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="status-filter" className="text-sm font-medium">
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="status-filter" className="text-sm font-medium">
             Status
-          </Label>
+          </FieldLabel>
           <Select
             items={{
               all: "All Status",
@@ -434,11 +438,11 @@ export function DataTable({
               <SelectItem value="Inactive">Inactive</SelectItem></SelectGroup>
             </SelectContent>
           </Select>
-        </div>
-        <div className="flex flex-col gap-2">
-          <Label htmlFor="column-visibility" className="text-sm font-medium">
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="column-visibility">
             Column Visibility
-          </Label>
+          </FieldLabel>
           <DropdownMenu>
             <DropdownMenuTrigger
               id="column-visibility"
@@ -468,8 +472,8 @@ export function DataTable({
                 })}</DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
-        </div>
-      </div>
+        </Field>
+      </FieldGroup>
 
       <div className="rounded-md border">
         <Table>
@@ -523,10 +527,10 @@ export function DataTable({
       </div>
 
       <div className="flex items-center justify-between gap-2 py-4">
-        <div className="flex items-center gap-2">
-          <Label htmlFor="page-size" className="text-sm font-medium">
+        <Field>
+          <FieldLabel htmlFor="page-size" className="text-sm font-medium">
             Show
-          </Label>
+          </FieldLabel>
           <Select
             value={`${table.state.pagination.pageSize}`}
             onValueChange={(value) => {
@@ -544,7 +548,7 @@ export function DataTable({
               ))}</SelectGroup>
             </SelectContent>
           </Select>
-        </div>
+        </Field>
         <div className="flex-1 text-sm text-muted-foreground hidden sm:block">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.

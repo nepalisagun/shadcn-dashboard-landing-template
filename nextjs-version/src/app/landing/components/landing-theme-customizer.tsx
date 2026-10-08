@@ -12,6 +12,8 @@ import {
   Sun,
   Moon,
 } from "lucide-react"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { Field, FieldLabel, FieldLegend, FieldSet } from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -20,7 +22,6 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet"
-import { Label } from "@/components/ui/label"
 import {
   Select,
   SelectContent,
@@ -226,38 +227,42 @@ export function LandingThemeCustomizer({
 
           <div className="flex flex-col flex-1 overflow-y-auto p-4 gap-6">
             {/* Mode Section */}
-            <div className="flex flex-col gap-3">
-              <Label className="text-sm font-medium">Mode</Label>
-              <div className="grid grid-cols-2 gap-2">
-                <Button
-                  variant={!isDarkMode ? "secondary" : "outline"}
-                  size="sm"
+            <FieldSet>
+              <FieldLegend variant="label">Mode</FieldLegend>
+              <ToggleGroup
+                variant="outline"
+                size="sm"
+                spacing={2}
+                value={[isDarkMode ? "dark" : "light"]}
+                className="grid w-full grid-cols-2"
+              >
+                <ToggleGroupItem
+                  value="light"
                   onClick={handleLightMode}
-                  className="cursor-pointer mode-toggle-button relative overflow-hidden"
+                  className="cursor-pointer"
                 >
-                  <Sun className="transition-transform duration-300" data-icon="inline-start" />
+                  <Sun />
                   Light
-                </Button>
-                <Button
-                  variant={isDarkMode ? "secondary" : "outline"}
-                  size="sm"
+                </ToggleGroupItem>
+                <ToggleGroupItem
+                  value="dark"
                   onClick={handleDarkMode}
-                  className="cursor-pointer mode-toggle-button relative overflow-hidden"
+                  className="cursor-pointer"
                 >
-                  <Moon className="transition-transform duration-300" data-icon="inline-start" />
+                  <Moon />
                   Dark
-                </Button>
-              </div>
-            </div>
+                </ToggleGroupItem>
+              </ToggleGroup>
+            </FieldSet>
 
             <Separator />
 
             {/* Shadcn UI Theme Presets */}
-            <div className="flex flex-col gap-3">
+            <Field>
               <div className="flex items-center justify-between">
-                <Label className="text-sm font-medium">
+                <FieldLabel htmlFor="customizer-shadcn-ui-theme">
                   Shadcn UI Theme Presets
-                </Label>
+                </FieldLabel>
                 <Button
                   variant="outline"
                   size="sm"
@@ -281,11 +286,11 @@ export function LandingThemeCustomizer({
                   applyTheme(value, isDarkMode)
                 }}
               >
-                <SelectTrigger className="w-full cursor-pointer">
+                <SelectTrigger id="customizer-shadcn-ui-theme" className="w-full cursor-pointer">
                   <SelectValue placeholder="Choose Shadcn Theme" />
                 </SelectTrigger>
                 <SelectContent className="max-h-60">
-                  <SelectGroup><div className="p-2">
+                  <SelectGroup>
                     {colorThemes.map((theme) => (
                       <SelectItem
                         key={theme.value}
@@ -327,19 +332,19 @@ export function LandingThemeCustomizer({
                         </div>
                       </SelectItem>
                     ))}
-                  </div></SelectGroup>
+                  </SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
+            </Field>
 
             <Separator />
 
             {/* Tweakcn Theme Presets */}
-            <div className="flex flex-col gap-3">
+            <Field>
               <div className="flex items-center justify-between">
-                <Label className="text-sm font-medium">
+                <FieldLabel htmlFor="customizer-tweakcn-theme">
                   Tweakcn Theme Presets
-                </Label>
+                </FieldLabel>
                 <Button
                   variant="outline"
                   size="sm"
@@ -368,11 +373,11 @@ export function LandingThemeCustomizer({
                   }
                 }}
               >
-                <SelectTrigger className="w-full cursor-pointer">
+                <SelectTrigger id="customizer-tweakcn-theme" className="w-full cursor-pointer">
                   <SelectValue placeholder="Choose Tweakcn Theme" />
                 </SelectTrigger>
                 <SelectContent className="max-h-60">
-                  <SelectGroup><div className="p-2">
+                  <SelectGroup>
                     {tweakcnThemes.map((theme) => (
                       <SelectItem
                         key={theme.value}
@@ -414,34 +419,34 @@ export function LandingThemeCustomizer({
                         </div>
                       </SelectItem>
                     ))}
-                  </div></SelectGroup>
+                  </SelectGroup>
                 </SelectContent>
               </Select>
-            </div>
+            </Field>
 
             <Separator />
 
             {/* Radius Selection */}
-            <div className="flex flex-col gap-3">
-              <Label className="text-sm font-medium">Radius</Label>
-              <div className="grid grid-cols-5 gap-2">
+            <FieldSet>
+              <FieldLegend variant="label">Radius</FieldLegend>
+              <ToggleGroup
+                variant="outline"
+                spacing={2}
+                value={[selectedRadius]}
+                onValueChange={(value) => value[0] && handleRadiusSelect(value[0])}
+                className="grid w-full grid-cols-5"
+              >
                 {radiusOptions.map((option) => (
-                  <div
+                  <ToggleGroupItem
                     key={option.value}
-                    className={`relative cursor-pointer rounded-md p-3 border transition-colors ${
-                      selectedRadius === option.value
-                        ? "border-primary"
-                        : "border-border hover:border-border/60"
-                    }`}
-                    onClick={() => handleRadiusSelect(option.value)}
+                    value={option.value}
+                    className="cursor-pointer text-xs"
                   >
-                    <div className="text-center">
-                      <div className="text-xs font-medium">{option.name}</div>
-                    </div>
-                  </div>
+                    {option.name}
+                  </ToggleGroupItem>
                 ))}
-              </div>
-            </div>
+              </ToggleGroup>
+            </FieldSet>
 
             <Separator />
 
@@ -465,9 +470,7 @@ export function LandingThemeCustomizer({
                 className="border border-border rounded-lg overflow-hidden"
               >
                 <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-muted/50 transition-colors">
-                  <Label className="text-sm font-medium cursor-pointer">
-                    Brand Colors
-                  </Label>
+                  <span className="text-sm font-medium">Brand Colors</span>
                 </AccordionTrigger>
                 <AccordionContent className="flex flex-col px-4 pb-4 pt-2 gap-3 border-t border-border bg-muted/20">
                   {baseColors.map((color) => (

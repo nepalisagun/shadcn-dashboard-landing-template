@@ -20,10 +20,7 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu"
-import {
-  Field,
-  FieldLabel,
-} from "@/components/ui/field"
+import { Field, FieldLabel } from "@/components/ui/field"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
@@ -205,18 +202,20 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             <span className="sr-only">More</span>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
-              Mark as unread
-            </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
-              Star thread
-            </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
-              Add label
-            </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
-              Mute thread
-            </DropdownMenuItem></DropdownMenuGroup>
+            <DropdownMenuGroup>
+              <DropdownMenuItem className="cursor-pointer">
+                Mark as unread
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
+                Star thread
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
+                Add label
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
+                Mute thread
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -263,7 +262,10 @@ export function MailDisplay({ mail }: MailDisplayProps) {
                 <div className="flex items-center">
                   <Field orientation="horizontal" className="w-fit">
                     <Switch id="mute" />
-                    <FieldLabel htmlFor="mute" className="text-xs font-normal cursor-pointer">
+                    <FieldLabel
+                      htmlFor="mute"
+                      className="text-xs font-normal cursor-pointer"
+                    >
                       Mute this thread
                     </FieldLabel>
                   </Field>

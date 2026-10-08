@@ -214,8 +214,14 @@ export function LandingNavbar() {
                       }
                       className="cursor-pointer size-8"
                     >
-                      <Moon className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" data-icon="inline-start" />
-                      <Sun className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" data-icon="inline-end" />
+                      <Moon
+                        className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+                        data-icon="inline-start"
+                      />
+                      <Sun
+                        className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+                        data-icon="inline-end"
+                      />
                     </Button>
                     <Button
                       variant="ghost"
@@ -258,7 +264,10 @@ export function LandingNavbar() {
                           <CollapsibleTrigger className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
                             {item.name}
                             <ChevronDown
-                              className={cn("size-4 transition-transform", solutionsOpen ? "rotate-180" : "")}
+                              className={cn(
+                                "size-4 transition-transform",
+                                solutionsOpen ? "rotate-180" : ""
+                              )}
                             />
                           </CollapsibleTrigger>
                           <CollapsibleContent className="flex flex-col pl-4 gap-1">

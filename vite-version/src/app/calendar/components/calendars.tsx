@@ -226,25 +226,29 @@ export function Calendars({
                             <MoreHorizontal />
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end" side="right">
-                            <DropdownMenuGroup><DropdownMenuItem
-                              onClick={() => onCalendarEdit?.(item.id)}
-                              className="cursor-pointer"
-                            >
-                              Edit calendar
-                            </DropdownMenuItem>
-                            <DropdownMenuItem
-                              onClick={() => handleToggleVisibility(item.id)}
-                              className="cursor-pointer"
-                            >
-                              {item.visible ? "Hide" : "Show"} calendar
-                            </DropdownMenuItem></DropdownMenuGroup>
+                            <DropdownMenuGroup>
+                              <DropdownMenuItem
+                                onClick={() => onCalendarEdit?.(item.id)}
+                                className="cursor-pointer"
+                              >
+                                Edit calendar
+                              </DropdownMenuItem>
+                              <DropdownMenuItem
+                                onClick={() => handleToggleVisibility(item.id)}
+                                className="cursor-pointer"
+                              >
+                                {item.visible ? "Hide" : "Show"} calendar
+                              </DropdownMenuItem>
+                            </DropdownMenuGroup>
                             <DropdownMenuSeparator />
-                            <DropdownMenuGroup><DropdownMenuItem
-                              onClick={() => onCalendarDelete?.(item.id)}
-                              className="cursor-pointer text-destructive"
-                            >
-                              Delete calendar
-                            </DropdownMenuItem></DropdownMenuGroup>
+                            <DropdownMenuGroup>
+                              <DropdownMenuItem
+                                onClick={() => onCalendarDelete?.(item.id)}
+                                className="cursor-pointer text-destructive"
+                              >
+                                Delete calendar
+                              </DropdownMenuItem>
+                            </DropdownMenuGroup>
                           </DropdownMenuContent>
                         </DropdownMenu>
                       </div>

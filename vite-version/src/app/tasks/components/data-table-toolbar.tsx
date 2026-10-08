@@ -80,23 +80,25 @@ export function DataTableToolbar<TData extends RowData>({
               <SelectValue placeholder="Status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectGroup><SelectItem value="all" className="cursor-pointer">
-                All Status
-              </SelectItem>
-              {statuses.map((status) => (
-                <SelectItem
-                  key={status.value}
-                  value={status.value}
-                  className="cursor-pointer"
-                >
-                  <div className="flex items-center">
-                    {status.icon && (
-                      <status.icon className="mr-2 size-4 text-muted-foreground" />
-                    )}
-                    {status.label}
-                  </div>
+              <SelectGroup>
+                <SelectItem value="all" className="cursor-pointer">
+                  All Status
                 </SelectItem>
-              ))}</SelectGroup>
+                {statuses.map((status) => (
+                  <SelectItem
+                    key={status.value}
+                    value={status.value}
+                    className="cursor-pointer"
+                  >
+                    <div className="flex items-center">
+                      {status.icon && (
+                        <status.icon className="mr-2 size-4 text-muted-foreground" />
+                      )}
+                      {status.label}
+                    </div>
+                  </SelectItem>
+                ))}
+              </SelectGroup>
             </SelectContent>
           </Select>
 
@@ -110,18 +112,20 @@ export function DataTableToolbar<TData extends RowData>({
               <SelectValue placeholder="Category" />
             </SelectTrigger>
             <SelectContent>
-              <SelectGroup><SelectItem value="all" className="cursor-pointer">
-                All Categories
-              </SelectItem>
-              {categories.map((category) => (
-                <SelectItem
-                  key={category.value}
-                  value={category.value}
-                  className="cursor-pointer"
-                >
-                  {category.label}
+              <SelectGroup>
+                <SelectItem value="all" className="cursor-pointer">
+                  All Categories
                 </SelectItem>
-              ))}</SelectGroup>
+                {categories.map((category) => (
+                  <SelectItem
+                    key={category.value}
+                    value={category.value}
+                    className="cursor-pointer"
+                  >
+                    {category.label}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
             </SelectContent>
           </Select>
 
@@ -135,18 +139,20 @@ export function DataTableToolbar<TData extends RowData>({
               <SelectValue placeholder="Priority" />
             </SelectTrigger>
             <SelectContent>
-              <SelectGroup><SelectItem value="all" className="cursor-pointer">
-                All Priorities
-              </SelectItem>
-              {priorities.map((priority) => (
-                <SelectItem
-                  key={priority.value}
-                  value={priority.value}
-                  className="cursor-pointer"
-                >
-                  <div className="flex items-center">{priority.label}</div>
+              <SelectGroup>
+                <SelectItem value="all" className="cursor-pointer">
+                  All Priorities
                 </SelectItem>
-              ))}</SelectGroup>
+                {priorities.map((priority) => (
+                  <SelectItem
+                    key={priority.value}
+                    value={priority.value}
+                    className="cursor-pointer"
+                  >
+                    <div className="flex items-center">{priority.label}</div>
+                  </SelectItem>
+                ))}
+              </SelectGroup>
             </SelectContent>
           </Select>
         </div>

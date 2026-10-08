@@ -1,7 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Controller,useForm } from "react-hook-form"
+import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
 import {
   Field,
@@ -57,8 +57,12 @@ export default function AppearanceSettings() {
           Customize the appearance of the application.
         </p>
       </div>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6">
-          <FieldGroup>{/* Theme Section */}
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex flex-col gap-6"
+      >
+        <FieldGroup>
+          {/* Theme Section */}
           <Controller
             control={form.control}
             name="theme"
@@ -82,24 +86,24 @@ export default function AppearanceSettings() {
                       aria-invalid={fieldState.invalid}
                     />
                     <div className="rounded-md border-2 border-muted p-4 hover:border-accent transition-colors">
+                      <div className="flex flex-col gap-2">
+                        <div className="size-20 bg-white border rounded-md p-3">
                           <div className="flex flex-col gap-2">
-                            <div className="size-20 bg-white border rounded-md p-3">
-                              <div className="flex flex-col gap-2">
-                                <div className="h-2 bg-gray-200 rounded w-3/4"></div>
-                                <div className="h-2 bg-gray-200 rounded w-1/2"></div>
-                                <div className="flex gap-2">
-                                  <div className="size-2 bg-gray-300 rounded-full"></div>
-                                  <div className="h-2 bg-gray-200 rounded flex-1"></div>
-                                </div>
-                                <div className="flex gap-2">
-                                  <div className="size-2 bg-gray-300 rounded-full"></div>
-                                  <div className="h-2 bg-gray-200 rounded flex-1"></div>
-                                </div>
-                              </div>
+                            <div className="h-2 bg-gray-200 rounded w-3/4"></div>
+                            <div className="h-2 bg-gray-200 rounded w-1/2"></div>
+                            <div className="flex gap-2">
+                              <div className="size-2 bg-gray-300 rounded-full"></div>
+                              <div className="h-2 bg-gray-200 rounded flex-1"></div>
                             </div>
-                            <span className="text-sm font-medium">Light</span>
+                            <div className="flex gap-2">
+                              <div className="size-2 bg-gray-300 rounded-full"></div>
+                              <div className="h-2 bg-gray-200 rounded flex-1"></div>
+                            </div>
                           </div>
                         </div>
+                        <span className="text-sm font-medium">Light</span>
+                      </div>
+                    </div>
                   </FieldLabel>
                   <FieldLabel
                     htmlFor="appearance-theme-dark"
@@ -112,27 +116,29 @@ export default function AppearanceSettings() {
                       aria-invalid={fieldState.invalid}
                     />
                     <div className="rounded-md border-2 border-muted p-4 hover:border-accent transition-colors">
+                      <div className="flex flex-col gap-2">
+                        <div className="size-20 bg-gray-900 border border-gray-700 rounded-md p-3">
                           <div className="flex flex-col gap-2">
-                            <div className="size-20 bg-gray-900 border border-gray-700 rounded-md p-3">
-                              <div className="flex flex-col gap-2">
-                                <div className="h-2 bg-gray-600 rounded w-3/4"></div>
-                                <div className="h-2 bg-gray-600 rounded w-1/2"></div>
-                                <div className="flex gap-2">
-                                  <div className="size-2 bg-gray-500 rounded-full"></div>
-                                  <div className="h-2 bg-gray-600 rounded flex-1"></div>
-                                </div>
-                                <div className="flex gap-2">
-                                  <div className="size-2 bg-gray-500 rounded-full"></div>
-                                  <div className="h-2 bg-gray-600 rounded flex-1"></div>
-                                </div>
-                              </div>
+                            <div className="h-2 bg-gray-600 rounded w-3/4"></div>
+                            <div className="h-2 bg-gray-600 rounded w-1/2"></div>
+                            <div className="flex gap-2">
+                              <div className="size-2 bg-gray-500 rounded-full"></div>
+                              <div className="h-2 bg-gray-600 rounded flex-1"></div>
                             </div>
-                            <span className="text-sm font-medium">Dark</span>
+                            <div className="flex gap-2">
+                              <div className="size-2 bg-gray-500 rounded-full"></div>
+                              <div className="h-2 bg-gray-600 rounded flex-1"></div>
+                            </div>
                           </div>
                         </div>
+                        <span className="text-sm font-medium">Dark</span>
+                      </div>
+                    </div>
                   </FieldLabel>
                 </RadioGroup>
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                {fieldState.invalid && (
+                  <FieldError errors={[fieldState.error]} />
+                )}
               </FieldSet>
             )}
           />
@@ -142,7 +148,9 @@ export default function AppearanceSettings() {
             name="fontFamily"
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor="appearance-font-family">Font Family</FieldLabel>
+                <FieldLabel htmlFor="appearance-font-family">
+                  Font Family
+                </FieldLabel>
                 <Select
                   items={{
                     inter: "Inter",
@@ -150,20 +158,27 @@ export default function AppearanceSettings() {
                     system: "System Default",
                   }}
                   name={field.name}
- onValueChange={field.onChange}
+                  onValueChange={field.onChange}
                   value={field.value}
                 >
-                  
-                    <SelectTrigger id="appearance-font-family" aria-invalid={fieldState.invalid} className="cursor-pointer">
-                      <SelectValue placeholder="Select a font" />
-                    </SelectTrigger>
+                  <SelectTrigger
+                    id="appearance-font-family"
+                    aria-invalid={fieldState.invalid}
+                    className="cursor-pointer"
+                  >
+                    <SelectValue placeholder="Select a font" />
+                  </SelectTrigger>
                   <SelectContent>
-                    <SelectGroup><SelectItem value="inter">Inter</SelectItem>
-                    <SelectItem value="roboto">Roboto</SelectItem>
-                    <SelectItem value="system">System Default</SelectItem></SelectGroup>
+                    <SelectGroup>
+                      <SelectItem value="inter">Inter</SelectItem>
+                      <SelectItem value="roboto">Roboto</SelectItem>
+                      <SelectItem value="system">System Default</SelectItem>
+                    </SelectGroup>
                   </SelectContent>
                 </Select>
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                {fieldState.invalid && (
+                  <FieldError errors={[fieldState.error]} />
+                )}
               </Field>
             )}
           />
@@ -172,24 +187,33 @@ export default function AppearanceSettings() {
             name="fontSize"
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor="appearance-font-size">Font Size</FieldLabel>
+                <FieldLabel htmlFor="appearance-font-size">
+                  Font Size
+                </FieldLabel>
                 <Select
                   items={{ small: "Small", medium: "Medium", large: "Large" }}
                   name={field.name}
- onValueChange={field.onChange}
+                  onValueChange={field.onChange}
                   value={field.value}
                 >
-                  
-                    <SelectTrigger id="appearance-font-size" aria-invalid={fieldState.invalid} className="cursor-pointer">
-                      <SelectValue placeholder="Select font size" />
-                    </SelectTrigger>
+                  <SelectTrigger
+                    id="appearance-font-size"
+                    aria-invalid={fieldState.invalid}
+                    className="cursor-pointer"
+                  >
+                    <SelectValue placeholder="Select font size" />
+                  </SelectTrigger>
                   <SelectContent>
-                    <SelectGroup><SelectItem value="small">Small</SelectItem>
-                    <SelectItem value="medium">Medium</SelectItem>
-                    <SelectItem value="large">Large</SelectItem></SelectGroup>
+                    <SelectGroup>
+                      <SelectItem value="small">Small</SelectItem>
+                      <SelectItem value="medium">Medium</SelectItem>
+                      <SelectItem value="large">Large</SelectItem>
+                    </SelectGroup>
                   </SelectContent>
                 </Select>
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                {fieldState.invalid && (
+                  <FieldError errors={[fieldState.error]} />
+                )}
               </Field>
             )}
           />
@@ -200,7 +224,9 @@ export default function AppearanceSettings() {
             name="sidebarWidth"
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor="appearance-sidebar-width">Sidebar Width</FieldLabel>
+                <FieldLabel htmlFor="appearance-sidebar-width">
+                  Sidebar Width
+                </FieldLabel>
                 <Select
                   items={{
                     compact: "Compact",
@@ -208,20 +234,27 @@ export default function AppearanceSettings() {
                     spacious: "Spacious",
                   }}
                   name={field.name}
- onValueChange={field.onChange}
+                  onValueChange={field.onChange}
                   value={field.value}
                 >
-                  
-                    <SelectTrigger id="appearance-sidebar-width" aria-invalid={fieldState.invalid} className="cursor-pointer">
-                      <SelectValue placeholder="Select sidebar width" />
-                    </SelectTrigger>
+                  <SelectTrigger
+                    id="appearance-sidebar-width"
+                    aria-invalid={fieldState.invalid}
+                    className="cursor-pointer"
+                  >
+                    <SelectValue placeholder="Select sidebar width" />
+                  </SelectTrigger>
                   <SelectContent>
-                    <SelectGroup><SelectItem value="compact">Compact</SelectItem>
-                    <SelectItem value="comfortable">Comfortable</SelectItem>
-                    <SelectItem value="spacious">Spacious</SelectItem></SelectGroup>
+                    <SelectGroup>
+                      <SelectItem value="compact">Compact</SelectItem>
+                      <SelectItem value="comfortable">Comfortable</SelectItem>
+                      <SelectItem value="spacious">Spacious</SelectItem>
+                    </SelectGroup>
                   </SelectContent>
                 </Select>
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                {fieldState.invalid && (
+                  <FieldError errors={[fieldState.error]} />
+                )}
               </Field>
             )}
           />
@@ -230,7 +263,9 @@ export default function AppearanceSettings() {
             name="contentWidth"
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor="appearance-content-width">Content Width</FieldLabel>
+                <FieldLabel htmlFor="appearance-content-width">
+                  Content Width
+                </FieldLabel>
                 <Select
                   items={{
                     fixed: "Fixed",
@@ -238,33 +273,41 @@ export default function AppearanceSettings() {
                     container: "Container",
                   }}
                   name={field.name}
- onValueChange={field.onChange}
+                  onValueChange={field.onChange}
                   value={field.value}
                 >
-                  
-                    <SelectTrigger id="appearance-content-width" aria-invalid={fieldState.invalid} className="cursor-pointer">
-                      <SelectValue placeholder="Select content width" />
-                    </SelectTrigger>
+                  <SelectTrigger
+                    id="appearance-content-width"
+                    aria-invalid={fieldState.invalid}
+                    className="cursor-pointer"
+                  >
+                    <SelectValue placeholder="Select content width" />
+                  </SelectTrigger>
                   <SelectContent>
-                    <SelectGroup><SelectItem value="fixed">Fixed</SelectItem>
-                    <SelectItem value="fluid">Fluid</SelectItem>
-                    <SelectItem value="container">Container</SelectItem></SelectGroup>
+                    <SelectGroup>
+                      <SelectItem value="fixed">Fixed</SelectItem>
+                      <SelectItem value="fluid">Fluid</SelectItem>
+                      <SelectItem value="container">Container</SelectItem>
+                    </SelectGroup>
                   </SelectContent>
                 </Select>
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                {fieldState.invalid && (
+                  <FieldError errors={[fieldState.error]} />
+                )}
               </Field>
             )}
-          /></FieldGroup>
+          />
+        </FieldGroup>
 
-          <div className="flex gap-2 mt-12">
-            <Button type="submit" className="cursor-pointer">
-              Save Preferences
-            </Button>
-            <Button variant="outline" type="button" className="cursor-pointer">
-              Cancel
-            </Button>
-          </div>
-        </form>
+        <div className="flex gap-2 mt-12">
+          <Button type="submit" className="cursor-pointer">
+            Save Preferences
+          </Button>
+          <Button variant="outline" type="button" className="cursor-pointer">
+            Cancel
+          </Button>
+        </div>
+      </form>
     </div>
   )
 }

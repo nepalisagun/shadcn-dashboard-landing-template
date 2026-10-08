@@ -328,22 +328,24 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                     <ChevronDown data-icon="inline-end" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
-                    <DropdownMenuGroup><DropdownMenuItem onClick={() => setViewMode("month")}>
-                      <Grid3X3 />
-                      Month
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setViewMode("week")}>
-                      <List />
-                      Week
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setViewMode("day")}>
-                      <CalendarIcon />
-                      Day
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setViewMode("list")}>
-                      <List />
-                      List
-                    </DropdownMenuItem></DropdownMenuGroup>
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem onClick={() => setViewMode("month")}>
+                        <Grid3X3 />
+                        Month
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => setViewMode("week")}>
+                        <List />
+                        Week
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => setViewMode("day")}>
+                        <CalendarIcon />
+                        Day
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => setViewMode("list")}>
+                        <List />
+                        List
+                      </DropdownMenuItem>
+                    </DropdownMenuGroup>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>

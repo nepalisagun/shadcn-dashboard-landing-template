@@ -207,27 +207,27 @@ export function CommandSearch({ open, onOpenChange }: CommandSearchProps) {
       className="sm:max-w-[640px]"
     >
       <Command>
-      <CommandInput placeholder="What do you need?" autoFocus />
-      <CommandList className="max-h-[400px]">
-        <CommandEmpty>No results found.</CommandEmpty>
-        {Object.entries(groupedItems).map(([group, items]) => (
-          <CommandGroup key={group} heading={group}>
-            {items.map((item) => {
-              const Icon = item.icon
-              return (
-                <CommandItem
-                  key={item.url}
-                  value={item.title}
-                  onSelect={() => handleSelect(item.url)}
-                >
-                  {Icon && <Icon />}
-                  {item.title}
-                </CommandItem>
-              )
-            })}
-          </CommandGroup>
-        ))}
-      </CommandList>
+        <CommandInput placeholder="What do you need?" autoFocus />
+        <CommandList className="max-h-[400px]">
+          <CommandEmpty>No results found.</CommandEmpty>
+          {Object.entries(groupedItems).map(([group, items]) => (
+            <CommandGroup key={group} heading={group}>
+              {items.map((item) => {
+                const Icon = item.icon
+                return (
+                  <CommandItem
+                    key={item.url}
+                    value={item.title}
+                    onSelect={() => handleSelect(item.url)}
+                  >
+                    {Icon && <Icon />}
+                    {item.title}
+                  </CommandItem>
+                )
+              })}
+            </CommandGroup>
+          ))}
+        </CommandList>
       </Command>
     </CommandDialog>
   )
@@ -243,7 +243,9 @@ export function SearchTrigger({ onClick }: { onClick: () => void }) {
     >
       <Search data-icon="inline-start" />
       Search...
-      <Kbd className="absolute top-1/2 right-1.5 hidden -translate-y-1/2 sm:inline-flex">⌘K</Kbd>
+      <Kbd className="absolute top-1/2 right-1.5 hidden -translate-y-1/2 sm:inline-flex">
+        ⌘K
+      </Kbd>
     </Button>
   )
 }

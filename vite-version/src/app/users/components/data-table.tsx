@@ -22,11 +22,7 @@ import {
   Search,
 } from "lucide-react"
 
-import {
-  Field,
-  FieldGroup,
-  FieldLabel,
-} from "@/components/ui/field"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -278,24 +274,28 @@ export function DataTable({
                 <span className="sr-only">More actions</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
-                  View Details
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  Send Email
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  Reset Password
-                </DropdownMenuItem></DropdownMenuGroup>
+                <DropdownMenuGroup>
+                  <DropdownMenuItem className="cursor-pointer">
+                    View Details
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer">
+                    Send Email
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer">
+                    Reset Password
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <DropdownMenuGroup><DropdownMenuItem
-                  variant="destructive"
-                  className="cursor-pointer"
-                  onClick={() => onDeleteUser(user.id)}
-                >
-                  <Trash2 />
-                  Delete User
-                </DropdownMenuItem></DropdownMenuGroup>
+                <DropdownMenuGroup>
+                  <DropdownMenuItem
+                    variant="destructive"
+                    className="cursor-pointer"
+                    onClick={() => onDeleteUser(user.id)}
+                  >
+                    <Trash2 />
+                    Delete User
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -331,11 +331,15 @@ export function DataTable({
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-1 items-center gap-2">
           <InputGroup className="flex-1 max-w-sm">
-<InputGroupInput placeholder="Search users..." value={globalFilter ?? ""} onChange={(event) => setGlobalFilter(String(event.target.value))} />
-<InputGroupAddon>
-<Search />
-</InputGroupAddon>
-</InputGroup>
+            <InputGroupInput
+              placeholder="Search users..."
+              value={globalFilter ?? ""}
+              onChange={(event) => setGlobalFilter(String(event.target.value))}
+            />
+            <InputGroupAddon>
+              <Search />
+            </InputGroupAddon>
+          </InputGroup>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="outline" className="cursor-pointer">
@@ -371,12 +375,14 @@ export function DataTable({
               <SelectValue placeholder="Select Role" />
             </SelectTrigger>
             <SelectContent>
-              <SelectGroup><SelectItem value="all">All Roles</SelectItem>
-              <SelectItem value="Admin">Admin</SelectItem>
-              <SelectItem value="Author">Author</SelectItem>
-              <SelectItem value="Editor">Editor</SelectItem>
-              <SelectItem value="Maintainer">Maintainer</SelectItem>
-              <SelectItem value="Subscriber">Subscriber</SelectItem></SelectGroup>
+              <SelectGroup>
+                <SelectItem value="all">All Roles</SelectItem>
+                <SelectItem value="Admin">Admin</SelectItem>
+                <SelectItem value="Author">Author</SelectItem>
+                <SelectItem value="Editor">Editor</SelectItem>
+                <SelectItem value="Maintainer">Maintainer</SelectItem>
+                <SelectItem value="Subscriber">Subscriber</SelectItem>
+              </SelectGroup>
             </SelectContent>
           </Select>
         </Field>
@@ -402,10 +408,12 @@ export function DataTable({
               <SelectValue placeholder="Select Plan" />
             </SelectTrigger>
             <SelectContent>
-              <SelectGroup><SelectItem value="all">All Plans</SelectItem>
-              <SelectItem value="Basic">Basic</SelectItem>
-              <SelectItem value="Professional">Professional</SelectItem>
-              <SelectItem value="Enterprise">Enterprise</SelectItem></SelectGroup>
+              <SelectGroup>
+                <SelectItem value="all">All Plans</SelectItem>
+                <SelectItem value="Basic">Basic</SelectItem>
+                <SelectItem value="Professional">Professional</SelectItem>
+                <SelectItem value="Enterprise">Enterprise</SelectItem>
+              </SelectGroup>
             </SelectContent>
           </Select>
         </Field>
@@ -432,18 +440,18 @@ export function DataTable({
               <SelectValue placeholder="Select Status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectGroup><SelectItem value="all">All Status</SelectItem>
-              <SelectItem value="Active">Active</SelectItem>
-              <SelectItem value="Pending">Pending</SelectItem>
-              <SelectItem value="Error">Error</SelectItem>
-              <SelectItem value="Inactive">Inactive</SelectItem></SelectGroup>
+              <SelectGroup>
+                <SelectItem value="all">All Status</SelectItem>
+                <SelectItem value="Active">Active</SelectItem>
+                <SelectItem value="Pending">Pending</SelectItem>
+                <SelectItem value="Error">Error</SelectItem>
+                <SelectItem value="Inactive">Inactive</SelectItem>
+              </SelectGroup>
             </SelectContent>
           </Select>
         </Field>
         <Field>
-          <FieldLabel htmlFor="column-visibility">
-            Column Visibility
-          </FieldLabel>
+          <FieldLabel htmlFor="column-visibility">Column Visibility</FieldLabel>
           <DropdownMenu>
             <DropdownMenuTrigger
               id="column-visibility"
@@ -454,23 +462,25 @@ export function DataTable({
               Columns <ChevronDown data-icon="inline-end" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuGroup>{table
-                .getAllColumns()
-                .filter((column) => column.getCanHide())
-                .map((column) => {
-                  return (
-                    <DropdownMenuCheckboxItem
-                      key={column.id}
-                      className="capitalize"
-                      checked={column.getIsVisible()}
-                      onCheckedChange={(value) =>
-                        column.toggleVisibility(!!value)
-                      }
-                    >
-                      {column.id}
-                    </DropdownMenuCheckboxItem>
-                  )
-                })}</DropdownMenuGroup>
+              <DropdownMenuGroup>
+                {table
+                  .getAllColumns()
+                  .filter((column) => column.getCanHide())
+                  .map((column) => {
+                    return (
+                      <DropdownMenuCheckboxItem
+                        key={column.id}
+                        className="capitalize"
+                        checked={column.getIsVisible()}
+                        onCheckedChange={(value) =>
+                          column.toggleVisibility(!!value)
+                        }
+                      >
+                        {column.id}
+                      </DropdownMenuCheckboxItem>
+                    )
+                  })}
+              </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </Field>
@@ -542,11 +552,13 @@ export function DataTable({
               <SelectValue placeholder={table.state.pagination.pageSize} />
             </SelectTrigger>
             <SelectContent side="top">
-              <SelectGroup>{[10, 20, 30, 40, 50].map((pageSize) => (
-                <SelectItem key={pageSize} value={`${pageSize}`}>
-                  {pageSize}
-                </SelectItem>
-              ))}</SelectGroup>
+              <SelectGroup>
+                {[10, 20, 30, 40, 50].map((pageSize) => (
+                  <SelectItem key={pageSize} value={`${pageSize}`}>
+                    {pageSize}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
             </SelectContent>
           </Select>
         </Field>

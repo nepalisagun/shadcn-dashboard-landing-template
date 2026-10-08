@@ -17,22 +17,21 @@ interface CalendarSidebarProps {
   className?: string
 }
 
-export function CalendarSidebar({ 
+export function CalendarSidebar({
   selectedDate,
   onDateSelect,
   onNewCalendar,
   onNewEvent,
   events = [],
-  className 
+  className,
 }: CalendarSidebarProps) {
   return (
-    <div className={cn("flex flex-col h-full bg-background rounded-lg", className)}>
+    <div
+      className={cn("flex flex-col h-full bg-background rounded-lg", className)}
+    >
       {/* Add New Event Button */}
       <div className="p-6 border-b">
-        <Button 
-          className="w-full cursor-pointer"
-          onClick={onNewEvent}
-        >
+        <Button className="w-full cursor-pointer" onClick={onNewEvent}>
           <Plus data-icon="inline-start" />
           Add New Event
         </Button>
@@ -49,7 +48,7 @@ export function CalendarSidebar({
 
       {/* Calendars */}
       <div className="flex-1 p-4">
-        <Calendars 
+        <Calendars
           onNewCalendar={onNewCalendar}
           onCalendarToggle={(calendarId, visible) => {
             console.log(`Calendar ${calendarId} visibility: ${visible}`)
@@ -65,8 +64,8 @@ export function CalendarSidebar({
 
       {/* Footer */}
       <div className="p-4 border-t">
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           className="w-full justify-start cursor-pointer"
           onClick={onNewCalendar}
         >

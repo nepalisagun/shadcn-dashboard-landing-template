@@ -70,18 +70,20 @@ export function DashboardHeader() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectGroup><SelectItem value="7d" className="cursor-pointer">
-                    Last 7 days
-                  </SelectItem>
-                  <SelectItem value="30d" className="cursor-pointer">
-                    Last 30 days
-                  </SelectItem>
-                  <SelectItem value="90d" className="cursor-pointer">
-                    Last 90 days
-                  </SelectItem>
-                  <SelectItem value="1y" className="cursor-pointer">
-                    Last year
-                  </SelectItem></SelectGroup>
+                  <SelectGroup>
+                    <SelectItem value="7d" className="cursor-pointer">
+                      Last 7 days
+                    </SelectItem>
+                    <SelectItem value="30d" className="cursor-pointer">
+                      Last 30 days
+                    </SelectItem>
+                    <SelectItem value="90d" className="cursor-pointer">
+                      Last 90 days
+                    </SelectItem>
+                    <SelectItem value="1y" className="cursor-pointer">
+                      Last year
+                    </SelectItem>
+                  </SelectGroup>
                 </SelectContent>
               </Select>
             </div>

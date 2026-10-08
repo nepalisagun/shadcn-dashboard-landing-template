@@ -1,10 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import {
-  Field,
-  FieldLabel,
-} from "@/components/ui/field"
+import { Field, FieldLabel } from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -13,7 +10,11 @@ export function LoginForm2({
   ...props
 }: React.ComponentProps<"form">) {
   return (
-    <form className={cn("flex flex-col gap-6", className)} {...props} action="/dashboard">
+    <form
+      className={cn("flex flex-col gap-6", className)}
+      {...props}
+      action="/dashboard"
+    >
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-2xl font-bold">Login to your account</h1>
         <p className="text-muted-foreground text-sm text-balance">
@@ -23,7 +24,13 @@ export function LoginForm2({
       <div className="grid gap-6">
         <Field>
           <FieldLabel htmlFor="email">Email</FieldLabel>
-          <Input id="email" type="email" placeholder="test@example.com" defaultValue="test@example.com" required />
+          <Input
+            id="email"
+            type="email"
+            placeholder="test@example.com"
+            defaultValue="test@example.com"
+            required
+          />
         </Field>
         <Field>
           <div className="flex items-center">
@@ -35,7 +42,12 @@ export function LoginForm2({
               Forgot your password?
             </a>
           </div>
-          <Input id="password" type="password" defaultValue="password" required />
+          <Input
+            id="password"
+            type="password"
+            defaultValue="password"
+            required
+          />
         </Field>
         <Button type="submit" className="w-full cursor-pointer">
           Login
@@ -57,7 +69,10 @@ export function LoginForm2({
       </div>
       <div className="text-center text-sm">
         Don&apos;t have an account?{" "}
-        <a href="/templates/dashboard/shadcn-dashboard-landing-template/auth/sign-up-2" className="underline underline-offset-4">
+        <a
+          href="/templates/dashboard/shadcn-dashboard-landing-template/auth/sign-up-2"
+          className="underline underline-offset-4"
+        >
           Sign up
         </a>
       </div>

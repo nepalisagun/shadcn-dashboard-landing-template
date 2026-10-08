@@ -46,7 +46,6 @@ export function SiteHeader() {
                   href="https://shadcnstore.com/blocks"
                   rel="noopener noreferrer"
                   target="_blank"
-                 
                 />
               }
             >
@@ -62,7 +61,6 @@ export function SiteHeader() {
                   href={getAppUrl("/landing")}
                   rel="noopener noreferrer"
                   target="_blank"
-                 
                 />
               }
             >
@@ -78,7 +76,6 @@ export function SiteHeader() {
                   href="https://github.com/shadcnstore/shadcn-dashboard-landing-template"
                   rel="noopener noreferrer"
                   target="_blank"
-                 
                 />
               }
             >

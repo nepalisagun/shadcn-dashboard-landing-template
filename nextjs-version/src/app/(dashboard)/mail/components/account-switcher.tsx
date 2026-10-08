@@ -53,14 +53,16 @@ export function AccountSwitcher({
         </SelectValue>
       </SelectTrigger>
       <SelectContent className="w-full">
-        <SelectGroup>{accounts.map((account) => (
-          <SelectItem key={account.email} value={account.email}>
-            <div className="flex items-center gap-3 [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-foreground">
-              {account.icon}
-              {account.email}
-            </div>
-          </SelectItem>
-        ))}</SelectGroup>
+        <SelectGroup>
+          {accounts.map((account) => (
+            <SelectItem key={account.email} value={account.email}>
+              <div className="flex items-center gap-3 [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-foreground">
+                {account.icon}
+                {account.email}
+              </div>
+            </SelectItem>
+          ))}
+        </SelectGroup>
       </SelectContent>
     </Select>
   )

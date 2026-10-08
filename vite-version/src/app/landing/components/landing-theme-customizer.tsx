@@ -286,7 +286,10 @@ export function LandingThemeCustomizer({
                   applyTheme(value, isDarkMode)
                 }}
               >
-                <SelectTrigger id="customizer-shadcn-ui-theme" className="w-full cursor-pointer">
+                <SelectTrigger
+                  id="customizer-shadcn-ui-theme"
+                  className="w-full cursor-pointer"
+                >
                   <SelectValue placeholder="Choose Shadcn Theme" />
                 </SelectTrigger>
                 <SelectContent className="max-h-60">
@@ -373,7 +376,10 @@ export function LandingThemeCustomizer({
                   }
                 }}
               >
-                <SelectTrigger id="customizer-tweakcn-theme" className="w-full cursor-pointer">
+                <SelectTrigger
+                  id="customizer-tweakcn-theme"
+                  className="w-full cursor-pointer"
+                >
                   <SelectValue placeholder="Choose Tweakcn Theme" />
                 </SelectTrigger>
                 <SelectContent className="max-h-60">
@@ -433,7 +439,9 @@ export function LandingThemeCustomizer({
                 variant="outline"
                 spacing={2}
                 value={[selectedRadius]}
-                onValueChange={(value) => value[0] && handleRadiusSelect(value[0])}
+                onValueChange={(value) =>
+                  value[0] && handleRadiusSelect(value[0])
+                }
                 className="grid w-full grid-cols-5"
               >
                 {radiusOptions.map((option) => (

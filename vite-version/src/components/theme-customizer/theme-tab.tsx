@@ -108,7 +108,9 @@ export function ThemeTab({
       {/* Shadcn UI Theme Presets */}
       <Field>
         <div className="flex items-center justify-between">
-          <FieldLabel htmlFor="customizer-shadcn-ui-theme">Shadcn UI Theme Presets</FieldLabel>
+          <FieldLabel htmlFor="customizer-shadcn-ui-theme">
+            Shadcn UI Theme Presets
+          </FieldLabel>
           <Button
             variant="outline"
             size="sm"
@@ -132,7 +134,10 @@ export function ThemeTab({
             applyTheme(value, isDarkMode)
           }}
         >
-          <SelectTrigger id="customizer-shadcn-ui-theme" className="w-full cursor-pointer">
+          <SelectTrigger
+            id="customizer-shadcn-ui-theme"
+            className="w-full cursor-pointer"
+          >
             <SelectValue placeholder="Choose Shadcn Theme" />
           </SelectTrigger>
           <SelectContent className="max-h-60">
@@ -184,7 +189,9 @@ export function ThemeTab({
       {/* Tweakcn Theme Presets */}
       <Field>
         <div className="flex items-center justify-between">
-          <FieldLabel htmlFor="customizer-tweakcn-theme">Tweakcn Theme Presets</FieldLabel>
+          <FieldLabel htmlFor="customizer-tweakcn-theme">
+            Tweakcn Theme Presets
+          </FieldLabel>
           <Button
             variant="outline"
             size="sm"
@@ -213,7 +220,10 @@ export function ThemeTab({
             }
           }}
         >
-          <SelectTrigger id="customizer-tweakcn-theme" className="w-full cursor-pointer">
+          <SelectTrigger
+            id="customizer-tweakcn-theme"
+            className="w-full cursor-pointer"
+          >
             <SelectValue placeholder="Choose Tweakcn Theme" />
           </SelectTrigger>
           <SelectContent className="max-h-60">
@@ -266,22 +276,22 @@ export function ThemeTab({
       <FieldSet>
         <FieldLegend variant="label">Radius</FieldLegend>
         <ToggleGroup
-                variant="outline"
-                spacing={2}
-                value={[selectedRadius]}
-                onValueChange={(value) => value[0] && handleRadiusSelect(value[0])}
-                className="grid w-full grid-cols-5"
-              >
-                {radiusOptions.map((option) => (
-                  <ToggleGroupItem
-                    key={option.value}
-                    value={option.value}
-                    className="cursor-pointer text-xs"
-                  >
-                    {option.name}
-                  </ToggleGroupItem>
-                ))}
-              </ToggleGroup>
+          variant="outline"
+          spacing={2}
+          value={[selectedRadius]}
+          onValueChange={(value) => value[0] && handleRadiusSelect(value[0])}
+          className="grid w-full grid-cols-5"
+        >
+          {radiusOptions.map((option) => (
+            <ToggleGroupItem
+              key={option.value}
+              value={option.value}
+              className="cursor-pointer text-xs"
+            >
+              {option.name}
+            </ToggleGroupItem>
+          ))}
+        </ToggleGroup>
       </FieldSet>
 
       <Separator />
@@ -290,29 +300,29 @@ export function ThemeTab({
       <FieldSet>
         <FieldLegend variant="label">Mode</FieldLegend>
         <ToggleGroup
-                variant="outline"
-                size="sm"
-                spacing={2}
-                value={[isDarkMode ? "dark" : "light"]}
-                className="grid w-full grid-cols-2"
-              >
-                <ToggleGroupItem
-                  value="light"
-                  onClick={handleLightMode}
-                  className="cursor-pointer"
-                >
-                  <Sun />
-                  Light
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="dark"
-                  onClick={handleDarkMode}
-                  className="cursor-pointer"
-                >
-                  <Moon />
-                  Dark
-                </ToggleGroupItem>
-              </ToggleGroup>
+          variant="outline"
+          size="sm"
+          spacing={2}
+          value={[isDarkMode ? "dark" : "light"]}
+          className="grid w-full grid-cols-2"
+        >
+          <ToggleGroupItem
+            value="light"
+            onClick={handleLightMode}
+            className="cursor-pointer"
+          >
+            <Sun />
+            Light
+          </ToggleGroupItem>
+          <ToggleGroupItem
+            value="dark"
+            onClick={handleDarkMode}
+            className="cursor-pointer"
+          >
+            <Moon />
+            Dark
+          </ToggleGroupItem>
+        </ToggleGroup>
       </FieldSet>
 
       <Separator />

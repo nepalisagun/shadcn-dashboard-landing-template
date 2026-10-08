@@ -1,8 +1,37 @@
-import { Navigate } from 'react-router-dom'
+import { Navigate } from "react-router-dom"
 
 import {
-  Landing, Dashboard, Dashboard2, Mail, Tasks, Chat, Calendar, Users, FAQs, Pricing, SignIn, SignIn2, SignIn3, SignUp, SignUp2, SignUp3, ForgotPassword, ForgotPassword2, ForgotPassword3, Unauthorized, Forbidden, NotFound, InternalServerError, UnderMaintenance, UserSettings, AccountSettings, BillingSettings, AppearanceSettings, NotificationSettings, ConnectionSettings,
-} from '@/config/lazy-pages'
+  Landing,
+  Dashboard,
+  Dashboard2,
+  Mail,
+  Tasks,
+  Chat,
+  Calendar,
+  Users,
+  FAQs,
+  Pricing,
+  SignIn,
+  SignIn2,
+  SignIn3,
+  SignUp,
+  SignUp2,
+  SignUp3,
+  ForgotPassword,
+  ForgotPassword2,
+  ForgotPassword3,
+  Unauthorized,
+  Forbidden,
+  NotFound,
+  InternalServerError,
+  UnderMaintenance,
+  UserSettings,
+  AccountSettings,
+  BillingSettings,
+  AppearanceSettings,
+  NotificationSettings,
+  ConnectionSettings,
+} from "@/config/lazy-pages"
 
 export interface RouteConfig {
   path: string
@@ -15,146 +44,146 @@ export const routes: RouteConfig[] = [
   // Use relative path "dashboard" instead of "/dashboard" for basename compatibility
   {
     path: "/",
-    element: <Navigate to="dashboard" replace />
+    element: <Navigate to="dashboard" replace />,
   },
 
   // Landing Page
   {
     path: "/landing",
-    element: <Landing />
+    element: <Landing />,
   },
 
   // Dashboard Routes
   {
     path: "/dashboard",
-    element: <Dashboard />
+    element: <Dashboard />,
   },
   {
     path: "/dashboard-2",
-    element: <Dashboard2 />
+    element: <Dashboard2 />,
   },
 
   // Application Routes
   {
     path: "/mail",
-    element: <Mail />
+    element: <Mail />,
   },
   {
     path: "/tasks",
-    element: <Tasks />
+    element: <Tasks />,
   },
   {
     path: "/chat",
-    element: <Chat />
+    element: <Chat />,
   },
   {
     path: "/calendar",
-    element: <Calendar />
+    element: <Calendar />,
   },
 
   // Content Pages
   {
     path: "/users",
-    element: <Users />
+    element: <Users />,
   },
   {
     path: "/faqs",
-    element: <FAQs />
+    element: <FAQs />,
   },
   {
     path: "/pricing",
-    element: <Pricing />
+    element: <Pricing />,
   },
 
   // Authentication Routes
   {
     path: "/auth/sign-in",
-    element: <SignIn />
+    element: <SignIn />,
   },
   {
     path: "/auth/sign-in-2",
-    element: <SignIn2 />
+    element: <SignIn2 />,
   },
   {
     path: "/auth/sign-in-3",
-    element: <SignIn3 />
+    element: <SignIn3 />,
   },
   {
     path: "/auth/sign-up",
-    element: <SignUp />
+    element: <SignUp />,
   },
   {
     path: "/auth/sign-up-2",
-    element: <SignUp2 />
+    element: <SignUp2 />,
   },
   {
     path: "/auth/sign-up-3",
-    element: <SignUp3 />
+    element: <SignUp3 />,
   },
   {
     path: "/auth/forgot-password",
-    element: <ForgotPassword />
+    element: <ForgotPassword />,
   },
   {
     path: "/auth/forgot-password-2",
-    element: <ForgotPassword2 />
+    element: <ForgotPassword2 />,
   },
   {
     path: "/auth/forgot-password-3",
-    element: <ForgotPassword3 />
+    element: <ForgotPassword3 />,
   },
 
   // Error Pages
   {
     path: "/errors/unauthorized",
-    element: <Unauthorized />
+    element: <Unauthorized />,
   },
   {
     path: "/errors/forbidden",
-    element: <Forbidden />
+    element: <Forbidden />,
   },
   {
     path: "/errors/not-found",
-    element: <NotFound />
+    element: <NotFound />,
   },
   {
     path: "/errors/internal-server-error",
-    element: <InternalServerError />
+    element: <InternalServerError />,
   },
   {
     path: "/errors/under-maintenance",
-    element: <UnderMaintenance />
+    element: <UnderMaintenance />,
   },
 
   // Settings Routes
   {
     path: "/settings/user",
-    element: <UserSettings />
+    element: <UserSettings />,
   },
   {
     path: "/settings/account",
-    element: <AccountSettings />
+    element: <AccountSettings />,
   },
   {
     path: "/settings/billing",
-    element: <BillingSettings />
+    element: <BillingSettings />,
   },
   {
     path: "/settings/appearance",
-    element: <AppearanceSettings />
+    element: <AppearanceSettings />,
   },
   {
     path: "/settings/notifications",
-    element: <NotificationSettings />
+    element: <NotificationSettings />,
   },
   {
     path: "/settings/connections",
-    element: <ConnectionSettings />
+    element: <ConnectionSettings />,
   },
 
   // Catch-all route for 404
   {
     path: "*",
-    element: <NotFound />
-  }
+    element: <NotFound />,
+  },
 ]

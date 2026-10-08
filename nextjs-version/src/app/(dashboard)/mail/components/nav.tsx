@@ -37,7 +37,7 @@ export function Nav({ links, isCollapsed }: NavProps) {
                   <button
                     className={cn(
                       buttonVariants({ variant: link.variant, size: "icon" }),
-                      "size-9 cursor-pointer",
+                      "size-9 cursor-pointer"
                     )}
                   />
                 }
@@ -68,8 +68,7 @@ export function Nav({ links, isCollapsed }: NavProps) {
                 <span
                   className={cn(
                     "ml-auto",
-                    link.variant === "default" &&
-                      "text-primary-foreground"
+                    link.variant === "default" && "text-primary-foreground"
                   )}
                 >
                   {link.label}

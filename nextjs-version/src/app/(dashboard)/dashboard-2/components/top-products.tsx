@@ -1,7 +1,13 @@
 "use client"
 
 import { Eye, Star, TrendingUp } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -74,10 +80,13 @@ export function TopProducts() {
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
         {products.map((product, index) => (
-          <div key={product.id} className="flex items-center p-3 rounded-lg border gap-2">
-              <div className="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary font-semibold text-sm">
-                #{index + 1}
-              </div>
+          <div
+            key={product.id}
+            className="flex items-center p-3 rounded-lg border gap-2"
+          >
+            <div className="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary font-semibold text-sm">
+              #{index + 1}
+            </div>
             <div className="flex gap-2 items-center justify-between flex-1 flex-wrap">
               <div className="">
                 <div className="flex items-center gap-2">
@@ -89,10 +98,14 @@ export function TopProducts() {
                 <div className="flex items-center gap-2 mt-1">
                   <div className="flex items-center gap-1">
                     <Star className="size-3 fill-warning text-warning" />
-                    <span className="text-xs text-muted-foreground">{product.rating}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {product.rating}
+                    </span>
                   </div>
                   <span className="text-xs text-muted-foreground">•</span>
-                  <span className="text-xs text-muted-foreground">{product.sales} sales</span>
+                  <span className="text-xs text-muted-foreground">
+                    {product.sales} sales
+                  </span>
                 </div>
               </div>
               <div className="flex flex-col text-right gap-1">
@@ -107,9 +120,13 @@ export function TopProducts() {
                   </Badge>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-muted-foreground">Stock: {product.stock}</span>
+                  <span className="text-xs text-muted-foreground">
+                    Stock: {product.stock}
+                  </span>
                   <Progress
-                    value={product.stock > 100 ? 100 : (product.stock / 100) * 100}
+                    value={
+                      product.stock > 100 ? 100 : (product.stock / 100) * 100
+                    }
                     className="w-12 h-1"
                   />
                 </div>

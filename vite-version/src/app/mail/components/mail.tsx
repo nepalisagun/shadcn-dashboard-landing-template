@@ -196,11 +196,14 @@ export function Mail({
             <div className="bg-background/95 supports-[backdrop-filter]:bg-background/60 p-4 backdrop-blur">
               <form>
                 <InputGroup>
-<InputGroupInput placeholder="Search" className="cursor-text" />
-<InputGroupAddon>
-<Search className="cursor-pointer" />
-</InputGroupAddon>
-</InputGroup>
+                  <InputGroupInput
+                    placeholder="Search"
+                    className="cursor-text"
+                  />
+                  <InputGroupAddon>
+                    <Search className="cursor-pointer" />
+                  </InputGroupAddon>
+                </InputGroup>
               </form>
             </div>
             <TabsContent value="all" className="m-0">

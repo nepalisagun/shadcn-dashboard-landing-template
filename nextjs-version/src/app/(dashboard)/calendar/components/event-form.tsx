@@ -216,16 +216,18 @@ export function EventForm({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectGroup>{eventTypes.map((type) => (
-                    <SelectItem key={type.value} value={type.value}>
-                      <div className="flex items-center gap-2">
-                        <div
-                          className={cn("size-3 rounded-full", type.color)}
-                        />
-                        {type.label}
-                      </div>
-                    </SelectItem>
-                  ))}</SelectGroup>
+                  <SelectGroup>
+                    {eventTypes.map((type) => (
+                      <SelectItem key={type.value} value={type.value}>
+                        <div className="flex items-center gap-2">
+                          <div
+                            className={cn("size-3 rounded-full", type.color)}
+                          />
+                          {type.label}
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
                 </SelectContent>
               </Select>
             </Field>
@@ -279,11 +281,13 @@ export function EventForm({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectGroup>{timeSlots.map((time) => (
-                    <SelectItem key={time} value={time}>
-                      {time}
-                    </SelectItem>
-                  ))}</SelectGroup>
+                  <SelectGroup>
+                    {timeSlots.map((time) => (
+                      <SelectItem key={time} value={time}>
+                        {time}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
                 </SelectContent>
               </Select>
             </Field>
@@ -303,11 +307,13 @@ export function EventForm({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectGroup>{durationOptions.map((duration) => (
-                    <SelectItem key={duration} value={duration}>
-                      {duration}
-                    </SelectItem>
-                  ))}</SelectGroup>
+                  <SelectGroup>
+                    {durationOptions.map((duration) => (
+                      <SelectItem key={duration} value={duration}>
+                        {duration}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
                 </SelectContent>
               </Select>
             </Field>
@@ -361,7 +367,10 @@ export function EventForm({
 
           {/* Attendees */}
           <Field>
-            <FieldLabel htmlFor="event-attendee" className="flex items-center gap-2">
+            <FieldLabel
+              htmlFor="event-attendee"
+              className="flex items-center gap-2"
+            >
               <Users className="size-4" />
               Attendees
             </FieldLabel>

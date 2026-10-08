@@ -26,19 +26,23 @@ export function QuickActions() {
           Actions
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
-            <FileText />
-            Generate Report
-          </DropdownMenuItem>
-          <DropdownMenuItem className="cursor-pointer">
-            <Download />
-            Export Data
-          </DropdownMenuItem></DropdownMenuGroup>
+          <DropdownMenuGroup>
+            <DropdownMenuItem className="cursor-pointer">
+              <FileText />
+              Generate Report
+            </DropdownMenuItem>
+            <DropdownMenuItem className="cursor-pointer">
+              <Download />
+              Export Data
+            </DropdownMenuItem>
+          </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
-            <Settings />
-            Dashboard Settings
-          </DropdownMenuItem></DropdownMenuGroup>
+          <DropdownMenuGroup>
+            <DropdownMenuItem className="cursor-pointer">
+              <Settings />
+              Dashboard Settings
+            </DropdownMenuItem>
+          </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

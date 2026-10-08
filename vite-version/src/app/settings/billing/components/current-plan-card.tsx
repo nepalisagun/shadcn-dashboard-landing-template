@@ -1,4 +1,10 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -39,7 +45,9 @@ export function CurrentPlanCard({ plan }: CurrentPlanCardProps) {
           </div>
           <div className="text-right">
             <div className="text-2xl font-bold">{plan.price}</div>
-            <div className="text-sm text-muted-foreground">Next billing: {plan.nextBilling}</div>
+            <div className="text-sm text-muted-foreground">
+              Next billing: {plan.nextBilling}
+            </div>
           </div>
         </div>
 
@@ -52,11 +60,18 @@ export function CurrentPlanCard({ plan }: CurrentPlanCardProps) {
               {/* Progress Section */}
               <div className="mt-3 flex w-full flex-col gap-2">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground font-medium">Days</span>
-                  <span className="text-sm text-muted-foreground font-medium">{plan.daysUsed} of {plan.totalDays} Days</span>
+                  <span className="text-sm text-muted-foreground font-medium">
+                    Days
+                  </span>
+                  <span className="text-sm text-muted-foreground font-medium">
+                    {plan.daysUsed} of {plan.totalDays} Days
+                  </span>
                 </div>
                 <Progress value={plan.progressPercentage} className="h-2" />
-                <p className="text-xs text-muted-foreground">{plan.remainingDays} days remaining until your plan requires update</p>
+                <p className="text-xs text-muted-foreground">
+                  {plan.remainingDays} days remaining until your plan requires
+                  update
+                </p>
               </div>
             </AlertDescription>
           </Alert>

@@ -109,19 +109,23 @@ export function ConversationList({
             <MoreVertical />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
-              <UserPlus />
-              New Chat
-            </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
-              <Filter />
-              Filter Messages
-            </DropdownMenuItem></DropdownMenuGroup>
+            <DropdownMenuGroup>
+              <DropdownMenuItem className="cursor-pointer">
+                <UserPlus />
+                New Chat
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
+                <Filter />
+                Filter Messages
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
-              <Settings />
-              Chat Settings
-            </DropdownMenuItem></DropdownMenuGroup>
+            <DropdownMenuGroup>
+              <DropdownMenuItem className="cursor-pointer">
+                <Settings />
+                Chat Settings
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -129,11 +133,17 @@ export function ConversationList({
       {/* Search */}
       <div className="px-4 py-3 border-b flex-shrink-0">
         <InputGroup>
-<InputGroupInput type="text" placeholder="Search conversations..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="cursor-text" />
-<InputGroupAddon>
-<Search />
-</InputGroupAddon>
-</InputGroup>
+          <InputGroupInput
+            type="text"
+            placeholder="Search conversations..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="cursor-text"
+          />
+          <InputGroupAddon>
+            <Search />
+          </InputGroupAddon>
+        </InputGroup>
       </div>
 
       {/* Conversations */}

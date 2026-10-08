@@ -287,23 +287,25 @@ export function MessageList({
                               <MoreHorizontal />
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
-                              <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
-                                <Reply />
-                                Reply
-                              </DropdownMenuItem>
-                              <DropdownMenuItem className="cursor-pointer">
-                                <Copy />
-                                Copy
-                              </DropdownMenuItem>
-                              {isOwnMessage && (
-                                <>
-                                  <DropdownMenuSeparator />
-                                  <DropdownMenuItem className="cursor-pointer text-destructive">
-                                    <Trash2 />
-                                    Delete
-                                  </DropdownMenuItem>
-                                </>
-                              )}</DropdownMenuGroup>
+                              <DropdownMenuGroup>
+                                <DropdownMenuItem className="cursor-pointer">
+                                  <Reply />
+                                  Reply
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className="cursor-pointer">
+                                  <Copy />
+                                  Copy
+                                </DropdownMenuItem>
+                                {isOwnMessage && (
+                                  <>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem className="cursor-pointer text-destructive">
+                                      <Trash2 />
+                                      Delete
+                                    </DropdownMenuItem>
+                                  </>
+                                )}
+                              </DropdownMenuGroup>
                             </DropdownMenuContent>
                           </DropdownMenu>
                         </div>

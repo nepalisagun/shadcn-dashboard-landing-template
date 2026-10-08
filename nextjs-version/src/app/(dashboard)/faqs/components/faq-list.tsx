@@ -57,11 +57,16 @@ export function FAQList({ faqs, categories }: FAQListProps) {
         <CardHeader>
           <CardTitle className="text-lg">Categories</CardTitle>
           <InputGroup>
-<InputGroupInput placeholder="Search FAQs..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="cursor-pointer" />
-<InputGroupAddon>
-<Search />
-</InputGroupAddon>
-</InputGroup>
+            <InputGroupInput
+              placeholder="Search FAQs..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="cursor-pointer"
+            />
+            <InputGroupAddon>
+              <Search />
+            </InputGroupAddon>
+          </InputGroup>
         </CardHeader>
         <CardContent className="flex flex-col gap-2">
           {categories.map((category) => (

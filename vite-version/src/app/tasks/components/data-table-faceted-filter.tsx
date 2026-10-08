@@ -141,19 +141,21 @@ export function DataTableFacetedFilter<TData extends RowData, TValue>({
                 )
               })}
             </CommandGroup>
-            <CommandGroup>{selectedValues.size > 0 && (
-              <>
-                <CommandSeparator />
-                <CommandGroup>
-                  <CommandItem
-                    onSelect={() => column?.setFilterValue(undefined)}
-                    className="justify-center text-center cursor-pointer"
-                  >
-                    Clear filters
-                  </CommandItem>
-                </CommandGroup>
-              </>
-            )}</CommandGroup>
+            <CommandGroup>
+              {selectedValues.size > 0 && (
+                <>
+                  <CommandSeparator />
+                  <CommandGroup>
+                    <CommandItem
+                      onSelect={() => column?.setFilterValue(undefined)}
+                      className="justify-center text-center cursor-pointer"
+                    >
+                      Clear filters
+                    </CommandItem>
+                  </CommandGroup>
+                </>
+              )}
+            </CommandGroup>
           </CommandList>
         </Command>
       </PopoverContent>

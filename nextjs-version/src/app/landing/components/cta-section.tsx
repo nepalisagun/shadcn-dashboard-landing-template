@@ -86,7 +86,10 @@ export function CTASection() {
                 >
                   <Github className="size-5" data-icon="inline-start" />
                   View on GitHub
-                  <ArrowRight className="transition-transform group-hover:translate-x-1" data-icon="inline-end" />
+                  <ArrowRight
+                    className="transition-transform group-hover:translate-x-1"
+                    data-icon="inline-end"
+                  />
                 </Button>
               </div>
 

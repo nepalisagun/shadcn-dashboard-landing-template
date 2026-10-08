@@ -11,7 +11,8 @@ export const features: Feature[] = [
   {
     id: 1,
     title: "Premium Quality",
-    description: "Handcrafted with premium materials and meticulous attention to detail.",
+    description:
+      "Handcrafted with premium materials and meticulous attention to detail.",
     icon: Sparkles,
   },
   {
@@ -23,7 +24,8 @@ export const features: Feature[] = [
   {
     id: 3,
     title: "Fast Delivery",
-    description: "Free worldwide shipping and hassle-free returns within 30 days.",
+    description:
+      "Free worldwide shipping and hassle-free returns within 30 days.",
     icon: Truck,
   },
   {

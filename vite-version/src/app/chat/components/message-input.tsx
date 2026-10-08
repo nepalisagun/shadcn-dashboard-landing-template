@@ -119,20 +119,22 @@ export function MessageInput({
               </TooltipContent>
             </Tooltip>
             <DropdownMenuContent side="top" align="start">
-              <DropdownMenuGroup><DropdownMenuItem
-                onClick={() => handleFileUpload("image")}
-                className="cursor-pointer"
-              >
-                <ImageIcon />
-                Photo or video
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={() => handleFileUpload("file")}
-                className="cursor-pointer"
-              >
-                <FileText />
-                Document
-              </DropdownMenuItem></DropdownMenuGroup>
+              <DropdownMenuGroup>
+                <DropdownMenuItem
+                  onClick={() => handleFileUpload("image")}
+                  className="cursor-pointer"
+                >
+                  <ImageIcon />
+                  Photo or video
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => handleFileUpload("file")}
+                  className="cursor-pointer"
+                >
+                  <FileText />
+                  Document
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </TooltipProvider>
@@ -156,7 +158,11 @@ export function MessageInput({
               <Tooltip>
                 <TooltipTrigger
                   render={
-                    <InputGroupButton size="icon-xs" disabled={disabled} className="cursor-pointer disabled:cursor-not-allowed" />
+                    <InputGroupButton
+                      size="icon-xs"
+                      disabled={disabled}
+                      className="cursor-pointer disabled:cursor-not-allowed"
+                    />
                   }
                 >
                   <Smile />
@@ -171,7 +177,11 @@ export function MessageInput({
               <Tooltip>
                 <TooltipTrigger
                   render={
-                    <InputGroupButton size="icon-xs" disabled={disabled} className="cursor-pointer disabled:cursor-not-allowed" />
+                    <InputGroupButton
+                      size="icon-xs"
+                      disabled={disabled}
+                      className="cursor-pointer disabled:cursor-not-allowed"
+                    />
                   }
                 >
                   <MoreHorizontal />
@@ -205,11 +215,7 @@ export function MessageInput({
                 )
               }
             >
-              {message.trim() ? (
-                <Send />
-              ) : (
-                <Mic />
-              )}
+              {message.trim() ? <Send /> : <Mic />}
             </TooltipTrigger>
             <TooltipContent>
               <p>{message.trim() ? "Send message" : "Voice message"}</p>

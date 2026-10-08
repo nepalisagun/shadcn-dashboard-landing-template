@@ -1,7 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Controller,useForm } from "react-hook-form"
+import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
 import {
   Field,
@@ -168,49 +168,74 @@ export function ContactSection() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                  <form
-                    onSubmit={form.handleSubmit(onSubmit)}
-                    className="flex flex-col gap-6"
-                  >
-                    <FieldGroup className="grid gap-4 sm:grid-cols-2">
-                      <Controller
-                        control={form.control}
-                        name="firstName"
-                        render={({ field, fieldState }) => (
-                          <Field data-invalid={fieldState.invalid}>
-                            <FieldLabel htmlFor="contact-section-first-name">First name</FieldLabel>
-                            
-                              <Input id="contact-section-first-name" aria-invalid={fieldState.invalid} placeholder="John" {...field} />
-                            {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-                          </Field>
-                        )}
-                      />
-                      <Controller
-                        control={form.control}
-                        name="lastName"
-                        render={({ field, fieldState }) => (
-                          <Field data-invalid={fieldState.invalid}>
-                            <FieldLabel htmlFor="contact-section-last-name">Last name</FieldLabel>
-                            
-                              <Input id="contact-section-last-name" aria-invalid={fieldState.invalid} placeholder="Doe" {...field} />
-                            {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-                          </Field>
-                        )}
-                      />
-                    </FieldGroup>
-                    <FieldGroup><Controller
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="flex flex-col gap-6"
+                >
+                  <FieldGroup className="grid gap-4 sm:grid-cols-2">
+                    <Controller
+                      control={form.control}
+                      name="firstName"
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor="contact-section-first-name">
+                            First name
+                          </FieldLabel>
+
+                          <Input
+                            id="contact-section-first-name"
+                            aria-invalid={fieldState.invalid}
+                            placeholder="John"
+                            {...field}
+                          />
+                          {fieldState.invalid && (
+                            <FieldError errors={[fieldState.error]} />
+                          )}
+                        </Field>
+                      )}
+                    />
+                    <Controller
+                      control={form.control}
+                      name="lastName"
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor="contact-section-last-name">
+                            Last name
+                          </FieldLabel>
+
+                          <Input
+                            id="contact-section-last-name"
+                            aria-invalid={fieldState.invalid}
+                            placeholder="Doe"
+                            {...field}
+                          />
+                          {fieldState.invalid && (
+                            <FieldError errors={[fieldState.error]} />
+                          )}
+                        </Field>
+                      )}
+                    />
+                  </FieldGroup>
+                  <FieldGroup>
+                    <Controller
                       control={form.control}
                       name="email"
                       render={({ field, fieldState }) => (
                         <Field data-invalid={fieldState.invalid}>
-                          <FieldLabel htmlFor="contact-section-email">Email</FieldLabel>
-                          
-                            <Input id="contact-section-email" aria-invalid={fieldState.invalid}
-                              type="email"
-                              placeholder="john@example.com"
-                              {...field}
-                            />
-                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                          <FieldLabel htmlFor="contact-section-email">
+                            Email
+                          </FieldLabel>
+
+                          <Input
+                            id="contact-section-email"
+                            aria-invalid={fieldState.invalid}
+                            type="email"
+                            placeholder="john@example.com"
+                            {...field}
+                          />
+                          {fieldState.invalid && (
+                            <FieldError errors={[fieldState.error]} />
+                          )}
                         </Field>
                       )}
                     />
@@ -219,13 +244,19 @@ export function ContactSection() {
                       name="subject"
                       render={({ field, fieldState }) => (
                         <Field data-invalid={fieldState.invalid}>
-                          <FieldLabel htmlFor="contact-section-subject">Subject</FieldLabel>
-                          
-                            <Input id="contact-section-subject" aria-invalid={fieldState.invalid}
-                              placeholder="Component request, bug report, general inquiry..."
-                              {...field}
-                            />
-                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                          <FieldLabel htmlFor="contact-section-subject">
+                            Subject
+                          </FieldLabel>
+
+                          <Input
+                            id="contact-section-subject"
+                            aria-invalid={fieldState.invalid}
+                            placeholder="Component request, bug report, general inquiry..."
+                            {...field}
+                          />
+                          {fieldState.invalid && (
+                            <FieldError errors={[fieldState.error]} />
+                          )}
                         </Field>
                       )}
                     />
@@ -234,22 +265,29 @@ export function ContactSection() {
                       name="message"
                       render={({ field, fieldState }) => (
                         <Field data-invalid={fieldState.invalid}>
-                          <FieldLabel htmlFor="contact-section-message">Message</FieldLabel>
-                          
-                            <Textarea id="contact-section-message" aria-invalid={fieldState.invalid}
-                              placeholder="Tell us how we can help you with ShadcnStore components..."
-                              rows={10}
-                              className="min-h-50"
-                              {...field}
-                            />
-                          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                          <FieldLabel htmlFor="contact-section-message">
+                            Message
+                          </FieldLabel>
+
+                          <Textarea
+                            id="contact-section-message"
+                            aria-invalid={fieldState.invalid}
+                            placeholder="Tell us how we can help you with ShadcnStore components..."
+                            rows={10}
+                            className="min-h-50"
+                            {...field}
+                          />
+                          {fieldState.invalid && (
+                            <FieldError errors={[fieldState.error]} />
+                          )}
                         </Field>
                       )}
-                    /></FieldGroup>
-                    <Button type="submit" className="w-full cursor-pointer">
-                      Send Message
-                    </Button>
-                  </form>
+                    />
+                  </FieldGroup>
+                  <Button type="submit" className="w-full cursor-pointer">
+                    Send Message
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </div>

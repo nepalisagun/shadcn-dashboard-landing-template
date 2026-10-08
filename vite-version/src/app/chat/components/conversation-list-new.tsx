@@ -91,11 +91,17 @@ export function ConversationList({
       {/* Search */}
       <div className="p-4 border-b flex-shrink-0">
         <InputGroup>
-<InputGroupInput type="text" placeholder="Search conversations..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="cursor-text" />
-<InputGroupAddon>
-<Search />
-</InputGroupAddon>
-</InputGroup>
+          <InputGroupInput
+            type="text"
+            placeholder="Search conversations..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="cursor-text"
+          />
+          <InputGroupAddon>
+            <Search />
+          </InputGroupAddon>
+        </InputGroup>
       </div>
 
       {/* Conversations */}
@@ -206,30 +212,34 @@ export function ConversationList({
                     <MoreHorizontal />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
-                    <DropdownMenuGroup><DropdownMenuItem
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        togglePin(conversation.id)
-                      }}
-                      className="cursor-pointer"
-                    >
-                      <Pin />
-                      {conversation.isPinned ? "Unpin" : "Pin"}
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        toggleMute(conversation.id)
-                      }}
-                      className="cursor-pointer"
-                    >
-                      <VolumeX />
-                      {conversation.isMuted ? "Unmute" : "Mute"}
-                    </DropdownMenuItem></DropdownMenuGroup>
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          togglePin(conversation.id)
+                        }}
+                        className="cursor-pointer"
+                      >
+                        <Pin />
+                        {conversation.isPinned ? "Unpin" : "Pin"}
+                      </DropdownMenuItem>
+                      <DropdownMenuItem
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          toggleMute(conversation.id)
+                        }}
+                        className="cursor-pointer"
+                      >
+                        <VolumeX />
+                        {conversation.isMuted ? "Unmute" : "Mute"}
+                      </DropdownMenuItem>
+                    </DropdownMenuGroup>
                     <DropdownMenuSeparator />
-                    <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer text-destructive">
-                      Delete conversation
-                    </DropdownMenuItem></DropdownMenuGroup>
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem className="cursor-pointer text-destructive">
+                        Delete conversation
+                      </DropdownMenuItem>
+                    </DropdownMenuGroup>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>

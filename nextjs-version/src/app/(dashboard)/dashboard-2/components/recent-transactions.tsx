@@ -149,15 +149,17 @@ export function RecentTransactions() {
                       <MoreHorizontal />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer">
-                        View Details
-                      </DropdownMenuItem>
-                      <DropdownMenuItem className="cursor-pointer">
-                        Download Receipt
-                      </DropdownMenuItem>
-                      <DropdownMenuItem className="cursor-pointer">
-                        Contact Customer
-                      </DropdownMenuItem></DropdownMenuGroup>
+                      <DropdownMenuGroup>
+                        <DropdownMenuItem className="cursor-pointer">
+                          View Details
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="cursor-pointer">
+                          Download Receipt
+                        </DropdownMenuItem>
+                        <DropdownMenuItem className="cursor-pointer">
+                          Contact Customer
+                        </DropdownMenuItem>
+                      </DropdownMenuGroup>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </div>

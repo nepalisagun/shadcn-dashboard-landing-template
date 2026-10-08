@@ -4,11 +4,7 @@ import { useState } from "react"
 import { Plus } from "lucide-react"
 import { z } from "zod"
 
-import {
-  Field,
-  FieldGroup,
-  FieldLabel,
-} from "@/components/ui/field"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -150,41 +146,43 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-          <FieldGroup>{/* Task Title */}
-          <Field>
-            <FieldLabel htmlFor="title">Task Title *</FieldLabel>
-            <Input
-              id="title"
-              placeholder="Enter task title..."
-              value={formData.title}
-              onChange={(e) =>
-                setFormData((prev) => ({ ...prev, title: e.target.value }))
-              }
-              className={errors.title ? "border-destructive" : ""}
-            />
-            {errors.title && (
-              <p className="text-sm text-destructive">{errors.title}</p>
-            )}
-          </Field>
+          <FieldGroup>
+            {/* Task Title */}
+            <Field>
+              <FieldLabel htmlFor="title">Task Title *</FieldLabel>
+              <Input
+                id="title"
+                placeholder="Enter task title..."
+                value={formData.title}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, title: e.target.value }))
+                }
+                className={errors.title ? "border-destructive" : ""}
+              />
+              {errors.title && (
+                <p className="text-sm text-destructive">{errors.title}</p>
+              )}
+            </Field>
 
-          {/* Task Description */}
-          <Field>
-            <FieldLabel htmlFor="description">Description</FieldLabel>
-            <Textarea
-              id="description"
-              placeholder="Provide additional details about the task..."
-              value={formData.description}
-              onChange={(e) =>
-                setFormData((prev) => ({
-                  ...prev,
-                  description: e.target.value,
-                }))
-              }
-              rows={3}
-            />
-          </Field>
+            {/* Task Description */}
+            <Field>
+              <FieldLabel htmlFor="description">Description</FieldLabel>
+              <Textarea
+                id="description"
+                placeholder="Provide additional details about the task..."
+                value={formData.description}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    description: e.target.value,
+                  }))
+                }
+                rows={3}
+              />
+            </Field>
 
-          {/* Task Status and Category - Side by Side */}</FieldGroup>
+            {/* Task Status and Category - Side by Side */}
+          </FieldGroup>
           <FieldGroup className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Task Status */}
             <Field>
@@ -200,16 +198,18 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
                   <SelectValue placeholder="Select status" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectGroup>{statuses.map((status) => (
-                    <SelectItem key={status.value} value={status.value}>
-                      <div className="flex items-center">
-                        {status.icon && (
-                          <status.icon className="mr-2 size-4 text-muted-foreground" />
-                        )}
-                        {status.label}
-                      </div>
-                    </SelectItem>
-                  ))}</SelectGroup>
+                  <SelectGroup>
+                    {statuses.map((status) => (
+                      <SelectItem key={status.value} value={status.value}>
+                        <div className="flex items-center">
+                          {status.icon && (
+                            <status.icon className="mr-2 size-4 text-muted-foreground" />
+                          )}
+                          {status.label}
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
                 </SelectContent>
               </Select>
             </Field>
@@ -228,11 +228,13 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
                   <SelectValue placeholder="Select category" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectGroup>{categories.map((category) => (
-                    <SelectItem key={category.value} value={category.value}>
-                      {category.label}
-                    </SelectItem>
-                  ))}</SelectGroup>
+                  <SelectGroup>
+                    {categories.map((category) => (
+                      <SelectItem key={category.value} value={category.value}>
+                        {category.label}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
                 </SelectContent>
               </Select>
             </Field>
@@ -253,11 +255,15 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
                   <SelectValue placeholder="Select priority" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectGroup>{priorities.map((priority) => (
-                    <SelectItem key={priority.value} value={priority.value}>
-                      <div className="flex items-center">{priority.label}</div>
-                    </SelectItem>
-                  ))}</SelectGroup>
+                  <SelectGroup>
+                    {priorities.map((priority) => (
+                      <SelectItem key={priority.value} value={priority.value}>
+                        <div className="flex items-center">
+                          {priority.label}
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
                 </SelectContent>
               </Select>
             </Field>

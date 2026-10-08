@@ -74,15 +74,17 @@ export function SalesChart() {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectGroup><SelectItem value="3m" className="cursor-pointer">
-                Last 3 months
-              </SelectItem>
-              <SelectItem value="6m" className="cursor-pointer">
-                Last 6 months
-              </SelectItem>
-              <SelectItem value="12m" className="cursor-pointer">
-                Last 12 months
-              </SelectItem></SelectGroup>
+              <SelectGroup>
+                <SelectItem value="3m" className="cursor-pointer">
+                  Last 3 months
+                </SelectItem>
+                <SelectItem value="6m" className="cursor-pointer">
+                  Last 6 months
+                </SelectItem>
+                <SelectItem value="12m" className="cursor-pointer">
+                  Last 12 months
+                </SelectItem>
+              </SelectGroup>
             </SelectContent>
           </Select>
           <Button variant="outline" className="cursor-pointer">

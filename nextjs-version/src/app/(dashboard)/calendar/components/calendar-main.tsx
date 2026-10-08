@@ -326,11 +326,11 @@ export function CalendarMain({
         <div className="flex flex-col gap-3 md:flex-row md:items-center">
           {/* Search */}
           <InputGroup>
-<InputGroupInput placeholder="Search events..." className="w-64" />
-<InputGroupAddon>
-<Search />
-</InputGroupAddon>
-</InputGroup>
+            <InputGroupInput placeholder="Search events..." className="w-64" />
+            <InputGroupAddon>
+              <Search />
+            </InputGroupAddon>
+          </InputGroup>
 
           {/* View Mode Toggle */}
           <DropdownMenu>
@@ -343,20 +343,22 @@ export function CalendarMain({
               <ChevronDown data-icon="inline-end" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuGroup><DropdownMenuItem
-                onClick={() => setViewMode("month")}
-                className="cursor-pointer"
-              >
-                <Grid3X3 />
-                Month
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={() => setViewMode("list")}
-                className="cursor-pointer"
-              >
-                <List />
-                List
-              </DropdownMenuItem></DropdownMenuGroup>
+              <DropdownMenuGroup>
+                <DropdownMenuItem
+                  onClick={() => setViewMode("month")}
+                  className="cursor-pointer"
+                >
+                  <Grid3X3 />
+                  Month
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => setViewMode("list")}
+                  className="cursor-pointer"
+                >
+                  <List />
+                  List
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

@@ -6,8 +6,8 @@ export { cn } from "cn"
  * Handles both development and production asset paths
  */
 export function assetUrl(path: string): string {
-  const baseUrl = import.meta.env.BASE_URL || '/'
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path
+  const baseUrl = import.meta.env.BASE_URL || "/"
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path
   return baseUrl + cleanPath
 }
 
@@ -17,7 +17,7 @@ export function assetUrl(path: string): string {
  * @returns The full path with basename prefix
  */
 export function getAppUrl(path: string): string {
-  const basename = import.meta.env.VITE_BASENAME || ''
-  const cleanPath = path.startsWith('/') ? path : `/${path}`
+  const basename = import.meta.env.VITE_BASENAME || ""
+  const cleanPath = path.startsWith("/") ? path : `/${path}`
   return basename + cleanPath
 }

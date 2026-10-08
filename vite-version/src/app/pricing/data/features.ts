@@ -1,4 +1,12 @@
-import { Clock, Headphones, Rocket, Shield, Users, Zap, type LucideIcon } from "lucide-react"
+import {
+  Clock,
+  Headphones,
+  Rocket,
+  Shield,
+  Users,
+  Zap,
+  type LucideIcon,
+} from "lucide-react"
 
 export interface Feature {
   id: number
@@ -11,37 +19,43 @@ export const features: Feature[] = [
   {
     id: 1,
     name: "Fast Performance",
-    description: "Lightning-fast response times and optimized performance for all your business needs.",
+    description:
+      "Lightning-fast response times and optimized performance for all your business needs.",
     icon: Rocket,
   },
   {
     id: 2,
     name: "Enterprise Security",
-    description: "Bank-level security with end-to-end encryption and advanced threat protection.",
+    description:
+      "Bank-level security with end-to-end encryption and advanced threat protection.",
     icon: Shield,
   },
   {
     id: 3,
     name: "Instant Setup",
-    description: "Get up and running in minutes with our streamlined onboarding process.",
+    description:
+      "Get up and running in minutes with our streamlined onboarding process.",
     icon: Zap,
   },
   {
     id: 4,
     name: "Team Collaboration",
-    description: "Seamless collaboration tools to keep your team connected and productive.",
+    description:
+      "Seamless collaboration tools to keep your team connected and productive.",
     icon: Users,
   },
   {
     id: 5,
     name: "24/7 Support",
-    description: "Round-the-clock expert support whenever you need help or have questions.",
+    description:
+      "Round-the-clock expert support whenever you need help or have questions.",
     icon: Headphones,
   },
   {
     id: 6,
     name: "Real-time Analytics",
-    description: "Monitor your business performance with real-time insights and detailed analytics.",
+    description:
+      "Monitor your business performance with real-time insights and detailed analytics.",
     icon: Clock,
   },
 ]

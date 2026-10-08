@@ -119,31 +119,33 @@ export function RevenueBreakdown() {
               <SelectValue placeholder="Select category" />
             </SelectTrigger>
             <SelectContent align="end" className="rounded-lg">
-              <SelectGroup>{categories.map((key) => {
-                const config = chartConfig[key as keyof typeof chartConfig]
+              <SelectGroup>
+                {categories.map((key) => {
+                  const config = chartConfig[key as keyof typeof chartConfig]
 
-                if (!config) {
-                  return null
-                }
+                  if (!config) {
+                    return null
+                  }
 
-                return (
-                  <SelectItem
-                    key={key}
-                    value={key}
-                    className="rounded-md [&_span]:flex cursor-pointer"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span
-                        className="flex size-3 shrink-0 "
-                        style={{
-                          backgroundColor: `var(--color-${key})`,
-                        }}
-                      />
-                      {config?.label}
-                    </div>
-                  </SelectItem>
-                )
-              })}</SelectGroup>
+                  return (
+                    <SelectItem
+                      key={key}
+                      value={key}
+                      className="rounded-md [&_span]:flex cursor-pointer"
+                    >
+                      <div className="flex items-center gap-2">
+                        <span
+                          className="flex size-3 shrink-0 "
+                          style={{
+                            backgroundColor: `var(--color-${key})`,
+                          }}
+                        />
+                        {config?.label}
+                      </div>
+                    </SelectItem>
+                  )
+                })}
+              </SelectGroup>
             </SelectContent>
           </Select>
           <Button variant="outline" className="cursor-pointer">
@@ -231,7 +233,10 @@ export function RevenueBreakdown() {
               return (
                 <div
                   key={item.category}
-                  className={cn("flex items-center justify-between p-3 rounded-lg transition-colors cursor-pointer", isActive ? "bg-muted" : "hover:bg-muted/50")}
+                  className={cn(
+                    "flex items-center justify-between p-3 rounded-lg transition-colors cursor-pointer",
+                    isActive ? "bg-muted" : "hover:bg-muted/50"
+                  )}
                   onClick={() => setActiveCategory(item.category)}
                 >
                   <div className="flex items-center gap-3">

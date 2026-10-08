@@ -222,36 +222,43 @@ export function ChatHeader({
             <MoreVertical />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuGroup><DropdownMenuItem onClick={onToggleMute} className="cursor-pointer">
-              {conversation.isMuted ? (
+            <DropdownMenuGroup>
+              <DropdownMenuItem
+                onClick={onToggleMute}
+                className="cursor-pointer"
+              >
+                {conversation.isMuted ? (
+                  <>
+                    <Bell />
+                    Unmute conversation
+                  </>
+                ) : (
+                  <>
+                    <BellOff />
+                    Mute conversation
+                  </>
+                )}
+              </DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer">
+                <Search />
+                Search messages
+              </DropdownMenuItem>
+              {conversation.type === "group" && (
                 <>
-                  <Bell />
-                  Unmute conversation
-                </>
-              ) : (
-                <>
-                  <BellOff />
-                  Mute conversation
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="cursor-pointer">
+                    <Users />
+                    Manage members
+                  </DropdownMenuItem>
                 </>
               )}
-            </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
-              <Search />
-              Search messages
-            </DropdownMenuItem>
-            {conversation.type === "group" && (
-              <>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem className="cursor-pointer">
-                  <Users />
-                  Manage members
-                </DropdownMenuItem>
-              </>
-            )}</DropdownMenuGroup>
+            </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuGroup><DropdownMenuItem className="cursor-pointer text-destructive">
-              Delete conversation
-            </DropdownMenuItem></DropdownMenuGroup>
+            <DropdownMenuGroup>
+              <DropdownMenuItem className="cursor-pointer text-destructive">
+                Delete conversation
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

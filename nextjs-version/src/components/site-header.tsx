@@ -45,7 +45,6 @@ export function SiteHeader() {
                   href="https://shadcnstore.com/blocks"
                   rel="noopener noreferrer"
                   target="_blank"
-                 
                 />
               }
             >
@@ -57,12 +56,7 @@ export function SiteHeader() {
               className="hidden sm:flex"
               nativeButton={false}
               render={
-                <a
-                  href="/landing"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                 
-                />
+                <a href="/landing" rel="noopener noreferrer" target="_blank" />
               }
             >
               Landing Page
@@ -77,7 +71,6 @@ export function SiteHeader() {
                   href="https://github.com/shadcnstore/shadcn-dashboard-landing-template"
                   rel="noopener noreferrer"
                   target="_blank"
-                 
                 />
               }
             >

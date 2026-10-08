@@ -65,10 +65,14 @@ export function AboutSection() {
             <Card key={index} className="group shadow-xs py-2">
               <CardHeader className="items-center p-8 text-center">
                 <CardDecorator>
-                    <value.icon className="size-6" aria-hidden />
-                  </CardDecorator>
-                <CardTitle className="mt-6 text-balance">{value.title}</CardTitle>
-                <CardDescription className="mt-3">{value.description}</CardDescription>
+                  <value.icon className="size-6" aria-hidden />
+                </CardDecorator>
+                <CardTitle className="mt-6 text-balance">
+                  {value.title}
+                </CardTitle>
+                <CardDescription className="mt-3">
+                  {value.description}
+                </CardDescription>
               </CardHeader>
             </Card>
           ))}

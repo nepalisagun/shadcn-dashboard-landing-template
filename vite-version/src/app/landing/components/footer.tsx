@@ -1,13 +1,9 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Controller,useForm } from "react-hook-form"
+import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
-import {
-  Field,
-  FieldError,
-  FieldGroup,
-} from "@/components/ui/field"
+import { Field, FieldError, FieldGroup } from "@/components/ui/field"
 import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -90,29 +86,34 @@ export function LandingFooter() {
               Get the latest updates, articles, and resources sent to your inbox
               weekly.
             </p>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="flex flex-col gap-2 max-w-md mx-auto sm:flex-row"
-              >
-                <FieldGroup><Controller
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="flex flex-col gap-2 max-w-md mx-auto sm:flex-row"
+            >
+              <FieldGroup>
+                <Controller
                   control={form.control}
                   name="email"
                   render={({ field, fieldState }) => (
                     <Field data-invalid={fieldState.invalid} className="flex-1">
-                      
-                        <Input id="footer-email" aria-invalid={fieldState.invalid}
-                          type="email"
-                          placeholder="Enter your email"
-                          {...field}
-                        />
-                      {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+                      <Input
+                        id="footer-email"
+                        aria-invalid={fieldState.invalid}
+                        type="email"
+                        placeholder="Enter your email"
+                        {...field}
+                      />
+                      {fieldState.invalid && (
+                        <FieldError errors={[fieldState.error]} />
+                      )}
                     </Field>
                   )}
-                /></FieldGroup>
-                <Button type="submit" className="cursor-pointer">
-                  Subscribe
-                </Button>
-              </form>
+                />
+              </FieldGroup>
+              <Button type="submit" className="cursor-pointer">
+                Subscribe
+              </Button>
+            </form>
           </div>
         </div>
 

@@ -11,18 +11,18 @@ import focusDocumentsData from "./data/focus-documents-data.json"
 export default function Page() {
   return (
     <BaseLayout title="Dashboard" description="Welcome to your admin dashboard">
-        <div className="flex flex-col @container/main px-4 lg:px-6 gap-6">
-          <SectionCards />
-          <ChartAreaInteractive />
-        </div>
-        <div className="@container/main">
-          <DataTable 
-            data={data} 
-            pastPerformanceData={pastPerformanceData}
-            keyPersonnelData={keyPersonnelData}
-            focusDocumentsData={focusDocumentsData}
-          />
-        </div>
+      <div className="flex flex-col @container/main px-4 lg:px-6 gap-6">
+        <SectionCards />
+        <ChartAreaInteractive />
+      </div>
+      <div className="@container/main">
+        <DataTable
+          data={data}
+          pastPerformanceData={pastPerformanceData}
+          keyPersonnelData={keyPersonnelData}
+          focusDocumentsData={focusDocumentsData}
+        />
+      </div>
     </BaseLayout>
   )
 }

@@ -538,7 +538,7 @@ export function DataTable({
       </div>
 
       <div className="flex items-center justify-between gap-2 py-4">
-        <Field>
+        <Field orientation="horizontal" className="w-fit">
           <FieldLabel htmlFor="page-size" className="text-sm font-medium">
             Show
           </FieldLabel>
@@ -567,7 +567,7 @@ export function DataTable({
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
         <div className="flex items-center gap-x-6 lg:gap-x-8">
-          <div className="flex items-center gap-2 hidden sm:block">
+          <div className="hidden items-center gap-2 sm:flex">
             <p className="text-sm font-medium">Page</p>
             <strong className="text-sm">
               {table.state.pagination.pageIndex + 1} of {table.getPageCount()}

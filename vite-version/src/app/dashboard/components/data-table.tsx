@@ -413,7 +413,7 @@ function TableContent({
           {currentTable.getFilteredRowModel().rows.length} row(s) selected.
         </div>
         <div className="flex w-full items-center gap-8 lg:w-fit">
-          <Field className="hidden lg:flex">
+          <Field orientation="horizontal" className="hidden w-fit lg:flex">
             <FieldLabel htmlFor="rows-per-page" className="text-sm font-medium">
               Rows per page
             </FieldLabel>
@@ -837,7 +837,7 @@ export function DataTable({
             {table.getFilteredRowModel().rows.length} row(s) selected.
           </div>
           <div className="flex w-full items-center gap-8 lg:w-fit">
-            <Field className="hidden lg:flex">
+            <Field orientation="horizontal" className="hidden w-fit lg:flex">
               <FieldLabel
                 htmlFor="rows-per-page"
                 className="text-sm font-medium"

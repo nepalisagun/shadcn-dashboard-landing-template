@@ -145,25 +145,16 @@ export function CustomerInsights() {
       </CardHeader>
       <CardContent>
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 bg-muted/50 p-1 rounded-lg h-12">
-            <TabsTrigger
-              value="growth"
-              className="cursor-pointer flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all data-active:bg-background data-active:shadow-sm data-active:text-foreground"
-            >
+          <TabsList className="w-full group-data-horizontal/tabs:h-10">
+            <TabsTrigger value="growth" className="cursor-pointer">
               <TrendingUp />
               <span className="hidden sm:inline">Growth</span>
             </TabsTrigger>
-            <TabsTrigger
-              value="demographics"
-              className="cursor-pointer flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all data-active:bg-background data-active:shadow-sm data-active:text-foreground"
-            >
+            <TabsTrigger value="demographics" className="cursor-pointer">
               <UserIcon />
               <span className="hidden sm:inline">Demographics</span>
             </TabsTrigger>
-            <TabsTrigger
-              value="regions"
-              className="cursor-pointer flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all data-active:bg-background data-active:shadow-sm data-active:text-foreground"
-            >
+            <TabsTrigger value="regions" className="cursor-pointer">
               <MapPin />
               <span className="hidden sm:inline">Regions</span>
             </TabsTrigger>

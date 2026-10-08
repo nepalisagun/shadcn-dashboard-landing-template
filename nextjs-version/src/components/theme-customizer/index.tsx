@@ -170,24 +170,14 @@ export function ThemeCustomizer({ open, onOpenChange }: ThemeCustomizerProps) {
               className="h-full flex flex-col"
             >
               <div className="py-2">
-                <TabsList className="grid w-full grid-cols-2 rounded-none h-12 p-1.5">
-                  <TabsTrigger
-                    value="theme"
-                    className="cursor-pointer data-active:bg-background"
-                  >
+                <TabsList className="w-full rounded-none group-data-horizontal/tabs:h-10">
+                  <TabsTrigger value="theme" className="cursor-pointer">
                     <Palette /> Theme
                   </TabsTrigger>
-                  <TabsTrigger
-                    value="layout"
-                    className="cursor-pointer data-active:bg-background"
-                  >
+                  <TabsTrigger value="layout" className="cursor-pointer">
                     <Layout /> Layout
                   </TabsTrigger>
                 </TabsList>
-                {/* <TabsList className="grid w-full grid-cols-2 rounded-none h-12 p-1.5">
-                  <TabsTrigger value="theme" className="cursor-pointer data-active:bg-primary data-active:text-primary-foreground"><Palette className="h-4 w-4 mr-1" /> Theme</TabsTrigger>
-                  <TabsTrigger value="layout" className="cursor-pointer data-active:bg-primary data-active:text-primary-foreground"><Layout className="h-4 w-4 mr-1" /> Layout</TabsTrigger>
-                </TabsList> */}
               </div>
 
               <TabsContent value="theme" className="flex-1 mt-0">

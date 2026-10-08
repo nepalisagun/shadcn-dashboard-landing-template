@@ -80,7 +80,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             <Trash2 data-icon="inline-start" />
             <span className="sr-only">Move to trash</span>
           </Button>
-          <Separator orientation="vertical" className="mx-1 h-6" />
+          <Separator orientation="vertical" className="mx-1 h-6 data-vertical:self-center" />
           <Popover>
             <PopoverTrigger
               render={
@@ -186,7 +186,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
             <span className="sr-only">Forward</span>
           </Button>
         </div>
-        <Separator orientation="vertical" className="mx-2 h-6" />
+        <Separator orientation="vertical" className="mx-2 h-6 data-vertical:self-center" />
         <DropdownMenu>
           <DropdownMenuTrigger
             render={

@@ -25,9 +25,9 @@ export function CTASection() {
                     <div className="size-2 rounded-full bg-success" />
                     150+ Blocks
                   </span>
-                  <Separator orientation="vertical" className="h-4!" />
+                  <Separator orientation="vertical" className="h-4! data-vertical:self-center" />
                   <span>25K+ Downloads</span>
-                  <Separator orientation="vertical" className="h-4!" />
+                  <Separator orientation="vertical" className="h-4! data-vertical:self-center" />
                   <span>4.9★ Rating</span>
                 </div>
               </div>

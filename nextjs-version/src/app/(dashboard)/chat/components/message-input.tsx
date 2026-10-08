@@ -11,9 +11,7 @@ import {
   MoreHorizontal,
 } from "lucide-react"
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,6 +25,12 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupTextarea,
+} from "@/components/ui/input-group"
 
 interface MessageInputProps {
   onSendMessage: (content: string) => void
@@ -134,33 +138,25 @@ export function MessageInput({
         </TooltipProvider>
 
         {/* Message input */}
-        <div className="flex-1 relative">
-          <Textarea
+        <InputGroup className="flex-1">
+          <InputGroupTextarea
             ref={textareaRef}
             placeholder={placeholder}
             value={message}
             onChange={handleTextareaChange}
             onKeyDown={handleKeyPress}
             disabled={disabled}
-            className={cn(
-              "min-h-[40px] max-h-[120px] resize-none cursor-text disabled:cursor-not-allowed",
-              "pr-20" // Space for emoji and more buttons
-            )}
+            className="min-h-[40px] max-h-[120px] resize-none cursor-text disabled:cursor-not-allowed"
             rows={1}
           />
 
           {/* Input action buttons */}
-          <div className="absolute right-2 bottom-2 flex items-center gap-1">
+          <InputGroupAddon align="inline-end">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger
                   render={
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      disabled={disabled}
-                      className="size-6 p-0 cursor-pointer disabled:cursor-not-allowed"
-                    />
+                    <InputGroupButton size="icon-xs" disabled={disabled} className="cursor-pointer disabled:cursor-not-allowed" />
                   }
                 >
                   <Smile />
@@ -175,12 +171,7 @@ export function MessageInput({
               <Tooltip>
                 <TooltipTrigger
                   render={
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      disabled={disabled}
-                      className="size-6 p-0 cursor-pointer disabled:cursor-not-allowed"
-                    />
+                    <InputGroupButton size="icon-xs" disabled={disabled} className="cursor-pointer disabled:cursor-not-allowed" />
                   }
                 >
                   <MoreHorizontal />
@@ -190,8 +181,8 @@ export function MessageInput({
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-          </div>
-        </div>
+          </InputGroupAddon>
+        </InputGroup>
 
         {/* Voice message or send button */}
         <TooltipProvider>

@@ -11,6 +11,7 @@ import { Separator } from '@/components/ui/separator'
 import { useSidebarConfig } from "@/hooks/use-sidebar-config"
 import { useSidebar } from '@/components/ui/sidebar'
 import { sidebarVariants, sidebarCollapsibleOptions, sidebarSideOptions } from '@/config/theme-customizer-constants'
+import { cn } from "@/lib/utils"
 
 export function LayoutTab() {
   const { config: sidebarConfig, updateConfig: updateSidebarConfig } = useSidebarConfig()
@@ -65,14 +66,10 @@ export function LayoutTab() {
               {/* Visual representation of sidebar variant */}
               <div className="flex flex-col gap-2">
                 <div className="text-xs font-semibold text-center">{variant.name}</div>
-                <div className={`flex h-12 rounded border ${ variant.value === "inset" ? "bg-muted" : "bg-background" }`}>
+                <div className={cn("flex h-12 rounded border", variant.value === "inset" ? "bg-muted" : "bg-background")}>
                   {/* Sidebar representation - smaller and more proportional */}
                   <div 
-                    className={`w-3 flex-shrink-0 bg-muted flex flex-col gap-0.5 p-1 ${
-                      variant.value === "floating" ? "border-r m-1 rounded" :
-                      variant.value === "inset" ? "m-1 ms-0 rounded bg-muted/80" :
-                      "border-r"
-                    }`}
+                    className={cn("w-3 flex-shrink-0 bg-muted flex flex-col gap-0.5 p-1", variant.value === "floating" ? "border-r m-1 rounded" : variant.value === "inset" ? "m-1 ms-0 rounded bg-muted/80" : "border-r")}
                   >
                     {/* Menu icon representations - clearer and more visible */}
                     <div className="h-0.5 w-full bg-foreground/60 rounded"></div>
@@ -81,7 +78,7 @@ export function LayoutTab() {
                     <div className="h-0.5 w-3/4 bg-foreground/30 rounded"></div>
                   </div>
                   {/* Main content area - larger and more prominent */}
-                  <div className={`flex-1 ${ variant.value === "inset" ? "bg-background ms-0" : "bg-background/50" } m-1 rounded-sm border-dashed border border-muted-foreground/20`}>
+                  <div className={cn("flex-1", variant.value === "inset" ? "bg-background ms-0" : "bg-background/50", "m-1 rounded-sm border-dashed border border-muted-foreground/20")}>
                   </div>
                 </div>
               </div>

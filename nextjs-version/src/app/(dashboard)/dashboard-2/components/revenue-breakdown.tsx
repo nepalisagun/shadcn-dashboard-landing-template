@@ -25,6 +25,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 const revenueData = [
   {
@@ -232,9 +233,7 @@ export function RevenueBreakdown() {
               return (
                 <div
                   key={item.category}
-                  className={`flex items-center justify-between p-3 rounded-lg transition-colors cursor-pointer ${
-                    isActive ? "bg-muted" : "hover:bg-muted/50"
-                  }`}
+                  className={cn("flex items-center justify-between p-3 rounded-lg transition-colors cursor-pointer", isActive ? "bg-muted" : "hover:bg-muted/50")}
                   onClick={() => setActiveCategory(item.category)}
                 >
                   <div className="flex items-center gap-3">

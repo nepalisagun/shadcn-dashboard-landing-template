@@ -40,7 +40,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
 import {
   Select,
   SelectContent,
@@ -58,6 +57,11 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { UserFormDialog } from "./user-form-dialog"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group"
 
 interface User {
   id: number
@@ -326,15 +330,12 @@ export function DataTable({
     <div className="flex flex-col w-full gap-4">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-1 items-center gap-2">
-          <div className="relative flex-1 max-w-sm">
-            <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              placeholder="Search users..."
-              value={globalFilter ?? ""}
-              onChange={(event) => setGlobalFilter(String(event.target.value))}
-              className="pl-9"
-            />
-          </div>
+          <InputGroup className="flex-1 max-w-sm">
+<InputGroupInput placeholder="Search users..." value={globalFilter ?? ""} onChange={(event) => setGlobalFilter(String(event.target.value))} />
+<InputGroupAddon>
+<Search />
+</InputGroupAddon>
+</InputGroup>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="outline" className="cursor-pointer">

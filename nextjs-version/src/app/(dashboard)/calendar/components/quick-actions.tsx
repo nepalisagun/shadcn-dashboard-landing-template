@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
+import { cn } from "@/lib/utils"
 
 interface QuickActionsProps {
   onNewEvent?: () => void
@@ -45,7 +46,7 @@ export function QuickActions({
           {quickStats.map((stat, index) => (
             <div key={index} className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className={`size-2 rounded-full ${stat.color}`} />
+                <div className={cn("size-2 rounded-full", stat.color)} />
                 <span className="text-sm text-muted-foreground">{stat.label}</span>
               </div>
               <Badge variant="secondary">{stat.value}</Badge>

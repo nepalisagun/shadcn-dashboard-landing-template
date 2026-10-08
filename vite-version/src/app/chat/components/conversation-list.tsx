@@ -17,7 +17,6 @@ import { cn } from "@/lib/utils"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   DropdownMenu,
@@ -28,6 +27,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useChat, type Conversation } from "@/app/chat/use-chat"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group"
 
 interface ConversationListProps {
   conversations: Conversation[]
@@ -124,16 +128,12 @@ export function ConversationList({
 
       {/* Search */}
       <div className="px-4 py-3 border-b flex-shrink-0">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-muted-foreground" />
-          <Input
-            type="text"
-            placeholder="Search conversations..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-9 cursor-text"
-          />
-        </div>
+        <InputGroup>
+<InputGroupInput type="text" placeholder="Search conversations..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="cursor-text" />
+<InputGroupAddon>
+<Search />
+</InputGroupAddon>
+</InputGroup>
       </div>
 
       {/* Conversations */}

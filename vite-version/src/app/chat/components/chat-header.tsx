@@ -29,6 +29,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { type Conversation, type User } from "@/app/chat/use-chat"
+import { cn } from "@/lib/utils"
 
 interface ChatHeaderProps {
   conversation: Conversation | null
@@ -130,7 +131,7 @@ export function ChatHeader({
               </Badge>
             )}
           </div>
-          <p className={`text-sm ${getStatusColor()}`}>{getStatusText()}</p>
+          <p className={cn("text-sm", getStatusColor())}>{getStatusText()}</p>
         </div>
       </div>
 

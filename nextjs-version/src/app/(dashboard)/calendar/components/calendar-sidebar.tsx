@@ -6,6 +6,7 @@ import { Calendars } from "./calendars"
 import { DatePicker } from "./date-picker"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
+import { cn } from "@/lib/utils"
 
 interface CalendarSidebarProps {
   selectedDate?: Date
@@ -25,7 +26,7 @@ export function CalendarSidebar({
   className 
 }: CalendarSidebarProps) {
   return (
-    <div className={`flex flex-col h-full bg-background rounded-lg ${className}`}>
+    <div className={cn("flex flex-col h-full bg-background rounded-lg", className)}>
       {/* Add New Event Button */}
       <div className="p-6 border-b">
         <Button 

@@ -32,6 +32,7 @@ import {
   ArrowUpIcon,
   UserIcon,
 } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 const customerGrowthData = [
   { month: "Jan", new: 245, returning: 890, churn: 45 },
@@ -309,7 +310,7 @@ export function CustomerInsights() {
                         {row.percentage}
                       </TableCell>
                       <TableCell className="text-right py-5 px-6">
-                        <span className={`font-medium ${row.growthColor}`}>
+                        <span className={cn("font-medium", row.growthColor)}>
                           {row.growth}
                         </span>
                       </TableCell>
@@ -368,7 +369,7 @@ export function CustomerInsights() {
                         {row.revenue}
                       </TableCell>
                       <TableCell className="text-right py-5 px-6">
-                        <span className={`font-medium ${row.growthColor}`}>
+                        <span className={cn("font-medium", row.growthColor)}>
                           {row.growth}
                         </span>
                       </TableCell>

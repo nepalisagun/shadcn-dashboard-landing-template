@@ -15,6 +15,7 @@ import {
   type Message,
   type User,
 } from "@/app/chat/use-chat"
+import { cn } from "@/lib/utils"
 
 interface ChatProps {
   conversations: Conversation[]
@@ -118,11 +119,7 @@ export function Chat({ conversations, messages, users }: ChatProps) {
 
         {/* Conversations Sidebar - Responsive */}
         <div
-          className={`
-          w-100 border-r bg-background flex-shrink-0
-          ${isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
-          lg:relative lg:block fixed inset-y-0 left-0 z-50 transition-transform duration-300 ease-in-out
-        `}
+          className={cn("w-100 border-r bg-background flex-shrink-0", isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0", "lg:relative lg:block fixed inset-y-0 left-0 z-50 transition-transform duration-300 ease-in-out")}
         >
           {/* Sidebar Header with Close Button (Mobile Only) */}
           <div className="lg:hidden p-4 border-b flex items-center justify-between bg-background">

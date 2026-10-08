@@ -29,6 +29,7 @@ import { Logo } from "@/components/logo"
 import { MegaMenu } from "@/components/landing/mega-menu"
 import { ModeToggle } from "@/components/mode-toggle"
 import { useTheme } from "@/hooks/use-theme"
+import { cn } from "@/lib/utils"
 
 const navigationItems = [
   { name: "Home", href: "#hero" },
@@ -257,7 +258,7 @@ export function LandingNavbar() {
                           <CollapsibleTrigger className="flex items-center justify-between w-full px-4 py-3 text-base font-medium rounded-lg transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer">
                             {item.name}
                             <ChevronDown
-                              className={`size-4 transition-transform ${solutionsOpen ? "rotate-180" : ""}`}
+                              className={cn("size-4 transition-transform", solutionsOpen ? "rotate-180" : "")}
                             />
                           </CollapsibleTrigger>
                           <CollapsibleContent className="flex flex-col pl-4 gap-1">

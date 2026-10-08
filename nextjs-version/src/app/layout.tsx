@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils"
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
+    <html lang="en" className={cn(inter.variable, "antialiased")}>
       <body className={inter.className}>
         <ThemeProvider defaultTheme="system" storageKey="nextjs-ui-theme">
           <SidebarConfigProvider>

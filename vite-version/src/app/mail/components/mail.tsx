@@ -16,7 +16,6 @@ import {
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Input } from "@/components/ui/input"
 import {
   ResizableHandle,
   ResizablePanel,
@@ -32,6 +31,11 @@ import { Nav } from "@/app/mail/components/nav"
 import { type Mail } from "@/app/mail/data"
 import { useMail } from "@/app/mail/use-mail"
 import { Button } from "@/components/ui/button"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group"
 
 interface MailProps {
   accounts: {
@@ -191,10 +195,12 @@ export function Mail({
             <Separator />
             <div className="bg-background/95 supports-[backdrop-filter]:bg-background/60 p-4 backdrop-blur">
               <form>
-                <div className="relative">
-                  <Search className="text-muted-foreground absolute top-2.5 left-2 size-4 cursor-pointer" />
-                  <Input placeholder="Search" className="pl-8 cursor-text" />
-                </div>
+                <InputGroup>
+<InputGroupInput placeholder="Search" className="cursor-text" />
+<InputGroupAddon>
+<Search className="cursor-pointer" />
+</InputGroupAddon>
+</InputGroup>
               </form>
             </div>
             <TabsContent value="all" className="m-0">

@@ -31,7 +31,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarGroup } from "@/components/ui/avatar"
-import { Input } from "@/components/ui/input"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -51,6 +50,11 @@ import { type CalendarEvent } from "../types"
 
 // Import data
 import eventsData from "../data/events.json"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group"
 
 interface CalendarMainProps {
   selectedDate?: Date
@@ -321,10 +325,12 @@ export function CalendarMain({
 
         <div className="flex flex-col gap-3 md:flex-row md:items-center">
           {/* Search */}
-          <div className="relative">
-            <Search className="size-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
-            <Input placeholder="Search events..." className="pl-10 w-64" />
-          </div>
+          <InputGroup>
+<InputGroupInput placeholder="Search events..." className="w-64" />
+<InputGroupAddon>
+<Search />
+</InputGroupAddon>
+</InputGroup>
 
           {/* View Mode Toggle */}
           <DropdownMenu>

@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import {
@@ -13,6 +12,11 @@ import {
 } from "@/components/ui/accordion"
 import { cn } from "@/lib/utils"
 import { Search } from "lucide-react"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group"
 
 interface FAQ {
   id: number
@@ -52,15 +56,12 @@ export function FAQList({ faqs, categories }: FAQListProps) {
       <Card className="lg:col-span-2 xl:col-span-1">
         <CardHeader>
           <CardTitle className="text-lg">Categories</CardTitle>
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-muted-foreground" />
-            <Input
-              placeholder="Search FAQs..."
-              className="pl-10 cursor-pointer"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
+          <InputGroup>
+<InputGroupInput placeholder="Search FAQs..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="cursor-pointer" />
+<InputGroupAddon>
+<Search />
+</InputGroupAddon>
+</InputGroup>
         </CardHeader>
         <CardContent className="flex flex-col gap-2">
           {categories.map((category) => (

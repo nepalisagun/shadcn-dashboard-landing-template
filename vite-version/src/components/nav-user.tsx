@@ -50,7 +50,7 @@ export function NavUser({
             }
           >
             <div className="flex size-8 items-center justify-center rounded-lg">
-              <Logo size={28} />
+              <Logo size={28} className="size-7!" />
             </div>
             <div className="grid flex-1 text-left text-sm leading-tight">
               <span className="truncate font-medium">{user.name}</span>
@@ -67,7 +67,7 @@ export function NavUser({
             sideOffset={4}
           >
             <DropdownMenuGroup>
-              <DropdownMenuLabel className="p-0 font-normal">
+              <DropdownMenuLabel className="p-0 font-normal text-foreground">
                 <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                   <div className="size-8 rounded-lg">
                     <Logo size={28} />

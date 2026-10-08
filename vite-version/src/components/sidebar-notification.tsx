@@ -12,7 +12,7 @@ export function SidebarNotification() {
   if (!isVisible) return null
 
   return (
-    <Card className="mb-3 py-0 bg-muted/50">
+    <Card className="mb-3 py-0 bg-muted/50 shadow-sm">
       <CardContent className="p-4 relative">
         <Button
           variant="ghost"

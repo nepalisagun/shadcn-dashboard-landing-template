@@ -108,7 +108,7 @@ export default function NotificationSettings() {
   }
 
   return (
-    <div className="space-y-6 px-4 lg:px-6">
+    <div className="flex flex-col gap-6 px-4 lg:px-6">
       <div>
         <h1 className="text-3xl font-bold">Notifications</h1>
         <p className="text-muted-foreground">
@@ -117,7 +117,7 @@ export default function NotificationSettings() {
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6">
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
             <Card>
               <CardHeader>
@@ -126,20 +126,20 @@ export default function NotificationSettings() {
                   Choose what email notifications you want to receive.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-4">
+              <CardContent className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
                   <FormField
                     control={form.control}
                     name="emailSecurity"
                     render={({ field }) => (
-                      <FormItem className="flex items-center space-x-3">
+                      <FormItem className="flex items-center gap-3">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
                         </FormControl>
-                        <div className="space-y-1">
+                        <div className="flex flex-col gap-1">
                           <FormLabel>Security alerts</FormLabel>
                           <p className="text-sm text-muted-foreground">
                             Get notified when there are security events on your
@@ -153,14 +153,14 @@ export default function NotificationSettings() {
                     control={form.control}
                     name="emailUpdates"
                     render={({ field }) => (
-                      <FormItem className="flex items-center space-x-3">
+                      <FormItem className="flex items-center gap-3">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
                         </FormControl>
-                        <div className="space-y-1">
+                        <div className="flex flex-col gap-1">
                           <FormLabel>Product updates</FormLabel>
                           <p className="text-sm text-muted-foreground">
                             Receive updates about new features and improvements.
@@ -173,14 +173,14 @@ export default function NotificationSettings() {
                     control={form.control}
                     name="emailMarketing"
                     render={({ field }) => (
-                      <FormItem className="flex items-center space-x-3">
+                      <FormItem className="flex items-center gap-3">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
                         </FormControl>
-                        <div className="space-y-1">
+                        <div className="flex flex-col gap-1">
                           <FormLabel>Marketing emails</FormLabel>
                           <p className="text-sm text-muted-foreground">
                             Receive emails about our latest offers and
@@ -201,20 +201,20 @@ export default function NotificationSettings() {
                   Configure browser and mobile push notifications.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-4">
+              <CardContent className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
                   <FormField
                     control={form.control}
                     name="pushMessages"
                     render={({ field }) => (
-                      <FormItem className="flex items-center space-x-3">
+                      <FormItem className="flex items-center gap-3">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
                         </FormControl>
-                        <div className="space-y-1">
+                        <div className="flex flex-col gap-1">
                           <FormLabel>New messages</FormLabel>
                           <p className="text-sm text-muted-foreground">
                             Get notified when you receive new messages.
@@ -227,14 +227,14 @@ export default function NotificationSettings() {
                     control={form.control}
                     name="pushMentions"
                     render={({ field }) => (
-                      <FormItem className="flex items-center space-x-3">
+                      <FormItem className="flex items-center gap-3">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
                         </FormControl>
-                        <div className="space-y-1">
+                        <div className="flex flex-col gap-1">
                           <FormLabel>Mentions</FormLabel>
                           <p className="text-sm text-muted-foreground">
                             Get notified when someone mentions you.
@@ -247,14 +247,14 @@ export default function NotificationSettings() {
                     control={form.control}
                     name="pushTasks"
                     render={({ field }) => (
-                      <FormItem className="flex items-center space-x-3">
+                      <FormItem className="flex items-center gap-3">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
                             onCheckedChange={field.onChange}
                           />
                         </FormControl>
-                        <div className="space-y-1">
+                        <div className="flex flex-col gap-1">
                           <FormLabel>Task updates</FormLabel>
                           <p className="text-sm text-muted-foreground">
                             Get notified about task assignments and updates.
@@ -311,7 +311,7 @@ export default function NotificationSettings() {
               />
               <FormItem>
                 <FormLabel>Quiet Hours</FormLabel>
-                <div className="flex space-x-2">
+                <div className="flex gap-2">
                   <FormField
                     control={form.control}
                     name="quietHoursStart"
@@ -381,7 +381,7 @@ export default function NotificationSettings() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6">
+              <div className="flex flex-col gap-6">
                 <Table>
                   <TableHeader>
                     <TableRow>
@@ -607,7 +607,7 @@ export default function NotificationSettings() {
                   </TableBody>
                 </Table>
 
-                <div className="space-y-4">
+                <div className="flex flex-col gap-4">
                   <FormField
                     control={form.control}
                     name="notificationTiming"
@@ -656,13 +656,13 @@ export default function NotificationSettings() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
+              <div className="flex flex-col gap-4">
                 <FormField
                   control={form.control}
                   name="channelEmail"
                   render={({ field }) => (
                     <FormItem className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center gap-3">
                         <Mail className="size-5 text-muted-foreground" />
                         <div>
                           <FormLabel className="font-medium mb-1">
@@ -688,7 +688,7 @@ export default function NotificationSettings() {
                   name="channelPush"
                   render={({ field }) => (
                     <FormItem className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center gap-3">
                         <Bell className="size-5 text-muted-foreground" />
                         <div>
                           <FormLabel className="font-medium mb-1">
@@ -714,7 +714,7 @@ export default function NotificationSettings() {
                   name="channelSms"
                   render={({ field }) => (
                     <FormItem className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center gap-3">
                         <MessageSquare className="size-5 text-muted-foreground" />
                         <div>
                           <FormLabel className="font-medium mb-1">
@@ -738,7 +738,7 @@ export default function NotificationSettings() {
             </CardContent>
           </Card>
 
-          <div className="flex space-x-2">
+          <div className="flex gap-2">
             <Button type="submit" className="cursor-pointer">
               Save Preferences
             </Button>

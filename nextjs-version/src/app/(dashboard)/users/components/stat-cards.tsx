@@ -40,7 +40,7 @@ export function StatCards() {
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {performanceMetrics.map((metric, index) => (
         <Card key={index} className='border'>
-          <CardContent className='space-y-4'>
+          <CardContent className='flex flex-col gap-4'>
             <div className='flex items-center justify-between'>
               <metric.icon className='text-muted-foreground size-6' />
               <Badge
@@ -66,7 +66,7 @@ export function StatCards() {
               </Badge>
             </div>
 
-            <div className='space-y-2'>
+            <div className='flex flex-col gap-2'>
               <p className='text-muted-foreground text-sm font-medium'>{metric.title}</p>
               <div className='text-2xl font-bold'>{metric.current}</div>
               <div className='text-muted-foreground flex items-center gap-2 text-sm'>

@@ -62,7 +62,7 @@ const products = [
 export function TopProducts() {
   return (
     <Card className="cursor-pointer">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+      <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-4">
         <div>
           <CardTitle>Top Products</CardTitle>
           <CardDescription>Best performing products this month</CardDescription>
@@ -72,22 +72,22 @@ export function TopProducts() {
           View All
         </Button>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="flex flex-col gap-4">
         {products.map((product, index) => (
           <div key={product.id} className="flex items-center p-3 rounded-lg border gap-2">
               <div className="flex items-center justify-center size-8 rounded-full bg-primary/10 text-primary font-semibold text-sm">
                 #{index + 1}
               </div>
-            <div className="flex gap-2 items-center justify-between space-x-3 flex-1 flex-wrap">
+            <div className="flex gap-2 items-center justify-between flex-1 flex-wrap">
               <div className="">
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-2">
                   <p className="text-sm font-medium truncate">{product.name}</p>
                   <Badge variant="outline" className="text-xs">
                     {product.category}
                   </Badge>
                 </div>
-                <div className="flex items-center space-x-2 mt-1">
-                  <div className="flex items-center space-x-1">
+                <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center gap-1">
                     <Star className="size-3 fill-yellow-400 text-yellow-400" />
                     <span className="text-xs text-muted-foreground">{product.rating}</span>
                   </div>
@@ -95,8 +95,8 @@ export function TopProducts() {
                   <span className="text-xs text-muted-foreground">{product.sales} sales</span>
                 </div>
               </div>
-              <div className="text-right space-y-1">
-                <div className="flex items-center space-x-2">
+              <div className="flex flex-col text-right gap-1">
+                <div className="flex items-center gap-2">
                   <p className="text-sm font-medium">{product.revenue}</p>
                   <Badge
                     variant="outline"
@@ -106,7 +106,7 @@ export function TopProducts() {
                     {product.growth}
                   </Badge>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-2">
                   <span className="text-xs text-muted-foreground">Stock: {product.stock}</span>
                   <Progress
                     value={product.stock > 100 ? 100 : (product.stock / 100) * 100}

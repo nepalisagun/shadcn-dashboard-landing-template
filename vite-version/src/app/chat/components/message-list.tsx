@@ -153,7 +153,7 @@ export function MessageList({
 
   return (
     <ScrollArea className="flex-1 px-4" ref={scrollAreaRef}>
-      <div className="space-y-4 py-4">
+      <div className="flex flex-col gap-4 py-4">
         {messageGroups.map((group) => (
           <div key={group.date}>
             {/* Date separator */}
@@ -164,7 +164,7 @@ export function MessageList({
             </div>
 
             {/* Messages for this day */}
-            <div className="space-y-1">
+            <div className="flex flex-col gap-1">
               {group.messages.map((message, messageIndex) => {
                 const user = getUserById(message.senderId)
                 const isOwnMessage = message.senderId === currentUserId

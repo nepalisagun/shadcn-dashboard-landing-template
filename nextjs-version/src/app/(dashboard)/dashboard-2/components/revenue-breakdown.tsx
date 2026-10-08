@@ -101,12 +101,12 @@ export function RevenueBreakdown() {
   return (
     <Card data-chart={id} className="flex flex-col cursor-pointer">
       <ChartStyle id={id} config={chartConfig} />
-      <CardHeader className="flex flex-col space-y-2 sm:flex-row sm:items-center sm:justify-between sm:space-y-0 pb-2">
+      <CardHeader className="flex flex-col gap-y-2 sm:flex-row sm:items-center sm:justify-between sm:gap-y-0 pb-2">
         <div>
           <CardTitle>Revenue Breakdown</CardTitle>
           <CardDescription>Revenue distribution by source</CardDescription>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           <Select
             items={categoryLabels}
             value={activeCategory}
@@ -222,7 +222,7 @@ export function RevenueBreakdown() {
             </ChartContainer>
           </div>
 
-          <div className="flex flex-col justify-center space-y-4">
+          <div className="flex flex-col justify-center gap-4">
             {revenueData.map((item, index) => {
               const config =
                 chartConfig[item.category as keyof typeof chartConfig]

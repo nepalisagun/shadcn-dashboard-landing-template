@@ -30,7 +30,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarGroup } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import {
   DropdownMenu,
@@ -178,7 +178,7 @@ export function CalendarMain({
                   )}
                 </div>
 
-                <div className="space-y-1">
+                <div className="flex flex-col gap-1">
                   {dayEvents.slice(0, 2).map((event) => (
                     <div
                       key={event.id}
@@ -213,7 +213,7 @@ export function CalendarMain({
 
     return (
       <div className="flex-1 p-6">
-        <div className="space-y-4">
+        <div className="flex flex-col gap-4">
           {upcomingEvents.map((event) => (
             <Card
               key={event.id}
@@ -245,18 +245,15 @@ export function CalendarMain({
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="flex -space-x-2">
+                    <AvatarGroup>
                       {event.attendees.slice(0, 3).map((attendee, index) => (
-                        <Avatar
-                          key={index}
-                          className="border-2 border-background"
-                        >
+                        <Avatar key={index}>
                           <AvatarFallback className="text-xs">
                             {attendee}
                           </AvatarFallback>
                         </Avatar>
                       ))}
-                    </div>
+                    </AvatarGroup>
                     <Button
                       variant="ghost"
                       size="sm"
@@ -371,7 +368,7 @@ export function CalendarMain({
             </DialogDescription>
           </DialogHeader>
           {selectedEvent && (
-            <div className="space-y-4">
+            <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2">
                 <CalendarIcon className="size-4 text-muted-foreground" />
                 <span>{format(selectedEvent.date, "EEEE, MMMM d, yyyy")}</span>
@@ -390,20 +387,17 @@ export function CalendarMain({
                 <Users className="size-4 text-muted-foreground" />
                 <div className="flex items-center gap-2">
                   <span>Attendees:</span>
-                  <div className="flex -space-x-2">
+                  <AvatarGroup>
                     {selectedEvent.attendees.map(
                       (attendee: string, index: number) => (
-                        <Avatar
-                          key={index}
-                          className="size-6 border-2 border-background"
-                        >
+                        <Avatar key={index} size="sm">
                           <AvatarFallback className="text-xs">
                             {attendee}
                           </AvatarFallback>
                         </Avatar>
                       )
                     )}
-                  </div>
+                  </AvatarGroup>
                 </div>
               </div>
               <div className="flex items-center gap-2">

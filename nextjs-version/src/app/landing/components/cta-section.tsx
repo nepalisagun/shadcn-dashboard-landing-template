@@ -12,7 +12,7 @@ export function CTASection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="text-center">
-            <div className="space-y-8">
+            <div className="flex flex-col gap-8">
               {/* Badge and Stats */}
               <div className="flex flex-col items-center gap-4">
                 <Badge variant="outline" className="flex items-center gap-2">
@@ -33,7 +33,7 @@ export function CTASection() {
               </div>
 
               {/* Main Content */}
-              <div className="space-y-6">
+              <div className="flex flex-col gap-6">
                 <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
                   Supercharge your team&apos;s
                   <span className="flex sm:inline-flex justify-center">

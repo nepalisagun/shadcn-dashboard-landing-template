@@ -165,7 +165,7 @@ export function PricingSection() {
 
                   {/* Features */}
                   <div>
-                    <ul role="list" className="space-y-3 text-sm">
+                    <ul role="list" className="flex flex-col gap-3 text-sm">
                       {plan.includesPrevious && (
                         <li className="flex items-center gap-3 font-medium">
                           {plan.includesPrevious}:

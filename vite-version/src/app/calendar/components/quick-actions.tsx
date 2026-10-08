@@ -35,13 +35,13 @@ export function QuickActions({
   ]
 
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col gap-4">
       {/* Quick Stats */}
       <Card>
         <CardHeader className="pb-3">
           <CardTitle className="text-sm font-medium">Overview</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
+        <CardContent className="flex flex-col gap-3">
           {quickStats.map((stat, index) => (
             <div key={index} className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -59,7 +59,7 @@ export function QuickActions({
         <CardHeader className="pb-3">
           <CardTitle className="text-sm font-medium">Quick Actions</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-2">
+        <CardContent className="flex flex-col gap-2">
           <Button 
             variant="outline" 
             className="w-full justify-start cursor-pointer" 
@@ -87,7 +87,7 @@ export function QuickActions({
             Set Reminder
           </Button>
 
-          <Separator className="my-3" />
+          <Separator className="mt-3 mb-1" />
 
           <Button 
             variant="ghost" 
@@ -127,8 +127,8 @@ export function QuickActions({
             Next Up
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="space-y-2">
+        <CardContent className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2">
             <div className="flex items-start gap-3">
               <div className="size-2 bg-blue-500 rounded-full mt-2" />
               <div className="flex-1 min-w-0">

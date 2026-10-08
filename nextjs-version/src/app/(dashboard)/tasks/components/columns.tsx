@@ -54,7 +54,7 @@ export const columns: ColumnDef<DataTableFeatures, Task>[] = [
     ),
     cell: ({ row }) => {
       return (
-        <div className="flex space-x-2">
+        <div className="flex gap-2">
           <span className="max-w-[500px] truncate font-medium">
             {row.getValue("title")}
           </span>

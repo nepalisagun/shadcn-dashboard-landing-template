@@ -29,9 +29,9 @@ export function LayoutTab() {
   }
 
   return (
-    <div className="p-4 space-y-6">
+    <div className="flex flex-col p-4 gap-6">
       {/* Sidebar Configuration */}
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
         {/* Sidebar Variant */}
         <div>
           <Label className="text-sm font-medium">Sidebar Variant</Label>
@@ -55,7 +55,7 @@ export function LayoutTab() {
               onClick={() => handleSidebarVariantSelect(variant.value as "sidebar" | "floating" | "inset")}
             >
               {/* Visual representation of sidebar variant */}
-              <div className="space-y-2">
+              <div className="flex flex-col gap-2">
                 <div className="text-xs font-semibold text-center">{variant.name}</div>
                 <div className={`flex h-12 rounded border ${ variant.value === "inset" ? "bg-muted" : "bg-background" }`}>
                   {/* Sidebar representation - smaller and more proportional */}
@@ -85,7 +85,7 @@ export function LayoutTab() {
       <Separator />
 
       {/* Sidebar Collapsible Mode */}
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
         <div>
           <Label className="text-sm font-medium">Sidebar Collapsible Mode</Label>
           {sidebarConfig.collapsible && (
@@ -108,7 +108,7 @@ export function LayoutTab() {
               onClick={() => handleSidebarCollapsibleSelect(option.value as "offcanvas" | "icon" | "none")}
             >
               {/* Visual representation of collapsible mode */}
-              <div className="space-y-2">
+              <div className="flex flex-col gap-2">
                 <div className="text-xs font-semibold text-center">{option.name}</div>
                 <div className="flex h-12 rounded border bg-background">
                   {/* Sidebar representation based on collapsible mode */}
@@ -153,7 +153,7 @@ export function LayoutTab() {
       <Separator />
 
       {/* Sidebar Side */}
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
         <div>
           <Label className="text-sm font-medium">Sidebar Position</Label>
           {sidebarConfig.side && (
@@ -175,7 +175,7 @@ export function LayoutTab() {
               onClick={() => handleSidebarSideSelect(side.value as "left" | "right")}
             >
               {/* Visual representation of sidebar side */}
-              <div className="space-y-2">
+              <div className="flex flex-col gap-2">
                 <div className="text-xs font-semibold text-center">{side.name}</div>
                 <div className="flex h-12 rounded border bg-background">
                   {side.value === "left" ? (

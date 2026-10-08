@@ -317,9 +317,9 @@ export function DataTable({
   const statusFilter = table.getColumn("status")?.getFilterValue() as string
 
   return (
-    <div className="w-full space-y-4">
+    <div className="flex flex-col w-full gap-4">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-1 items-center space-x-2">
+        <div className="flex flex-1 items-center gap-2">
           <div className="relative flex-1 max-w-sm">
             <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
             <Input
@@ -330,7 +330,7 @@ export function DataTable({
             />
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           <Button variant="outline" className="cursor-pointer">
             <Download className="mr-2 size-4" />
             Export
@@ -340,7 +340,7 @@ export function DataTable({
       </div>
 
       <div className="grid gap-2 sm:grid-cols-4 sm:gap-4">
-        <div className="space-y-2">
+        <div className="flex flex-col gap-2">
           <Label htmlFor="role-filter" className="text-sm font-medium">
             Role
           </Label>
@@ -373,7 +373,7 @@ export function DataTable({
             </SelectContent>
           </Select>
         </div>
-        <div className="space-y-2">
+        <div className="flex flex-col gap-2">
           <Label htmlFor="plan-filter" className="text-sm font-medium">
             Plan
           </Label>
@@ -402,7 +402,7 @@ export function DataTable({
             </SelectContent>
           </Select>
         </div>
-        <div className="space-y-2">
+        <div className="flex flex-col gap-2">
           <Label htmlFor="status-filter" className="text-sm font-medium">
             Status
           </Label>
@@ -433,7 +433,7 @@ export function DataTable({
             </SelectContent>
           </Select>
         </div>
-        <div className="space-y-2">
+        <div className="flex flex-col gap-2">
           <Label htmlFor="column-visibility" className="text-sm font-medium">
             Column Visibility
           </Label>
@@ -520,8 +520,8 @@ export function DataTable({
         </Table>
       </div>
 
-      <div className="flex items-center justify-between space-x-2 py-4">
-        <div className="flex items-center space-x-2">
+      <div className="flex items-center justify-between gap-2 py-4">
+        <div className="flex items-center gap-2">
           <Label htmlFor="page-size" className="text-sm font-medium">
             Show
           </Label>
@@ -547,14 +547,14 @@ export function DataTable({
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
-        <div className="flex items-center space-x-6 lg:space-x-8">
-          <div className="flex items-center space-x-2 hidden sm:flex">
+        <div className="flex items-center gap-x-6 lg:gap-x-8">
+          <div className="flex items-center gap-2 hidden sm:flex">
             <p className="text-sm font-medium">Page</p>
             <strong className="text-sm">
               {table.state.pagination.pageIndex + 1} of {table.getPageCount()}
             </strong>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-2">
             <Button
               variant="outline"
               size="sm"

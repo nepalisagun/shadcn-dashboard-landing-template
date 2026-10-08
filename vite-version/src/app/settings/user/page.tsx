@@ -117,7 +117,7 @@ export default function UserSettingsPage() {
                   Update your personal information and preferences
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="flex flex-col gap-6">
                 {/* Profile Picture Section */}
                 <div className="flex items-center gap-6 ">
                   {useDefaultIcon ? (
@@ -163,7 +163,7 @@ export default function UserSettingsPage() {
                   />
                 </div>
 
-                <Separator className="mb-10" />
+                <Separator className="mb-4" />
                 {/* Form Fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* First Name */}

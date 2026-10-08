@@ -74,7 +74,7 @@ export function ContactSection() {
 
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Contact Options */}
-          <div className="space-y-6 order-2 lg:order-1">
+          <div className="flex flex-col gap-6 order-2 lg:order-1">
             <Card className="hover:shadow-md transition-shadow cursor-pointer">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -173,7 +173,7 @@ export function ContactSection() {
                 <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-6"
+                    className="flex flex-col gap-6"
                   >
                     <div className="grid gap-4 sm:grid-cols-2">
                       <FormField

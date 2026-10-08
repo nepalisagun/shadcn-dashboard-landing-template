@@ -72,7 +72,7 @@ export default function TaskPage() {
       </div>
 
       {/* Desktop view */}
-      <div className="hidden h-full flex-1 flex-col space-y-6 px-4 md:px-6 md:flex">
+      <div className="hidden h-full flex-1 flex-col gap-6 px-4 md:px-6 md:flex">
         {/* Stats Cards */}
         <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
           <Card>

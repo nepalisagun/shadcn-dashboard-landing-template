@@ -79,7 +79,7 @@ const transactions = [
 export function RecentTransactions() {
   return (
     <Card className="cursor-pointer">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+      <CardHeader className="flex flex-row items-center justify-between gap-y-0 pb-4">
         <div>
           <CardTitle>Recent Transactions</CardTitle>
           <CardDescription>Latest customer transactions</CardDescription>
@@ -89,7 +89,7 @@ export function RecentTransactions() {
           View All
         </Button>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="flex flex-col gap-4">
         {transactions.map((transaction) => (
           <div key={transaction.id}>
             <div className="flex p-3 rounded-lg border gap-2">
@@ -106,7 +106,7 @@ export function RecentTransactions() {
                 </AvatarFallback>
               </Avatar>
               <div className="flex flex-1 items-center flex-wrap justify-between gap-1">
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center gap-3">
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-medium truncate">
                       {transaction.customer.name}
@@ -116,7 +116,7 @@ export function RecentTransactions() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center gap-3">
                   <Badge
                     variant={
                       transaction.status === "completed"

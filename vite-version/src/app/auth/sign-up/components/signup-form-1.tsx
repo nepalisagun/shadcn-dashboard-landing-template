@@ -147,7 +147,7 @@ export function SignupForm1({
                     control={form.control}
                     name="terms"
                     render={({ field }) => (
-                      <FormItem className="flex items-start space-x-2">
+                      <FormItem className="flex items-start gap-2">
                         <FormControl>
                           <Checkbox
                             checked={field.value}

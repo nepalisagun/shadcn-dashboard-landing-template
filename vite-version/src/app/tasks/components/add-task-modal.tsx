@@ -144,9 +144,9 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           {/* Task Title */}
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <Label htmlFor="title">Task Title *</Label>
             <Input
               id="title"
@@ -163,7 +163,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
           </div>
 
           {/* Task Description */}
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <Label htmlFor="description">Description</Label>
             <Textarea
               id="description"
@@ -182,7 +182,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
           {/* Task Status and Category - Side by Side */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Task Status */}
-            <div className="space-y-2">
+            <div className="flex flex-col gap-2">
               <Label htmlFor="status">Status</Label>
               <Select
                 items={statuses}
@@ -210,7 +210,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
             </div>
 
             {/* Task Category */}
-            <div className="space-y-2">
+            <div className="flex flex-col gap-2">
               <Label htmlFor="category">Category</Label>
               <Select
                 items={categories}
@@ -235,7 +235,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
 
           {/* Task Priority - Half Width on Desktop */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="flex flex-col gap-2">
               <Label htmlFor="priority">Priority</Label>
               <Select
                 items={priorities}
@@ -259,7 +259,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex justify-end space-x-2 pt-4">
+          <div className="flex justify-end gap-2 pt-4">
             <Button
               type="button"
               variant="outline"

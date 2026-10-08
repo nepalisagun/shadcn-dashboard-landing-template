@@ -18,7 +18,7 @@ export default function ConnectionSettings() {
   const [dbConnected, setDbConnected] = useState(true)
 
   return (
-    <div className="space-y-6 px-4 lg:px-6">
+    <div className="flex flex-col gap-6 px-4 lg:px-6">
         <div>
           <h1 className="text-3xl font-bold">Connections</h1>
           <p className="text-muted-foreground">
@@ -35,9 +35,9 @@ export default function ConnectionSettings() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6">
+              <div className="flex flex-col gap-6">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Apple className="size-8" />
                     <div>
                       <div className="font-medium">Apple</div>
@@ -52,7 +52,7 @@ export default function ConnectionSettings() {
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Chrome className="size-8" />
                     <div>
                       <div className="font-medium">Google</div>
@@ -67,7 +67,7 @@ export default function ConnectionSettings() {
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Github className="size-8" />
                     <div>
                       <div className="font-medium">Github</div>
@@ -82,7 +82,7 @@ export default function ConnectionSettings() {
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Slack className="size-8" />
                     <div>
                       <div className="font-medium">Slack</div>
@@ -107,9 +107,9 @@ export default function ConnectionSettings() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6">
+              <div className="flex flex-col gap-6">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Facebook className="size-8" />
                     <div>
                       <div className="font-medium">
@@ -125,7 +125,7 @@ export default function ConnectionSettings() {
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Twitter className="size-8" />
                     <div>
                       <div className="font-medium">
@@ -141,7 +141,7 @@ export default function ConnectionSettings() {
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Instagram className="size-8" />
                     <div>
                       <div className="font-medium">
@@ -157,7 +157,7 @@ export default function ConnectionSettings() {
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Dribbble className="size-8" />
                     <div>
                       <div className="font-medium">
@@ -184,9 +184,9 @@ export default function ConnectionSettings() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6">
+              <div className="flex flex-col gap-6">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Zap className="size-8" />
                     <div>
                       <div className="font-medium">Zapier</div>
@@ -201,7 +201,7 @@ export default function ConnectionSettings() {
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Globe className="size-8" />
                     <div>
                       <div className="font-medium">Webhooks</div>
@@ -216,7 +216,7 @@ export default function ConnectionSettings() {
                 </div>
                 <Separator />
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center gap-3">
                     <Database className="size-8" />
                     <div>
                       <div className="font-medium">Database Sync</div>
@@ -241,13 +241,13 @@ export default function ConnectionSettings() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
+              <div className="flex flex-col gap-4">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <div>
                     <div className="font-medium">Production API Key</div>
                     <div className="text-sm text-muted-foreground font-mono">sk_live_••••••••••••••••••••••••4234</div>
                   </div>
-                  <div className="flex space-x-2">
+                  <div className="flex gap-2">
                     <Button variant="outline" size="sm" className="cursor-pointer">
                       Regenerate
                     </Button>
@@ -262,7 +262,7 @@ export default function ConnectionSettings() {
                     <div className="font-medium">Development API Key</div>
                     <div className="text-sm text-muted-foreground font-mono">sk_test_••••••••••••••••••••••••5678</div>
                   </div>
-                  <div className="flex space-x-2">
+                  <div className="flex gap-2">
                     <Button variant="outline" size="sm" className="cursor-pointer">
                       Regenerate
                     </Button>

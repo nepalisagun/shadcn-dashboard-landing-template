@@ -12,7 +12,7 @@ import {
 
 export function QuickActions() {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center gap-2">
       <Button className="cursor-pointer">
         <Plus className="size-4 mr-2" />
         New Sale

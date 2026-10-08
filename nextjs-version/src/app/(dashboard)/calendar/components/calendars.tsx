@@ -150,7 +150,7 @@ export function Calendars({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col gap-4">
       {calendarData.map((calendar, index) => (
         <div key={calendar.name}>
           <Collapsible defaultOpen={index === 0} className="group/collapsible">
@@ -173,7 +173,7 @@ export function Calendars({
             </CollapsibleTrigger>
 
             <CollapsibleContent>
-              <div className="mt-2 space-y-1">
+              <div className="flex flex-col mt-2 gap-1">
                 {calendar.items.map((item) => (
                   <div key={item.id} className="group/calendar-item">
                     <div className="flex items-center justify-between p-2 hover:bg-accent/50 rounded-md">

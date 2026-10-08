@@ -62,7 +62,7 @@ export function BlogSection() {
                     loading="lazy"
                   />
                 </div>
-                <div className="space-y-3 p-6">
+                <div className="flex flex-col gap-3 p-6">
                   <p className="text-muted-foreground text-xs tracking-widest uppercase">
                     {blog.category}
                   </p>

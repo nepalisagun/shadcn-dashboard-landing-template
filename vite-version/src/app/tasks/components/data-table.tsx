@@ -64,7 +64,7 @@ export function DataTable<TData extends RowData>({
   })
 
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col gap-4">
       <DataTableToolbar table={table} onAddTask={onAddTask} />
       <div className="rounded-md border">
         <Table>

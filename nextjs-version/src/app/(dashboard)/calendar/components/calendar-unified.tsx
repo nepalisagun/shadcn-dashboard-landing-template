@@ -176,7 +176,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                 </div>
 
                 {/* Events */}
-                <div className="space-y-1">
+                <div className="flex flex-col gap-1">
                   {dayEvents.slice(0, 3).map((event) => (
                     <div
                       key={event.id}
@@ -241,9 +241,9 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
           </Button>
         </div>
 
-        <div className="space-y-2">
+        <div className="flex flex-col gap-2">
           {calendarsData.map((calendar) => (
-            <div key={calendar.id} className="flex items-center space-x-2">
+            <div key={calendar.id} className="flex items-center gap-2">
               <div className={cn("size-3 rounded-full", calendar.color)} />
               <span className="text-sm">{calendar.name}</span>
             </div>
@@ -266,7 +266,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
           {/* Calendar Toolbar */}
           <div className="border-b bg-background px-4 py-3">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center gap-4">
                 {/* Mobile Menu Button */}
                 <Button
                   variant="ghost"
@@ -278,7 +278,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                 </Button>
 
                 {/* Month Navigation */}
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-2">
                   <Button
                     variant="ghost"
                     size="sm"
@@ -303,8 +303,8 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                 </Button>
               </div>
 
-              <div className="flex items-center space-x-2">
-                <div className="hidden sm:flex items-center space-x-2">
+              <div className="flex items-center gap-2">
+                <div className="hidden sm:flex items-center gap-2">
                   <Button variant="ghost" size="sm" className="text-xs">
                     <Search className="size-4 mr-1" />
                     Search
@@ -375,8 +375,8 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
             <DialogDescription>Event details and information</DialogDescription>
           </DialogHeader>
           {selectedEvent && (
-            <div className="space-y-4 pt-4">
-              <div className="flex items-center space-x-2 text-sm">
+            <div className="flex flex-col gap-4 pt-4">
+              <div className="flex items-center gap-2 text-sm">
                 <Clock className="size-4 text-muted-foreground" />
                 <span>
                   {selectedEvent.time} • {selectedEvent.duration}
@@ -384,16 +384,16 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
               </div>
 
               {selectedEvent.location && (
-                <div className="flex items-center space-x-2 text-sm">
+                <div className="flex items-center gap-2 text-sm">
                   <MapPin className="size-4 text-muted-foreground" />
                   <span>{selectedEvent.location}</span>
                 </div>
               )}
 
               {selectedEvent.attendees.length > 0 && (
-                <div className="flex items-center space-x-2 text-sm">
+                <div className="flex items-center gap-2 text-sm">
                   <Users className="size-4 text-muted-foreground" />
-                  <div className="flex space-x-1">
+                  <div className="flex gap-1">
                     {selectedEvent.attendees.map((attendee, index) => (
                       <Avatar key={index} className="size-6">
                         <AvatarFallback className="text-xs">
@@ -411,7 +411,7 @@ export function CalendarMain({ eventDates = [] }: CalendarMainProps) {
                 </div>
               )}
 
-              <div className="flex items-center space-x-2 pt-4">
+              <div className="flex items-center gap-2 pt-4">
                 <Badge
                   variant="secondary"
                   className={cn("text-white", selectedEvent.color)}

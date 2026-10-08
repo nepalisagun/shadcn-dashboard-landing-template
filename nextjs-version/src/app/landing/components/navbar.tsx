@@ -81,10 +81,10 @@ export function LandingNavbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           <Link
             href="https://shadcnstore.com"
-            className="flex items-center space-x-2 cursor-pointer"
+            className="flex items-center gap-2 cursor-pointer"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -128,7 +128,7 @@ export function LandingNavbar() {
         </NavigationMenu>
 
         {/* Desktop CTA */}
-        <div className="hidden xl:flex items-center space-x-2">
+        <div className="hidden xl:flex items-center gap-2">
           <ModeToggle variant="ghost" />
           <Button
             variant="ghost"
@@ -196,7 +196,7 @@ export function LandingNavbar() {
           >
             <div className="flex flex-col h-full">
               {/* Header */}
-              <SheetHeader className="space-y-0 p-4 pb-2 border-b">
+              <SheetHeader className="gap-0 p-4 pb-2 border-b">
                 <div className="flex items-center gap-2">
                   <div className="p-2 bg-primary/10 rounded-lg">
                     <Logo size={16} />
@@ -246,7 +246,7 @@ export function LandingNavbar() {
 
               {/* Navigation Links */}
               <div className="flex-1 overflow-y-auto">
-                <nav className="p-6 space-y-1">
+                <nav className="flex flex-col p-6 gap-1">
                   {navigationItems.map((item) => (
                     <div key={item.name}>
                       {item.hasMegaMenu ? (
@@ -260,7 +260,7 @@ export function LandingNavbar() {
                               className={`size-4 transition-transform ${solutionsOpen ? "rotate-180" : ""}`}
                             />
                           </CollapsibleTrigger>
-                          <CollapsibleContent className="pl-4 space-y-1">
+                          <CollapsibleContent className="flex flex-col pl-4 gap-1">
                             {solutionsItems.map((solution, index) =>
                               solution.title ? (
                                 <div
@@ -312,9 +312,9 @@ export function LandingNavbar() {
               </div>
 
               {/* Footer Actions */}
-              <div className="border-t p-6 space-y-4">
+              <div className="flex flex-col border-t p-6 gap-4">
                 {/* Primary Actions */}
-                <div className="space-y-3">
+                <div className="flex flex-col gap-3">
                   <Button
                     variant="outline"
                     size="lg"

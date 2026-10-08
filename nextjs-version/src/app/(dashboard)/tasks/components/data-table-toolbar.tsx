@@ -65,9 +65,9 @@ export function DataTableToolbar<TData extends RowData>({
     string | undefined
 
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col gap-4">
       {/* Filter Section */}
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
         <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
           {/* Status Filter */}
           <Select
@@ -153,7 +153,7 @@ export function DataTableToolbar<TData extends RowData>({
 
       {/* Search and Actions Section */}
       <div className="flex items-center justify-between">
-        <div className="flex flex-1 items-center space-x-2">
+        <div className="flex flex-1 items-center gap-2">
           <Input
             placeholder="Search Task"
             value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
@@ -172,7 +172,7 @@ export function DataTableToolbar<TData extends RowData>({
             <span className="hidden lg:block">Reset Filters</span>
           </Button>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           <DataTableViewOptions table={table} />
           <AddTaskModal onAddTask={onAddTask} />
         </div>

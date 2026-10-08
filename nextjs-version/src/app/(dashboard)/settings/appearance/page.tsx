@@ -49,7 +49,7 @@ export default function AppearanceSettings() {
   }
 
   return (
-    <div className="space-y-6 px-4 lg:px-6">
+    <div className="flex flex-col gap-6 px-4 lg:px-6">
       <div>
         <h1 className="text-3xl font-bold">Appearance</h1>
         <p className="text-muted-foreground">
@@ -58,14 +58,14 @@ export default function AppearanceSettings() {
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6">
           {/* Theme Section */}
-          <h3 className="text-lg font-medium mb-2">Theme</h3>
+          <h3 className="text-lg font-medium">Theme</h3>
           <FormField
             control={form.control}
             name="theme"
             render={({ field }) => (
-              <FormItem className="space-y-3">
+              <FormItem className="gap-y-3">
                 <FormControl>
                   <RadioGroup
                     onValueChange={field.onChange}
@@ -78,16 +78,16 @@ export default function AppearanceSettings() {
                           <RadioGroupItem value="light" className="sr-only" />
                         </FormControl>
                         <div className="rounded-md border-2 border-muted p-4 hover:border-accent transition-colors">
-                          <div className="space-y-2">
+                          <div className="flex flex-col gap-2">
                             <div className="size-20 bg-white border rounded-md p-3">
-                              <div className="space-y-2">
+                              <div className="flex flex-col gap-2">
                                 <div className="h-2 bg-gray-200 rounded w-3/4"></div>
                                 <div className="h-2 bg-gray-200 rounded w-1/2"></div>
-                                <div className="flex space-x-2">
+                                <div className="flex gap-2">
                                   <div className="size-2 bg-gray-300 rounded-full"></div>
                                   <div className="h-2 bg-gray-200 rounded flex-1"></div>
                                 </div>
-                                <div className="flex space-x-2">
+                                <div className="flex gap-2">
                                   <div className="size-2 bg-gray-300 rounded-full"></div>
                                   <div className="h-2 bg-gray-200 rounded flex-1"></div>
                                 </div>
@@ -104,16 +104,16 @@ export default function AppearanceSettings() {
                           <RadioGroupItem value="dark" className="sr-only" />
                         </FormControl>
                         <div className="rounded-md border-2 border-muted p-4 hover:border-accent transition-colors">
-                          <div className="space-y-2">
+                          <div className="flex flex-col gap-2">
                             <div className="size-20 bg-gray-900 border border-gray-700 rounded-md p-3">
-                              <div className="space-y-2">
+                              <div className="flex flex-col gap-2">
                                 <div className="h-2 bg-gray-600 rounded w-3/4"></div>
                                 <div className="h-2 bg-gray-600 rounded w-1/2"></div>
-                                <div className="flex space-x-2">
+                                <div className="flex gap-2">
                                   <div className="size-2 bg-gray-500 rounded-full"></div>
                                   <div className="h-2 bg-gray-600 rounded flex-1"></div>
                                 </div>
-                                <div className="flex space-x-2">
+                                <div className="flex gap-2">
                                   <div className="size-2 bg-gray-500 rounded-full"></div>
                                   <div className="h-2 bg-gray-600 rounded flex-1"></div>
                                 </div>
@@ -250,7 +250,7 @@ export default function AppearanceSettings() {
             )}
           />
 
-          <div className="flex space-x-2 mt-12">
+          <div className="flex gap-2 mt-12">
             <Button type="submit" className="cursor-pointer">
               Save Preferences
             </Button>

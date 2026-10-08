@@ -11,7 +11,7 @@ import focusDocumentsData from "./data/focus-documents-data.json"
 export default function Page() {
   return (
     <BaseLayout title="Dashboard" description="Welcome to your admin dashboard">
-        <div className="@container/main px-4 lg:px-6 space-y-6">
+        <div className="flex flex-col @container/main px-4 lg:px-6 gap-6">
           <SectionCards />
           <ChartAreaInteractive />
         </div>

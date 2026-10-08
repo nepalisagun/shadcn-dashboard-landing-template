@@ -50,7 +50,7 @@ export default function AccountSettings() {
 
   return (
     <BaseLayout>
-      <div className="space-y-6 px-4 lg:px-6">
+      <div className="flex flex-col gap-6 px-4 lg:px-6">
         <div>
           <h1 className="text-3xl font-bold">Account Settings</h1>
           <p className="text-muted-foreground">
@@ -59,7 +59,7 @@ export default function AccountSettings() {
         </div>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6">
             <Card>
               <CardHeader>
                 <CardTitle>Personal Information</CardTitle>
@@ -67,7 +67,7 @@ export default function AccountSettings() {
                   Update your personal information that will be displayed on your profile.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <FormField
                     control={form.control}
@@ -132,7 +132,7 @@ export default function AccountSettings() {
                   Update your password to keep your account secure.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="flex flex-col gap-4">
                 <FormField
                   control={form.control}
                   name="currentPassword"
@@ -182,7 +182,7 @@ export default function AccountSettings() {
                   Irreversible and destructive actions.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="flex flex-col gap-4">
                 <Separator />
                 <div className="flex flex-wrap gap-2 items-center justify-between">
                   <div>
@@ -198,7 +198,7 @@ export default function AccountSettings() {
               </CardContent>
             </Card>
 
-            <div className="flex space-x-2">
+            <div className="flex gap-2">
               <Button type="submit" className="cursor-pointer">Save Changes</Button>
               <Button variant="outline" type="reset" className="cursor-pointer">Cancel</Button>
             </div>

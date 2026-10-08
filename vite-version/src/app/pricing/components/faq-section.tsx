@@ -34,7 +34,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
       <CardContent className="mt-6 sm:mt-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6">
           {/* Left Column */}
-          <div className="space-y-4">
+          <div className="flex flex-col gap-4">
             <Accordion multiple>
               {faqs.slice(0, 3).map((item) => (
                 <AccordionItem
@@ -54,7 +54,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-4">
+          <div className="flex flex-col gap-4">
             <Accordion multiple>
               {faqs.slice(3, 6).map((item) => (
                 <AccordionItem

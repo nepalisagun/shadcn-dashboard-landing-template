@@ -58,7 +58,7 @@ export function StatsSection() {
                     <stat.icon className="size-6 text-primary" />
                   </div>
                 </div>
-                <div className="space-y-1">
+                <div className="flex flex-col gap-1">
                   <h3 className="text-2xl sm:text-3xl font-bold text-foreground">
                     {stat.value}
                   </h3>

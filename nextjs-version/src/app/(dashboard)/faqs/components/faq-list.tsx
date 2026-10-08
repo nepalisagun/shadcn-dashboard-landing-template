@@ -62,7 +62,7 @@ export function FAQList({ faqs, categories }: FAQListProps) {
             />
           </div>
         </CardHeader>
-        <CardContent className="space-y-2">
+        <CardContent className="flex flex-col gap-2">
           {categories.map((category) => (
             <div
               key={category.name}
@@ -108,7 +108,7 @@ export function FAQList({ faqs, categories }: FAQListProps) {
                   <p>No FAQs found matching your search criteria.</p>
                 </div>
               ) : (
-                <Accordion className="space-y-4" defaultValue={["item-1"]}>
+                <Accordion className="gap-4" defaultValue={["item-1"]}>
                   {filteredFaqs.map((item) => (
                     <AccordionItem
                       key={item.id}

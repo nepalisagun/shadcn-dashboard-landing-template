@@ -57,7 +57,7 @@ export function ColorPicker({
   }, [localValue, cssVar])
 
   return (
-    <div className="space-y-2">
+    <div className="flex flex-col gap-2">
       <Label htmlFor={`color-${cssVar}`} className="text-xs font-medium">
         {label}
       </Label>

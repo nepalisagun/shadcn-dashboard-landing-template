@@ -191,7 +191,7 @@ export function LandingThemeCustomizer({
           side="right"
           className="w-[400px] p-0 gap-0 pointer-events-auto overflow-hidden flex flex-col"
         >
-          <SheetHeader className="space-y-0 p-4 pb-2">
+          <SheetHeader className="gap-0 p-4 pb-2">
             <div className="flex items-center gap-2">
               <div className="p-2 bg-primary/10 rounded-lg">
                 <Settings className="size-4" />
@@ -223,9 +223,9 @@ export function LandingThemeCustomizer({
             </SheetDescription>
           </SheetHeader>
 
-          <div className="flex-1 overflow-y-auto p-4 space-y-6">
+          <div className="flex flex-col flex-1 overflow-y-auto p-4 gap-6">
             {/* Mode Section */}
-            <div className="space-y-3">
+            <div className="flex flex-col gap-3">
               <Label className="text-sm font-medium">Mode</Label>
               <div className="grid grid-cols-2 gap-2">
                 <Button
@@ -252,7 +252,7 @@ export function LandingThemeCustomizer({
             <Separator />
 
             {/* Shadcn UI Theme Presets */}
-            <div className="space-y-3">
+            <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between">
                 <Label className="text-sm font-medium">
                   Shadcn UI Theme Presets
@@ -334,7 +334,7 @@ export function LandingThemeCustomizer({
             <Separator />
 
             {/* Tweakcn Theme Presets */}
-            <div className="space-y-3">
+            <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between">
                 <Label className="text-sm font-medium">
                   Tweakcn Theme Presets
@@ -421,7 +421,7 @@ export function LandingThemeCustomizer({
             <Separator />
 
             {/* Radius Selection */}
-            <div className="space-y-3">
+            <div className="flex flex-col gap-3">
               <Label className="text-sm font-medium">Radius</Label>
               <div className="grid grid-cols-5 gap-2">
                 {radiusOptions.map((option) => (
@@ -445,7 +445,7 @@ export function LandingThemeCustomizer({
             <Separator />
 
             {/* Import Theme Button */}
-            <div className="space-y-3">
+            <div className="flex flex-col gap-3">
               <Button
                 variant="outline"
                 size="lg"
@@ -468,7 +468,7 @@ export function LandingThemeCustomizer({
                     Brand Colors
                   </Label>
                 </AccordionTrigger>
-                <AccordionContent className="px-4 pb-4 pt-2 space-y-3 border-t border-border bg-muted/20">
+                <AccordionContent className="flex flex-col px-4 pb-4 pt-2 gap-3 border-t border-border bg-muted/20">
                   {baseColors.map((color) => (
                     <div
                       key={color.cssVar}
@@ -487,7 +487,7 @@ export function LandingThemeCustomizer({
             </Accordion>
 
             {/* Tweakcn */}
-            <div className="p-4 bg-muted rounded-lg space-y-3">
+            <div className="flex flex-col p-4 bg-muted rounded-lg gap-3">
               <div className="flex items-center gap-2">
                 <Palette className="size-4 text-primary" />
                 <span className="text-sm font-medium">

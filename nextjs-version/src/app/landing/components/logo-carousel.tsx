@@ -78,7 +78,7 @@ export function LogoCarousel() {
 
             {/* Logo Container */}
             <div className="overflow-hidden">
-              <div className="flex animate-logo-scroll space-x-8 sm:space-x-12">
+              <div className="flex animate-logo-scroll gap-x-8 sm:gap-x-12">
                 {/* First set of logos */}
                 {techCompanies.map((company, index) => (
                   <Card

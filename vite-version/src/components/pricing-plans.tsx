@@ -124,18 +124,18 @@ export function PricingPlans({
               </Badge>
             </div>
           )}
-          <CardHeader className='space-y-2 pt-8 text-center'>
+          <CardHeader className='gap-y-2 pt-8 text-center'>
             <CardTitle id={`${tier.id}-title`} className='text-2xl'>
               {tier.name}
             </CardTitle>
             <p className='text-muted-foreground text-sm text-balance'>{tier.description}</p>
           </CardHeader>
-          <CardContent className='flex flex-1 flex-col space-y-6'>
+          <CardContent className='flex flex-1 flex-col gap-6'>
             <div className='flex items-baseline justify-center'>
               <span className='text-4xl font-bold'>{tier.price}</span>
               <span className='text-muted-foreground text-sm'>{tier.frequency}</span>
             </div>
-            <div className='space-y-2'>
+            <div className='flex flex-col gap-2'>
               {tier.features.map(feature => (
                 <div key={feature} className='flex items-center gap-2'>
                   <div className='bg-muted rounded-full p-1'>

@@ -18,7 +18,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="@container/main px-4 lg:px-6 space-y-6">
+      <div className="flex flex-col @container/main px-4 lg:px-6 gap-6">
         <SectionCards />
         <ChartAreaInteractive />
       </div>

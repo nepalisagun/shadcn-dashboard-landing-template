@@ -169,9 +169,9 @@ export function EventForm({
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-6 py-4">
+        <div className="flex flex-col gap-6 py-4">
           {/* Event Title */}
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <Label htmlFor="title" className="flex items-center gap-2">
               <Type className="size-4" />
               Event Title
@@ -189,7 +189,7 @@ export function EventForm({
 
           {/* Event Type */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="flex flex-col gap-2">
               <Label className="flex items-center gap-2">
                 <Tag className="size-4" />
                 Event Type
@@ -226,7 +226,7 @@ export function EventForm({
 
           {/* Date and Time */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="flex flex-col gap-2">
               <Label className="flex items-center gap-2">
                 <CalendarIcon className="size-4" />
                 Date
@@ -257,7 +257,7 @@ export function EventForm({
               </Popover>
             </div>
 
-            <div className="space-y-2">
+            <div className="flex flex-col gap-2">
               <Label className="flex items-center gap-2">
                 <Clock className="size-4" />
                 Time
@@ -284,7 +284,7 @@ export function EventForm({
 
           {/* Duration and All Day */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
+            <div className="flex flex-col gap-2">
               <Label>Duration</Label>
               <Select
                 value={formData.duration}
@@ -305,10 +305,10 @@ export function EventForm({
               </Select>
             </div>
 
-            <div className="space-y-2">
+            <div className="flex flex-col gap-2">
               <Label>Options</Label>
-              <div className="flex items-center space-x-4 h-10">
-                <div className="flex items-center space-x-2">
+              <div className="flex items-center gap-4 h-10">
+                <div className="flex items-center gap-2">
                   <Switch
                     id="all-day"
                     checked={formData.allDay}
@@ -320,7 +320,7 @@ export function EventForm({
                     All day
                   </Label>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-2">
                   <Switch
                     id="reminder"
                     checked={formData.reminder}
@@ -337,7 +337,7 @@ export function EventForm({
           </div>
 
           {/* Location */}
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <Label htmlFor="location" className="flex items-center gap-2">
               <MapPin className="size-4" />
               Location
@@ -353,7 +353,7 @@ export function EventForm({
           </div>
 
           {/* Attendees */}
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <Label className="flex items-center gap-2">
               <Users className="size-4" />
               Attendees
@@ -406,7 +406,7 @@ export function EventForm({
           </div>
 
           {/* Description */}
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <Label htmlFor="description">Description</Label>
             <Textarea
               id="description"

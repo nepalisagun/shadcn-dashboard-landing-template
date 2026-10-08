@@ -86,8 +86,8 @@ export function FeaturesSection() {
             direction="left"
           />
           {/* Right Content */}
-          <div className="space-y-6">
-            <div className="space-y-4">
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
               <h3 className="text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
                 Components that accelerate development
               </h3>
@@ -129,8 +129,8 @@ export function FeaturesSection() {
         {/* Second Feature Section - Flipped Layout */}
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-8 xl:gap-16">
           {/* Left Content */}
-          <div className="space-y-6 order-2 lg:order-1">
-            <div className="space-y-4">
+          <div className="flex flex-col gap-6 order-2 lg:order-1">
+            <div className="flex flex-col gap-4">
               <h3 className="text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
                 Built for modern development workflows
               </h3>

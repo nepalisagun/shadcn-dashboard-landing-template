@@ -24,7 +24,7 @@ export function BillingHistoryCard({ history }: BillingHistoryCardProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
+        <div className="flex flex-col gap-4">
           {history.map((item, index) => (
             <div key={item.id}>
               <div className="flex items-center justify-between py-2">

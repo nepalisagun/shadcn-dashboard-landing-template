@@ -125,11 +125,11 @@ export function LandingFooter() {
         <div className="grid gap-8 grid-cols-4 lg:grid-cols-6">
           {/* Brand Column */}
           <div className="col-span-4 lg:col-span-2 max-w-2xl">
-            <div className="flex items-center space-x-2 mb-4 max-lg:justify-center">
+            <div className="flex items-center gap-2 mb-4 max-lg:justify-center">
               <a
                 href="https://shadcnstore.com"
                 target="_blank"
-                className="flex items-center space-x-2 cursor-pointer"
+                className="flex items-center gap-2 cursor-pointer"
               >
                 <Logo size={32} />
                 <span className="font-bold text-xl">ShadcnStore</span>
@@ -140,7 +140,7 @@ export function LandingFooter() {
               landing pages, and admin dashboards designed for modern
               developers.
             </p>
-            <div className="flex space-x-4 max-lg:justify-center">
+            <div className="flex gap-4 max-lg:justify-center">
               {socialLinks.map((social) => (
                 <Button
                   key={social.name}
@@ -165,7 +165,7 @@ export function LandingFooter() {
           {/* Links Columns */}
           <div className="max-md:col-span-2 lg:col-span-1">
             <h4 className="font-semibold mb-4">Product</h4>
-            <ul className="space-y-3">
+            <ul className="flex flex-col gap-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
                   <a
@@ -181,7 +181,7 @@ export function LandingFooter() {
 
           <div className="max-md:col-span-2 lg:col-span-1">
             <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-3">
+            <ul className="flex flex-col gap-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <a
@@ -197,7 +197,7 @@ export function LandingFooter() {
 
           <div className="max-md:col-span-2 lg:col-span-1">
             <h4 className="font-semibold mb-4">Resources</h4>
-            <ul className="space-y-3">
+            <ul className="flex flex-col gap-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <a
@@ -213,7 +213,7 @@ export function LandingFooter() {
 
           <div className="max-md:col-span-2 lg:col-span-1">
             <h4 className="font-semibold mb-4">Legal</h4>
-            <ul className="space-y-3">
+            <ul className="flex flex-col gap-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <a
@@ -250,7 +250,7 @@ export function LandingFooter() {
               © {new Date().getFullYear()} for the developer community
             </span>
           </div>
-          <div className="flex items-center space-x-4 text-sm text-muted-foreground mt-4 md:mt-0">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground mt-4 md:mt-0">
             <a
               href="#privacy"
               className="hover:text-foreground transition-colors"

@@ -168,7 +168,7 @@ export function CustomerInsights() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="growth" className="mt-8 space-y-6">
+          <TabsContent value="growth" className="flex flex-col mt-8 gap-6">
             <div className="grid gap-6">
               {/* Chart and Key Metrics Side by Side */}
               <div className="grid grid-cols-10 gap-6">
@@ -224,8 +224,8 @@ export function CustomerInsights() {
                 </div>
 
                 {/* Key Metrics - 30% */}
-                <div className="col-span-10 xl:col-span-3 space-y-5">
-                  <h3 className="text-sm font-medium text-muted-foreground mb-6">
+                <div className="flex flex-col col-span-10 xl:col-span-3 gap-5">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-1">
                     Key Metrics
                   </h3>
                   <div className="grid grid-cols-3 gap-5">
@@ -318,11 +318,11 @@ export function CustomerInsights() {
                 </TableBody>
               </Table>
             </div>
-            <div className="flex items-center justify-end space-x-2 py-6">
+            <div className="flex items-center justify-end gap-2 py-6">
               <div className="text-muted-foreground text-sm hidden sm:block">
                 0 of {demographicsData.length} row(s) selected.
               </div>
-              <div className="space-x-2 space-y-2">
+              <div className="flex flex-col gap-2 gap-2">
                 <Button variant="outline" size="sm" disabled>
                   Previous
                 </Button>
@@ -377,11 +377,11 @@ export function CustomerInsights() {
                 </TableBody>
               </Table>
             </div>
-            <div className="flex items-center justify-end space-x-2 py-6">
+            <div className="flex items-center justify-end gap-2 py-6">
               <div className="text-muted-foreground text-sm hidden sm:block">
                 0 of {regionsData.length} row(s) selected.
               </div>
-              <div className="space-x-2 space-y-2">
+              <div className="flex flex-col gap-2 gap-2">
                 <Button variant="outline" size="sm" disabled>
                   Previous
                 </Button>

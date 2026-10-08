@@ -77,7 +77,7 @@ const FaqSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="bg-transparent">
             <div className="p-0">
-              <Accordion className="space-y-5">
+              <Accordion className="gap-5">
                 {faqItems.map((item) => (
                   <AccordionItem
                     key={item.value}

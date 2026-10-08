@@ -102,9 +102,9 @@ export function ThemeTab({
   }
 
   return (
-    <div className="p-4 space-y-6">
+    <div className="flex flex-col p-4 gap-6">
       {/* Shadcn UI Theme Presets */}
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <Label className="text-sm font-medium">Shadcn UI Theme Presets</Label>
           <Button
@@ -180,7 +180,7 @@ export function ThemeTab({
       <Separator />
 
       {/* Tweakcn Theme Presets */}
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <Label className="text-sm font-medium">Tweakcn Theme Presets</Label>
           <Button
@@ -261,7 +261,7 @@ export function ThemeTab({
       <Separator />
 
       {/* Radius Selection */}
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
         <Label className="text-sm font-medium">Radius</Label>
         <div className="grid grid-cols-5 gap-2">
           {radiusOptions.map((option) => (
@@ -285,7 +285,7 @@ export function ThemeTab({
       <Separator />
 
       {/* Mode Section */}
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
         <Label className="text-sm font-medium">Mode</Label>
         <div className="grid grid-cols-2 gap-2">
           <Button
@@ -312,7 +312,7 @@ export function ThemeTab({
       <Separator />
 
       {/* Import Theme Button */}
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3">
         <Button
           variant="outline"
           size="lg"
@@ -335,7 +335,7 @@ export function ThemeTab({
               Brand Colors
             </Label>
           </AccordionTrigger>
-          <AccordionContent className="px-4 pb-4 pt-2 space-y-3 border-t border-border bg-muted/20">
+          <AccordionContent className="flex flex-col px-4 pb-4 pt-2 gap-3 border-t border-border bg-muted/20">
             {baseColors.map((color) => (
               <div
                 key={color.cssVar}
@@ -354,7 +354,7 @@ export function ThemeTab({
       </Accordion>
 
       {/* Tweakcn */}
-      <div className="p-4 bg-muted rounded-lg space-y-3">
+      <div className="flex flex-col p-4 bg-muted rounded-lg gap-3">
         <div className="flex items-center gap-2">
           <Palette className="size-4 text-primary" />
           <span className="text-sm font-medium">Advanced Customization</span>

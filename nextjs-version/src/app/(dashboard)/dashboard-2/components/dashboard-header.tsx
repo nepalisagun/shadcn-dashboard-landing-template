@@ -36,7 +36,7 @@ export function DashboardHeader() {
               metrics
             </CardDescription>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-2">
             <Badge variant="outline" className="cursor-pointer">
               <Clock className="size-3 mr-1" />
               Live Data
@@ -51,8 +51,8 @@ export function DashboardHeader() {
         <Separator className="my-4" />
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <Calendar className="size-4 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">Date Range:</span>
               <Select

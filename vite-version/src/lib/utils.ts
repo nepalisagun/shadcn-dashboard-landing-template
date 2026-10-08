@@ -1,9 +1,5 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
+// shadcn's class-name merger (clsx + tailwind-merge in one compiled package)
+export { cn } from "cn"
 
 /**
  * Get the correct URL for public assets

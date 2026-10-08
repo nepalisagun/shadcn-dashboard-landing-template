@@ -1,6 +1,7 @@
 "use client"
 
-import type { Table } from "@tanstack/react-table"
+import type { ReactTable, RowData } from "@tanstack/react-table"
+import type { DataTableFeatures } from "@/lib/data-table"
 import { RefreshCcw } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -18,16 +19,16 @@ import { AddTaskModal } from "./add-task-modal"
 import { categories, priorities, statuses } from "../data/data"
 import type { Task } from "../data/schema"
 
-interface DataTableToolbarProps<TData> {
-  table: Table<TData>
+interface DataTableToolbarProps<TData extends RowData> {
+  table: ReactTable<DataTableFeatures, TData>
   onAddTask?: (task: Task) => void
 }
 
-export function DataTableToolbar<TData>({
+export function DataTableToolbar<TData extends RowData>({
   table,
   onAddTask,
 }: DataTableToolbarProps<TData>) {
-  const isFiltered = table.getState().columnFilters.length > 0
+  const isFiltered = table.state.columnFilters.length > 0
 
   const handleStatusChange = (value: string) => {
     const column = table.getColumn("status")
@@ -131,9 +132,6 @@ export function DataTableToolbar<TData>({
                   className="cursor-pointer"
                 >
                   <div className="flex items-center">
-                    {priority.icon && (
-                      <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-                    )}
                     {priority.label}
                   </div>
                 </SelectItem>

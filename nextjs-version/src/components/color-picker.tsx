@@ -14,10 +14,13 @@ interface ColorPickerProps {
 
 export function ColorPicker({ label, cssVar, value, onChange }: ColorPickerProps) {
   const [localValue, setLocalValue] = React.useState(value)
+  const [prevValue, setPrevValue] = React.useState(value)
 
-  React.useEffect(() => {
+  // Re-sync when the parent changes the value (e.g. a theme preset is applied).
+  if (value !== prevValue) {
+    setPrevValue(value)
     setLocalValue(value)
-  }, [value])
+  }
 
   const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newColor = e.target.value

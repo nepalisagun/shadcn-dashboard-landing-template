@@ -1,6 +1,7 @@
 "use client"
 
-import { ArrowRight, TrendingUp, Package, Github } from 'lucide-react'
+import { ArrowRight, TrendingUp, Package } from 'lucide-react'
+import { Github } from '@/components/icons/brand-icons'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'

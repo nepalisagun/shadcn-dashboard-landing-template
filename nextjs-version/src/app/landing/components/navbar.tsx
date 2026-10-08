@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, Github, LayoutDashboard, ChevronDown, X, Moon, Sun } from 'lucide-react'
+import { Menu, LayoutDashboard, ChevronDown, X, Moon, Sun } from 'lucide-react'
+import { Github } from '@/components/icons/brand-icons'
 import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,

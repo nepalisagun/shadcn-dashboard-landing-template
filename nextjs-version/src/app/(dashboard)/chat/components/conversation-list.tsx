@@ -74,7 +74,8 @@ export function ConversationList({
   const getOnlineStatus = (conversation: Conversation) => {
     if (conversation.type === "direct" && conversation.participants.length === 1) {
       // In a real app, you'd check user online status
-      return Math.random() > 0.5 // Mock online status
+      // Mock online status, stable per conversation across renders
+      return conversation.id.charCodeAt(conversation.id.length - 1) % 2 === 0
     }
     return false
   }

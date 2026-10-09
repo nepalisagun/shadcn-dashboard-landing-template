@@ -1,24 +1,18 @@
 name: Deploy Template to ShadcnStore
 
+# Production only. The staging site never served /templates/, so staging runs
+# uploaded files nobody could reach and always failed the health check. The
+# demo is moving to demo.shadcnstore.com, whose staging twin
+# (demo-staging.shadcnstore.com) will bring staging back with that move.
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to deploy template to'
-        required: true
-        default: 'production'
-        type: choice
-        options:
-          - production
-          - staging
 
 jobs:
   deploy-template:
     runs-on: ubuntu-latest
 
-    # Determine environment
     env:
-      DEPLOY_ENV: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || 'production' }}
+      DEPLOY_ENV: production
       TEMPLATE_NAME: shadcn-dashboard-landing-template
       TEMPLATE_TYPE: dashboard
 
@@ -33,13 +27,7 @@ jobs:
           echo "BASE_URL=/templates/${{ env.TEMPLATE_TYPE }}/${{ env.TEMPLATE_NAME }}/" >> $GITHUB_OUTPUT
           echo "BASENAME=/templates/${{ env.TEMPLATE_TYPE }}/${{ env.TEMPLATE_NAME }}" >> $GITHUB_OUTPUT
           echo "TEMPLATE_DIR=/var/www/shadcnstore/templates/${{ env.TEMPLATE_TYPE }}/${{ env.TEMPLATE_NAME }}" >> $GITHUB_OUTPUT
-
-          if [[ "${{ env.DEPLOY_ENV }}" == "production" ]]; then
-            echo "DOMAIN=shadcnstore.com" >> $GITHUB_OUTPUT
-          else
-            echo "DOMAIN=staging.shadcnstore.com" >> $GITHUB_OUTPUT
-            echo "TEMPLATE_DIR=/var/www/shadcnstore/templates-staging/${{ env.TEMPLATE_TYPE }}/${{ env.TEMPLATE_NAME }}" >> $GITHUB_OUTPUT
-          fi
+          echo "DOMAIN=shadcnstore.com" >> $GITHUB_OUTPUT
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
